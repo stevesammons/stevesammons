@@ -25,3 +25,17 @@ You need an administrator account (WordPress's `unfiltered_html` capability) for
 - Every reference links to Bible Gateway (NIV). Works with a keyboard, respects reduced-motion settings and fits phone widths.
 
 `preview.html` wraps the embed in a plain page for viewing it locally.
+
+## Publishing automatically
+
+`publish.py` updates page 3169 via the WordPress REST API. It reads `WP_USER` and
+`WP_APP_PASSWORD` from the environment and never prints them. Before changing anything it
+backs up the page's current content to `backups/`, which is git-ignored.
+
+```
+python3 hebron-map/publish.py          # dry run
+python3 hebron-map/publish.py --apply  # publish
+```
+
+It replaces only the old map `<figure>`, between `<!-- chm:start -->` and `<!-- chm:end -->`
+markers, so re-running it after editing `embed.html` updates the map in place.
