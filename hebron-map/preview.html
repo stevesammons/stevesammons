@@ -1,0 +1,321 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:Georgia,serif;margin:0;padding:20px;background:#fff}main{max-width:800px;margin:auto}</style></head><body><main>
+<!--
+  Hebron in Caleb's Story: interactive map
+  Paste this whole file into a WordPress "Custom HTML" block on
+  https://stevesammons.com/hebron-in-calebs-story/ in place of the old map <figure>.
+  Everything is scoped to #chm so it will not affect the rest of the theme.
+-->
+<div id="chm" class="chm" aria-label="Interactive map of Hebron in Caleb's story">
+<style>
+#chm{--ink:#1f2a2c;--muted:#5d6a6d;--line:#d9d4c4;--paper:#fbf8ef;--land:#efe6cf;--hill:#d9c79a;--shep:#e6dab6;--wild:#e9d9b8;--negev:#f1e3c2;--sea:#cfe0e3;--seaInk:#4f7680;--accent:#c8322d;--accent2:#8a5a14;--route:#c8322d;--ref:#3b4a4d;
+  font-family:inherit;color:var(--ink);line-height:1.55;margin:28px 0;border:1px solid var(--line);background:var(--paper);border-radius:6px;overflow:hidden;overflow:clip}
+#chm *{box-sizing:border-box}
+#chm button{font:inherit;cursor:pointer;background:none;border:0;color:inherit;margin:0;padding:0;letter-spacing:normal;text-transform:none;line-height:inherit;box-shadow:none}
+#chm button:focus-visible,#chm a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#chm .chm-head{padding:16px 18px 10px;border-bottom:1px solid var(--line)}
+#chm .chm-kicker{font-size:.72em;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+#chm .chm-title{font-size:1.15em;font-weight:700;margin:2px 0 10px;color:var(--ink)}
+#chm .chm-tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+#chm .chm-tab{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:6px 11px 6px 7px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.86em;color:var(--muted);white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+#chm .chm-tab b{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--land);color:var(--ink);font-size:.8em}
+#chm .chm-tab:hover{border-color:var(--accent);color:var(--ink)}
+#chm .chm-tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+#chm .chm-tab[aria-selected="true"] b{background:var(--accent);color:#fff}
+#chm .chm-body{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:760px){#chm .chm-body{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}#chm .chm-panel{border-left:1px solid var(--line)}#chm .chm-mapwrap{position:sticky;top:0;align-self:start}}
+#chm .chm-mapwrap{position:relative;background:var(--paper)}
+#chm svg.chm-map{display:block;width:100%;height:auto;touch-action:manipulation}
+#chm .chm-map text{font-family:inherit;pointer-events:none}
+#chm .chm-region{transition:opacity .4s}
+#chm .chm-rlabel{font-size:14px;letter-spacing:.14em;text-transform:uppercase;fill:#7b6a45;font-style:italic;opacity:.85}
+#chm .chm-water{font-size:15px;letter-spacing:.16em;text-transform:uppercase;fill:var(--seaInk);font-style:italic}
+#chm .chm-route{fill:none;stroke:var(--route);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .45s}
+#chm .chm-route.on{opacity:1}
+#chm .chm-route.dash{stroke-dasharray:2 7}
+#chm .chm-route.req{stroke:var(--accent2);stroke-dasharray:10 7}
+#chm .chm-route.draw{animation:chmDraw 1.4s ease-out forwards}
+@keyframes chmDraw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+#chm .chm-pl{cursor:pointer}
+#chm .chm-pl .dot{stroke:#fff;stroke-width:2.5;transition:r .2s}
+#chm .chm-pl .halo{fill:var(--accent);opacity:0;transition:opacity .3s}
+#chm .chm-pl.hot .halo{opacity:.22;animation:chmPulse 2s ease-in-out infinite}
+#chm .chm-pl.dim{opacity:.45}
+#chm .chm-pl.sel .dot{stroke:var(--ink);stroke-width:3}
+#chm .chm-pl .lbl{font-size:18px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:rgba(251,248,239,.92);stroke-width:4px;stroke-linejoin:round}
+#chm .chm-pl .sub{font-size:13.5px;fill:var(--muted);paint-order:stroke;stroke:rgba(251,248,239,.92);stroke-width:3.5px}
+#chm .chm-pl:focus{outline:none}
+#chm .chm-pl:focus-visible .dot{stroke:var(--accent);stroke-width:4}
+#chm .chm-area{fill:var(--accent2);opacity:.14;stroke:var(--accent2);stroke-dasharray:3 4;stroke-width:1.5}
+@keyframes chmPulse{0%,100%{opacity:.12}50%{opacity:.32}}
+#chm .chm-ref .lbl{font-weight:600;fill:var(--ref)}
+#chm .chm-hidden{display:none}
+#chm .chm-maptools{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;border-top:1px solid var(--line)}#chm .chm-maptools span{font-size:.74em;color:var(--muted);align-self:center;margin-right:2px}
+#chm .chm-chip{font-size:.74em;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--ink)}
+#chm .chm-chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+#chm .chm-panel{padding:18px 18px 16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+#chm .chm-step{font-size:.72em;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+#chm .chm-ch{font-size:1.2em;font-weight:700;margin:2px 0 4px;color:var(--ink);line-height:1.3}
+#chm .chm-meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+#chm .chm-badge{font-size:.74em;border-radius:4px;padding:2px 8px;background:var(--land);color:var(--ink)}
+#chm .chm-badge.age{background:var(--ink);color:#fff}
+#chm .chm-text p{margin:0 0 .7em;font-size:.95em;color:#3a4547}
+#chm .chm-text p:last-child{margin-bottom:0}
+#chm .chm-quote{border-left:3px solid var(--accent);padding:4px 0 4px 12px;margin:10px 0;font-style:italic;color:var(--ink);font-size:.95em}
+#chm .chm-quote small{display:block;font-style:normal;color:var(--muted);font-size:.8em;margin-top:2px}
+#chm .chm-refs{font-size:.82em;color:var(--muted)}
+#chm .chm-refs a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+#chm .chm-nav{display:flex;justify-content:space-between;gap:8px;margin-top:auto;padding-top:6px}
+#chm .chm-btn{border:1px solid var(--ink)!important;border-radius:4px;padding:7px 14px!important;font-size:.85em;font-weight:600;background:#fff!important;color:var(--ink)!important}
+#chm .chm-btn.pri{background:var(--ink)!important;color:#fff!important}
+#chm .chm-btn:disabled{opacity:.35;cursor:default}
+#chm .chm-card{border:1px solid var(--line);background:#fff;border-radius:6px;padding:12px 14px}
+#chm .chm-card-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+#chm .chm-card-t{font-weight:700;font-size:1em}
+#chm .chm-conf{font-size:.7em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap}
+#chm .conf-secure{background:#e2efe4;color:#2d6a3a}
+#chm .conf-probable{background:#f5ecd6;color:#81601a}
+#chm .conf-debated{background:#f7e1dc;color:#9a3b2b}
+#chm .conf-modern{background:#e6ebec;color:#3b4a4d}
+#chm .chm-card p{margin:.45em 0 0;font-size:.88em;color:#3a4547}
+#chm .chm-card .chm-dist{font-size:.8em;color:var(--muted);margin-top:.5em}
+#chm .chm-hint{font-size:.8em;color:var(--muted);font-style:italic}
+#chm .chm-prof{margin-top:4px}
+#chm .chm-prof svg{width:100%;height:auto;display:block}
+#chm .chm-prof text{font-family:inherit}
+#chm .chm-foot{border-top:1px solid var(--line);padding:10px 18px;font-size:.8em;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+#chm .chm-key{display:inline-flex;align-items:center;gap:6px}
+#chm .chm-key i{display:inline-block;width:10px;height:10px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){#chm *{animation:none!important;transition:none!important}}
+</style>
+
+<div class="chm-head">
+  <div class="chm-kicker">Interactive map &bull; Numbers 13&ndash;14 &bull; Joshua 14&ndash;15</div>
+  <div class="chm-title">Follow Caleb from the scouting trip to Hebron</div>
+  <div class="chm-tabs" role="tablist" aria-label="Chapters of the story"></div>
+</div>
+
+<div class="chm-body">
+  <div class="chm-mapwrap">
+    <svg class="chm-map" viewBox="0 0 640 700" role="group" aria-label="Map of the southern hill country, the Negev and Kadesh Barnea"></svg>
+    <div class="chm-maptools"><span>Show:</span>
+      <button type="button" class="chm-chip" data-toggle="modern" aria-pressed="true">Modern reference points</button>
+      <button type="button" class="chm-chip" data-toggle="regions" aria-pressed="true">Regions</button>
+    </div>
+  </div>
+  <div class="chm-panel">
+    <div aria-live="polite">
+      <div class="chm-step"></div>
+      <div class="chm-ch"></div>
+      <div class="chm-meta"></div>
+      <div class="chm-text"></div>
+      <div class="chm-prof"></div>
+    </div>
+    <div class="chm-card" aria-live="polite"></div>
+    <div class="chm-refs"></div>
+    <div class="chm-nav">
+      <button type="button" class="chm-btn" data-go="-1">&larr; Previous</button>
+      <button type="button" class="chm-btn pri" data-go="1">Next &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<div class="chm-foot">
+  <span class="chm-key"><i style="background:var(--accent)"></i>Story location</span>
+  <span class="chm-key"><i style="background:var(--ref)"></i>Modern reference</span>
+  <span class="chm-key"><i style="background:#e2efe4;border:1px solid #2d6a3a"></i>Secure ID</span>
+  <span class="chm-key"><i style="background:#f5ecd6;border:1px solid #81601a"></i>Probable</span>
+  <span class="chm-key"><i style="background:#f7e1dc;border:1px solid #9a3b2b"></i>Debated</span>
+  <span>Routes are illustrative, not surveyed paths. Coastline and Dead Sea are approximate modern outlines.</span>
+</div>
+
+<noscript><p style="padding:12px 18px">This interactive map needs JavaScript. Hebron lies in the Judean hill country, about 20 miles south of Jerusalem (Joshua 14:12&ndash;15; 15:13&ndash;14).</p></noscript>
+
+<script>
+(function(){
+  var root=document.getElementById('chm'); if(!root||root.dataset.ready) return; root.dataset.ready='1';
+  var NS='http://www.w3.org/2000/svg';
+  // Equirectangular projection for lat 30.55–31.95, lon 34.15–35.65
+  var K=500, C=Math.cos(31.25*Math.PI/180);
+  function P(lat,lon){return [ (lon-34.15)*K*C, (31.95-lat)*K ];}
+  function path(pts,close){return pts.map(function(p,i){var q=P(p[0],p[1]);return (i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1);}).join(' ')+(close?' Z':'');}
+  function smooth(pts){ // Catmull-Rom to cubic Bézier
+    var q=pts.map(function(p){return P(p[0],p[1]);}), d='M'+q[0][0].toFixed(1)+' '+q[0][1].toFixed(1);
+    for(var i=0;i<q.length-1;i++){var p0=q[i-1]||q[i],p1=q[i],p2=q[i+1],p3=q[i+2]||p2;
+      d+=' C'+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+' '+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+' '+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+' '+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+' '+p2[0].toFixed(1)+' '+p2[1].toFixed(1);}
+    return d;}
+  function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+  function miles(a,b){var R=3958.8,r=Math.PI/180,dl=(b[0]-a[0])*r,dn=(b[1]-a[1])*r,x=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dn/2)*Math.sin(dn/2);return 2*R*Math.asin(Math.sqrt(x));}
+  function bg(q){return 'https://www.biblegateway.com/passage/?search='+encodeURIComponent(q)+'&version=NIV';}
+
+  /* ---------- Places ---------- */
+  var PL={
+    hebron:{name:'Hebron',sub:'Kiriath Arba',ll:[31.532,35.095],conf:'secure',confT:'Secure identification',
+      text:'Ancient Hebron is identified with Tel Rumeida, beside the modern city of Hebron (al-Khalil). At about 3,050 ft (930 m) it is one of the highest towns in the hill country of Judah. Long before Caleb, Abraham camped at the nearby great trees of Mamre, and the patriarchs were buried in the cave of Machpelah here (Genesis 13:18; 23:19; 49:29–31). The spies walked into the burial ground of the promise.'},
+    eshcol:{name:'Valley of Eshcol',sub:'"cluster"',ll:[31.585,35.105],area:true,conf:'debated',confT:'Location uncertain',
+      text:'Numbers 13:23–24 places Eshcol near Hebron. The spies cut a single cluster of grapes so heavy that two of them carried it on a pole. The text does not say exactly which valley; tradition points to the fertile valleys just north of Hebron, which are still known for vineyards.'},
+    kadesh:{name:'Kadesh Barnea',sub:'spies’ base camp',ll:[30.65,34.42],conf:'probable',confT:'Probable identification',
+      text:'The spies left from, and returned to, Kadesh in the wilderness (Numbers 13:26; Joshua 14:7). Numbers links it to both the Desert of Paran and the Desert of Zin. Most scholars identify it with the spring and oasis at Ein el-Qudeirat in the northeastern Sinai. Israel stayed in this region for much of the wilderness period.'},
+    gilgal:{name:'Gilgal',sub:'near Jericho',ll:[31.85,35.47],conf:'debated',confT:'Exact site unknown',
+      text:'Israel’s first camp west of the Jordan, "on the eastern border of Jericho" (Joshua 4:19). Here the men of Judah came to Joshua and Caleb made his request (Joshua 14:6). Several sites near Jericho have been proposed, but none is confirmed. The Jordan valley here is about 800 ft below sea level, so from Gilgal to Hebron the land climbs almost 4,000 ft.'},
+    debir:{name:'Debir',sub:'Kiriath Sepher',ll:[31.46,35.02],conf:'debated',confT:'Debated',
+      text:'Caleb offered his daughter Achsah in marriage to the man who captured Kiriath Sepher, later called Debir. His nephew Othniel took it (Joshua 15:15–17). The site is debated. Khirbet Rabud, southwest of Hebron, is widely favored, and Tell Beit Mirsim is an older proposal.'},
+    beersheba:{name:'Beersheba',sub:'Negev reference',ll:[31.245,34.84],ref:true,conf:'modern',confT:'Reference point',
+      text:'Tel Beersheba marks the heart of the northern Negev, the dry country the spies crossed as they "went up through the Negev" to Hebron (Numbers 13:22). It is shown here to orient the route. The text does not say the spies stopped there.'},
+    jerusalem:{name:'Jerusalem',sub:'then Jebus',ll:[31.778,35.235],ref:true,conf:'modern',confT:'Modern reference',
+      text:'Shown for orientation: Hebron is about 19 miles (30 km) south-southwest of the Old City. In Caleb’s day it was the Jebusite city of Jebus, and Judah could not drive the Jebusites out (Joshua 15:8, 63).'},
+  };
+
+  /* ---------- Chapters ---------- */
+  var CH=[
+    {id:'sent',tab:'Sent',title:'Sent out from Kadesh',age:'Caleb is 40',refs:[['Numbers 13:1–3, 17–21','Numbers 13:1-3,17-21'],['Joshua 14:7','Joshua 14:7']],
+      hot:['kadesh'],routes:['north','spies'],sel:'kadesh',prof:'up',
+      html:'<p>Moses chose one leader from each tribe to explore Canaan. For Judah he chose Caleb son of Jephunneh (Numbers 13:6). Caleb later said he was forty years old at the time (Joshua 14:7).</p><p>Their orders were to go up through the Negev into the hill country. They were to see whether the people were strong or weak, the towns walled or open, the soil rich or poor, and to bring back some fruit. The survey took forty days and reached as far north as Rehob, near Lebo Hamath, well off this map.</p>',
+      q:['Go up through the Negev and on into the hill country.','Numbers 13:17']},
+    {id:'hebron1',tab:'Hebron',title:'Hebron and the sons of Anak',age:'Caleb is 40',refs:[['Numbers 13:22–24','Numbers 13:22-24']],
+      hot:['hebron','eshcol'],routes:['spies'],sel:'hebron',
+      html:'<p>Hebron is the only town the spy account names along the way. There they saw Ahiman, Sheshai and Talmai, descendants of Anak. The text notes that Hebron was built seven years before Zoan in Egypt, so it was already an old, established city (Numbers 13:22).</p><p>Nearby, in the Valley of Eshcol, they cut a cluster of grapes so large that two men carried it on a pole. The fruit and the fortified cities came from the same place.</p><p>Remember those three names. They come back at the end of the story.</p>'},
+    {id:'report',tab:'Report',title:'Two reports at Kadesh',age:'Caleb is 40',refs:[['Numbers 13:25–33','Numbers 13:25-33'],['Numbers 14:6–9, 24, 30','Numbers 14:6-9,24,30']],
+      hot:['kadesh'],routes:['spies','back'],sel:'kadesh',
+      html:'<p>Back at Kadesh, all the scouts agreed that the land flowed with milk and honey. Ten of them said its cities were fortified and its people like giants, and that "we seemed like grasshoppers" (Numbers 13:33).</p><p>Caleb quieted the crowd and said Israel should go up at once. The people wanted to stone him and Joshua. God answered that his servant Caleb had "a different spirit" and followed him wholeheartedly, and promised to bring him into the land he had gone to (Numbers 14:24). The rest of that generation would die in the wilderness during forty years of wandering.</p>',
+      q:['We should go up and take possession of the land, for we can certainly do it.','Numbers 13:30 (NIV)']},
+    {id:'gilgal',tab:'Gilgal',title:'Forty-five years later, at Gilgal',age:'Caleb is 85',refs:[['Joshua 14:6–12','Joshua 14:6-12'],['Deuteronomy 1:36','Deuteronomy 1:36']],
+      hot:['gilgal','hebron'],routes:['request'],sel:'gilgal',prof:'climb',
+      html:'<p>After the wilderness years and the first campaigns in Canaan, the men of Judah came to Joshua at Gilgal. Caleb reminded him of Moses’ promise: the land his feet had walked on would belong to him and his descendants (Deuteronomy 1:36).</p><p>He was eighty-five and said he was as strong as the day Moses sent him. He did not ask for easy ground in the valley. He asked for the high, fortified hill country where the Anakites still lived. From Gilgal that is a climb of nearly 4,000 ft.</p>',
+      q:['Now give me this hill country that the LORD promised me that day.','Joshua 14:12 (NIV)']},
+    {id:'taken',tab:'Taken',title:'Hebron becomes Caleb’s',age:'Caleb is 85+',refs:[['Joshua 14:13–15','Joshua 14:13-15'],['Joshua 15:13–14','Joshua 15:13-14'],['Joshua 21:11–12','Joshua 21:11-12']],
+      hot:['hebron'],routes:[],sel:'hebron',
+      html:'<p>Joshua blessed Caleb and gave him Hebron. The city had been called Kiriath Arba, after Arba, "the greatest man among the Anakites" (Joshua 14:15).</p><p>Caleb drove out Sheshai, Ahiman and Talmai (Joshua 15:14). These are the same three names the spies reported in Numbers 13:22. What had frightened a generation was the ground Caleb asked for.</p><p>Later, Hebron itself was given to the Levites as a city of refuge, and Caleb kept its fields and villages (Joshua 20:7; 21:11–12). The text says Hebron "has belonged to Caleb ever since" (Joshua 14:14).</p>'},
+    {id:'debir',tab:'Debir',title:'Debir, Othniel and Achsah',age:'Caleb’s family',refs:[['Joshua 15:15–19','Joshua 15:15-19'],['Judges 1:10–15','Judges 1:10-15']],
+      hot:['debir','hebron'],routes:['debir'],sel:'debir',
+      html:'<p>From Hebron, Caleb moved against Debir, which was earlier called Kiriath Sepher. He promised his daughter Achsah to whoever captured it. Othniel, son of Caleb’s brother Kenaz, took the town. He later became Israel’s first judge (Judges 3:9–11).</p><p>Achsah asked her father for more than dry Negev land: "give me also springs of water." Caleb gave her the upper and lower springs (Joshua 15:19). In the hill country, water decided whether an inheritance could be lived on.</p>'}
+  ];
+
+  var ROUTES={
+    spies:{pts:[[30.65,34.42],[30.86,34.56],[31.07,34.70],[31.245,34.84],[31.38,34.96],[31.532,35.095]],cls:''},
+    north:{pts:[[31.532,35.095],[31.66,35.17],[31.80,35.22],[31.95,35.24]],cls:'dash'},
+    back:{pts:[[31.532,35.095],[31.30,34.98],[31.05,34.80],[30.85,34.62],[30.65,34.42]],cls:'dash'},
+    request:{pts:[[31.85,35.47],[31.80,35.36],[31.70,35.24],[31.60,35.15],[31.532,35.095]],cls:'req'},
+    debir:{pts:[[31.532,35.095],[31.50,35.06],[31.46,35.02]],cls:''}
+  };
+
+  var PROF={
+    up:{label:'Going up: Kadesh to Hebron (approximate elevations)',pts:[['Kadesh',0,1100],['Beersheba',45,850],['Hebron',73,3050]],max:73},
+    climb:{label:'The climb Caleb asked for: Gilgal to Hebron (approximate)',pts:[['Gilgal',0,-800],['Wilderness',12,600],['Hill ridge',22,2600],['Hebron',31,3050]],max:31}
+  };
+
+  /* ---------- Build the map ---------- */
+  var svg=root.querySelector('svg.chm-map');
+  var defs=el('defs',{},svg);
+  var f=el('filter',{id:'chmSoft',x:'-10%',y:'-10%',width:'120%',height:'120%'},defs); el('feGaussianBlur',{stdDeviation:'6'},f);
+  var pat=el('pattern',{id:'chmGrid',width:'42.7',height:'50',patternUnits:'userSpaceOnUse'},defs);
+  el('path',{d:'M42.7 0 L0 0 0 50',fill:'none',stroke:'rgba(80,70,40,.07)','stroke-width':'1'},pat);
+
+  el('rect',{x:0,y:0,width:640,height:700,fill:'var(--land)'},svg);
+  var regions=el('g',{class:'chm-region'},svg);
+  var R=[
+    {fill:'var(--negev)',pts:[[31.40,34.55],[31.40,34.93],[31.33,35.02],[31.30,35.20],[31.15,35.33],[30.85,35.25],[30.70,35.00],[30.80,34.60],[31.10,34.40]]},
+    {fill:'var(--shep)',pts:[[31.95,34.86],[31.95,35.03],[31.75,35.00],[31.55,34.97],[31.40,34.93],[31.38,34.80],[31.55,34.80],[31.75,34.83]]},
+    {fill:'var(--wild)',pts:[[31.95,35.30],[31.95,35.45],[31.76,35.49],[31.55,35.40],[31.35,35.36],[31.20,35.33],[31.30,35.18],[31.45,35.20],[31.62,35.27],[31.80,35.30]]},
+    {fill:'var(--hill)',pts:[[31.95,35.03],[31.95,35.30],[31.80,35.30],[31.62,35.27],[31.45,35.20],[31.30,35.18],[31.33,35.02],[31.40,34.93],[31.55,34.97],[31.75,35.00]]}
+  ];
+  R.forEach(function(r){el('path',{d:path(r.pts,true),fill:r.fill,filter:'url(#chmSoft)'},regions);});
+  el('rect',{x:0,y:0,width:640,height:700,fill:'url(#chmGrid)'},svg);
+
+  // Sea, Dead Sea, Jordan
+  el('path',{d:path([[31.95,34.15],[31.95,34.71],[31.80,34.63],[31.67,34.55],[31.52,34.44],[31.40,34.34],[31.30,34.24],[31.22,34.15]],true),fill:'var(--sea)',stroke:'#9fbcc2','stroke-width':'1.2'},svg);
+  el('path',{d:smooth([[31.765,35.52],[31.70,35.465],[31.55,35.42],[31.40,35.395],[31.25,35.375],[31.10,35.40],[31.04,35.43],[31.10,35.49],[31.25,35.52],[31.40,35.555],[31.55,35.575],[31.70,35.58],[31.765,35.555],[31.765,35.52]]),fill:'var(--sea)',stroke:'#9fbcc2','stroke-width':'1.2'},svg);
+  el('path',{d:smooth([[31.95,35.545],[31.90,35.56],[31.85,35.545],[31.80,35.56],[31.765,35.545]]),fill:'none',stroke:'#7fa7b0','stroke-width':'2.2'},svg);
+
+  var labels=el('g',{},svg);
+  function tx(t,lat,lon,cls,rot,anchor){var q=P(lat,lon),a={x:q[0],y:q[1],class:cls,'text-anchor':anchor||'middle'};if(rot)a.transform='rotate('+rot+' '+q[0]+' '+q[1]+')';var e=el('text',a,labels);e.textContent=t;return e;}
+  tx('Mediterranean Sea',31.62,34.30,'chm-water',-52);
+  tx('Salt Sea',31.42,35.49,'chm-water',-82);
+  tx('(Dead Sea)',31.42,35.53,'chm-water',-82).style.fontSize='10px';
+  tx('Jordan',31.90,35.60,'chm-water',-80).style.fontSize='10px';
+  var rl=el('g',{class:'chm-region'},labels);
+  [['Hill Country of Judah',31.70,35.10,-62],['Shephelah',31.62,34.86,-64],['Judean Wilderness',31.42,35.29,-66],['Negev',31.13,34.98,0],['Wilderness of Zin',30.93,35.02,0],['Wilderness of Paran',30.70,34.98,0],['Coastal plain',31.52,34.62,-55]].forEach(function(r){var q=P(r[1],r[2]);var e=el('text',{x:q[0],y:q[1],class:'chm-rlabel','text-anchor':'middle',transform:r[3]?'rotate('+r[3]+' '+q[0]+' '+q[1]+')':''},rl);e.textContent=r[0];});
+
+  // Scale bar and north arrow
+  var sb=el('g',{transform:'translate(452 676)'},svg), ten=16.09*K/111.2;
+  el('rect',{x:0,y:-6,width:ten,height:5,fill:'var(--ink)'},sb);el('rect',{x:ten,y:-6,width:ten,height:5,fill:'#fff',stroke:'var(--ink)','stroke-width':'1'},sb);
+  [['0',0],['10',ten],['20 mi',ten*2]].forEach(function(t){var e=el('text',{x:t[1],y:13,'font-size':'13','text-anchor':'middle',fill:'var(--ink)'},sb);e.textContent=t[0];});
+  var na=el('g',{transform:'translate(40 44)'},svg);
+  el('path',{d:'M0 -18 L8 6 L0 1 L-8 6 Z',fill:'var(--ink)'},na);var nt=el('text',{x:0,y:20,'font-size':'12','font-weight':'700','text-anchor':'middle',fill:'var(--ink)'},na);nt.textContent='N';
+
+  // Routes
+  var rg=el('g',{},svg), routeEls={};
+  Object.keys(ROUTES).forEach(function(k){routeEls[k]=el('path',{d:smooth(ROUTES[k].pts),class:'chm-route '+ROUTES[k].cls},rg);});
+  var offT=tx('on to Rehob, toward Lebo Hamath ↑',31.925,35.215,'chm-rlabel',0,'end');offT.style.fill='var(--accent)';offT.style.opacity='0';offT.style.transition='opacity .4s';
+
+  // Places
+  var pg=el('g',{},svg), plEls={};
+  Object.keys(PL).forEach(function(k){
+    var p=PL[k],q=P(p.ll[0],p.ll[1]);
+    var g=el('g',{class:'chm-pl'+(p.ref?' chm-ref':''),tabindex:'0',role:'button','aria-label':p.name+(p.sub?' ('+p.sub+')':'')+'. '+p.confT},pg);
+    if(p.area) el('ellipse',{cx:q[0],cy:q[1],rx:20,ry:13,class:'chm-area'},g);
+    el('circle',{cx:q[0],cy:q[1],r:17,class:'halo'},g);
+    el('circle',{cx:q[0],cy:q[1],r:p.ref?5.5:(k==='hebron'?9:7),class:'dot',fill:p.ref?'var(--ref)':(p.area?'var(--accent2)':'var(--accent)')},g);
+    var right={kadesh:1,beersheba:1,gilgal:0,jerusalem:0,hebron:1,eshcol:1,debir:0}[k];
+    var dx=right?14:-14, anchor=right?'start':'end', dy={eshcol:-8,hebron:8,debir:14,gilgal:0,jerusalem:0}[k]||5;
+    var l=el('text',{x:q[0]+dx,y:q[1]+dy,class:'lbl','text-anchor':anchor},g);l.textContent=p.name;
+    if(p.sub){var s=el('text',{x:q[0]+dx,y:q[1]+dy+16,class:'sub','text-anchor':anchor},g);s.textContent=p.sub;}
+    g.addEventListener('click',function(){select(k);});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(k);}});
+    var t=el('title',{},g);t.textContent=p.name;
+    plEls[k]=g;
+  });
+
+  /* ---------- Panel ---------- */
+  var tabs=root.querySelector('.chm-tabs'), cur=0, selKey=null;
+  CH.forEach(function(c,i){var b=document.createElement('button');b.type='button';b.className='chm-tab';b.setAttribute('role','tab');b.id='chm-tab-'+c.id;b.innerHTML='<b>'+(i+1)+'</b>'+c.tab;b.addEventListener('click',function(){go(i);});tabs.appendChild(b);});
+  tabs.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(cur+(e.key==='ArrowRight'?1:-1),true);}});
+  root.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){go(cur+(+b.dataset.go));});});
+  root.querySelectorAll('[data-toggle]').forEach(function(b){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);
+    if(b.dataset.toggle==='modern'){['jerusalem','beersheba'].forEach(function(k){plEls[k].classList.toggle('chm-hidden',!on);});}
+    else root.querySelectorAll('.chm-region').forEach(function(g){g.style.opacity=on?1:0;});});});
+
+  function profile(key){
+    var box=root.querySelector('.chm-prof'); if(!key){box.innerHTML='';return;}
+    var pr=PROF[key],W=320,H=112,L=40,Rr=24,T=14,B=26,lo=-1000,hi=3400;
+    function X(m){return L+(W-L-Rr)*m/pr.max;} function Y(ft){return T+(H-T-B)*(hi-ft)/(hi-lo);}
+    var line=pr.pts.map(function(p,i){return (i?'L':'M')+X(p[1]).toFixed(1)+' '+Y(p[2]).toFixed(1);}).join(' ');
+    var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+pr.label+'">';
+    s+='<line x1="'+L+'" x2="'+(W-Rr)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="#9fbcc2" stroke-dasharray="3 3"/><text x="'+(L-4)+'" y="'+(Y(0)+3)+'" font-size="8" text-anchor="end" fill="#5d6a6d">sea level</text>';
+    s+='<text x="'+(L-4)+'" y="'+(Y(3000)+3)+'" font-size="8" text-anchor="end" fill="#5d6a6d">3,000 ft</text><line x1="'+L+'" x2="'+(W-Rr)+'" y1="'+Y(3000)+'" y2="'+Y(3000)+'" stroke="#e3dccb"/>';
+    s+='<path d="'+line+' L'+X(pr.max)+' '+(H-B)+' L'+X(0)+' '+(H-B)+' Z" fill="#d9c79a" opacity=".55"/><path d="'+line+'" fill="none" stroke="#8a5a14" stroke-width="2"/>';
+    pr.pts.forEach(function(p){s+='<circle cx="'+X(p[1])+'" cy="'+Y(p[2])+'" r="3" fill="#c8322d"/><text x="'+X(p[1])+'" y="'+(H-B+12)+'" font-size="8.5" text-anchor="middle" fill="#1f2a2c">'+p[0]+'</text><text x="'+X(p[1])+'" y="'+(Y(p[2])-6)+'" font-size="8" text-anchor="middle" fill="#5d6a6d">'+p[2].toLocaleString()+'</text>';});
+    s+='<text x="'+W/2+'" y="'+(H-2)+'" font-size="8.5" text-anchor="middle" fill="#5d6a6d">'+pr.label+'</text></svg>';
+    box.innerHTML=s;
+  }
+
+  function select(k){
+    selKey=k; var p=PL[k], card=root.querySelector('.chm-card');
+    Object.keys(plEls).forEach(function(n){plEls[n].classList.toggle('sel',n===k);});
+    var d=k==='hebron'?'':'<div class="chm-dist">≈ '+Math.round(miles(p.ll,PL.hebron.ll))+' miles from Hebron in a straight line (routes on foot were longer)</div>';
+    if(k==='hebron') d='<div class="chm-dist">≈ '+Math.round(miles(p.ll,PL.jerusalem.ll))+' miles SSW of Jerusalem • ≈ '+Math.round(miles(p.ll,PL.kadesh.ll))+' miles from Kadesh Barnea</div>';
+    card.innerHTML='<div class="chm-card-h"><span class="chm-card-t">'+p.name+(p.sub?' <span style="font-weight:400;color:#5d6a6d">· '+p.sub+'</span>':'')+'</span><span class="chm-conf conf-'+p.conf+'">'+p.confT+'</span></div><p>'+p.text+'</p>'+d;
+  }
+
+  function go(i,focusTab){
+    if(i<0||i>=CH.length) return; cur=i; var c=CH[i];
+    tabs.querySelectorAll('.chm-tab').forEach(function(b,j){b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1;});
+    var tb=tabs.children[i]; if(focusTab) tb.focus(); if(tb.scrollIntoView&&tabs.scrollWidth>tabs.clientWidth) tabs.scrollLeft=tb.offsetLeft-tabs.clientWidth/2+tb.offsetWidth/2;
+    root.querySelector('.chm-step').textContent='Chapter '+(i+1)+' of '+CH.length;
+    root.querySelector('.chm-ch').textContent=c.title;
+    root.querySelector('.chm-meta').innerHTML='<span class="chm-badge age">'+c.age+'</span>'+c.refs.map(function(r){return '<span class="chm-badge">'+r[0]+'</span>';}).join('');
+    root.querySelector('.chm-text').innerHTML=c.html+(c.q?'<div class="chm-quote">“'+c.q[0]+'”<small>'+c.q[1]+'</small></div>':'');
+    root.querySelector('.chm-refs').innerHTML='Read it: '+c.refs.map(function(r){return '<a href="'+bg(r[1])+'" target="_blank" rel="noopener">'+r[0]+'</a>';}).join(' · ');
+    profile(c.prof);
+    Object.keys(plEls).forEach(function(k){var hot=c.hot.indexOf(k)>=0;plEls[k].classList.toggle('hot',hot);plEls[k].classList.toggle('dim',!hot&&!PL[k].ref);});
+    Object.keys(routeEls).forEach(function(k){var e=routeEls[k],on=c.routes.indexOf(k)>=0;e.classList.remove('draw');
+      if(on&&!ROUTES[k].cls){var L=e.getTotalLength();e.style.setProperty('--len',L);e.style.strokeDasharray=L;e.style.strokeDashoffset=L;void e.getBoundingClientRect();e.classList.add('draw');} else if(!ROUTES[k].cls){e.style.strokeDasharray='';e.style.strokeDashoffset='';}
+      e.classList.toggle('on',on);});
+    offT.style.opacity=c.routes.indexOf('north')>=0?1:0;
+    root.querySelector('[data-go="-1"]').disabled=i===0; var nx=root.querySelector('[data-go="1"]'); nx.disabled=i===CH.length-1;
+    select(c.sel);
+  }
+  go(0);
+})();
+</script>
+</div>
+</main></body></html>
