@@ -107,9 +107,17 @@ only pages whose back links changed, and checks each live page).
   prints anything UNASSIGNED/UNMATCHED to fix by hand. Then rebuild what changed:
   `python3 site/build_hub.py --apply` (/bible-characters/), `site/build_songs.py --apply` (/songs/, 3947),
   `site/build_maps.py --apply` (/bible-maps/, 3948, lists seo/map-pages.json), and
-  `site/story_strip.py --apply` (the "<Name> in five parts" box after each character post: Code Snippet
+  `site/story_strip.py --apply` (the five-part component on each character post: Code Snippet
   id in `site/story-strip-snippet-id.txt`, the_content priority 15, skipped in feeds). Approval for a new
   character post covers all of these.
+- Five-part component on posts (rebuilt 2026-09-25, source `site/story_strip.py`, `story-strip.css`,
+  `story-strip.js`): parts are Read, Gospel Quartet, Podcast, Profile, Map (Steve renamed Listen and
+  Deep dive). A bar under the title with icons, hover titles and a ? panel; up to two cards in the text
+  (song or podcast about 40% in; map after the first paragraph naming a place from its title, else
+  profile about 70% in); a box at the end. Missing parts are light grey "Coming soon". Gospel Quartet
+  opens a popup YouTube player and Podcast a popup audio player (free Substack episodes; `stories.py`
+  saves each episode's `audio` URL). The CSS is printed in wp_head: a `<style>` at the start of the
+  post content gets stripped along with whatever follows it.
 - Subscribing: new subscribers go to Substack via /subscribe/ (1423, `site/build_subscribe.py`). The
   existing MailPoet list (about 8,000) keeps getting email; don't touch it. The footer MailPoet form
   (mailpoet_form-2) was moved to Inactive widgets on 2026-09-25. /newsletter/ (1464) holds the

@@ -1,28 +1,41 @@
 #!/usr/bin/env python3
-"""Generate the "in five parts" strip shown after each Bible character post, and push it.
+"""Generate the Characters Worth Following five-part component on each Bible character post, and push it.
 
   python3 site/stories.py                 # refresh the data first
   python3 site/story_strip.py [--apply]
 
-Writes site/story-strip-snippet.php (a Code Snippets snippet, front-end scope) with the data
-baked in: post id -> the character's song, deep dive, profile and map. It hooks the_content at
+Each post gets three views of the same five parts (Read, Gospel Quartet, Podcast, Profile, Map):
+  - a bar under the title (icons + words, hover titles, a ? panel explaining the series),
+  - up to two cards inside the post: the song (or podcast) about 40% of the way in, and the map
+    after the first paragraph that names one of its places (or the profile, about 70% in),
+  - a full box at the end.
+Parts that aren't out yet are light grey ("Coming soon"). Gospel Quartet and Podcast open a popup
+player (YouTube embed / an audio player for the free Substack episode) instead of leaving the page.
+
+Writes site/story-strip-snippet.php (a Code Snippets snippet, front-end scope) with the data baked
+in. Styling is site/story-strip.css and behaviour site/story-strip.js; the script ships as a base64
+data: URI because the site's content filters mangle inline scripts, and the CSS goes in wp_head
+(a <style> block at the start of the post content gets stripped, taking the bar with it). It hooks the_content at
 priority 15, after wpautop and before the Keep reading block (priority 20), and skips feeds, so
-the RSS feed and emails are unchanged. With --apply it lints the PHP, creates or updates the
-snippet (id in site/story-strip-snippet-id.txt), activates it and checks a live post.
+the RSS feed and emails are unchanged. With --apply it lints the PHP, updates the snippet (id in
+site/story-strip-snippet-id.txt), activates it and checks the site and a few live posts.
 """
-import json, subprocess, sys
-from storykit import DEEP_DIVES, ROOT, SERIES, SITE, check, characters, parts, wp
+import base64, json, re, subprocess, sys
+from storykit import DEEP_DIVES, ROOT, SERIES, SITE, check, characters, wp
 
 OUT = ROOT / "site" / "story-strip-snippet.php"
 ID_FILE = ROOT / "site" / "story-strip-snippet-id.txt"
-LABEL = {"listen": "2. Listen", "deep": "3. Deep dive", "profile": "4. Profile", "map": "5. Map"}  # numbers match the hub
-HINT = {"listen": "The song", "deep": "The long version", "profile": "Who they were", "map": "Where it happened"}
+CSS = ROOT / "site" / "story-strip.css"
+JS = ROOT / "site" / "story-strip.js"
+SKIP_TERMS = {"rebuilding", "hill country", "hills near jerusalem", "wilderness"}  # map-title words too vague to place a card
 
 
 def php(v):
-    """PHP literal for str / list / dict / None."""
+    """PHP literal for str / int / list / dict / None."""
     if v is None:
         return "null"
+    if isinstance(v, bool):
+        return "true" if v else "false"
     if isinstance(v, (int, float)):
         return str(v)
     if isinstance(v, str):
@@ -32,74 +45,334 @@ def php(v):
     return "array(" + ",".join(f"{php(k)}=>{php(x)}" for k, x in v.items()) + ")"
 
 
+def names(c):
+    n = c["name"]
+    out = {n.lower(), re.split(r"[,(]", n)[0].strip().lower()}
+    out |= {a.lower() for a in c.get("aliases", [])}
+    return out
+
+
+def place_terms(c):
+    """Place names from the map title, used to put the map card after the paragraph that mentions one."""
+    if not c.get("maps"):
+        return []
+    t = c["maps"][0]["title"].replace("’", "'")
+    t = re.sub(r"\s+in\s+[^']+'s?\s+Story$", "", t)
+    t = re.sub(r"^Where Is (the )?", "", t)
+    t = re.sub(r"\s*Today\?$", "", t)
+    if t.startswith("The World of"):
+        return []
+    out = []
+    for part in re.split(r"\s+and\s+", t):
+        part = re.sub(r"^the\s+", "", part.strip(), flags=re.I)
+        if part and part.lower() not in names(c) and part.lower() not in SKIP_TERMS:
+            out.append(part)
+    return out
+
+
 def data():
+    """post id -> [name, portrait, song, podcast, profile, map, place terms]."""
     rows = {}
     for c in characters():
-        p = parts(c)
-        items = [[k, LABEL[k], HINT[k], p[k][0], p[k][1]] for k in ("listen", "deep", "profile", "map") if k in p and p[k][0]]
+        song = [c["song"]["id"], c["song"]["title"]] if c.get("song") else None
+        d = c.get("deep")
+        pod = [d["url"], d["title"], d.get("minutes") or 0, d.get("audio") or ""] if d else None
+        prof = c["profile"]["link"] if c.get("profile") and c["profile"].get("link") else None
+        mp = [c["maps"][0]["link"], c["maps"][0]["title"]] if c.get("maps") else None
         for pid in c["posts"]:
-            rows[pid] = [c["name"], items]
+            rows[pid] = [c["name"], c.get("img") or "", song, pod, prof, mp, place_terms(c)]
     return rows
+
+
+def css():
+    s = CSS.read_text()
+    s = re.sub(r"/\*.*?\*/", "", s, flags=re.S)
+    s = re.sub(r"\s*\n\s*", "", s)
+    return s.replace("'", "\\'")
+
+
+def js_uri():
+    return "data:text/javascript;base64," + base64.b64encode(JS.read_bytes()).decode()
 
 
 TEMPLATE = r"""<?php
 /**
- * Characters Worth Following: "<name> in five parts" strip after each Bible character post
- * (read, listen, deep dive, profile, map). Generated by site/story_strip.py from site/stories.json;
+ * Characters Worth Following: the five parts (Read, Gospel Quartet, Podcast, Profile, Map) on each
+ * Bible character post, as a bar under the title, up to two cards inside the text and a box at the
+ * end. Parts not out yet are grey ("Coming soon"). Gospel Quartet and Podcast open a popup player.
+ * Generated by site/story_strip.py from site/stories.json, story-strip.css and story-strip.js;
  * edit those, not this file. Front-end scope. Skips feeds so RSS and emails are unchanged.
  */
 
-if ( ! function_exists( 'ss_story_strip_data' ) ) {
+if ( ! function_exists( 'ss_cwf_data' ) ) {
 
-	function ss_story_strip_data() {
+	function ss_cwf_data() {
 		return __DATA__;
 	}
 
-	add_filter( 'the_content', function ( $content ) {
-		if ( is_feed() || ! is_singular( 'post' ) || ! in_the_loop() || ! is_main_query() ) {
+	function ss_cwf_icon( $k ) {
+		static $paths = array(
+			'read'    => '<path d="M2 5.5C4.5 4 7.5 4 12 6c4.5-2 7.5-2 10-.5V19c-2.5-1.5-5.5-1.5-10 .5-4.5-2-7.5-2-10-.5z"/><path d="M12 6v13.5"/>',
+			'song'    => '<circle cx="4" cy="10" r="2"/><circle cx="9.35" cy="8" r="2"/><circle cx="14.65" cy="8" r="2"/><circle cx="20" cy="10" r="2"/><path d="M1 19.5v-2.5a3 3 0 0 1 6 0v2.5M6.35 19.5V15a3 3 0 0 1 6 0M11.65 15a3 3 0 0 1 6 0v4.5M17 19.5V17a3 3 0 0 1 6 0v2.5"/>',
+			'podcast' => '<circle cx="12" cy="10" r="2.2"/><path d="M7.8 14.2a6 6 0 1 1 8.4 0M4.9 17.1a10 10 0 1 1 14.2 0M12 14.5v7"/>',
+			'profile' => '<circle cx="12" cy="8" r="4"/><path d="M4 21c1.2-4 4.3-6 8-6s6.8 2 8 6"/>',
+			'map'     => '<path d="M12 21.5s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/>',
+		);
+		$wide = 'song' === $k;
+		return '<span class="cwf-ic"><svg class="cwf-svg' . ( $wide ? ' cwf-wide' : '' ) . '" viewBox="' . ( $wide ? '0 5 24 15.5' : '0 0 24 24' )
+			. '" aria-hidden="true" focusable="false">' . $paths[ $k ] . '</svg></span>';
+	}
+
+	/* The five parts for this post, in order. Each: key, number, label, and (when out) title, meta, url, play attributes. */
+	function ss_cwf_parts( $row, $post_title ) {
+		list( $name, $img, $song, $pod, $prof, $map ) = $row;
+		$soon  = array(
+			'song'    => 'The quartet is still recording this one.',
+			'podcast' => 'The podcast episode is being made.',
+			'profile' => 'The profile is being written.',
+			'map'     => 'The map is being drawn.',
+		);
+		$parts = array();
+		$parts[] = array( 'k' => 'read', 'n' => 1, 'label' => 'Read', 'on' => true, 'here' => true, 'title' => $post_title, 'meta' => 'This post' );
+		$p = array( 'k' => 'song', 'n' => 2, 'label' => 'Gospel Quartet', 'on' => (bool) $song );
+		if ( $song ) {
+			$p += array( 'title' => $song[1], 'meta' => 'Gospel quartet song · plays here', 'url' => 'https://www.youtube.com/watch?v=' . $song[0],
+				'play' => ' data-cwf-play="song" data-cwf-yt="' . esc_attr( $song[0] ) . '"' );
+		}
+		$parts[] = $p;
+		$p = array( 'k' => 'podcast', 'n' => 3, 'label' => 'Podcast', 'on' => (bool) $pod );
+		if ( $pod ) {
+			$min = $pod[2] ? $pod[2] . ' min · ' : '';
+			$p  += array( 'title' => $pod[1], 'url' => $pod[0] );
+			if ( $pod[3] ) {
+				$p['meta'] = $min . 'Podcast episode · plays here';
+				$p['play'] = ' data-cwf-play="podcast" data-cwf-audio="' . esc_url( $pod[3] ) . '" data-cwf-min="' . (int) $pod[2] . '"';
+			} else {
+				$p['meta'] = $min . 'Podcast episode · Substack';
+			}
+		}
+		$parts[] = $p;
+		$p = array( 'k' => 'profile', 'n' => 4, 'label' => 'Profile', 'on' => (bool) $prof );
+		if ( $prof ) {
+			$p += array( 'title' => $name, 'meta' => 'Character profile', 'url' => $prof );
+		}
+		$parts[] = $p;
+		$p = array( 'k' => 'map', 'n' => 5, 'label' => 'Map', 'on' => (bool) $map );
+		if ( $map ) {
+			$p += array( 'title' => $map[1], 'meta' => 'Map of the places in the story', 'url' => $map[0] );
+		}
+		$parts[] = $p;
+		foreach ( $parts as &$q ) {
+			if ( ! $q['on'] ) {
+				$q['soon'] = $soon[ $q['k'] ];
+			} elseif ( isset( $q['url'] ) ) {
+				$q['ext'] = 0 !== strpos( $q['url'], home_url() );
+				$q['attrs'] = ' href="' . esc_url( $q['url'] ) . '"' . ( $q['ext'] ? ' target="_blank" rel="noopener"' : '' )
+					. ( isset( $q['play'] ) ? $q['play'] . ' data-cwf-title="' . esc_attr( $q['title'] ) . '" data-cwf-num="' . $q['n'] . '"' : '' );
+			}
+		}
+		unset( $q );
+		return $parts;
+	}
+
+	function ss_cwf_arrow( $q ) {
+		return isset( $q['play'] ) ? ' ▶' : ( ! empty( $q['ext'] ) ? ' ↗' : ' →' );
+	}
+
+	function ss_cwf_bar( $row, $parts ) {
+		$name = $row[0];
+		$out  = 0;
+		foreach ( $parts as $q ) {
+			$out += $q['on'] ? 1 : 0;
+		}
+		$h  = '<nav class="cwf cwf-bar" aria-label="' . esc_attr( $name ) . ' in five parts" data-name="' . esc_attr( $name ) . '" data-img="' . esc_url( $row[1] ) . '">';
+		$h .= '<div class="cwf-head"><span class="cwf-k">__SERIES__</span>'
+			. '<button type="button" class="cwf-q" aria-expanded="false" aria-label="What is this?">?</button>'
+			. '<div class="cwf-help" hidden><p class="cwf-help-t">Every character comes in five parts</p><ol>'
+			. '<li><b>Read</b> the short post. You’re on it now.</li>'
+			. '<li><b>Gospel Quartet</b>: an original song about ' . esc_html( $name ) . ', sung by a gospel quartet.</li>'
+			. '<li><b>Podcast</b>: a longer conversation about the story.</li>'
+			. '<li><b>Profile</b>: a closer look at ' . esc_html( $name ) . ', with the key Bible passages.</li>'
+			. '<li><b>Map</b>: the places in the story and where they are today.</li></ol>'
+			. '<p class="cwf-help-s"><b>' . $out . ' of 5</b> ' . ( 1 === $out ? 'is' : 'are' ) . ' out for ' . esc_html( $name ) . '.'
+			. ( $out < 5 ? ' Grey parts are coming soon.' : '' ) . '</p>'
+			. '<a href="' . esc_url( home_url( '/bible-characters/' ) ) . '">See all characters →</a></div></div><ol class="cwf-track">';
+		foreach ( $parts as $q ) {
+			$num  = $q['n'] . ' · ' . $q['label'];
+			$data = ' data-part="' . $q['k'] . '" data-label="' . esc_attr( $q['label'] ) . '"';
+			if ( ! empty( $q['here'] ) ) {
+				$h .= '<li><span class="cwf-step is-here" tabindex="0"' . $data . '>' . ss_cwf_icon( $q['k'] ) . '<span class="cwf-lbl">' . $q['label'] . '</span>'
+					. '<span class="cwf-sub">You’re here</span><span class="cwf-tip" role="tooltip"><span class="cwf-tip-k">' . $num . '</span>'
+					. '<span class="cwf-tip-t">' . esc_html( $q['title'] ) . '</span><span class="cwf-tip-m">You’re reading it now.</span></span></span></li>';
+			} elseif ( ! $q['on'] ) {
+				$h .= '<li><button type="button" class="cwf-step is-soon"' . $data . ' aria-label="' . esc_attr( $num ) . ': coming soon">' . ss_cwf_icon( $q['k'] )
+					. '<span class="cwf-lbl">' . $q['label'] . '</span><span class="cwf-sub">Coming soon</span><span class="cwf-tip" role="tooltip">'
+					. '<span class="cwf-tip-k">' . $num . '</span><span class="cwf-tip-t">Coming soon</span><span class="cwf-tip-m">' . esc_html( $q['soon'] ) . '</span></span></button></li>';
+			} else {
+				$h .= '<li><a class="cwf-step"' . $q['attrs'] . $data . ' aria-label="' . esc_attr( $num . ': ' . $q['title'] ) . '">' . ss_cwf_icon( $q['k'] )
+					. '<span class="cwf-lbl">' . $q['label'] . '</span><span class="cwf-sub"></span><span class="cwf-tip" role="tooltip">'
+					. '<span class="cwf-tip-k">' . $num . '</span><span class="cwf-tip-t">' . esc_html( $q['title'] ) . '</span>'
+					. '<span class="cwf-tip-m">' . esc_html( $q['meta'] ) . ( ! empty( $q['ext'] ) && empty( $q['play'] ) ? ' ↗' : '' ) . '</span></span></a></li>';
+			}
+		}
+		return $h . '</ol></nav>';
+	}
+
+	function ss_cwf_card( $row, $parts, $k ) {
+		foreach ( $parts as $q ) {
+			if ( $q['k'] === $k ) {
+				break;
+			}
+		}
+		$lead = array(
+			'song'    => 'Hear it sung: ' . $q['title'],
+			'podcast' => 'Hear the conversation: ' . $q['title'],
+			'profile' => 'Meet ' . $row[0] . ': the full profile',
+			'map'     => 'See where this happened: ' . $q['title'],
+		);
+		$dots = '';
+		foreach ( $parts as $d ) {
+			$dots .= '<i class="' . ( ! empty( $d['here'] ) ? 'h' : ( $d['on'] ? '' : 'o' ) ) . ( $d['k'] === $k ? ' me' : '' ) . '"></i>';
+		}
+		return '<a class="cwf cwf-card"' . $q['attrs'] . '>' . ss_cwf_icon( $k ) . '<span class="cwf-card-b"><span class="cwf-k">Part ' . $q['n'] . ' of 5 · ' . $q['label'] . '</span>'
+			. '<span class="cwf-card-t">' . esc_html( $lead[ $k ] ) . ss_cwf_arrow( $q ) . '</span><span class="cwf-card-m">' . esc_html( $q['meta'] ) . '</span></span>'
+			. '<span class="cwf-dots" aria-hidden="true">' . $dots . '</span></a>';
+	}
+
+	function ss_cwf_end( $row, $parts ) {
+		$name = $row[0];
+		$out  = 0;
+		$h    = '';
+		foreach ( $parts as $q ) {
+			$out += $q['on'] ? 1 : 0;
+			$num  = $q['n'] . ' · ' . $q['label'];
+			if ( ! empty( $q['here'] ) ) {
+				$h .= '<li><div class="cwf-tile is-here">' . ss_cwf_icon( $q['k'] ) . '<span class="cwf-tile-b"><span class="cwf-tile-n">' . $num . '</span>'
+					. '<span class="cwf-tile-t">' . esc_html( $q['title'] ) . '</span><span class="cwf-tile-m">You just read it</span></span></div></li>';
+			} elseif ( ! $q['on'] ) {
+				$h .= '<li><div class="cwf-tile is-soon">' . ss_cwf_icon( $q['k'] ) . '<span class="cwf-tile-b"><span class="cwf-tile-n">' . $num . '</span>'
+					. '<span class="cwf-tile-t">Coming soon</span><span class="cwf-tile-m">' . esc_html( $q['soon'] ) . '</span></span></div></li>';
+			} else {
+				$h .= '<li><a class="cwf-tile"' . $q['attrs'] . '>' . ss_cwf_icon( $q['k'] ) . '<span class="cwf-tile-b"><span class="cwf-tile-n">' . $num . '</span>'
+					. '<span class="cwf-tile-t">' . esc_html( $q['title'] ) . ss_cwf_arrow( $q ) . '</span><span class="cwf-tile-m">' . esc_html( $q['meta'] ) . '</span></span></a></li>';
+			}
+		}
+		$sub = 5 === $out ? 'All five parts are out.' : $out . ' of 5 parts are out. The rest are on the way.';
+		return '<aside class="cwf cwf-end" aria-label="' . esc_attr( $name ) . ' in five parts"><span class="cwf-k">__SERIES__</span>'
+			. '<h2 class="cwf-end-h">' . esc_html( $name ) . ' in five parts</h2><p class="cwf-end-s">' . $sub . '</p><ol class="cwf-grid">' . $h . '</ol>'
+			. '<p class="cwf-more"><a href="' . esc_url( home_url( '/bible-characters/' ) ) . '">All characters</a><a href="' . esc_url( home_url( '/songs/' ) ) . '">Songs</a>'
+			. '<a href="__PODCAST__" target="_blank" rel="noopener">Podcast ↗</a><a href="' . esc_url( home_url( '/bible-maps/' ) ) . '">Maps</a></p></aside>';
+	}
+
+	/* Paragraph ends at the top level of the post (or one wrapper deep): array( array( start, end ), ... ). */
+	function ss_cwf_paragraphs( $html ) {
+		$lists = array( array(), array() );
+		$depth = 0;
+		$open  = array();
+		if ( ! preg_match_all( '#<(/?)(div|blockquote|figure|ul|ol|table|aside|section|details|nav|p)\b[^>]*>#i', $html, $m, PREG_SET_ORDER | PREG_OFFSET_CAPTURE ) ) {
+			return array();
+		}
+		foreach ( $m as $t ) {
+			$close = '/' === $t[1][0];
+			$tag   = strtolower( $t[2][0] );
+			if ( 'p' === $tag ) {
+				if ( $depth <= 1 ) {
+					if ( $close && isset( $open[ $depth ] ) ) {
+						$lists[ $depth ][] = array( $open[ $depth ], $t[0][1] + strlen( $t[0][0] ) );
+						unset( $open[ $depth ] );
+					} elseif ( ! $close ) {
+						$open[ $depth ] = $t[0][1];
+					}
+				}
+				continue;
+			}
+			$depth = max( 0, $depth + ( $close ? -1 : 1 ) );
+		}
+		return count( $lists[0] ) >= 5 ? $lists[0] : $lists[1];
+	}
+
+	function ss_cwf_inline( $content, $row, $parts ) {
+		$ps = ss_cwf_paragraphs( $content );
+		$n  = count( $ps );
+		if ( $n < 5 ) {
 			return $content;
 		}
-		$all = ss_story_strip_data();
+		$on = array();
+		foreach ( $parts as $q ) {
+			$on[ $q['k'] ] = $q['on'];
+		}
+		$media = $on['song'] ? 'song' : ( $on['podcast'] ? 'podcast' : null );
+		$place = $on['map'] ? 'map' : ( $on['profile'] ? 'profile' : null );
+		$pi    = null;
+		if ( 'map' === $place && $row[6] ) {
+			for ( $i = 1; $i <= $n - 2 && null === $pi; $i++ ) {
+				$text = wp_strip_all_tags( substr( $content, $ps[ $i ][0], $ps[ $i ][1] - $ps[ $i ][0] ) );
+				foreach ( $row[6] as $term ) {
+					if ( preg_match( '/\b' . preg_quote( $term, '/' ) . '\b/iu', $text ) ) {
+						$pi = $i;
+						break;
+					}
+				}
+			}
+		}
+		if ( $place && null === $pi ) {
+			$pi = (int) round( ( $n - 1 ) * 0.7 );
+		}
+		$mi = $media ? (int) round( ( $n - 1 ) * 0.4 ) : null;
+		if ( null !== $mi && null !== $pi && abs( $mi - $pi ) < 2 ) {
+			$mi = $pi >= 3 ? $pi - 2 : $pi + 2;
+		}
+		$slots = array();
+		if ( null !== $pi ) {
+			$slots[ min( max( $pi, 1 ), $n - 2 ) ] = $place;
+		}
+		if ( null !== $mi ) {
+			$mi = min( max( $mi, 1 ), $n - 2 );
+			if ( ! isset( $slots[ $mi ] ) ) {
+				$slots[ $mi ] = $media;
+			}
+		}
+		krsort( $slots );
+		foreach ( $slots as $i => $k ) {
+			$content = substr_replace( $content, ss_cwf_card( $row, $parts, $k ), $ps[ $i ][1], 0 );
+		}
+		return $content;
+	}
+
+	add_filter( 'the_content', function ( $content ) {
+		if ( is_feed() || ! is_singular( 'post' ) || ! in_the_loop() || ! is_main_query() || get_the_ID() !== get_queried_object_id() ) {
+			return $content;
+		}
+		$all = ss_cwf_data();
 		$id  = get_the_ID();
 		if ( ! isset( $all[ $id ] ) ) {
 			return $content;
 		}
-		list( $name, $items ) = $all[ $id ];
-		$h  = '<aside class="ss-five" aria-label="' . esc_attr( $name ) . ' in five parts">';
-		$h .= '<p class="ss-five-k">__SERIES__</p><h2 class="ss-five-h">' . esc_html( $name ) . ' in five parts</h2><ol class="ss-five-l">';
-		$h .= '<li class="is-here"><span class="ss-five-n">1. Read</span><span class="ss-five-d">You just read it</span></li>';
-		foreach ( $items as $it ) {
-			list( $key, $label, $hint, $href, $detail ) = $it;
-			$ext = 0 !== strpos( $href, home_url() );
-			$h  .= '<li><span class="ss-five-n">' . esc_html( $label ) . '</span><a class="ss-five-d" href="' . esc_url( $href ) . '"'
-				. ( $ext ? ' target="_blank" rel="noopener"' : '' ) . '><small>' . esc_html( $hint ) . '</small>' . esc_html( $detail ) . '</a></li>';
+		static $done = false;
+		if ( $done ) {
+			return $content;
 		}
-		$h .= '</ol><p class="ss-five-more"><a href="' . esc_url( home_url( '/bible-characters/' ) ) . '">All characters</a> &middot; '
-			. '<a href="' . esc_url( home_url( '/songs/' ) ) . '">Songs</a> &middot; <a href="__DEEP__" target="_blank" rel="noopener">Deep dives</a> &middot; '
-			. '<a href="' . esc_url( home_url( '/bible-maps/' ) ) . '">Maps</a></p></aside>';
-		static $css = false;
-		if ( ! $css ) {
-			$css = true;
-			$h  .= '<style>.ss-five{margin:40px 0 8px;padding:20px 22px;border:1px solid #e6e2d8;border-left:4px solid #dd3333;border-radius:4px;background:#faf8f3}'
-				. '.ss-five-k{margin:0;font-size:.72em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#dd3333}'
-				. '.ss-five-h{margin:2px 0 14px;font-size:1.3em}'
-				. '.ss-five-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;}'
-				. '.ss-five-l li{display:flex;flex-direction:column;gap:3px;margin:0;padding:10px 12px;background:#fff;border:1px solid #e6e2d8;border-radius:4px}'
-				. '.ss-five-n{font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b6b6b}'
-				. '.ss-five-d{font-weight:700;line-height:1.3;color:#111!important;text-decoration:none!important}'
-				. 'a.ss-five-d:hover{color:#dd3333!important}.ss-five-d small{display:block;font-weight:400;font-size:.8em;color:#6b6b6b}'
-				. '.is-here{background:#111!important;border-color:#111!important}.is-here .ss-five-n,.is-here .ss-five-d{color:#fff!important}'
-				. '.ss-five-more{margin:14px 0 0;font-size:.88em}.ss-five-more a{color:#dd3333}</style>';
-		}
-		return $content . $h;
+		$done  = true;
+		$row   = $all[ $id ];
+		$parts = ss_cwf_parts( $row, wp_strip_all_tags( get_the_title() ) );
+		$js    = '<' . 'script src="__JS__"></' . 'script>';
+		return ss_cwf_bar( $row, $parts ) . $js . ss_cwf_inline( $content, $row, $parts ) . ss_cwf_end( $row, $parts );
 	}, 15 );
+
+	add_action( 'wp_head', function () {
+		if ( is_singular( 'post' ) && isset( ss_cwf_data()[ get_queried_object_id() ] ) ) {
+			echo '<style id="cwf-css">__CSS__</style>' . "\n";
+		}
+	} );
 }
 """
 
 
 def render():
     d = data()
-    code = TEMPLATE.replace("__DATA__", php({int(k): v for k, v in d.items()})).replace("__SERIES__", SERIES).replace("__DEEP__", DEEP_DIVES)
+    code = (TEMPLATE.replace("__DATA__", php({int(k): v for k, v in d.items()}))
+            .replace("__SERIES__", SERIES).replace("__PODCAST__", DEEP_DIVES)
+            .replace("__CSS__", css()).replace("__JS__", js_uri()))
     OUT.write_text(code)
     print(len(d), "posts,", len(code) // 1024, "KB ->", OUT.relative_to(ROOT))
     return code
@@ -111,8 +384,8 @@ def apply(code):
         sys.exit("php -l failed: " + lint.stdout + lint.stderr)
     body = code.split("<?php", 1)[1].lstrip("\n")
     sid = ID_FILE.read_text().strip() if ID_FILE.exists() else None
-    payload = {"name": "Characters Worth Following: five-part strip on posts", "code": body, "scope": "front-end", "active": True,
-               "desc": "Generated by site/story_strip.py. Source: site/story-strip-snippet.php."}
+    payload = {"name": "Characters Worth Following: five parts on posts", "code": body, "scope": "front-end", "active": True,
+               "desc": "Generated by site/story_strip.py. Source: site/story-strip-snippet.php, story-strip.css, story-strip.js."}
     path = f"/code-snippets/v1/snippets/{sid}" if sid else "/code-snippets/v1/snippets"
     code_, res = wp.request("POST", path, json.dumps(payload).encode(), {"Content-Type": "application/json"})
     if code_ not in (200, 201):
@@ -122,10 +395,9 @@ def apply(code):
     if not res.get("active"):
         wp.request("POST", f"/code-snippets/v1/snippets/{res['id']}/activate")
     ok = check(SITE + "/")  # the site must still load
-    sample = next((c for c in characters() if c.get("song") and any(r["status"] == "publish" for r in c.get("post_rows", []))), None)
-    if sample:
-        link = [r for r in sample["post_rows"] if r["status"] == "publish"][-1]["link"]
-        ok = check(link, ('class="ss-five"',)) and ok
+    live = [r["link"] for c in characters() for r in c.get("post_rows", []) if r["status"] == "publish"]
+    for link in live[:3] + live[-2:]:
+        ok = check(link, ('class="cwf cwf-bar"', 'class="cwf cwf-end"')) and ok
     if not ok:
         print("CHECK FAILED: deactivate the snippet if the site is broken")
     return ok
