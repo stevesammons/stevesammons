@@ -65,3 +65,15 @@ only pages whose back links changed, and checks each live page).
   Story). `apply.py` handles all three. Never add block markup to a classic page.
 - The tag is split into "Bible character" (1716) and "Bible characters" (1676). Scan both.
 - Not yet covered: "Give Me the Hard One" (untagged Caleb post) and its Caleb and Hebron pages.
+
+## Bible map pages: tags and descriptions
+
+- Pages can have tags and categories via the "Pages with category and tag" plugin
+  (installed 2026-09-25 at the user's request).
+- Every page with a Bible map carries "Bible Map", "Map of the Bible", "Biblical Geography"
+  and "Bible Places", plus tags for its characters, places, books and testament, reusing
+  existing tag names. It also gets a hand-written excerpt (about 160 characters), which the
+  theme uses as the page's search and social description. Don't overwrite an existing excerpt.
+- The data lives in `seo/map-pages.json` and is applied with `python3 seo/apply_tags.py`.
+  When a new map page is created, add an entry and run it (the user's approval for the page
+  covers its tags and excerpt).
