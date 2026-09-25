@@ -177,7 +177,7 @@
       t.textContent = c.t;
       var pts = [];
       for (var i = 0; i + 2 < c.pts.length; i += 3) pts.push([c.pts[i], c.pts[i + 1], c.pts[i + 2]]);
-      cEls.push({ t: t, pts: pts });
+      cEls.push({ t: t, pts: pts, size: c.size || 11 });
     });
 
     var gRoutes = el('g', {}, svg), routeEls = {};
@@ -330,14 +330,14 @@
 
     // Put each country name at the most central visible point of that country that clears
     // places, other labels, the north arrow and the scale bar. Hidden when nothing fits.
+    var SLIDE = [0, 4, -4, 8, -8, 12, -12];
     function placeCountries(k, boxes, hit) {
       if (!cEls.length || gCountries.classList.contains('bm-hidden')) return;
       Array.prototype.forEach.call(gLabels.querySelectorAll('text'), function (t) {
         if (t.style.display === 'none' || t.getAttribute('transform')) return;
         var b = t.getBBox(); boxes.push({ x: b.x, y: b.y, w: b.width, h: b.height });
       });
-      boxes.push({ x: view[0], y: view[1], w: 46 * k, h: 50 * k });
-      boxes.push({ x: view[0] + view[2] * 0.62, y: view[1] + view[3] - 36 * k, w: view[2] * 0.38, h: 36 * k });
+      [na, sb].forEach(function (g) { var b = g.getBBox(); if (b.width) boxes.push({ x: b.x, y: b.y, w: b.width, h: b.height }); });
       var vx = view[0], vy = view[1], vw = view[2], vh = view[3], areas = [];
       Array.prototype.forEach.call(svg.querySelectorAll('.bm-area'), function (a) {
         if (a.closest('.bm-hidden')) return;
@@ -351,23 +351,50 @@
         var t = ce.t;
         t.style.display = '';
         t.setAttribute('x', 0); t.setAttribute('y', 0);
-        var bb0 = t.getBBox(), w = bb0.width, th = bb0.height, pad = 3 * k;
-        var cands = ce.pts.filter(function (p) {
-          return p[2] >= th * 0.6 && p[0] - w / 2 - pad >= vx && p[0] + w / 2 + pad <= vx + vw && p[1] - th / 2 - pad >= vy && p[1] + th / 2 + pad <= vy + vh;
-        }).map(function (p) {
-          var edge = Math.min(p[0] - vx, vx + vw - p[0], p[1] - vy, vy + vh - p[1]);
-          return [p, Math.min(p[2], edge)];
-        }).sort(function (a, b) { return b[1] - a[1]; });
-        // First try to stay clear of shaded "approximate area" ellipses too; if nothing fits, allow them.
-        for (var pass = 0; pass < 2; pass++) {
-          for (var i = 0; i < cands.length; i++) {
-            var p = cands[i][0], b = { x: p[0] - w / 2 - pad, y: p[1] - th / 2 - pad, w: w + 2 * pad, h: th + 2 * pad };
-            if (hit(b) || (pass === 0 && overlaps(areas, b))) continue;
-            t.setAttribute('x', p[0].toFixed(1)); t.setAttribute('y', (p[1] + th * 0.32).toFixed(1));
-            boxes.push(b);
-            return;
+        t.removeAttribute('transform');
+        var pad = 3 * k;
+        // Horizontal first. In a narrow strip (like the edge of a zoomed-in map) run it vertically,
+        // then vertically a little smaller, before giving up.
+        var tries = [[0, 1], [1, 1], [1, 0.82]];
+        for (var o2 = 0; o2 < tries.length; o2++) {
+          var o = tries[o2][0];
+          t.style.fontSize = 'calc(' + (ce.size * tries[o2][1]) + 'px*var(--k))';
+          var bb0 = t.getBBox(), w = bb0.width, th = bb0.height;
+          pad = (o ? 1.5 : 3) * k;
+          var bw = o ? th : w, bh = o ? w : th;
+          // Candidates slide up to half their border distance to fit inside the view.
+          var cands = ce.pts.map(function (p) {
+            var x = Math.min(Math.max(p[0], vx + bw / 2 + pad), vx + vw - bw / 2 - pad);
+            var y = Math.min(Math.max(p[1], vy + bh / 2 + pad), vy + vh - bh / 2 - pad);
+            var moved = Math.max(Math.abs(x - p[0]), Math.abs(y - p[1]));
+            return [x, y, p[2] - moved, moved <= p[2] * 0.5];
+          }).filter(function (p) { return p[3] && p[2] >= th * 0.6 && vw >= bw + 2 * pad && vh >= bh + 2 * pad; }).map(function (p) {
+            var edge = Math.min(p[0] - vx, vx + vw - p[0], p[1] - vy, vy + vh - p[1]);
+            return [p, Math.min(p[2], edge)];
+          }).sort(function (a, b) { return b[1] - a[1]; });
+          // First try to stay clear of shaded "approximate area" ellipses too; if nothing fits, allow them.
+          for (var pass = 0; pass < 2; pass++) {
+            for (var i = 0; i < cands.length; i++) {
+              // Also try sliding a little along the name's length to clear a neighbouring label.
+              var p = null, b = null, c0 = cands[i][0];
+              for (var j = 0; j < SLIDE.length && !p; j++) {
+                var dx = o ? 0 : SLIDE[j] * k, dy = o ? SLIDE[j] * k : 0;
+                if (Math.max(Math.abs(dx), Math.abs(dy)) > c0[2] * 0.5) continue;
+                var q = [c0[0] + dx, c0[1] + dy], bq = { x: q[0] - bw / 2 - pad, y: q[1] - bh / 2 - pad, w: bw + 2 * pad, h: bh + 2 * pad };
+                if (bq.x < vx || bq.y < vy || bq.x + bq.w > vx + vw || bq.y + bq.h > vy + vh) continue;
+                if (hit(bq) || (pass === 0 && overlaps(areas, bq))) continue;
+                p = q; b = bq;
+              }
+              if (!p) continue;
+              var x = o ? p[0] + th * 0.32 : p[0], y = o ? p[1] : p[1] + th * 0.32;
+              t.setAttribute('x', x.toFixed(1)); t.setAttribute('y', y.toFixed(1));
+              if (o) t.setAttribute('transform', 'rotate(-90 ' + x.toFixed(1) + ' ' + y.toFixed(1) + ')');
+              boxes.push(b);
+              return;
+            }
           }
         }
+        t.style.fontSize = '';
         t.style.display = 'none';
       });
     }

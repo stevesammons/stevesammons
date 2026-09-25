@@ -6,8 +6,7 @@
 For every map page (or just the IDs given):
 - swaps in the current bible-maps/engine.js, keeping the page's own map config;
 - adds modern country names to the config (C.countries), computed from Natural Earth 10m map
-  units so they match the dashed modern borders. They show and hide with "Modern borders".
-  Street-level maps (under MIN_SPAN) get none, since the border data isn't that precise;
+  units so they match the dashed modern borders. They show and hide with "Modern borders";
 - with --category ID, sets the page's category to ID (e.g. Bible Maps).
 Each page is backed up to backups/ first and only saved when something changed.
 Without --apply this is a dry run. Needs shapely (pip install shapely).
@@ -25,9 +24,6 @@ sys.path.insert(0, str(ROOT / "tools"))
 import wp  # noqa: E402
 
 TAG = 1727  # "Bible Map"
-# Natural Earth 10m borders are only good to a few hundred metres, so street-level maps (narrower
-# than this many degrees of longitude, about 6 miles) get no country names.
-MIN_SPAN = 0.1
 NE_URL = ("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/"
           "ne_10m_admin_0_map_units.geojson")
 NE_FILE = ROOT / "backups" / "ne_10m_admin_0_map_units.geojson"
@@ -60,8 +56,6 @@ def project(geom, cfg):
 
 def countries(cfg, world):
     W, H, bb = cfg["W"], cfg["H"], cfg["bbox"]
-    if bb[2] - bb[0] < MIN_SPAN:
-        return []
     frame = box(0, 0, W, H)
     ll = box(bb[0] - 1, bb[1] - 1, bb[2] + 1, bb[3] + 1)
     step = max(W, H) / 40.0

@@ -65,10 +65,12 @@ the shared engine (`bible-maps/engine.js`) followed by that map's config JSON.
 - Country names come from Natural Earth 10m map units (cached in `backups/`, needs
   `pip install shapely`). They match the dashed modern borders and show and hide with the
   "Modern borders" button. The engine puts each name at the most central visible spot that clears
-  places, labels, shaded areas, the north arrow and the scale bar, and hides it when nothing fits.
+  places, labels, shaded areas, the north arrow and the scale bar. In a narrow strip it runs the
+  name vertically (then slightly smaller), and hides it only when nothing fits.
   West Bank and Gaza are labelled as Natural Earth draws them.
-- Street-level maps narrower than 0.1 degrees of longitude get no country names, because the
-  border data isn't that precise. Today that is only 3111 Jerusalem in Nicodemus's Story.
+- Every map has country names, including the street-level 3111 Jerusalem in Nicodemus's Story
+  (owner's request, 2026-09-25). At that scale the Natural Earth line is only approximate: it puts
+  the Old City on the Israel side, so "Israel" appears near the Temple courts.
 - New maps: tag them Bible Map, put them in Bible Maps, run apply.py on them, and add the back card.
 
 ## YouTube videos play on the page
