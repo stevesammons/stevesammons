@@ -42,3 +42,10 @@ Always:
 - 3169 Hebron in Caleb's Story. Interactive map in `hebron-map/`, publish with
   `python3 hebron-map/publish.py --apply`.
 - /caleb/ Caleb profile. /give-me-the-hard-one/ reflection.
+
+## Back-to-the-story links
+
+Reference pages (character profiles and place maps) get a "Back to the story" card at the top
+and bottom via `python3 backlinks/apply.py PAGE_ID POST_IDS SUBJECT --apply`. It only links
+posts that are already published, so scheduled posts appear automatically on their publish date.
+Done so far: 2903 Ahab (post 2943).
