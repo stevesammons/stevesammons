@@ -1,15 +1,34 @@
 <?php
+// Single-use snippet: rebuild the primary menu (id 14, also the mobile menu) and the footer bottom bar.
+// Menu items can't be created over REST on this site (a hook on wp_update_nav_menu_item demands an
+// admin nonce), so this runs inside WordPress with that hook removed. Pages are found by path.
 remove_all_actions( 'wp_update_nav_menu_item' );
-$menu = 14; $ids = array(); $pos = 0;
-$pos++; $ids["Bible Characters"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Bible Characters", 'menu-item-object' => 'page', 'menu-item-object-id' => 3416, 'menu-item-type' => 'post_type', 'menu-item-status' => 'publish', 'menu-item-parent-id' => 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Old Testament"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Old Testament", 'menu-item-object' => 'category', 'menu-item-object-id' => 1804, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => isset( $ids["Bible Characters"] ) ? $ids["Bible Characters"] : 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["New Testament"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "New Testament", 'menu-item-object' => 'category', 'menu-item-object-id' => 1805, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => isset( $ids["Bible Characters"] ) ? $ids["Bible Characters"] : 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Bible Maps"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Bible Maps", 'menu-item-object' => 'post_tag', 'menu-item-object-id' => 1727, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => isset( $ids["Bible Characters"] ) ? $ids["Bible Characters"] : 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Leadership"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Leadership", 'menu-item-object' => 'category', 'menu-item-object-id' => 24, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Character & Integrity"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Character & Integrity", 'menu-item-object' => 'category', 'menu-item-object-id' => 16, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => isset( $ids["Leadership"] ) ? $ids["Leadership"] : 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Faith"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Faith", 'menu-item-object' => 'category', 'menu-item-object-id' => 31, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Marketing"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Marketing", 'menu-item-object' => 'category', 'menu-item-object-id' => 26, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Publishing"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Publishing", 'menu-item-object' => 'category', 'menu-item-object-id' => 30, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => isset( $ids["Marketing"] ) ? $ids["Marketing"] : 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Nonprofits & Education"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Nonprofits & Education", 'menu-item-object' => 'category', 'menu-item-object-id' => 1806, 'menu-item-type' => 'taxonomy', 'menu-item-status' => 'publish', 'menu-item-parent-id' => isset( $ids["Marketing"] ) ? $ids["Marketing"] : 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["About"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "About", 'menu-item-object' => 'page', 'menu-item-object-id' => 3393, 'menu-item-type' => 'post_type', 'menu-item-status' => 'publish', 'menu-item-parent-id' => 0, 'menu-item-position' => $pos ) );
-$pos++; $ids["Newsletter"] = wp_update_nav_menu_item( $menu, 0, array( 'menu-item-title' => "Newsletter", 'menu-item-object' => 'page', 'menu-item-object-id' => 1464, 'menu-item-type' => 'post_type', 'menu-item-status' => 'publish', 'menu-item-parent-id' => 0, 'menu-item-position' => $pos ) );
+$menu = 14;
+foreach ( (array) wp_get_nav_menu_items( $menu, array( 'post_status' => 'any' ) ) as $old ) {
+	wp_delete_post( $old->ID, true );
+}
+$pos   = 0;
+$items = array(
+	array( 'Characters', 'bible-characters', '', '' ),
+	array( 'Songs', 'songs', '', '' ),
+	array( 'Maps', 'bible-maps', '', '' ),
+	array( 'Deep Dives', '', 'https://sammons.substack.com/podcast', '' ),
+	array( 'About', 'about', '', '' ),
+	array( 'Subscribe', 'subscribe', '', 'ss-menu-subscribe' ),
+);
+foreach ( $items as $it ) {
+	list( $title, $path, $url, $class ) = $it;
+	$pos++;
+	$args = array( 'menu-item-title' => $title, 'menu-item-status' => 'publish', 'menu-item-position' => $pos, 'menu-item-classes' => $class );
+	if ( $path ) {
+		$page = get_page_by_path( $path );
+		if ( ! $page ) {
+			continue;
+		}
+		$args += array( 'menu-item-object' => 'page', 'menu-item-object-id' => $page->ID, 'menu-item-type' => 'post_type' );
+	} else {
+		$args += array( 'menu-item-type' => 'custom', 'menu-item-url' => $url, 'menu-item-target' => '_blank' );
+	}
+	wp_update_nav_menu_item( $menu, 0, $args );
+}
+set_theme_mod( 'footer_text', "&copy; 2026 Steve Sammons &middot; <a href=\"https://stevesammons.com/privacy-policy/\">Privacy Policy</a> &middot; <a href=\"https://stevesammons.com/about/\">About</a> &middot; <a href=\"https://stevesammons.com/subscribe/\">Subscribe</a>" );

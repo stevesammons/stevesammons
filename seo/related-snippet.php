@@ -69,7 +69,7 @@ if ( ! function_exists( 'ss_related_posts' ) ) {
 			if ( $hub ) {
 				$h .= '<a href="' . esc_url( get_permalink( $hub ) ) . '">All Bible characters</a> &middot; ';
 			}
-			$h .= '<a href="' . esc_url( get_category_link( $bib ) ) . '">More ' . esc_html( $bib->name ) . ' stories</a> &middot; <a href="' . esc_url( home_url( '/tag/bible-map/' ) ) . '">Bible maps</a></p>';
+			$h .= '<a href="' . esc_url( get_category_link( $bib ) ) . '">More ' . esc_html( $bib->name ) . ' stories</a> &middot; <a href="' . esc_url( home_url( '/bible-maps/' ) ) . '">Bible maps</a></p>';
 		}
 		$h .= '</aside>';
 		static $css = false;
