@@ -18,16 +18,20 @@ next_songs view ──copy──▶ Claude Project ──SQL──▶ Supabase (
 ## One-time setup (about 20 minutes)
 
 ### 1. Supabase
-In **SQL Editor**, run these files in order (each is safe to run again):
-1. `supabase/schema.sql`: the `songs` table (one row per post, with its full text),
-   `song_versions` (two versions per song), the `next_songs` and `clips_queue` views, and the
-   private `song-clips` bucket.
-2. `supabase/seed-posts.sql`: all 98 Bible-character posts (52 scheduled, 46 published) with their
-   text. The 6 songs made earlier are marked `done_before`.
+In **SQL Editor**, run these files in order, one at a time (each is safe to run again):
+1. `supabase/schema.sql`: the `songs` table (one row per post: its text plus the WordPress,
+   Substack, podcast and YouTube links), `song_versions` (two versions per song), the
+   `next_songs`, `post_links` and `clips_queue` views, and the private `song-clips` bucket. It
+   also upgrades a `songs` table made by an earlier version of this file.
+2. `supabase/seed-posts-1-of-5.sql` through `seed-posts-5-of-5.sql`: all 98 Bible-character posts
+   (52 scheduled, 46 published) with their text and every live link. The 6 songs made earlier
+   are marked `done_before`.
 3. `supabase/dinah.sql`: the Dinah song (one version), which makes a good first test of n8n.
 
-`seed-posts.sql` is about 300 KB. If the editor struggles, split it in half; each post is one
-statement. To refresh it after new posts are scheduled: `python3 songs/supabase/export_posts.py`.
+The SQL Editor splits scripts at every semicolon, even inside quoted text, so none of these files
+put a semicolon inside a value (post text stores them as a placeholder that `chr(59)` puts back).
+To refresh posts and links as more go live: `python3 songs/supabase/export_posts.py`, then run
+the new seed files. It fills in links and never erases a link, song or status you've set.
 
 ### 2. Claude Project
 In claude.ai, create a Project called **Quartet Songs**, paste everything below the line in
@@ -83,8 +87,8 @@ about 10 credits, so downloads are the real limit: roughly 5 finished songs a we
 | file | what |
 |---|---|
 | `claude-project-instructions.md` | the Project prompt: song rules, tender ears, big finish, chords, SQL format |
-| `supabase/schema.sql`, `seed-posts.sql`, `dinah.sql` | database setup and data |
-| `supabase/export_posts.py` | rebuilds `seed-posts.sql` from WordPress |
+| `supabase/schema.sql`, `seed-posts-*.sql`, `dinah.sql` | database setup and data |
+| `supabase/export_posts.py` | rebuilds the seed files from WordPress and the Substack archive |
 | `n8n/render-clips.js` | chord chart to WAV (JavaScript, used inside n8n) |
 | `n8n/build_workflow.py`, `song-clips-workflow.json` | the n8n workflow and its builder |
 | `render_chords.py` | the same renderer in Python, plus MIDI files, for local use |

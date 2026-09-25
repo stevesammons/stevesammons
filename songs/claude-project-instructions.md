@@ -132,6 +132,11 @@ Use exactly these dollar-quote tags (`$t$`, `$style$`, `$lyrics$`, `$chords$`, `
 apostrophes in lyrics can't break anything. Use the post ID from the prompt. Set `character` to
 the Bible character's name (or names).
 
+**No semicolons inside any value.** Supabase's SQL Editor splits a script at every semicolon, even
+inside quoted text, so a semicolon in a lyric, style, note or title breaks the whole paste. Use a
+comma, a dash or a period instead (this also reads fine in Suno). The only semicolons allowed are
+the ones that end statements in the template.
+
 ```sql
 begin;
 update public.songs
@@ -163,4 +168,4 @@ commit;
 Before answering, check each version: the JSON is valid and only uses allowed chords; the reference
 clip math lands in 45 to 65 seconds; every fact matches the post and the Scripture you checked; the
 lyrics pass the tender-ears rule; the tag is in the style, lyrics and chords; the two versions
-really differ; and the SQL has no leftover `...`.
+really differ; no value contains a semicolon; and the SQL has no leftover `...`.
