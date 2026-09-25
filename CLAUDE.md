@@ -78,8 +78,9 @@ and never touches status or schedule. Run it again after editing `player.js`.
 
 - Done (2026-09-25): posts 2627, 1907, 1854, scheduled post 2642.
 - Waiting on Substack: 2656 (the-help-we-forget), 2698 (can-their-good-news-stay-theirs).
-- A Routine named "Podcast player refresh" runs `--all --apply` twice a day (6:54 and 16:54
-  Central), so new posts and newly released episodes switch to the player on their own.
+- No automatic refresh yet: a twice-daily Routine for `--all --apply` was blocked by the session's
+  permission settings on 2026-09-25. Until one is set up, re-run it by hand when an episode goes
+  out on Substack or a post with a podcast link is added.
 - Audio `src` is the episode's `podcast_url` (api.substack.com/api/v1/audio/upload/<id>/src). It
   redirects to a fresh signed CDN file each time, so it doesn't expire. Browsers can't call the
   Substack API from the site (no CORS), which is why the lookup happens at publish time.
