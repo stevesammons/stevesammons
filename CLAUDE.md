@@ -64,8 +64,9 @@ Always:
 Reference pages (character profiles and place maps) get a "Back to the story" card at the top
 and bottom via `python3 backlinks/apply.py PAGE_ID POST_IDS SUBJECT --apply`. It only links
 posts that are already published, so scheduled posts appear automatically on their publish date.
-All 50 reference pages linked from the 25 posts tagged "Bible character" / "Bible characters"
-were done on 2026-09-25. For new posts or links: `python3 backlinks/scan.py` (rebuilds
+`scan.py` covers pages linked from any Old/New Testament post plus every character's profile and
+map pages from `site/stories.json` (some older posts never link their own profile). As of 2026-09-25
+all 142 such pages have back links, including every one of the 88 profile pages. For new posts or links: `python3 backlinks/scan.py` (rebuilds
 `backups/backlink-map.json`), then `python3 backlinks/apply_all.py` (idempotent; re-publishes
 only pages whose back links changed, and checks each live page).
 

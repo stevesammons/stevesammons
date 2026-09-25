@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Map site pages linked from posts tagged Bible character(s). Writes backups/backlink-map.json."""
+"""Map site pages linked from Bible character posts, plus each character's profile and map pages
+from site/stories.json. Writes backups/backlink-map.json."""
 import json, re, sys, urllib.parse as up
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
@@ -32,6 +33,14 @@ for po in posts:
         pg = byid.get(pid) or bypath.get(u.path.rstrip("/"))
         if pg: m.setdefault(pg["id"], set()).add(po["id"])
         else: other.add(href)
+# Also link each character's profile and map pages to their posts from site/stories.json, since some
+# older posts never link to their own profile page.
+stories = Path(__file__).resolve().parent.parent / "site" / "stories.json"
+post_ids = {po["id"] for po in posts}
+for c in json.loads(stories.read_text())["characters"] if stories.exists() else []:
+    for ref in [c.get("profile")] + c.get("maps", []):
+        if ref and ref.get("id") in byid:
+            m.setdefault(ref["id"], set()).update(pid for pid in c["posts"] if pid in post_ids)
 res = [{"page": k, "title": byid[k]["title"]["rendered"], "status": byid[k]["status"], "link": byid[k]["link"],
         "posts": sorted(v)} for k, v in sorted(m.items())]
 Path("backups/backlink-map.json").write_text(json.dumps(res, indent=1))
