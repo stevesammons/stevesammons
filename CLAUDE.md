@@ -45,8 +45,10 @@ Always:
 - Use the block editor. Put custom HTML inside a `<!-- wp:html -->` block.
 - Menu items can't be created through the REST API (a theme or plugin hook on
   `wp_update_nav_menu_item` demands an admin nonce and aborts with "link expired"). Deleting works.
-  Build menus with a single-use Code Snippets snippet that calls `remove_all_actions(
-  'wp_update_nav_menu_item' )` first (see `site/menu-snippet.php`).
+  Build menus with a Code Snippets snippet that calls `remove_all_actions(
+  'wp_update_nav_menu_item' )` first (see `site/menu-snippet.php`). Activating a single-use snippet over
+  REST does not run it: wrap the code in a run-once `get_option`/`update_option` guard, save it with scope
+  `global` and active, load one page, then deactivate it and set it back to single-use.
 - The sammons-social-tags plugin outputs Open Graph tags and switches itself off when an SEO
   plugin such as Rank Math is active. Rank Math can't be configured without its admin wizard,
   so SEO is handled by our own snippet instead (below). Don't install another SEO plugin.
@@ -91,9 +93,7 @@ only pages whose back links changed, and checks each live page).
   > SEO / Advertising / LinkedIn / UI/UX Design / Technology, Publishing, Nonprofits & Education >
   Fundraising / Higher Education / Children's Literacy. Default category: Leadership.
   New Bible character posts go only in Old Testament or New Testament.
-- Primary menu (id 14, also mobile), current: Bible Characters (OT, NT, Bible Maps), Leadership
-  (Character & Integrity), Faith, Marketing (Publishing, Nonprofits & Education), About, Newsletter.
-  Approved target (2026-09-25, not yet applied): Characters (/bible-characters/), Songs (/songs/),
+- Primary menu (id 14, also mobile), rebuilt 2026-09-25 by `site/menu-snippet.php`: Characters (/bible-characters/), Songs (/songs/),
   Maps (/bible-maps/), Deep Dives (sammons.substack.com/podcast, new tab), About, Subscribe (/subscribe/,
   menu item class `ss-menu-subscribe`, styled as a red button by the `ss-header` CSS in the SEO snippet).
   Non-Bible topics live in the footer's "More writing" column, not the header.
