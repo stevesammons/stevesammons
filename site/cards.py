@@ -3,6 +3,7 @@
 
   python3 site/cards.py sample            # writes site/cards/sample-*.jpg
   python3 site/cards.py apply             # generate, upload, set featured_media (skips posts that have one)
+  python3 site/cards.py one POST_ID         # (re)make one post's card and set it, replacing any image
 """
 import html, json, random, sys, textwrap, time
 from pathlib import Path
@@ -98,6 +99,20 @@ if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     plan, by_post, cats, wp = load()
     todo = [p for p in plan if not p.get("att")]
+    if sys.argv[1:2] == ["one"]:
+        pid = int(sys.argv[2])
+        c, p = wp.request("GET", f"/wp/v2/posts/{pid}?context=edit&_fields=id,title,slug,categories,featured_media")
+        (ROOT / "backups").mkdir(exist_ok=True)
+        (ROOT / "backups" / f"featured-{pid}-before.json").write_text(json.dumps({"post": pid, "old_featured": p["featured_media"]}))
+        h, s_, k = spec({"id": pid, "title": p["title"]["raw"], "cats": p["categories"]}, by_post, cats)
+        f = OUT / f"{p['slug'][:60]}-card.jpg"
+        card(h, s_, k, pid).save(f, quality=84, optimize=True, progressive=True)
+        code, m = wp.request("POST", "/wp/v2/media", f.read_bytes(), {"Content-Type": "image/jpeg", "Content-Disposition": f'attachment; filename="{f.name}"'})
+        alt = f"{h}: {s_}" if s_ else h
+        wp.request("POST", f"/wp/v2/media/{m['id']}", json.dumps({"alt_text": alt[:120], "title": alt[:120]}).encode(), {"Content-Type": "application/json"})
+        code, r = wp.request("POST", f"/wp/v2/posts/{pid}", json.dumps({"featured_media": m["id"]}).encode(), {"Content-Type": "application/json"})
+        print("set", pid, "->", m["id"], "(old", p["featured_media"], "kept in media library)")
+        sys.exit()
     if sys.argv[1:] == ["sample"]:
         for p in todo[:2] + [x for x in todo if x["id"] in (1334, 27, 353)]:
             h, s, k = spec(p, by_post, cats)

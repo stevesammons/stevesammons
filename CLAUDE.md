@@ -120,6 +120,29 @@ only pages whose back links changed, and checks each live page).
 - Every post needs a featured image. Posts without one get a branded card from
   `python3 site/cards.py apply` (Poppins fonts in site/fonts, downloaded from google/fonts).
 
+## Featured image design (the house style, confirmed by Steve 2026-09-25)
+
+Two kinds of featured image, both 16:9, black and white with one red accent:
+
+1. **Bible character posts**: the character portrait (imagined, black-and-white documentary
+   photo style) with the name in white bold caps top left, a short line under it, and a thin red
+   vertical bar to the left of the text. These come from Steve's own artwork; don't replace them.
+2. **Everything else (leadership, faith, marketing, publishing, nonprofits), and any Bible post
+   without a portrait**: a typographic card made by `site/cards.py`, never a stock or AI
+   illustration. Spec:
+   - 1600x900 JPEG (quality 84, progressive). Background near black with a soft off-center light
+     pool (about #3a3a3a fading to #080808 at the edges) and fine film grain.
+   - Red bar #dd3333, 18 px wide, left of the text block, spanning its full height.
+   - Headline: Poppins Bold, white, ALL CAPS, left aligned at x=150, vertically centered, 1 to 3
+     lines, sized 150 px down to 70 px to fit. Non-Bible posts: the post title. Bible posts: the
+     character's name.
+   - Subtitle (Bible posts only): the post title in Poppins SemiBold caps, light gray, up to 2 lines.
+   - Footer line: "STEVE SAMMONS" bottom left and the category name bottom right, Poppins Medium
+     26 px caps, gray.
+   - Alt text: the headline (plus subtitle).
+   To swap a post's image for a card: `python3 site/cards.py one POST_ID`. It backs up the old
+   image id to backups/ and leaves the old image in the media library.
+
 ## Footer (redesigned 2026-09-25)
 
 - Widgets (edit through /wp/v2/widgets): sidebar-footer = block-13 (brand, `site/footer/col1.html`),
