@@ -124,6 +124,15 @@ WordPress readers subscribe through MailPoet, separately from the Substack audie
   source in `subscribe/pattern.html`. It holds MailPoet form 1 (`[mailpoet_form id="1"]`, adds to
   the "Newsletter mailing list", segment 3) plus its styling. Page 1423 uses it with
   `<!-- wp:block {"ref":4313} /-->`; drop the same line into any other page or widget that needs a form.
+- Every post ends with the form (2026-09-25: all 196 published, scheduled and draft posts).
+  `python3 subscribe/apply.py --all --apply` adds it to any post that lacks it (new posts need
+  this, or add the "Subscribe form" pattern in the editor). It goes after the story, before the
+  invisible ss-video / ss-pod / ss-wrap script blocks. Set `SCRATCH_DRAFT=<draft id>` to reuse a
+  draft for the classic-post check instead of creating one.
+- Classic-editor posts get converted first: adding any block to a classic post turns off
+  WordPress's automatic paragraphs, so `subscribe/wpautop.py` (a port of wpautop) writes the
+  paragraphs out inside a Classic block. The tool renders the conversion on a scratch draft and only
+  saves when it matches the live rendering exactly. The 26 classic posts are now converted.
 - To change provider or form, edit `subscribe/pattern.html` and POST it as `content` to
   `/wp/v2/blocks/4313` (back up the old content first). Every page using it updates.
 - Substack stays the home of the podcast (the Podcast menu item and podcast links); only
