@@ -35,10 +35,17 @@ def strip(raw):
 
 def insert(raw, top, bottom):
     raw = strip(raw)
-    # Single Custom HTML block wrapping one container div: go inside the container.
-    m = re.match(r"(\s*<!-- wp:html -->\s*<div[^>]*>)", raw)
+    # One Custom HTML block (optionally after a stray <meta>) wrapping a container div:
+    # go inside the container.
+    m = re.match(r"(\s*(?:<meta[^>]*>\s*)?<!-- wp:html -->\s*<div[^>]*>)", raw)
     tail = re.search(r"(</div>\s*<!-- /wp:html -->\s*)$", raw)
     if m and tail:
+        return raw[:m.end()] + top + raw[m.end():tail.start()] + bottom + raw[tail.start():]
+    # Classic-editor page wrapped in one div: insert inside it without adding block markup,
+    # which would switch off WordPress's paragraph formatting for the rest of the page.
+    m = re.match(r"(\s*<div[^>]*>)", raw)
+    tail = re.search(r"(</div>\s*)$", raw)
+    if "<!-- wp:" not in raw and m and tail:
         return raw[:m.end()] + top + raw[m.end():tail.start()] + bottom + raw[tail.start():]
     return (f"<!-- wp:html -->{top}<!-- /wp:html -->\n\n" + raw.rstrip() +
             f"\n\n<!-- wp:html -->{bottom}<!-- /wp:html -->")

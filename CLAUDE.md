@@ -48,4 +48,7 @@ Always:
 Reference pages (character profiles and place maps) get a "Back to the story" card at the top
 and bottom via `python3 backlinks/apply.py PAGE_ID POST_IDS SUBJECT --apply`. It only links
 posts that are already published, so scheduled posts appear automatically on their publish date.
-Done so far: 2903 Ahab (post 2943).
+All 50 reference pages linked from the 25 posts tagged "Bible character" / "Bible characters"
+were done on 2026-09-25. For new posts or links: `python3 backlinks/scan.py` (rebuilds
+`backups/backlink-map.json`), then `python3 backlinks/apply_all.py` (idempotent; re-publishes
+only pages whose back links changed, and checks each live page).
