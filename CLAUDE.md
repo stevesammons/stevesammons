@@ -70,7 +70,10 @@ the shared engine (`bible-maps/engine.js`) followed by that map's config JSON.
   West Bank and Gaza are labelled as Natural Earth draws them.
 - Every map has country names, including the street-level 3111 Jerusalem in Nicodemus's Story
   (owner's request, 2026-09-25). At that scale the Natural Earth line is only approximate: it puts
-  the Old City on the Israel side, so "Israel" appears near the Temple courts.
+  the Old City on the Israel side. The owner asked for "Israel" further west, so it is pinned to
+  West Jerusalem.
+- To steer a name on one map, add it to `NEAR` in `bible-maps/apply.py`
+  (`{page_id: {name: [lat, lon]}}`); the engine uses the free spot nearest that point.
 - New maps: tag them Bible Map, put them in Bible Maps, run apply.py on them, and add the back card.
 
 ## YouTube videos play on the page

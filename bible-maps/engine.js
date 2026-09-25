@@ -177,7 +177,7 @@
       t.textContent = c.t;
       var pts = [];
       for (var i = 0; i + 2 < c.pts.length; i += 3) pts.push([c.pts[i], c.pts[i + 1], c.pts[i + 2]]);
-      cEls.push({ t: t, pts: pts, size: c.size || 11 });
+      cEls.push({ t: t, pts: pts, size: c.size || 11, near: c.near });
     });
 
     var gRoutes = el('g', {}, svg), routeEls = {};
@@ -370,7 +370,8 @@
             return [x, y, p[2] - moved, moved <= p[2] * 0.5];
           }).filter(function (p) { return p[3] && p[2] >= th * 0.6 && vw >= bw + 2 * pad && vh >= bh + 2 * pad; }).map(function (p) {
             var edge = Math.min(p[0] - vx, vx + vw - p[0], p[1] - vy, vy + vh - p[1]);
-            return [p, Math.min(p[2], edge)];
+            // A map can ask for a name near a given point (c.near); otherwise the most central spot wins.
+            return [p, ce.near ? -Math.hypot(p[0] - ce.near[0], p[1] - ce.near[1]) : Math.min(p[2], edge)];
           }).sort(function (a, b) { return b[1] - a[1]; });
           // First try to stay clear of shaded "approximate area" ellipses too; if nothing fits, allow them.
           for (var pass = 0; pass < 2; pass++) {

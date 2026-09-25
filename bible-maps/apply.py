@@ -30,6 +30,11 @@ NE_FILE = ROOT / "backups" / "ne_10m_admin_0_map_units.geojson"
 # Natural Earth map units -> label. Units not listed use their own NAME; None means no label.
 MERGE = {"Iraqi Kurdistan": "Iraq", "N. Cyprus": "Cyprus", "Cyprus U.N. Buffer Zone": "Cyprus",
          "Akrotiri": "Cyprus", "Dhekelia": "Cyprus", "UNDOF Zone": None}
+# Preferred spots for particular names, as {page_id: {name: [lat, lon]}}. The engine puts the name
+# at the free spot nearest this point instead of the most central one.
+NEAR = {
+    3111: {"Israel": [31.7815, 35.2135]},  # West Jerusalem, clear of the Old City
+}
 SCRIPT = re.compile(r"(<!-- bm:start -->.*?data:text/javascript;base64,)([A-Za-z0-9+/=]+)", re.S)
 CALL = "(function(){var r=document.getElementById("
 
@@ -54,7 +59,7 @@ def project(geom, cfg):
     return transform(lambda lon, lat, z=None: ((lon - bb[0]) * K * SX, (bb[3] - lat) * SX), geom)
 
 
-def countries(cfg, world):
+def countries(cfg, world, near=None):
     W, H, bb = cfg["W"], cfg["H"], cfg["bbox"]
     frame = box(0, 0, W, H)
     ll = box(bb[0] - 1, bb[1] - 1, bb[2] + 1, bb[3] + 1)
@@ -80,7 +85,11 @@ def countries(cfg, world):
                     if d >= 3:
                         pts += [round(x, 1), round(y, 1), round(d, 1)]
         if pts:
-            out.append({"t": name, "pts": pts})
+            c = {"t": name, "pts": pts}
+            if near and name in near:
+                lat, lon = near[name]
+                c["near"] = [round((lon - bb[0]) * cfg["k"] * cfg["sx"], 1), round((bb[3] - lat) * cfg["sx"], 1)]
+            out.append(c)
     out.sort(key=lambda c: c["t"])
     return out
 
@@ -116,7 +125,7 @@ def main(a):
             ok = False
             continue
         old_engine, pre, cfg, post = split(base64.b64decode(m.group(2)).decode())
-        cfg["countries"] = countries(cfg, world)
+        cfg["countries"] = countries(cfg, world, NEAR.get(p["id"]))
         js = engine + pre + json.dumps(cfg, ensure_ascii=False, separators=(",", ":")) + post
         updated = raw[:m.start(2)] + base64.b64encode(js.encode()).decode() + raw[m.end(2):]
         body = {}
