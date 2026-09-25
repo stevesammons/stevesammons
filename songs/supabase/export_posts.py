@@ -67,19 +67,23 @@ def norm(title):
     return re.sub(r"[^a-z0-9]", "", html.unescape(title).lower().replace("’", "'"))
 
 
-SEMI = "[[semicolon]]"
+SEMI, NEWLINE = "[[semicolon]]", "[[newline]]"
 
 
 def quote(value, tag="q"):
-    """Dollar-quote a value. Supabase's SQL Editor splits scripts at every semicolon, even inside
-    quoted text, so semicolons are written as a placeholder and put back by replace(...chr(59))."""
+    """Dollar-quote a value on a single line. Semicolons and line breaks become placeholders that
+    replace(...) turns back into chr(59) and chr(10): the Supabase SQL Editor splits at semicolons,
+    and some viewers only copy the first 100 lines of a file, so every post stays on one line."""
     if value is None:
         return "null"
     s = str(value)
-    assert f"${tag}$" not in s and SEMI not in s
-    if ";" not in s:
-        return f"${tag}${s}${tag}$"
-    return f"replace(${tag}${s.replace(';', SEMI)}${tag}$, '{SEMI}', chr(59))"
+    assert f"${tag}$" not in s and SEMI not in s and NEWLINE not in s
+    out = f"${tag}${s.replace(';', SEMI).replace(chr(10), NEWLINE)}${tag}$"
+    if ";" in s:
+        out = f"replace({out}, '{SEMI}', chr(59))"
+    if "\n" in s:
+        out = f"replace({out}, '{NEWLINE}', chr(10))"
+    return out
 
 
 def match_substack(posts, archive):
@@ -142,7 +146,7 @@ def main():
         lines.append(
             "insert into public.songs (post_id, post_title, slug, post_text, publish_date, post_status, priority, "
             "wordpress_url, substack_url, podcast_url, podcast_title, youtube_url, character, status) values ("
-            + ", ".join(values) + ")\n"
+            + ", ".join(values) + ") "
             "on conflict (post_id) do update set post_title = excluded.post_title, slug = excluded.slug, "
             "post_text = excluded.post_text, publish_date = excluded.publish_date, "
             "post_status = excluded.post_status, priority = excluded.priority, "
@@ -158,8 +162,10 @@ def main():
     parts = [rows[i:i + PER_FILE] for i in range(0, len(rows), PER_FILE)]
     for n, part in enumerate(parts, start=1):
         name = OUT.parent / f"seed-posts-{n}-of-{len(parts)}.sql"
-        name.write_text("\n".join(header + [f"-- Part {n} of {len(parts)}.", ""] + part) + "\n")
-    print(f"{len(parts)} files, largest {max(f.stat().st_size for f in OUT.parent.glob('seed-posts-*.sql')) // 1024} KB")
+        name.write_text("\n".join(header + [f"-- Part {n} of {len(parts)}. One post per line.", ""] + part) + "\n")
+    files = sorted(OUT.parent.glob("seed-posts-*.sql"))
+    print(f"{len(parts)} files, most lines {max(len(f.read_text().splitlines()) for f in files)}, "
+          f"largest {max(f.stat().st_size for f in files) // 1024} KB")
     print(f"{OUT.parent}: {len(posts)} posts ({len(future)} scheduled, {len(published)} published), "
           f"{sum(1 for i in posts if i in DONE_BEFORE)} done_before")
     print(f"links: {len(substack)} Substack posts, {len(podcasts)} podcasts, {len(YOUTUBE)} YouTube")

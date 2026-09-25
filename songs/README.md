@@ -28,8 +28,11 @@ In **SQL Editor**, run these files in order, one at a time (each is safe to run 
    are marked `done_before`.
 3. `supabase/dinah.sql`: the Dinah song (one version), which makes a good first test of n8n.
 
-The SQL Editor splits scripts at every semicolon, even inside quoted text, so none of these files
-put a semicolon inside a value (post text stores them as a placeholder that `chr(59)` puts back).
+Every file stays under 100 lines (each post's insert is one line) because some file viewers only
+copy the first 100 lines, and no quoted value contains a semicolon, because the SQL Editor can
+split scripts at semicolons. Semicolons and line breaks in post text are stored as placeholders
+that `replace(... chr(59))` and `chr(10)` put back. After loading, `select count(*) from songs`
+should say 98.
 To refresh posts and links as more go live: `python3 songs/supabase/export_posts.py`, then run
 the new seed files. It fills in links and never erases a link, song or status you've set.
 
