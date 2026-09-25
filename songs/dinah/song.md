@@ -96,7 +96,7 @@ Then her brothers answered Hamor
 With deceit inside their terms;
 While the men of Shechem lay healing,
 Simeon and Levi drew their swords.
-"Should he treat her like a harlot?"
+"Should he treat our sister so?"
 They shot back to Jacob in their rage;
 But it never let us hear her,
 Not one word of hers is on the page.
@@ -166,7 +166,7 @@ note over the full chord, long fermata, clean stop." If replacing needs audio, u
 
 - Keeps the post's sequence: the visit to the women of the land; Shechem's crime; the bargaining
   over marriage, land and trade; the brothers' deceit; Simeon and Levi killing the men while they
-  were healing; Jacob's fear for the household; the "harlot" retort (Genesis 34:31). Left out for
+  were healing; Jacob's fear for the household; the brothers' retort (Genesis 34:31, paraphrased). Left out for
   length: the circumcision condition by name, removing Dinah from Shechem's house, and the plunder.
 - Keeps the post's moral distinctions: the crime is Shechem's, not Dinah's; her visit did not cause
   it; marriage terms could not erase it; the massacre named a real outrage but multiplied the
@@ -177,8 +177,8 @@ note over the full chord, long fermata, clean stop." If replacing needs audio, u
 - Read-aloud check: the lines scan in 3/4, with near-rhymes (terms/swords, lost/cost) rather than
   forced rhymes.
 
-**Worth a second look:** "Should he treat her like a harlot?" is Scripture's own word. Keep it for
-accuracy, or soften it to "Should our sister be treated so?"
+**Tender ears:** written for a grandmother to hear. The crime is named only as "took her" and
+"the wrong," and Genesis 34:31's "harlot" is paraphrased as "Should he treat our sister so?"
 
 ## Candidates
 

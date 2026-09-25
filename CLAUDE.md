@@ -155,3 +155,19 @@ Two kinds of featured image, both 16:9, black and white with one red accent:
   (`site/footer/theme-snippet.php`). Update the year each January.
 - Fonts: only Poppins (headings) and Lato (body). The MailPoet form defaults to Montserrat and is
   overridden in the footer CSS.
+
+## Suno songs (Characters Worth Following quartet series)
+
+- Packages live in `songs/<character>/` (`song.md`, `chords.json`, rendered clips). The governing
+  guide is `suno-gospel-quartet-songwriting-guide.md` in Steve's Google Drive.
+- Suno account @stevesammons is on Pro (2,500 credits and about 20 downloads a month, no Studio).
+  Chords go in as audio: `python3 songs/render_chords.py songs/<character>/chords.json`, then upload
+  `chords-reference.wav` as the Audio reference in Create > Advanced. Never type chord names into
+  Suno's text boxes.
+- Big finish: end with a barbershop tag (lead holds an open vowel, tenor posts high above the
+  chord, long fermata, clean stop), asked for in the style line, the lyrics and the chords.
+- Tender ears: write every lyric so a grandmother with tender ears can listen. Handle violence and
+  sexual material with restraint, never graphically. Never sing a swear word or crude word, even
+  when Scripture uses one (paraphrase it). A rhyme may set up a bad word and then swap in a clean
+  one, but never set up the F-word, and keep that trick out of songs about serious harm.
+- Steve picks the winning candidate. Nothing is downloaded, published or linked before he does.
