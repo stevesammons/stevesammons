@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Make a post's YouTube links play in an on-page lightbox instead of leaving the site.
 
-  python3 video-popup/apply.py POST_ID [POST_ID ...] [--apply]
+  python3 video-popup/apply.py ID [ID ...] [--apply]
+
+IDs can be posts or pages. Only the content changes; status and schedule are left alone.
 
 Adds one Custom HTML block at the end of the post that loads lightbox.js (as a base64
 data: URI, so the site's content filters can't mangle it). The links themselves are not
@@ -31,7 +33,12 @@ def insert(raw):
 
 
 def run(post_id, apply):
-    code, post = wp.request("GET", f"/wp/v2/posts/{post_id}?context=edit&_fields=id,title,link,status,content")
+    fields = "?context=edit&_fields=id,title,link,status,content"
+    kind = "posts"
+    code, post = wp.request("GET", f"/wp/v2/posts/{post_id}{fields}")
+    if code == 404:
+        kind = "pages"
+        code, post = wp.request("GET", f"/wp/v2/pages/{post_id}{fields}")
     if code != 200:
         print(f"{post_id}: could not read post: HTTP {code} {post}")
         return False
@@ -41,7 +48,7 @@ def run(post_id, apply):
         return True
     bdir = HERE.parent / "backups"
     bdir.mkdir(exist_ok=True)
-    bak = bdir / f"post-{post_id}-{time.strftime('%Y%m%d-%H%M%S')}.html"
+    bak = bdir / f"{kind[:-1]}-{post_id}-{time.strftime('%Y%m%d-%H%M%S')}.html"
     bak.write_text(raw)
 
     updated = insert(raw)
@@ -50,10 +57,10 @@ def run(post_id, apply):
         print(f"{label}: already up to date.")
         return True
     if not apply:
-        (bdir / f"post-{post_id}-proposed.html").write_text(updated)
+        (bdir / f"{kind[:-1]}-{post_id}-proposed.html").write_text(updated)
         print(f"{label}: {len(raw)} -> {len(updated)} chars. Dry run; backup {bak.name}")
         return True
-    code, res = wp.request("POST", f"/wp/v2/posts/{post_id}", json.dumps({"content": updated}).encode(),
+    code, res = wp.request("POST", f"/wp/v2/{kind}/{post_id}", json.dumps({"content": updated}).encode(),
                            {"Content-Type": "application/json"})
     if code != 200 or START not in res["content"]["raw"]:
         print(f"{label}: update FAILED (HTTP {code}). Restore from backups/{bak.name} if needed.")

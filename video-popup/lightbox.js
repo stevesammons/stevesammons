@@ -31,7 +31,8 @@
 
   function init() {
     var css = [
-      'a.ss-vid-text{white-space:nowrap}',
+      'a.ss-vid-short{white-space:nowrap}',
+      'a.ss-vid-text{overflow-wrap:anywhere}',
       'a.ss-vid-text::after{content:"";display:inline-block;width:.95em;height:.95em;margin-left:.3em;vertical-align:-.12em;border-radius:50%;background:#dd3333 url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M6 4.5v7l5.5-3.5z%27 fill=%27%23fff%27/%3E%3C/svg%3E") center/100% no-repeat;transition:transform .15s}',
       'a.ss-vid-text:hover::after,a.ss-vid-text:focus-visible::after{transform:scale(1.18)}',
       'a.ss-vid-card{display:block;position:relative;cursor:pointer}',
@@ -64,9 +65,11 @@
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
       if (!videoOf(a.href) || a.closest('header,footer,nav,.ss-vid')) continue;
-      a.classList.add(a.querySelector('img') ? 'ss-vid-card' : 'ss-vid-text');
+      var card = !!a.querySelector('img');
+      a.classList.add(card ? 'ss-vid-card' : 'ss-vid-text');
+      if (!card && a.textContent.trim().length <= 24) a.classList.add('ss-vid-short'); // keep icon with the word
       a.setAttribute('aria-haspopup', 'dialog');
-      if (!a.getAttribute('title')) a.setAttribute('title', a.querySelector('img') ? 'Play video' : 'Hear it pronounced');
+      if (!a.getAttribute('title')) a.setAttribute('title', isPronunciation(a) ? 'Hear it pronounced' : 'Play video');
     }
 
     document.addEventListener('click', function (e) {
@@ -80,10 +83,16 @@
     });
   }
 
+  function isPronunciation(a) {
+    var prev = a.previousSibling;
+    return !a.querySelector('img') && !!prev && prev.nodeType === 3 && /\(\s*$/.test(prev.textContent);
+  }
+
   function labelFor(a) {
     var img = a.querySelector('img');
     if (img && img.alt) return img.alt;
     var text = a.textContent.trim();
+    if (!text || /^https?:\/\//.test(text)) return 'Video';
     // Pronunciation links sit in "Name (<a>NAME-say</a>)": show "Name, pronounced ...".
     var prev = a.previousSibling, name = '';
     if (prev && prev.nodeType === 3 && /\(\s*$/.test(prev.textContent)) {
