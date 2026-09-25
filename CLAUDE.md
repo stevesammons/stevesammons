@@ -158,8 +158,11 @@ Two kinds of featured image, both 16:9, black and white with one red accent:
 
 ## Suno songs (Characters Worth Following quartet series)
 
+- One song per Bible-character post (posts in the Old/New Testament categories, never pages or
+  other posts), written only from the post text plus Scripture checks, in two versions.
 - Pipeline (see `songs/README.md`): Steve writes each song in a claude.ai Project using
-  `songs/claude-project-instructions.md`, which returns SQL for the Supabase `songs` table. An n8n
+  `songs/claude-project-instructions.md`, which returns SQL for the Supabase `songs` and
+  `song_versions` tables. An n8n
   workflow (`songs/n8n/`) renders the chord clips for rows marked `ready` and emails them. Keep the
   Project instructions, `render-clips.js` and `render_chords.py` in step; rebuild the workflow with
   `python3 songs/n8n/build_workflow.py`. Refresh posts with `python3 songs/supabase/export_posts.py`.

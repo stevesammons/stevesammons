@@ -1,15 +1,21 @@
--- Dinah, in the same format the Claude Project returns. Paste into Supabase > SQL Editor.
-insert into public.songs (post_id, post_title, character, song_title, format, style,
-  exclude_styles, lyrics, chords, notes, status)
-values (
-  3149,
-  $t$A Person, Not a Pretext$t$,
-  $t$Dinah$t$,
-  $t$Let Her Story Be Her Own$t$,
-  'A',
-  $style$Barbershop quartet, 1940s gospel quartet, close four-part male harmony, warm baritone lead, tenor lock, a cappella-style with light piano and upright bass, slow 3/4 hymn waltz, 66-70 BPM, grave tender minor-key verses, chorus opens into warm major, final chorus modulates up a whole step, reverent and dignified not triumphant, ends with a barbershop tag: ritardando, lead holds the last word while the tenor rises to a high ringing sustained note above the full chord, long fermata, clean stop$style$,
-  $t$female vocals, choir, drums, synth, autotune, rap, pop$t$,
-  $lyrics$[Intro: quartet hums the opening chord softly]
+-- Dinah, in the format the Claude Project returns (one version; newer songs get two).
+-- Paste into Supabase > SQL Editor after schema.sql and seed-posts.sql.
+begin;
+update public.songs
+   set character = $t$Dinah$t$, status = 'ready', chosen_version = null,
+       clips_made_at = null, clip_error = null
+ where post_id = 3149;
+delete from public.song_versions where post_id = 3149;
+insert into public.song_versions
+  (post_id, version, song_title, format, feel, style, exclude_styles, lyrics, chords, notes)
+values
+  (3149, 1,
+   $t$Let Her Story Be Her Own$t$,
+   'A',
+   $t$3/4 hymn waltz, D minor to F, final chorus and tag in G, 68 BPM$t$,
+   $style$Barbershop quartet, 1940s gospel quartet, close four-part male harmony, warm baritone lead, tenor lock, a cappella-style with light piano and upright bass, slow 3/4 hymn waltz, 66-70 BPM, grave tender minor-key verses, chorus opens into warm major, final chorus modulates up a whole step, reverent and dignified not triumphant, ends with a barbershop tag: ritardando, lead holds the last word while the tenor rises to a high ringing sustained note above the full chord, long fermata, clean stop$style$,
+   $t$female vocals, choir, drums, synth, autotune, rap, pop$t$,
+   $lyrics$[Intro: quartet hums the opening chord softly]
 Mmm...
 
 [Verse 1]
@@ -80,14 +86,9 @@ Be her own, (be her own)
 Let her story be her o-o-o-own.
 
 [End: long held final chord, tenor on top, then silence]$lyrics$,
-  $chords${"bpm": 68, "beats_per_bar": 3, "clips": {"reference": ["verse", "chorus"], "tag": ["tag"]}, "sections": {"verse": {"key": "D minor", "bars": ["Dm", "Dm/C", "Bb", "A7", "Dm", "Gm", "A7", "Dm"]}, "chorus": {"key": "F major", "bars": ["F", "F7", "Bb", "Bbm6", "F/C", "D7", "G7", "C7", "F", "A7", "Dm", "Bb Bbm6", "F/C C7", "F"]}, "bridge": {"key": "D minor to F major", "bars": ["Bb", "C", "Am", "Dm", "Gm7", "C7", "A7", "D7"]}, "final_chorus": {"key": "G major (up a whole step)", "bars": ["G", "G7", "C", "Cm6", "G/D", "E7", "A7", "D7", "G", "B7", "Em", "C Cm6", "G/D D7", "G"]}, "tag": {"key": "G major", "feel": "sustain", "bars": ["C", "Cm6", "G/D", "E7", "A7", "D7", "G~3"]}}}$chords$::jsonb,
-  $notes$Format A: one clear turn (everyone speaks, bargains or takes revenge; Dinah's own voice never appears). Feel: 3/4 hymn waltz, 68 BPM, D minor verses, F major chorus, final chorus and tag in G.
+   $chords${"bpm": 68, "beats_per_bar": 3, "clips": {"reference": ["verse", "chorus"], "tag": ["tag"]}, "sections": {"verse": {"key": "D minor", "bars": ["Dm", "Dm/C", "Bb", "A7", "Dm", "Gm", "A7", "Dm"]}, "chorus": {"key": "F major", "bars": ["F", "F7", "Bb", "Bbm6", "F/C", "D7", "G7", "C7", "F", "A7", "Dm", "Bb Bbm6", "F/C C7", "F"]}, "bridge": {"key": "D minor to F major", "bars": ["Bb", "C", "Am", "Dm", "Gm7", "C7", "A7", "D7"]}, "final_chorus": {"key": "G major (up a whole step)", "bars": ["G", "G7", "C", "Cm6", "G/D", "E7", "A7", "D7", "G", "B7", "Em", "C Cm6", "G/D D7", "G"]}, "tag": {"key": "G major", "feel": "sustain", "bars": ["C", "Cm6", "G/D", "E7", "A7", "D7", "G~3"]}}}$chords$::jsonb,
+   $notes$Scripture checked: Genesis 34. Format A: one clear turn (everyone speaks, bargains or takes revenge; Dinah's own voice never appears).
 Tender ears: the crime is only 'took her' and 'the wrong'; Genesis 34:31's 'harlot' is paraphrased as 'Should he treat our sister so?'
-Left out for length: the circumcision condition by name, removing Dinah from Shechem's house, the plunder.$notes$,
-  'ready')
-on conflict (post_id) do update set
-  post_title = excluded.post_title, character = excluded.character,
-  song_title = excluded.song_title, format = excluded.format, style = excluded.style,
-  exclude_styles = excluded.exclude_styles, lyrics = excluded.lyrics, chords = excluded.chords,
-  notes = excluded.notes, status = 'ready', reference_clip = null, tag_clip = null,
-  clips_made_at = null, clip_error = null;
+Left out for length: the circumcision condition by name, removing Dinah from Shechem's house, the plunder.
+Written before the two-version rule, so this post has one version.$notes$);
+commit;

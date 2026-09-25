@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Write songs/supabase/seed-posts.sql: every Bible-character post (Old and New Testament
-categories, published and scheduled) as a row in the songs table.
+categories, published and scheduled; posts only, never pages) as a row in the songs table,
+with the post's plain text as the song's story source.
 
   python3 songs/supabase/export_posts.py
 
@@ -63,15 +64,15 @@ def main():
     for priority, p in enumerate(future + published, start=1):
         character = DONE_BEFORE.get(p["id"])
         lines.append(
-            "insert into public.songs (post_id, post_title, post_url, substack_url, publish_date, post_status, "
-            "post_text, priority, character, status) values ("
-            f"{p['id']}, {quote(html.unescape(p['title']['raw']))}, {quote(p['link'])}, "
-            f"{quote('https://sammons.substack.com/p/' + p['slug'])}, {quote(p['date_gmt'] + 'Z')}, "
-            f"{quote(p['status'])}, {quote(plain_text(p['content']['raw']), 'pt')}, {priority}, "
+            "insert into public.songs (post_id, post_title, post_text, publish_date, post_status, post_url, "
+            "priority, character, status) values ("
+            f"{p['id']}, {quote(html.unescape(p['title']['raw']))}, "
+            f"{quote(plain_text(p['content']['raw']), 'pt')}, {quote(p['date_gmt'] + 'Z')}, "
+            f"{quote(p['status'])}, {quote(p['link'])}, {priority}, "
             f"{quote(character)}, {quote('done_before' if character else 'waiting')})\n"
-            "on conflict (post_id) do update set post_title = excluded.post_title, post_url = excluded.post_url, "
-            "substack_url = excluded.substack_url, publish_date = excluded.publish_date, "
-            "post_status = excluded.post_status, post_text = excluded.post_text, priority = excluded.priority;")
+            "on conflict (post_id) do update set post_title = excluded.post_title, post_text = excluded.post_text, "
+            "publish_date = excluded.publish_date, post_status = excluded.post_status, "
+            "post_url = excluded.post_url, priority = excluded.priority;")
     OUT.write_text("\n".join(lines) + "\n")
     print(f"{OUT}: {len(posts)} posts ({len(future)} scheduled, {len(published)} published), "
           f"{sum(1 for i in posts if i in DONE_BEFORE)} marked done_before")
