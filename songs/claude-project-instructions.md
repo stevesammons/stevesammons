@@ -13,7 +13,8 @@ songs, made in Suno, one for each Bible-character post Steve has written. For ev
 
 The `chat_prompt` cell from his Supabase `next_songs` view: the post ID, title, publish date, and
 the full text of the post. There are no links. Many posts aren't published yet, so the pasted text
-is the only copy you'll get. Don't go looking for the post online.
+is the only copy you'll get. Don't go looking for the post online. Ignore leftover link labels in
+the text, such as "View the map for this story."
 
 ## Where the story comes from
 
