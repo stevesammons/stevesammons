@@ -66,6 +66,25 @@ Re-running replaces the old copy, so after editing `lightbox.js` re-run it on ev
   of posts and pages for `youtube.com/watch`, `youtu.be/` or `shorts/` links without the
   `ss-video:start` marker.
 
+## Podcast plays on the page
+
+"Listen to the podcast" cards (links to sammons.substack.com/p/<slug>) turn into an on-page
+audio player: play/pause, seek, back/forward 15s, speed, "Open on Substack", resume where the
+reader stopped, lock-screen controls, and a mini bar at the bottom of the screen while it plays.
+`python3 podcast-player/apply.py --all --apply` looks each episode up on Substack
+(`/api/v1/posts/<slug>`) and writes the public ones into the post with `player.js`. Links to
+episodes that aren't out yet stay plain links. It only saves a post when its player block changes
+and never touches status or schedule. Run it again after editing `player.js`.
+
+- Done (2026-09-25): posts 2627, 1907, 1854, scheduled post 2642.
+- Waiting on Substack: 2656 (the-help-we-forget), 2698 (can-their-good-news-stay-theirs).
+- A Routine named "Podcast player refresh" runs `--all --apply` twice a day (6:54 and 16:54
+  Central), so new posts and newly released episodes switch to the player on their own.
+- Audio `src` is the episode's `podcast_url` (api.substack.com/api/v1/audio/upload/<id>/src). It
+  redirects to a fresh signed CDN file each time, so it doesn't expire. Browsers can't call the
+  Substack API from the site (no CORS), which is why the lookup happens at publish time.
+- Paid-only episodes can't play here and keep their Substack link.
+
 ## Checking pages from the cloud sandbox
 
 - Headless Chromium needs the proxy and its CA. Launch Playwright with
@@ -73,6 +92,6 @@ Re-running replaces the old copy, so after editing `lightbox.js` re-run it on ev
   `--ignore-certificate-errors-spki-list=<sha256 of /root/.ccr/agent-proxy-ca.crt public key>`.
 - YouTube blocks playback of most videos from the sandbox ("Video unavailable", watch pages 403),
   even for plain WordPress embeds. That is the sandbox, not the site. Check the player opens and
-  ask the user to confirm playback on a real device.
+  ask the user to confirm playback on a real device. Substack podcast audio does play from the sandbox.
 - Known issue, not yet fixed: on phones, /the-art-of-quiet-change/ scrolls sideways because a long
   Wikipedia URL in its footnotes does not wrap.
