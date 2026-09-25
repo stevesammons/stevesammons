@@ -37,9 +37,15 @@ To refresh posts and links as more go live: `python3 songs/supabase/export_posts
 the new seed files. It fills in links and never erases a link, song or status you've set.
 
 ### 2. Claude Project
-In claude.ai, create a Project called **Quartet Songs**, paste everything below the line in
-`claude-project-instructions.md` into its Instructions, and keep web search on. Claude uses it to
-check each story against Scripture, never to find the post.
+1. In claude.ai, create a Project called **Quartet Songs** and paste everything below the line in
+   `claude-project-instructions.md` into its Instructions.
+2. Add the Supabase connector: claude.ai **Settings > Connectors > Add custom connector**, URL
+   `https://mcp.supabase.com/mcp?project_ref=YOUR-PROJECT-REF` (the ref is in your Supabase project
+   URL). Sign in to Supabase when asked. Leave read-only off, so the Project can save songs.
+3. In a Project chat, turn on web search and the Supabase connector.
+
+Then just talk to it: "Let's do the next one", "Let's do Balaam", "Let's finish the scheduled
+posts", "What's left?", and "Save it" once you like both versions.
 
 ### 3. n8n
 1. **Workflows > Import from File**, and choose `n8n/song-clips-workflow.json`.
@@ -58,14 +64,14 @@ renderer, run `python3 songs/n8n/build_workflow.py` and re-import.
 
 ## Making a song (a few minutes each)
 
-1. In Supabase, open **next_songs** and copy the top row's `chat_prompt` cell.
-2. Start a new chat in the Quartet Songs project and paste it.
-3. Claude writes two versions. Copy its SQL block into the Supabase SQL Editor and run it. (Want
-   changes? Ask in the same chat for revised SQL and run that instead; it replaces both versions.)
-4. Within 5 minutes you get one email with both versions and four clips (`v1-...` and `v2-...`).
+1. In a Quartet Songs chat, say "Let's do the next one" (or name a character).
+2. Claude shows two versions. Ask for changes, or say "Save it" and it stores both in Supabase.
+   (Without the connector: copy `chat_prompt` from `next_songs` into the chat, then run the SQL it
+   returns in the Supabase SQL Editor.)
+3. Within 5 minutes you get one email with both versions and four clips (`v1-...` and `v2-...`).
    Pick a version, paste its Title, Styles and Lyrics into Suno (Create > Advanced), upload that
    version's reference clip, and click Create.
-5. Update the row as you go: set `chosen_version` and `generated` (add `candidate_urls`), then
+4. Update the row as you go: set `chosen_version` and `generated` (add `candidate_urls`), then
    `picked` (`winner_url`), then `downloaded`.
 
 ## Statuses
