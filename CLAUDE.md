@@ -115,6 +115,21 @@ and never touches status or schedule. Run it again after editing `player.js`.
   Substack API from the site (no CORS), which is why the lookup happens at publish time.
 - Paid-only episodes can't play here and keep their Substack link.
 
+## Subscribe (MailPoet)
+
+WordPress readers subscribe through MailPoet, separately from the Substack audience.
+- Every Subscribe button (header menu item 4021, footer "Subscribe free" widget, footer link) goes
+  to /subscribe/ (page 1423). Don't point subscribe links anywhere else.
+- The signup form itself is one component: the synced pattern "Subscribe form" (wp_block 4313),
+  source in `subscribe/pattern.html`. It holds MailPoet form 1 (`[mailpoet_form id="1"]`, adds to
+  the "Newsletter mailing list", segment 3) plus its styling. Page 1423 uses it with
+  `<!-- wp:block {"ref":4313} /-->`; drop the same line into any other page or widget that needs a form.
+- To change provider or form, edit `subscribe/pattern.html` and POST it as `content` to
+  `/wp/v2/blocks/4313` (back up the old content first). Every page using it updates.
+- Substack stays the home of the podcast (the Podcast menu item and podcast links); only
+  subscribing moved. The separate "Newsletter" plugin (page /newsletter/, `[newsletter]`) is not
+  used for signups.
+
 ## Checking pages from the cloud sandbox
 
 - Headless Chromium needs the proxy and its CA. Launch Playwright with
