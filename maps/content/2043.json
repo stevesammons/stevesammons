@@ -21,7 +21,8 @@
    ],
    "conf": "debated",
    "confT": "Proposed region",
-   "text": "The most common view places Uz in or near Edom, in today's southern Jordan, possibly reaching into northwestern Saudi Arabia. Lamentations 4:21 addresses Edom as living in the land of Uz, and Job's friend Eliphaz came from Teman, a name tied to Edom. The shading is broad orientation, not a known border."
+   "text": "The most common view places Uz in or near Edom, in today's southern Jordan, possibly reaching into northwestern Saudi Arabia. Lamentations 4:21 addresses Edom as living in the land of Uz, and Job's friend Eliphaz came from Teman, a name tied to Edom. The shading is broad orientation, not a known border.",
+   "main": true
   },
   "hauran": {
    "name": "Hauran",

@@ -1,0 +1,274 @@
+{
+ "title": "Follow Simon of Cyrene from North Africa to Jerusalem",
+ "kicker": "Interactive map • Mark 15:21; Luke 23:26",
+ "bbox": [
+  19.5,
+  29.6,
+  38.0,
+  37.2
+ ],
+ "anchor": "jerusalem",
+ "note": "The line between Cyrene and Jerusalem shows direction and distance only. The Gospels do not give Simon's route. Modern borders are shown only for orientation.",
+ "places": {
+  "cyrene": {
+   "name": "Cyrene",
+   "sub": "Simon's home city",
+   "ll": [
+    32.825,
+    21.858
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "The leading city of Cyrenaica, on a high plateau above the coast of today's eastern Libya. Its ruins at Shahhat are a UNESCO World Heritage Site. Visitors from the parts of Libya near Cyrene were in Jerusalem at Pentecost (Acts 2:10)."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "where Simon met Jesus",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "conf": "secure",
+   "text": "Simon was coming in from the country when the soldiers made him carry the cross (Mark 15:21). Golgotha lay outside the city but close to it (John 19:17–20). Since the fourth century, tradition has placed it within today's Church of the Holy Sepulchre."
+  },
+  "antioch": {
+   "name": "Antioch",
+   "sub": "Cyrenians in the church",
+   "ll": [
+    36.2021,
+    36.1606
+   ],
+   "conf": "secure",
+   "text": "Antioch on the Orontes, now Antakya in southern Turkey, was one of the great cities of the Roman East. Believers from Cyprus and Cyrene first preached to Greeks here, and Lucius of Cyrene was among its prophets and teachers (Acts 11:20; 13:1).",
+   "elev": 80
+  },
+  "alexandria": {
+   "name": "Alexandria",
+   "ll": [
+    31.2001,
+    29.9187
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern Egyptian city on the site of ancient Alexandria, which had one of the largest Jewish communities of the first century. Jews of Cyrene and Alexandria are named together in Acts 6:9."
+  },
+  "benghazi": {
+   "name": "Benghazi",
+   "ll": [
+    32.1167,
+    20.0667
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern Libyan city west of Cyrene, shown for orientation."
+  }
+ },
+ "routes": {
+  "line": {
+   "pts": [
+    [
+     32.825,
+     21.858
+    ],
+    [
+     32.75,
+     25.5
+    ],
+    [
+     32.45,
+     29.5
+    ],
+    [
+     32.1,
+     32.5
+    ],
+    [
+     31.7767,
+     35.2345
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    34.2,
+    25.5
+   ],
+   "kind": "water",
+   "size": 14
+  },
+  {
+   "t": "Cyrenaica",
+   "ll": [
+    31.55,
+    22.4
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Egypt",
+   "ll": [
+    30.1,
+    28.6
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Nile",
+   "ll": [
+    30.35,
+    31.05
+   ],
+   "kind": "river",
+   "rot": -70
+  },
+  {
+   "t": "Crete",
+   "ll": [
+    35.55,
+    24.4
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Cyprus",
+   "ll": [
+    35.3,
+    33.0
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Judea",
+   "ll": [
+    31.35,
+    35.05
+   ],
+   "kind": "region",
+   "size": 10
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Cyrene",
+   "title": "A Greek city in North Africa",
+   "refs": [
+    [
+     "Matthew 27:32",
+     "Matthew 27:32"
+    ]
+   ],
+   "hot": [
+    "cyrene"
+   ],
+   "sel": "cyrene",
+   "view": [
+    19.5,
+    30.6,
+    25.0,
+    34.0
+   ],
+   "html": "<p>Cyrene stood on a green limestone plateau above the coast of today's eastern Libya. Greek settlers founded it around 630 BC, and by the first century it was a prosperous city under Roman rule, with a large Jewish community.</p><p>The Gospels say only that Simon came from Cyrene. He may have been a pilgrim in Jerusalem for Passover, or a Cyrenian Jew who had settled in the area. The text does not say which.</p>",
+   "facts": [
+    "According to the Greek historian Herodotus, Cyrene was founded by settlers from the island of Thera, now Santorini.",
+    "Cyrene grew rich on silphium, a medicinal plant pictured on its coins. It was harvested so heavily that it disappeared in ancient times, and it has never been identified with certainty since."
+   ]
+  },
+  {
+   "tab": "The journey",
+   "title": "From Cyrene to Jerusalem",
+   "refs": [
+    [
+     "Acts 2:5–11",
+     "Acts 2:5-11"
+    ],
+    [
+     "Acts 6:9",
+     "Acts 6:9"
+    ]
+   ],
+   "hot": [
+    "cyrene",
+    "jerusalem"
+   ],
+   "routes": [
+    "line"
+   ],
+   "sel": "cyrene",
+   "html": "<p>The Gospels do not say how or when Simon came to Jerusalem. The line on the map shows direction and distance only, not a route.</p><p>Jews from Cyrenaica were a familiar presence in Jerusalem. At Pentecost the crowd included visitors from the parts of Libya near Cyrene, and Jerusalem had a synagogue whose members included Jews of Cyrene. Some of them later argued with Stephen.</p>",
+   "facts": [
+    "Cyrene lies about 785 miles (1,265 km) from Jerusalem in a straight line, across the eastern Mediterranean.",
+    "Mark and Luke both say Simon was coming in from the country, so he was arriving from outside the city when the soldiers met him (Mark 15:21; Luke 23:26)."
+   ]
+  },
+  {
+   "tab": "Jerusalem",
+   "title": "Carrying the cross",
+   "refs": [
+    [
+     "Mark 15:20–22",
+     "Mark 15:20-22"
+    ],
+    [
+     "Luke 23:26",
+     "Luke 23:26"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "view": [
+    33.3,
+    30.5,
+    36.6,
+    32.9
+   ],
+   "html": "<p>As the soldiers led Jesus out to crucify him, they met Simon, who was passing by on his way in from the country. They forced him to carry the cross.</p><p>Luke adds that Simon carried it behind Jesus. They came to the place called Golgotha, which means the place of the skull. John says the place was near the city, and many people read the sign on the cross.</p>",
+   "facts": [
+    "Matthew uses the same Greek verb, angareuo, for the soldiers forcing Simon (Matthew 27:32) as Jesus used in the Sermon on the Mount: if anyone forces you to go one mile (Matthew 5:41).",
+    "The Church of the Holy Sepulchre has marked the traditional site of Golgotha since the time of Constantine. The Garden Tomb, north of the Old City, was proposed as an alternative in the nineteenth century."
+   ]
+  },
+  {
+   "tab": "The family",
+   "title": "Simon's sons and the Cyrenians of Antioch",
+   "refs": [
+    [
+     "Mark 15:21",
+     "Mark 15:21"
+    ],
+    [
+     "Romans 16:13",
+     "Romans 16:13"
+    ],
+    [
+     "Acts 11:19–26",
+     "Acts 11:19-26"
+    ],
+    [
+     "Acts 13:1",
+     "Acts 13:1"
+    ]
+   ],
+   "hot": [
+    "antioch",
+    "jerusalem",
+    "cyrene"
+   ],
+   "sel": "antioch",
+   "html": "<p>Mark calls Simon the father of Alexander and Rufus, as if his readers knew them. Paul later greets a Rufus in Rome, chosen in the Lord, along with his mother. Whether this is the same family is not certain.</p><p>Other Cyrenians helped shape the early church. Believers from Cyprus and Cyrene first preached to Greeks in Antioch, and Lucius of Cyrene was one of the prophets and teachers who sent Barnabas and Saul on their first journey.</p>",
+   "facts": [
+    "The disciples were first called Christians at Antioch (Acts 11:26).",
+    "Rufus was a common Latin name, so the link between Mark 15:21 and Romans 16:13 is possible but cannot be proven."
+   ]
+  }
+ ]
+}

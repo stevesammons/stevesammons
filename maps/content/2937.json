@@ -1,84 +1,255 @@
 {
  "title": "Follow Michal between Saul's Gibeah and David's Jerusalem",
  "kicker": "Interactive map • 1 Samuel 18–19; 25 • 2 Samuel 3; 6",
- "bbox": [34.98, 31.47, 35.45, 31.92],
+ "bbox": [
+  34.98,
+  31.47,
+  35.45,
+  31.99
+ ],
  "anchor": "gibeah",
  "places": {
   "gibeah": {
-   "name": "Gibeah", "sub": "Saul's hometown",
-   "ll": [31.8237, 35.2311], "main": true, "conf": "probable",
-   "text": "Saul's home and royal seat in the territory of Benjamin (1 Samuel 10:26; 15:34). It is usually identified with Tell el-Ful, a hill about 3 miles (5 km) north of the City of David, though some scholars prefer nearby Jaba."
+   "name": "Gibeah",
+   "sub": "Saul's hometown",
+   "ll": [
+    31.8237,
+    35.2311
+   ],
+   "main": true,
+   "conf": "probable",
+   "text": "Saul's home and royal seat in the territory of Benjamin (1 Samuel 10:26; 15:34). It is usually identified with Tell el-Ful, a hill about 3.5 miles (6 km) north of the City of David, though some scholars prefer nearby Jaba."
   },
   "ramah": {
-   "name": "Ramah", "sub": "Samuel's home",
-   "ll": [31.8503, 35.2336], "conf": "debated",
+   "name": "Ramah",
+   "sub": "Samuel's home",
+   "ll": [
+    31.8503,
+    35.2336
+   ],
+   "conf": "debated",
    "text": "After Michal helped him escape, David fled to Samuel at Ramah (1 Samuel 19:18). Ramah of Benjamin is usually placed at er-Ram, but whether Samuel's Ramah is the same town is debated."
   },
   "bahurim": {
-   "name": "Bahurim", "sub": "Paltiel turns back",
-   "ll": [31.793, 35.254], "conf": "debated",
+   "name": "Bahurim",
+   "sub": "Paltiel turns back",
+   "ll": [
+    31.793,
+    35.254
+   ],
+   "conf": "debated",
    "text": "Paltiel followed Michal weeping as far as Bahurim, where Abner ordered him to go home (2 Samuel 3:16). The village lay east of Jerusalem near the Mount of Olives. Ras et-Tmim is a common suggestion, but the site is not certain."
   },
   "hebron": {
-   "name": "Hebron", "sub": "David's first capital",
-   "ll": [31.5247, 35.1034], "conf": "secure",
+   "name": "Hebron",
+   "sub": "David's first capital",
+   "ll": [
+    31.5247,
+    35.1034
+   ],
+   "conf": "secure",
    "text": "David reigned over Judah from Hebron, and it was there that he demanded Michal be returned to him (2 Samuel 3:13–16). The ancient city is at Tel Rumeida in today's Hebron."
   },
   "kiriath": {
-   "name": "Kiriath Jearim", "sub": "the ark's resting place",
-   "ll": [31.8067, 35.1036], "conf": "probable",
+   "name": "Kiriath Jearim",
+   "sub": "the ark's resting place",
+   "ll": [
+    31.8067,
+    35.1036
+   ],
+   "conf": "probable",
    "text": "The ark had stayed here for many years (1 Samuel 7:1–2). Second Samuel 6:2 calls the place Baalah of Judah. It is identified with the hill of Deir el-Azar at Abu Ghosh, west of Jerusalem."
   },
   "jerusalem": {
-   "name": "Jerusalem", "sub": "City of David",
-   "ll": [31.7735, 35.2357], "conf": "secure",
+   "name": "Jerusalem",
+   "sub": "City of David",
+   "ll": [
+    31.7735,
+    35.2357
+   ],
+   "conf": "secure",
    "text": "David's new capital. Michal watched from a window here as David danced before the ark (2 Samuel 6:16). The City of David lies on the ridge south of today's Old City walls."
   }
  },
  "routes": {
-  "escape": {"pts": [[31.8237, 35.2311], [31.8503, 35.2336]]},
+  "escape": {
+   "pts": [
+    [
+     31.8237,
+     35.2311
+    ],
+    [
+     31.8503,
+     35.2336
+    ]
+   ]
+  },
   "tohebron": {
-   "pts": [[31.793, 35.254], [31.76, 35.22], [31.705, 35.2], [31.63, 35.16], [31.5247, 35.1034]],
+   "pts": [
+    [
+     31.793,
+     35.254
+    ],
+    [
+     31.76,
+     35.22
+    ],
+    [
+     31.705,
+     35.2
+    ],
+    [
+     31.63,
+     35.16
+    ],
+    [
+     31.5247,
+     35.1034
+    ]
+   ],
    "style": "req"
   },
   "ark": {
-   "pts": [[31.8067, 35.1036], [31.8, 35.15], [31.79, 35.2], [31.7735, 35.2357]]
+   "pts": [
+    [
+     31.8067,
+     35.1036
+    ],
+    [
+     31.8,
+     35.15
+    ],
+    [
+     31.79,
+     35.2
+    ],
+    [
+     31.7735,
+     35.2357
+    ]
+   ]
   }
  },
  "labels": [
-  {"t": "Dead Sea", "ll": [31.6, 35.44], "kind": "water", "rot": -85, "size": 9},
-  {"t": "Benjamin", "ll": [31.89, 35.3], "kind": "region", "size": 11},
-  {"t": "Judah", "ll": [31.62, 35.02], "kind": "region", "size": 11},
-  {"t": "Judean Desert", "ll": [31.68, 35.33], "kind": "region", "size": 10, "rot": -60}
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.6,
+    35.44
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 9
+  },
+  {
+   "t": "Benjamin",
+   "ll": [
+    31.9,
+    35.27
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.62,
+    35.02
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Judean Desert",
+   "ll": [
+    31.68,
+    35.33
+   ],
+   "kind": "region",
+   "size": 10,
+   "rot": -60
+  }
  ],
  "chapters": [
   {
-   "tab": "Gibeah", "title": "The king's daughter",
-   "refs": [["1 Samuel 18:17–29", "1 Samuel 18:17-29"]],
-   "hot": ["gibeah"], "sel": "gibeah",
-   "view": [35.08, 31.72, 35.38, 31.9],
+   "tab": "Gibeah",
+   "title": "The king's daughter",
+   "refs": [
+    [
+     "1 Samuel 18:17–29",
+     "1 Samuel 18:17-29"
+    ]
+   ],
+   "hot": [
+    "gibeah"
+   ],
+   "sel": "gibeah",
+   "view": [
+    35.07,
+    31.72,
+    35.33,
+    31.9
+   ],
    "html": "<p>Michal was the younger daughter of King Saul, whose home was at Gibeah in the hills of Benjamin. She loved David, the young warrior who had become famous after killing Goliath.</p><p>Saul was pleased, hoping the Philistines would kill David. He asked for a bride price of a hundred Philistine foreskins. David brought twice that number, and Saul gave him Michal as his wife.</p>",
-   "quote": ["Now Saul's daughter Michal was in love with David", "1 Samuel 18:20 (NIV)"],
+   "quote": [
+    "Now Saul's daughter Michal was in love with David",
+    "1 Samuel 18:20 (NIV)"
+   ],
    "facts": [
     "The name Gibeah simply means “hill” in Hebrew.",
     "On top of Tell el-Ful stands the unfinished shell of a palace that King Hussein of Jordan began building in the 1960s."
    ]
   },
   {
-   "tab": "Window", "title": "Escape through a window",
-   "refs": [["1 Samuel 19:11–18", "1 Samuel 19:11-18"]],
-   "hot": ["gibeah", "ramah"], "routes": ["escape"], "sel": "ramah",
-   "view": [35.08, 31.72, 35.38, 31.9],
-   "html": "<p>Saul sent men to watch David's house and kill him in the morning. Michal warned David and let him down through a window, and he escaped.</p><p>She put a household idol in the bed with goat hair at its head and told Saul's men that David was ill. When Saul confronted her, she claimed David had threatened her. David fled to Samuel at Ramah.</p>",
+   "tab": "Window",
+   "title": "Escape through a window",
+   "refs": [
+    [
+     "1 Samuel 19:11–18",
+     "1 Samuel 19:11-18"
+    ]
+   ],
+   "hot": [
+    "gibeah",
+    "ramah"
+   ],
+   "routes": [
+    "escape"
+   ],
+   "sel": "ramah",
+   "view": [
+    35.07,
+    31.72,
+    35.33,
+    31.9
+   ],
+   "html": "<p>Saul sent men to watch David's house, probably in or near Gibeah, and kill him in the morning. Michal warned David and let him down through a window, and he escaped.</p><p>She put a household idol in the bed with goat hair at its head and told Saul's men that David was ill. When Saul confronted her, she claimed David had threatened her. David fled to Samuel at Ramah.</p>",
    "facts": [
     "Er-Ram, the usual site for Ramah of Benjamin, is only about 2 miles (3 km) north of Tell el-Ful.",
     "The Hebrew word for the household idol is teraphim, the same word used for the gods Rachel took from her father Laban (Genesis 31:19)."
    ]
   },
   {
-   "tab": "Hebron", "title": "Taken from Paltiel",
-   "refs": [["1 Samuel 25:44", "1 Samuel 25:44"], ["2 Samuel 3:12–16", "2 Samuel 3:12-16"]],
-   "hot": ["bahurim", "hebron"], "routes": ["tohebron"], "sel": "bahurim",
+   "tab": "Hebron",
+   "title": "Taken from Paltiel",
+   "refs": [
+    [
+     "1 Samuel 25:44",
+     "1 Samuel 25:44"
+    ],
+    [
+     "2 Samuel 3:12–16",
+     "2 Samuel 3:12-16"
+    ]
+   ],
+   "hot": [
+    "bahurim",
+    "hebron"
+   ],
+   "routes": [
+    "tohebron"
+   ],
+   "sel": "bahurim",
    "html": "<p>While David was a fugitive, Saul gave Michal to another man, Paltiel son of Laish. After Saul's death, David was king in Hebron, and he made Michal's return a condition of any agreement with Abner.</p><p>Ish-Bosheth had her taken from Paltiel. Her husband followed her, weeping, as far as Bahurim, until Abner told him to go back. The text does not say what route they took to Hebron.</p>",
    "facts": [
     "Paltiel came from Gallim (1 Samuel 25:44), a village in Benjamin whose exact site is uncertain.",
@@ -86,12 +257,33 @@
    ]
   },
   {
-   "tab": "Jerusalem", "title": "Watching from the window",
-   "refs": [["2 Samuel 6", "2 Samuel 6"]],
-   "hot": ["kiriath", "jerusalem"], "routes": ["ark"], "sel": "jerusalem",
-   "view": [35.02, 31.7, 35.35, 31.88],
+   "tab": "Jerusalem",
+   "title": "Watching from the window",
+   "refs": [
+    [
+     "2 Samuel 6",
+     "2 Samuel 6"
+    ]
+   ],
+   "hot": [
+    "kiriath",
+    "jerusalem"
+   ],
+   "routes": [
+    "ark"
+   ],
+   "sel": "jerusalem",
+   "view": [
+    35.05,
+    31.71,
+    35.3,
+    31.88
+   ],
    "html": "<p>David brought the ark of God up to Jerusalem from Baalah of Judah, also called Kiriath Jearim. As it entered the City of David, he danced before the Lord with all his might, wearing a linen ephod.</p><p>Michal watched from a window and despised him. When David came home, she mocked him, and he answered sharply. Second Samuel adds that Michal had no children to the day of her death.</p>",
-   "quote": ["How the king of Israel has distinguished himself today", "2 Samuel 6:20 (NIV)"],
+   "quote": [
+    "How the king of Israel has distinguished himself today",
+    "2 Samuel 6:20 (NIV)"
+   ],
    "facts": [
     "Kiriath Jearim is about 8 miles (13 km) west of the City of David in a straight line, but the road climbs and drops through steep hill country.",
     "The first attempt to move the ark ended when Uzzah died after touching it, and the ark stayed three months at the house of Obed-Edom (2 Samuel 6:6–11)."

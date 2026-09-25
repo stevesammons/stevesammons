@@ -1,0 +1,305 @@
+{
+ "title": "Follow Miriam from the Nile into the wilderness",
+ "kicker": "Interactive map • Exodus 2; 15; Numbers 12; 20",
+ "bbox": [
+  30.6,
+  27.8,
+  35.6,
+  31.8
+ ],
+ "anchor": "goshen",
+ "note": "No route is drawn because Israel's wilderness itinerary and the place of the sea crossing are debated. Mount Sinai, Hazeroth and Kadesh are shown at common identifications. Modern borders are shown only for orientation.",
+ "places": {
+  "goshen": {
+   "name": "Goshen",
+   "sub": "Israel in Egypt",
+   "ll": [
+    30.55,
+    31.95
+   ],
+   "area": [
+    40,
+    24
+   ],
+   "main": true,
+   "conf": "region",
+   "confT": "Approximate region",
+   "text": "Jacob's family settled in the region of Goshen (Genesis 47:27), usually placed in the eastern Nile Delta around the Wadi Tumilat. Exodus does not say where along the Nile Miriam watched over her baby brother (Exodus 2:3–4)."
+  },
+  "rameses": {
+   "name": "Rameses",
+   "sub": "store city",
+   "ll": [
+    30.799,
+    31.834
+   ],
+   "conf": "probable",
+   "text": "The Israelites were forced to build the store cities Pithom and Rameses (Exodus 1:11). Rameses is usually identified with Pi-Ramesses, the delta capital of Ramesses II, whose remains lie near the village of Qantir."
+  },
+  "shur": {
+   "name": "Desert of Shur",
+   "sub": "beyond the sea",
+   "ll": [
+    30.55,
+    33.05
+   ],
+   "area": [
+    70,
+    40
+   ],
+   "conf": "region",
+   "confT": "Approximate region",
+   "text": "After the sea crossing, Moses led Israel into the Desert of Shur (Exodus 15:22). Genesis places Shur near the eastern border of Egypt (Genesis 25:18), so it is usually located in the northwestern Sinai."
+  },
+  "sinai": {
+   "name": "Mount Sinai",
+   "sub": "Jebel Musa",
+   "ll": [
+    28.5392,
+    33.9753
+   ],
+   "elev": 2285,
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "Christian tradition since at least the fourth century places Mount Sinai at Jebel Musa in the southern Sinai. Other peaks in Sinai and in northwestern Arabia have also been proposed. Israel left the mountain shortly before the events at Hazeroth (Numbers 10:11–12; 11:35)."
+  },
+  "hazeroth": {
+   "name": "Hazeroth",
+   "sub": "Miriam's affliction",
+   "ll": [
+    28.88,
+    34.42
+   ],
+   "conf": "debated",
+   "text": "The camp where Miriam and Aaron spoke against Moses (Numbers 11:35–12:16). It is often linked with the oasis of Ain Khadra (Ein Hudra) northeast of Jebel Musa, partly because of a similar name, but that is uncertain.",
+   "area": [
+    8,
+    8
+   ],
+   "confT": "Location debated"
+  },
+  "kadesh": {
+   "name": "Kadesh",
+   "sub": "Miriam's burial",
+   "ll": [
+    30.648,
+    34.421
+   ],
+   "conf": "probable",
+   "text": "Miriam died and was buried at Kadesh in the Desert of Zin (Numbers 20:1). Kadesh Barnea is commonly identified with the spring of Ein el-Qudeirat in the northeastern Sinai, the richest spring in the region."
+  },
+  "cairo": {
+   "name": "Cairo",
+   "ll": [
+    30.0444,
+    31.2357
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Capital of modern Egypt, at the head of the Nile Delta, shown for orientation."
+  },
+  "aqaba": {
+   "name": "Aqaba",
+   "ll": [
+    29.5267,
+    35.0078
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern Jordanian port at the head of the Gulf of Aqaba, shown for orientation."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.62,
+    33.3
+   ],
+   "kind": "water"
+  },
+  {
+   "t": "Gulf of Suez",
+   "ll": [
+    29.05,
+    32.95
+   ],
+   "kind": "water",
+   "rot": -57,
+   "size": 10.5
+  },
+  {
+   "t": "Gulf of Aqaba",
+   "ll": [
+    28.4,
+    34.66
+   ],
+   "kind": "water",
+   "rot": -70,
+   "size": 10.5
+  },
+  {
+   "t": "Nile",
+   "ll": [
+    29.1,
+    30.95
+   ],
+   "kind": "river",
+   "rot": -80
+  },
+  {
+   "t": "Sinai",
+   "ll": [
+    29.75,
+    33.6
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Egypt",
+   "ll": [
+    28.6,
+    31.6
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Desert of Paran",
+   "ll": [
+    29.85,
+    34.15
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Nile Delta",
+   "ll": [
+    30.85,
+    31.3
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "The Nile",
+   "title": "A sister watching by the river",
+   "refs": [
+    [
+     "Exodus 2:1–10",
+     "Exodus 2:1-10"
+    ]
+   ],
+   "hot": [
+    "goshen",
+    "rameses"
+   ],
+   "sel": "goshen",
+   "view": [
+    30.9,
+    29.9,
+    32.7,
+    31.6
+   ],
+   "html": "<p>When Pharaoh ordered every Hebrew baby boy thrown into the Nile, a Levite woman hid her son for three months. Then she placed him in a papyrus basket coated with tar and pitch and set it among the reeds along the riverbank.</p><p>His sister stood at a distance to see what would happen. When Pharaoh's daughter found the baby, the girl offered to find a Hebrew woman to nurse him, and she brought the baby's own mother.</p>",
+   "facts": [
+    "Exodus 2 does not name the sister. Numbers 26:59 lists Miriam as the sister of Aaron and Moses, the only sister named in the family.",
+    "The Hebrew word for the basket, tevah, appears elsewhere in the Bible only for Noah's ark."
+   ]
+  },
+  {
+   "tab": "The sea",
+   "title": "Miriam's song",
+   "refs": [
+    [
+     "Exodus 15:19–22",
+     "Exodus 15:19-22"
+    ]
+   ],
+   "hot": [
+    "shur",
+    "goshen"
+   ],
+   "sel": "shur",
+   "view": [
+    31.0,
+    29.3,
+    34.3,
+    31.6
+   ],
+   "html": "<p>After Israel crossed the sea on dry ground and Pharaoh's chariots were swept away, Miriam the prophet, Aaron's sister, took a timbrel in her hand. All the women followed her with timbrels and dancing.</p><p>Miriam sang the refrain of the song Moses and the Israelites had just sung. Exodus calls the sea the Yam Suph, but where it lay is debated, so the map marks no crossing point. From the sea, Israel went on into the Desert of Shur.</p>",
+   "quote": [
+    "Sing to the LORD, for he is highly exalted.",
+    "Exodus 15:21 (NIV)"
+   ],
+   "facts": [
+    "Miriam is the first woman the Bible calls a prophet (Exodus 15:20).",
+    "Yam Suph is usually translated Red Sea, but many scholars render it Sea of Reeds. Proposed crossing areas include the lakes along today's Suez Canal, the Gulf of Suez and the Gulf of Aqaba."
+   ]
+  },
+  {
+   "tab": "Hazeroth",
+   "title": "Spoken against at Hazeroth",
+   "refs": [
+    [
+     "Numbers 11:35–12:16",
+     "Numbers 11:35-12:16"
+    ]
+   ],
+   "hot": [
+    "hazeroth",
+    "sinai"
+   ],
+   "sel": "hazeroth",
+   "view": [
+    33.0,
+    27.85,
+    35.3,
+    29.8
+   ],
+   "html": "<p>After Israel left Mount Sinai, the people camped at Hazeroth. There Miriam and Aaron spoke against Moses because of his Cushite wife. Has the Lord spoken only through Moses? they asked.</p><p>The Lord called the three of them to the tent of meeting and defended Moses as his faithful servant. Then Miriam's skin became leprous, white as snow. Moses cried out for her healing, and she was kept outside the camp seven days. The people did not move on until she was brought back.</p>",
+   "quote": [
+    "Please, God, heal her!",
+    "Numbers 12:13 (NIV)"
+   ],
+   "facts": [
+    "The name Hazeroth comes from a Hebrew word for enclosures or settlements, the kind of walled pens and camps used by herders.",
+    "Jebel Musa rises about 7,500 feet (2,285 m). Saint Catherine's Monastery at its foot was built in the sixth century and is among the oldest working Christian monasteries in the world."
+   ]
+  },
+  {
+   "tab": "Kadesh",
+   "title": "Buried at Kadesh",
+   "refs": [
+    [
+     "Numbers 20:1",
+     "Numbers 20:1"
+    ],
+    [
+     "Micah 6:4",
+     "Micah 6:4"
+    ]
+   ],
+   "hot": [
+    "kadesh"
+   ],
+   "sel": "kadesh",
+   "view": [
+    32.9,
+    29.5,
+    35.5,
+    31.5
+   ],
+   "html": "<p>In the first month, the whole community of Israel arrived in the Desert of Zin and stayed at Kadesh. There Miriam died and was buried.</p><p>Numbers records her death in a single verse, but Israel did not forget her. Centuries later, the prophet Micah reminded the people that God had brought them out of Egypt and sent Moses, Aaron and Miriam to lead them.</p>",
+   "facts": [
+    "Excavations at Ein el-Qudeirat uncovered a series of fortresses from the time of Israel's kings. No trace of Israel's earlier wilderness camp has been found, which is one reason the identification is still discussed.",
+    "Right after Miriam's death, the community had no water, and Moses struck the rock at Meribah. Aaron died soon after at Mount Hor (Numbers 20:2–29), so all three leaders died before Israel entered Canaan."
+   ]
+  }
+ ]
+}
