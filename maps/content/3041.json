@@ -1,0 +1,270 @@
+{
+ "title": "Follow Andrew around the Sea of Galilee",
+ "kicker": "Interactive map • John 1; 6; 12 • Mark 1",
+ "bbox": [
+  34.95,
+  31.6,
+  35.95,
+  33.1
+ ],
+ "anchor": "bethsaida",
+ "places": {
+  "bethsaida": {
+   "name": "Bethsaida",
+   "sub": "Andrew's town",
+   "ll": [
+    32.9103,
+    35.6308
+   ],
+   "main": true,
+   "conf": "debated",
+   "text": "John says Philip, like Andrew and Peter, was from the town of Bethsaida (John 1:44). The site is debated. Et-Tell, northeast of the lake, has long been the leading candidate, while el-Araj, closer to the shore, has recently gained support."
+  },
+  "capernaum": {
+   "name": "Capernaum",
+   "sub": "home of Simon and Andrew",
+   "ll": [
+    32.8806,
+    35.575
+   ],
+   "conf": "secure",
+   "text": "A fishing town on the north shore of the lake. Mark says Jesus went from the synagogue here to the home of Simon and Andrew (Mark 1:29). The ruins lie at Kfar Nahum in Israel.",
+   "label": "t"
+  },
+  "tabgha": {
+   "name": "Tabgha",
+   "sub": "traditional feeding site",
+   "ll": [
+    32.8733,
+    35.5484
+   ],
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "Church tradition places the feeding of the five thousand here, on the northwest shore. Luke connects the feeding with the area of Bethsaida (Luke 9:10), and John places it on a hillside across the lake (John 6:1–3), so the exact site is uncertain."
+  },
+  "bethany": {
+   "name": "Bethany beyond the Jordan",
+   "sub": "where John baptized",
+   "ll": [
+    31.8375,
+    35.5503
+   ],
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "John the Baptist was baptizing at Bethany on the other side of the Jordan when Andrew first followed Jesus (John 1:28, 35–40). The location is uncertain. Tradition points to the Wadi al-Kharrar area near the river, east of Jericho."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "Greeks ask to see Jesus",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "conf": "secure",
+   "text": "At the last Passover of Jesus's ministry, some Greeks came to Philip asking to see Jesus. Philip told Andrew, and the two went together to tell Jesus (John 12:20–22)."
+  },
+  "tiberias": {
+   "name": "Tiberias",
+   "ll": [
+    32.7922,
+    35.5312
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the west shore of the Sea of Galilee, shown for orientation."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.25,
+    34.8
+   ],
+   "kind": "water",
+   "rot": -76,
+   "size": 10
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.8,
+    35.6
+   ],
+   "kind": "water",
+   "size": 8.5
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.66,
+    35.52
+   ],
+   "kind": "water",
+   "size": 9
+  },
+  {
+   "t": "Galilee",
+   "ll": [
+    32.95,
+    35.35
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Golan",
+   "ll": [
+    32.98,
+    35.78
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.3,
+    35.595
+   ],
+   "kind": "river",
+   "rot": -84
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Bethsaida",
+   "title": "A fisherman from Bethsaida",
+   "refs": [
+    [
+     "John 1:44",
+     "John 1:44"
+    ],
+    [
+     "Mark 1:16",
+     "Mark 1:16"
+    ]
+   ],
+   "hot": [
+    "bethsaida",
+    "capernaum"
+   ],
+   "sel": "bethsaida",
+   "view": [
+    35.4,
+    32.7,
+    35.75,
+    33.02
+   ],
+   "html": "<p>Andrew and his brother Simon Peter came from Bethsaida, a town near the north end of the Sea of Galilee. They made their living by fishing on the lake.</p><p>Mark later places the brothers' home in nearby Capernaum. The ancient site of Bethsaida is debated, so its marker shows the leading candidate, not a certain location.</p>",
+   "facts": [
+    "Andrew is a Greek name, related to a Greek word for “man” or “manly.” Philip, also from Bethsaida, has a Greek name too.",
+    "The two main candidates for Bethsaida, et-Tell and el-Araj, are only a little over a mile (2 km) apart. El-Araj lies close to the modern shoreline."
+   ]
+  },
+  {
+   "tab": "Jordan",
+   "title": "We have found the Messiah",
+   "refs": [
+    [
+     "John 1:28–42",
+     "John 1:28-42"
+    ]
+   ],
+   "hot": [
+    "bethany",
+    "bethsaida"
+   ],
+   "sel": "bethany",
+   "html": "<p>Andrew was a disciple of John the Baptist. When John pointed to Jesus as the Lamb of God, Andrew and another disciple followed Jesus and spent the day with him.</p><p>The first thing Andrew did was find his brother Simon and bring him to Jesus. Jesus gave Simon the new name Cephas, which means Peter.</p>",
+   "quote": [
+    "We have found the Messiah",
+    "John 1:41 (NIV)"
+   ],
+   "facts": [
+    "John says it was about four in the afternoon when the two disciples went to see where Jesus was staying (John 1:39).",
+    "The traditional baptism site lies about 1,250 feet (380 m) below sea level, in the Jordan Valley just north of the Dead Sea."
+   ]
+  },
+  {
+   "tab": "Nets",
+   "title": "Fishers of people",
+   "refs": [
+    [
+     "Mark 1:16–29",
+     "Mark 1:16-29"
+    ]
+   ],
+   "hot": [
+    "capernaum",
+    "bethsaida"
+   ],
+   "sel": "capernaum",
+   "view": [
+    35.4,
+    32.7,
+    35.75,
+    33.02
+   ],
+   "html": "<p>Walking beside the Sea of Galilee, Jesus saw Simon and Andrew casting a net into the lake. He called them to follow him and promised to make them fishers of people. At once they left their nets.</p><p>Jesus then taught in the synagogue at Capernaum and went straight to the home of Simon and Andrew, where he healed Simon's mother-in-law.</p>",
+   "facts": [
+    "Mark describes a casting net, a round net thrown from the shore or shallow water. Fishermen on the lake used such nets into modern times.",
+    "The remains of a fifth-century octagonal church at Capernaum stand over a house that early Christians honored as Peter's."
+   ]
+  },
+  {
+   "tab": "Loaves",
+   "title": "A boy with five loaves",
+   "refs": [
+    [
+     "John 6:1–14",
+     "John 6:1-14"
+    ]
+   ],
+   "hot": [
+    "tabgha",
+    "bethsaida"
+   ],
+   "sel": "tabgha",
+   "view": [
+    35.4,
+    32.7,
+    35.75,
+    33.02
+   ],
+   "html": "<p>A large crowd followed Jesus to a hillside by the lake. When Jesus asked Philip where they could buy bread, Andrew pointed out a boy with a small lunch, while doubting it could help.</p><p>Jesus had the people sit down, gave thanks, and fed about five thousand men. The leftover pieces filled twelve baskets.</p>",
+   "quote": [
+    "Here is a boy with five small barley loaves and two small fish",
+    "John 6:9 (NIV)"
+   ],
+   "facts": [
+    "Only John mentions that the loaves were barley, the cheaper grain often eaten by poorer people.",
+    "The church at Tabgha preserves a fifth-century mosaic of a basket of loaves between two fish."
+   ]
+  },
+  {
+   "tab": "Jerusalem",
+   "title": "Bringing the Greeks to Jesus",
+   "refs": [
+    [
+     "John 12:20–22",
+     "John 12:20-22"
+    ],
+    [
+     "Acts 1:13",
+     "Acts 1:13"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>At Passover in Jerusalem, some Greeks who had come to worship asked Philip to see Jesus. Philip went to Andrew, and together they told Jesus.</p><p>Andrew appears once more in the New Testament, in the list of apostles gathered in Jerusalem after the ascension (Acts 1:13). Later traditions about his travels and death are not found in Scripture.</p>",
+   "facts": [
+    "In each of John's three scenes with Andrew, he is bringing someone or something to Jesus: his brother, a boy's lunch, and a group of Greeks.",
+    "Jerusalem lies roughly 80 miles (130 km) south of the Sea of Galilee in a straight line."
+   ]
+  }
+ ]
+}

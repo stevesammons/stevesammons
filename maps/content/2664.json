@@ -1,0 +1,326 @@
+{
+ "title": "Follow Manasseh from Jerusalem to Babylon and back",
+ "kicker": "Interactive map • 2 Chronicles 33",
+ "bbox": [
+  34.0,
+  30.0,
+  46.6,
+  37.2
+ ],
+ "anchor": "babylon",
+ "places": {
+  "babylon": {
+   "name": "Babylon",
+   "sub": "Manasseh's captivity",
+   "ll": [
+    32.54197,
+    44.42083
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "Assyrian commanders took Manasseh to Babylon, and he later returned to Jerusalem (2 Chronicles 33:11–13). The ruins lie near Hillah in modern Iraq, about 53 miles (85 km) south of Baghdad. The marker shows the archaeological site, not a known prison or place of prayer."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "Manasseh's capital",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "conf": "secure",
+   "text": "Manasseh became king in Jerusalem at age twelve and reigned there fifty-five years (2 Chronicles 33:1). He was buried in his palace grounds (2 Chronicles 33:20), in the garden of Uzza according to 2 Kings 21:18.",
+   "elev": 754
+  },
+  "nineveh": {
+   "name": "Nineveh",
+   "sub": "Assyrian capital",
+   "ll": [
+    36.3594,
+    43.1533
+   ],
+   "conf": "secure",
+   "text": "The capital of Assyria under Sennacherib, Esarhaddon and Ashurbanipal, the kings of Manasseh's lifetime. Its mounds lie on the east bank of the Tigris across from Mosul. Chronicles says only that the captors were commanders of the king of Assyria and does not name him."
+  },
+  "baghdad": {
+   "name": "Baghdad",
+   "ll": [
+    33.3152,
+    44.3661
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Capital of modern Iraq, shown as a present-day landmark north of Babylon."
+  },
+  "damascus": {
+   "name": "Damascus",
+   "ll": [
+    33.5138,
+    36.2765
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Capital of modern Syria, shown for orientation. Travelers between Judah and Mesopotamia usually went north through Syria rather than straight across the desert."
+  }
+ },
+ "routes": {
+  "captive": {
+   "pts": [
+    [
+     31.7767,
+     35.2345
+    ],
+    [
+     32.3,
+     35.33
+    ],
+    [
+     32.8,
+     35.62
+    ],
+    [
+     33.2,
+     35.95
+    ],
+    [
+     33.5138,
+     36.2765
+    ],
+    [
+     34.2,
+     36.55
+    ],
+    [
+     34.73,
+     36.71
+    ],
+    [
+     35.13,
+     36.75
+    ],
+    [
+     35.7,
+     37.3
+    ],
+    [
+     35.99,
+     38.1
+    ],
+    [
+     35.95,
+     39.0
+    ],
+    [
+     35.33,
+     40.14
+    ],
+    [
+     34.45,
+     40.92
+    ],
+    [
+     34.37,
+     41.98
+    ],
+    [
+     34.13,
+     42.37
+    ],
+    [
+     33.64,
+     42.83
+    ],
+    [
+     33.4,
+     43.3
+    ],
+    [
+     33.3,
+     43.8
+    ],
+    [
+     32.9,
+     44.2
+    ],
+    [
+     32.54197,
+     44.42083
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.7,
+    34.5
+   ],
+   "kind": "water",
+   "rot": -78,
+   "size": 11
+  },
+  {
+   "t": "Euphrates",
+   "ll": [
+    35.0,
+    40.25
+   ],
+   "kind": "river",
+   "rot": 38
+  },
+  {
+   "t": "Tigris",
+   "ll": [
+    35.0,
+    43.62
+   ],
+   "kind": "river",
+   "rot": 68
+  },
+  {
+   "t": "Syrian Desert",
+   "ll": [
+    32.6,
+    39.2
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Assyria",
+   "ll": [
+    35.95,
+    42.55
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Babylonia",
+   "ll": [
+    31.55,
+    44.75
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.35,
+    35.05
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Babylon",
+   "title": "An ancient city on the Euphrates",
+   "badge": "Seventh century BC",
+   "refs": [
+    [
+     "2 Chronicles 33:11",
+     "2 Chronicles 33:11"
+    ]
+   ],
+   "hot": [
+    "babylon"
+   ],
+   "sel": "babylon",
+   "view": [
+    43.2,
+    31.7,
+    45.6,
+    33.8
+   ],
+   "html": "<p>Babylon stood on the Euphrates in the flat, irrigated plain of southern Mesopotamia. In Manasseh's day it was not yet the capital of a great empire. It was a prized but restless city under the control of Assyria, whose kings ruled from Nineveh far to the north.</p><p>Chronicles says Manasseh was brought here as a prisoner. It does not say how long he stayed or where he was held.</p>",
+   "facts": [
+    "The Assyrian king Sennacherib sacked Babylon in 689 BC. His son Esarhaddon began rebuilding it, so the city was being restored in the years around Manasseh's reign.",
+    "Babylon's famous Ishtar Gate and much of what visitors see today come from Nebuchadnezzar II, who reigned after Manasseh. UNESCO inscribed Babylon as a World Heritage Site in 2019."
+   ]
+  },
+  {
+   "tab": "Jerusalem",
+   "title": "Fifty-five years on David's throne",
+   "refs": [
+    [
+     "2 Chronicles 33:1–10",
+     "2 Chronicles 33:1-10"
+    ],
+    [
+     "2 Kings 21:1–18",
+     "2 Kings 21:1-18"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "view": [
+    34.2,
+    30.8,
+    37.0,
+    33.9
+   ],
+   "html": "<p>Manasseh became king of Judah at twelve and reigned fifty-five years, longer than any other king of Judah. He rebuilt the high places his father Hezekiah had torn down, set up altars to the stars in the temple courts and sacrificed his children in the fire in the Valley of Ben Hinnom.</p><p>The Lord spoke to Manasseh and his people, but they paid no attention.</p>",
+   "facts": [
+    "Assyrian records name “Manasseh king of Judah” among the western kings who sent building materials to Esarhaddon for his palace at Nineveh.",
+    "Ashurbanipal, Esarhaddon's son, also lists Manasseh among the kings who supported his campaign against Egypt."
+   ]
+  },
+  {
+   "tab": "Captivity",
+   "title": "Taken to Babylon by Assyria",
+   "refs": [
+    [
+     "2 Chronicles 33:11–12",
+     "2 Chronicles 33:11-12"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "babylon",
+    "nineveh"
+   ],
+   "routes": [
+    "captive"
+   ],
+   "sel": "babylon",
+   "html": "<p>The Lord brought the commanders of the Assyrian king's army against Judah. They took Manasseh prisoner, put a hook in his nose, bound him with bronze shackles and took him to Babylon. These captors were Assyrians, not the later Babylonian empire that exiled Judah.</p><p>In his distress Manasseh sought the Lord and humbled himself greatly. The route shown is only a likely line of travel.</p>",
+   "facts": [
+    "Babylon is about 540 miles (870 km) from Jerusalem in a straight line. Travelers usually followed the Fertile Crescent north through Syria and down the Euphrates, a much longer trip.",
+    "Some scholars link Manasseh's summons to Babylon with the revolt of Shamash-shum-ukin, the Assyrian-appointed king of Babylon, in 652–648 BC. The Bible does not give a date."
+   ]
+  },
+  {
+   "tab": "Return",
+   "title": "A humbled king comes home",
+   "refs": [
+    [
+     "2 Chronicles 33:13–20",
+     "2 Chronicles 33:13-20"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "babylon"
+   ],
+   "routes": [
+    "captive"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>God heard Manasseh's plea and brought him back to Jerusalem and to his kingdom. He rebuilt the outer wall of the City of David west of the Gihon spring, stationed commanders in Judah's fortified cities and removed the foreign gods and the image from the temple.</p><p>He restored the altar of the Lord and told Judah to serve the Lord, though the people still sacrificed at the high places, now only to the Lord.</p>",
+   "quote": [
+    "Then Manasseh knew that the LORD is God.",
+    "2 Chronicles 33:13 (NIV)"
+   ],
+   "facts": [
+    "Only Chronicles tells of Manasseh's captivity and repentance. The account in 2 Kings 21 does not mention them.",
+    "Chronicles says Manasseh's prayer was recorded in the annals of the kings of Israel (2 Chronicles 33:18). A later short text called the Prayer of Manasseh appears in the Apocrypha of some Bibles."
+   ]
+  }
+ ]
+}

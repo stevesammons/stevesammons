@@ -1,0 +1,176 @@
+{
+ "title": "Follow Nicodemus through Jerusalem",
+ "kicker": "Interactive map • John 3; 7; 19",
+ "bbox": [
+  35.207,
+  31.762,
+  35.257,
+  31.792
+ ],
+ "places": {
+  "city": {
+   "name": "Jerusalem",
+   "sub": "a visit at night",
+   "ll": [
+    31.7752,
+    35.2305
+   ],
+   "main": true,
+   "area": [
+    0.8,
+    0.55
+   ],
+   "conf": "region",
+   "text": "Nicodemus came to Jesus at night while Jesus was in Jerusalem for the Passover (John 2:23; 3:2). John does not say where in the city they met, so the shaded area marks only the general setting."
+  },
+  "temple": {
+   "name": "Temple courts",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "conf": "secure",
+   "text": "Jesus taught in the temple courts during the Festival of Tabernacles (John 7:14). Nicodemus was among the leaders when the temple guards came back without arresting him (John 7:45–52). The site is today's Temple Mount, or Haram al-Sharif."
+  },
+  "golgotha": {
+   "name": "Golgotha",
+   "sub": "and the garden tomb",
+   "ll": [
+    31.7784,
+    35.2296
+   ],
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "John says Jesus was crucified at the place of the Skull, near the city, with a garden and a new tomb nearby (John 19:17–20, 41). Since the fourth century, tradition has placed both at the Church of the Holy Sepulchre. The Garden Tomb north of Damascus Gate is a later alternative."
+  },
+  "damascusgate": {
+   "name": "Damascus Gate",
+   "ll": [
+    31.7816,
+    35.2302
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "The main northern gate of today's Old City, built in the Ottoman period. Shown for orientation."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Kidron Valley",
+   "ll": [
+    31.7675,
+    35.2382
+   ],
+   "kind": "river",
+   "rot": -72,
+   "size": 9.5
+  },
+  {
+   "t": "Hinnom Valley",
+   "ll": [
+    31.7685,
+    35.2282
+   ],
+   "kind": "river",
+   "rot": -25,
+   "size": 10
+  },
+  {
+   "t": "Mount of Olives",
+   "ll": [
+    31.7725,
+    35.2495
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Jerusalem",
+   "title": "A Pharisee in the city",
+   "refs": [
+    [
+     "John 2:23–3:2",
+     "John 2:23-3:2"
+    ]
+   ],
+   "hot": [
+    "city",
+    "temple"
+   ],
+   "sel": "city",
+   "html": "<p>Jesus was in Jerusalem for the Passover, and many people believed in him when they saw the signs he was doing. Among the city's leaders was Nicodemus, a Pharisee and a member of the Jewish ruling council.</p><p>Nicodemus came to Jesus at night. He called him Rabbi and said the signs showed that Jesus was a teacher who had come from God.</p>",
+   "facts": [
+    "At Passover, Jerusalem filled with pilgrims from across the Jewish world, which put Jesus in front of large crowds.",
+    "John is the only Gospel that mentions Nicodemus. He appears three times, and in the later two John reminds readers that he first came to Jesus at night."
+   ]
+  },
+  {
+   "tab": "Night",
+   "title": "Born from above",
+   "refs": [
+    [
+     "John 3:1–21",
+     "John 3:1-21"
+    ]
+   ],
+   "hot": [
+    "city"
+   ],
+   "sel": "city",
+   "html": "<p>Jesus told Nicodemus that no one can see the kingdom of God without being born again. Nicodemus took this literally and asked how anyone could be born a second time.</p><p>Jesus spoke of being born of water and the Spirit, compared the Spirit to the wind, and pointed back to the bronze snake Moses lifted up in the wilderness. John does not record how Nicodemus responded that night.</p>",
+   "quote": [
+    "Very truly I tell you, no one can see the kingdom of God unless they are born again.",
+    "John 3:3 (NIV)"
+   ],
+   "facts": [
+    "The Greek word translated \"again,\" anothen, can also mean \"from above.\" The NIV notes this in a footnote.",
+    "In Greek, as in Hebrew, the same word can mean both \"wind\" and \"spirit,\" which gives Jesus's comparison in John 3:8 its force."
+   ]
+  },
+  {
+   "tab": "Temple",
+   "title": "A question in the council",
+   "refs": [
+    [
+     "John 7:45–52",
+     "John 7:45-52"
+    ]
+   ],
+   "hot": [
+    "temple"
+   ],
+   "sel": "temple",
+   "html": "<p>During the Festival of Tabernacles, Jesus taught in the temple courts. The chief priests and Pharisees sent temple guards to arrest him, but the guards came back empty-handed, amazed at how he spoke.</p><p>Nicodemus spoke up and asked whether the law condemns anyone without first hearing him. The others mocked him and said no prophet comes out of Galilee.</p>",
+   "quote": [
+    "Does our law condemn a man without first hearing him to find out what he has been doing?",
+    "John 7:51 (NIV)"
+   ],
+   "facts": [
+    "Herod the Great enlarged the temple platform to roughly 37 acres (15 hectares). Its massive retaining walls, including the Western Wall, still stand.",
+    "During the Festival of Tabernacles, people lived for seven days in temporary shelters to remember Israel's wilderness journey (Leviticus 23:42–43)."
+   ]
+  },
+  {
+   "tab": "Tomb",
+   "title": "Burial in a garden tomb",
+   "refs": [
+    [
+     "John 19:38–42",
+     "John 19:38-42"
+    ]
+   ],
+   "hot": [
+    "golgotha"
+   ],
+   "sel": "golgotha",
+   "html": "<p>After Jesus died, Joseph of Arimathea asked Pilate for the body. Nicodemus came too, bringing about seventy-five pounds of myrrh and aloes.</p><p>The two men wrapped the body with the spices in strips of linen, following Jewish burial custom. Because it was the day of Preparation and the tomb was nearby, they laid Jesus in a new tomb in a garden near the place of crucifixion.</p>",
+   "facts": [
+    "The Church of the Holy Sepulchre stands on what was a quarry outside the city wall in Jesus's day. First-century rock-cut tombs survive inside the church.",
+    "Nicodemus brought about 100 Roman pounds of spices, an amount many commentators compare to a royal burial."
+   ]
+  }
+ ]
+}

@@ -1,54 +1,182 @@
 {
  "title": "Follow James from the Galilee shore to Jerusalem",
  "kicker": "Interactive map • Mark 1; 3; 10 • Acts 12",
- "bbox": [34.8, 31.6, 35.85, 33.0],
+ "bbox": [
+  34.8,
+  31.6,
+  35.85,
+  33.15
+ ],
  "anchor": "capernaum",
  "places": {
   "capernaum": {
-   "name": "Capernaum", "sub": "lakeside town",
-   "ll": [32.8806, 35.575], "main": true, "conf": "secure",
+   "name": "Capernaum",
+   "sub": "lakeside town",
+   "ll": [
+    32.8806,
+    35.575
+   ],
+   "main": true,
+   "conf": "secure",
    "text": "A fishing town on the north shore of the Sea of Galilee. Jesus called James and his brother John near the lake and then went with them into Capernaum (Mark 1:19–21). Its ruins lie at Kfar Nahum in Israel."
   },
   "jericho": {
-   "name": "Jericho", "sub": "on the way up",
-   "ll": [31.8456, 35.4386], "conf": "probable",
+   "name": "Jericho",
+   "sub": "on the way up",
+   "ll": [
+    31.8456,
+    35.4386
+   ],
+   "conf": "probable",
    "text": "Mark places the request of James and John on the road up to Jerusalem, and the next scene is at Jericho (Mark 10:32–46). New Testament Jericho lay near the Wadi Qelt, a short distance south of the older mound."
   },
   "jerusalem": {
-   "name": "Jerusalem", "sub": "where James was killed",
-   "ll": [31.778, 35.2354], "conf": "secure",
+   "name": "Jerusalem",
+   "sub": "where James was killed",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "conf": "secure",
    "text": "King Herod Agrippa I had James put to death with the sword here, about AD 44 (Acts 12:1–2). Acts does not say where in the city it happened."
   },
   "caesarea": {
-   "name": "Caesarea", "sub": "Herod's coastal capital",
-   "ll": [32.5005, 34.8918], "conf": "secure",
+   "name": "Caesarea",
+   "sub": "Herod's coastal capital",
+   "ll": [
+    32.5005,
+    34.8918
+   ],
+   "conf": "secure",
    "text": "The Roman port built by Herod the Great. Soon after James's death, Herod Agrippa I died suddenly here (Acts 12:19–23). The Jewish historian Josephus also describes his death at Caesarea."
   },
   "tiberias": {
-   "name": "Tiberias", "ll": [32.7922, 35.5312], "kind": "ref", "conf": "modern",
+   "name": "Tiberias",
+   "ll": [
+    32.7922,
+    35.5312
+   ],
+   "kind": "ref",
+   "conf": "modern",
    "text": "Modern city on the west shore of the Sea of Galilee, shown for orientation."
   }
  },
  "routes": {
   "up": {
-   "pts": [[32.8806, 35.575], [32.7, 35.58], [32.45, 35.57], [32.2, 35.55], [31.95, 35.51], [31.8456, 35.4386], [31.8, 35.35], [31.778, 35.2354]],
+   "pts": [
+    [
+     32.8806,
+     35.575
+    ],
+    [
+     32.7,
+     35.58
+    ],
+    [
+     32.45,
+     35.57
+    ],
+    [
+     32.2,
+     35.55
+    ],
+    [
+     31.95,
+     35.51
+    ],
+    [
+     31.8456,
+     35.4386
+    ],
+    [
+     31.8,
+     35.35
+    ],
+    [
+     31.778,
+     35.2354
+    ]
+   ],
    "style": "req"
   }
  },
  "labels": [
-  {"t": "Mediterranean Sea", "ll": [32.25, 34.86], "kind": "water", "rot": -74, "size": 11},
-  {"t": "Sea of Galilee", "ll": [32.83, 35.7], "kind": "water", "size": 9},
-  {"t": "Dead Sea", "ll": [31.66, 35.52], "kind": "water", "size": 9},
-  {"t": "Galilee", "ll": [32.78, 35.3], "kind": "region", "size": 12},
-  {"t": "Judea", "ll": [31.7, 35.05], "kind": "region", "size": 12},
-  {"t": "Jordan", "ll": [32.3, 35.595], "kind": "river", "rot": -84}
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.25,
+    34.86
+   ],
+   "kind": "water",
+   "rot": -74,
+   "size": 11
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.8,
+    35.6
+   ],
+   "kind": "water",
+   "size": 8.5
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.66,
+    35.52
+   ],
+   "kind": "water",
+   "size": 9
+  },
+  {
+   "t": "Galilee",
+   "ll": [
+    32.95,
+    35.42
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Judea",
+   "ll": [
+    31.7,
+    35.05
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.3,
+    35.595
+   ],
+   "kind": "river",
+   "rot": -84
+  }
  ],
  "chapters": [
   {
-   "tab": "Galilee", "title": "Mending nets by the lake",
-   "refs": [["Mark 1:16–21", "Mark 1:16-21"]],
-   "hot": ["capernaum"], "sel": "capernaum",
-   "view": [35.3, 32.65, 35.8, 33.0],
+   "tab": "Galilee",
+   "title": "Mending nets by the lake",
+   "refs": [
+    [
+     "Mark 1:16–21",
+     "Mark 1:16-21"
+    ]
+   ],
+   "hot": [
+    "capernaum"
+   ],
+   "sel": "capernaum",
+   "view": [
+    35.35,
+    32.62,
+    35.75,
+    33.05
+   ],
    "html": "<p>James and his brother John were in a boat with their father Zebedee, preparing their nets, when Jesus called them. They left Zebedee in the boat with the hired men and followed him.</p><p>Mark tells this right after the call of Simon and Andrew, and the group then went into Capernaum. The mention of hired men suggests the family fishing business was of some size.</p>",
    "facts": [
     "The surface of the Sea of Galilee lies about 690 feet (210 m) below sea level. The lake is roughly 13 miles (21 km) long.",
@@ -56,10 +184,32 @@
    ]
   },
   {
-   "tab": "Thunder", "title": "The sons of thunder",
-   "refs": [["Mark 3:13–19", "Mark 3:13-19"], ["Mark 5:37", "Mark 5:37"], ["Mark 9:2", "Mark 9:2"]],
-   "hot": ["capernaum"], "sel": "capernaum",
-   "view": [35.3, 32.65, 35.8, 33.0],
+   "tab": "Thunder",
+   "title": "The sons of thunder",
+   "refs": [
+    [
+     "Mark 3:13–19",
+     "Mark 3:13-19"
+    ],
+    [
+     "Mark 5:37",
+     "Mark 5:37"
+    ],
+    [
+     "Mark 9:2",
+     "Mark 9:2"
+    ]
+   ],
+   "hot": [
+    "capernaum"
+   ],
+   "sel": "capernaum",
+   "view": [
+    35.35,
+    32.62,
+    35.75,
+    33.05
+   ],
    "html": "<p>When Jesus appointed the Twelve, he gave James and John the name Boanerges, which Mark explains as “sons of thunder.”</p><p>With Peter, James belonged to a small inner circle. He was allowed in when Jesus raised Jairus's daughter, went up the mountain of the transfiguration, and was taken farther into Gethsemane on the night of Jesus's arrest.</p>",
    "facts": [
     "Luke records that James and John once offered to call down fire on a Samaritan village that would not welcome Jesus (Luke 9:54), a scene that fits the nickname.",
@@ -67,9 +217,23 @@
    ]
   },
   {
-   "tab": "The road", "title": "A request on the road to Jerusalem",
-   "refs": [["Mark 10:32–45", "Mark 10:32-45"]],
-   "hot": ["capernaum", "jericho", "jerusalem"], "routes": ["up"], "sel": "jericho",
+   "tab": "The road",
+   "title": "A request on the road to Jerusalem",
+   "refs": [
+    [
+     "Mark 10:32–45",
+     "Mark 10:32-45"
+    ]
+   ],
+   "hot": [
+    "capernaum",
+    "jericho",
+    "jerusalem"
+   ],
+   "routes": [
+    "up"
+   ],
+   "sel": "jericho",
    "html": "<p>On the road up to Jerusalem, James and John asked to sit at Jesus's right and left in his glory. Jesus asked whether they could drink the cup he would drink, and they said they could.</p><p>He told them they would, but that greatness among his followers meant serving. Mark names Jericho as the next stop, so the line shows only the general direction of travel.</p>",
    "facts": [
     "Jerusalem lies about 79 miles (127 km) from Capernaum in a straight line. From Jericho the road climbs roughly 3,300 feet (1,000 m) to the city.",
@@ -77,12 +241,25 @@
    ]
   },
   {
-   "tab": "Jerusalem", "title": "The first of the Twelve to die",
+   "tab": "Jerusalem",
+   "title": "The first of the Twelve to die",
    "badge": "About AD 44",
-   "refs": [["Acts 12:1–23", "Acts 12:1-23"]],
-   "hot": ["jerusalem", "caesarea"], "sel": "jerusalem",
+   "refs": [
+    [
+     "Acts 12:1–23",
+     "Acts 12:1-23"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "caesarea"
+   ],
+   "sel": "jerusalem",
    "html": "<p>Years after the resurrection, King Herod Agrippa I arrested some who belonged to the church in Jerusalem. He had James put to death with the sword, and when he saw that this pleased some of the people, he arrested Peter too.</p><p>James is the only one of the Twelve whose death the New Testament records. His brother John lived on.</p>",
-   "quote": ["He had James, the brother of John, put to death with the sword.", "Acts 12:2 (NIV)"],
+   "quote": [
+    "He had James, the brother of John, put to death with the sword.",
+    "Acts 12:2 (NIV)"
+   ],
    "facts": [
     "Herod Agrippa I was a grandson of Herod the Great. He died at Caesarea soon afterward, in AD 44.",
     "Later tradition connects James with Spain and the shrine at Santiago de Compostela, but the New Testament says nothing of travel there."

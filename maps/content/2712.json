@@ -1,0 +1,84 @@
+{
+ "title": "Explore the Nile Delta of Jochebed's story",
+ "kicker": "Interactive map • Exodus 1–2",
+ "bbox": [29.7, 29.6, 33.4, 31.75],
+ "anchor": "cairo",
+ "places": {
+  "delta": {
+   "name": "Nile Delta", "sub": "northern Egypt", "ll": [30.85, 31.1], "area": [105, 70], "main": true, "conf": "region",
+   "text": "The broad, fertile plain where the Nile spreads into branches before reaching the Mediterranean. Exodus 2 places the basket among the reeds along the Nile's bank but names no town or branch. The marker shows the region only, not Jochebed's home or the basket's location."
+  },
+  "goshen": {
+   "name": "Goshen", "sub": "Israel's settlement area", "ll": [30.65, 31.75], "area": [28, 20], "conf": "region", "confT": "Approximate region",
+   "text": "Jacob's family settled in the region of Goshen (Genesis 47:27). It is commonly associated with the eastern delta, but its exact extent is unknown, and it cannot pinpoint where Jochebed's family lived."
+  },
+  "rameses": {
+   "name": "Rameses", "sub": "store city", "ll": [30.799, 31.835], "conf": "probable", "confT": "Often identified",
+   "text": "One of the store cities the Israelites were forced to build (Exodus 1:11). Many scholars identify it with Pi-Ramesses, the delta capital of Ramesses II, whose remains lie at Qantir in the eastern delta."
+  },
+  "pithom": {
+   "name": "Pithom", "sub": "store city", "ll": [30.55, 32.03], "area": [9, 5], "conf": "debated",
+   "text": "The second store city named in Exodus 1:11. It is placed in the Wadi Tumilat, a valley leading east from the delta, but scholars debate whether it was Tell el-Retaba or Tell el-Maskhuta."
+  },
+  "cairo": {
+   "name": "Cairo", "ll": [30.0444, 31.2357], "kind": "ref", "conf": "modern",
+   "text": "Egypt's modern capital, near the delta's southern end, shown for orientation. It did not exist in the time of Exodus."
+  }
+ },
+ "routes": {
+  "midian": {"pts": [[30.799, 31.835], [30.6, 32.1], [30.4, 32.6], [30.2, 33.0], [30.05, 33.38]], "style": "req"}
+ },
+ "labels": [
+  {"t": "Mediterranean Sea", "ll": [31.6, 30.4], "kind": "water", "rot": 0},
+  {"t": "Nile", "ll": [29.85, 31.19], "kind": "river", "rot": -80},
+  {"t": "Rosetta branch", "ll": [30.85, 30.72], "kind": "river", "rot": -58, "size": 8.5},
+  {"t": "Damietta branch", "ll": [30.75, 31.36], "kind": "river", "rot": -62, "size": 8.5},
+  {"t": "Sinai", "ll": [30.35, 33.15], "kind": "region", "size": 12},
+  {"t": "Gulf of Suez", "ll": [29.8, 32.62], "kind": "water", "rot": -60, "size": 8.5},
+  {"t": "Western Desert", "ll": [30.0, 30.2], "kind": "region", "size": 11}
+ ],
+ "chapters": [
+  {
+   "tab": "Delta", "title": "A family in the land of Egypt",
+   "refs": [["Genesis 47:27", "Genesis 47:27"], ["Exodus 1:1–7", "Exodus 1:1-7"]],
+   "hot": ["delta", "goshen"], "sel": "delta",
+   "html": "<p>Jacob's family came down to Egypt during a famine and settled in the region of Goshen. After Joseph and his generation died, the Israelites multiplied until the land was filled with them.</p><p>Goshen is commonly placed in the eastern Nile Delta, the green fan of land where the river divides before reaching the sea. Jochebed, a woman of the tribe of Levi, lived somewhere in this world of fields, canals and reeds.</p>",
+   "facts": [
+    "The delta stretches roughly 100 miles (160 km) from the Cairo area to the sea and about 150 miles (240 km) along the coast.",
+    "Ancient writers described several Nile branches, often seven. Today only two main branches remain, the Rosetta and the Damietta, so modern channels are not a guide to ancient ones."
+   ]
+  },
+  {
+   "tab": "Labor", "title": "Store cities and a cruel order",
+   "refs": [["Exodus 1:8–22", "Exodus 1:8-22"]],
+   "hot": ["rameses", "pithom", "goshen"], "sel": "rameses",
+   "view": [31.1, 30.2, 32.5, 31.3],
+   "html": "<p>A new king who did not know about Joseph feared the growing Israelite population. He put them to forced labor, and they built Pithom and Rameses as store cities for Pharaoh.</p><p>When harsh labor did not stop their growth, he told the Hebrew midwives to kill newborn boys. The midwives feared God and refused. Then Pharaoh ordered that every Hebrew boy be thrown into the Nile.</p>",
+   "facts": [
+    "Exodus preserves the names of the two midwives, Shiphrah and Puah, but never names the Pharaoh.",
+    "Many stone monuments from Pi-Ramesses were later hauled to Tanis, farther north, which misled early excavators about where the city had stood."
+   ]
+  },
+  {
+   "tab": "Basket", "title": "A basket among the reeds",
+   "refs": [["Exodus 2:1–10", "Exodus 2:1-10"], ["Exodus 6:20", "Exodus 6:20"]],
+   "hot": ["delta"], "sel": "delta",
+   "html": "<p>Jochebed gave birth to a son and hid him for three months. When she could hide him no longer, she coated a papyrus basket with tar and pitch, placed him in it and set it among the reeds by the Nile. His sister watched from a distance.</p><p>Pharaoh's daughter came to bathe, found the crying baby and felt sorry for him. His sister offered to find a Hebrew nurse, and Jochebed was paid to nurse her own son.</p>",
+   "quote": ["She named him Moses, saying, 'I drew him out of the water.'", "Exodus 2:10 (NIV)"],
+   "facts": [
+    "The Hebrew word for the basket, tevah, appears elsewhere in the Bible only for Noah's ark.",
+    "Jochebed's name appears only in genealogies (Exodus 6:20; Numbers 26:59). Exodus 2 calls her simply a Levite woman."
+   ]
+  },
+  {
+   "tab": "Midian", "title": "A son who fled",
+   "refs": [["Exodus 2:11–15", "Exodus 2:11-15"]],
+   "hot": ["goshen", "rameses"], "routes": ["midian"], "sel": "goshen",
+   "html": "<p>The son Jochebed nursed grew up in Pharaoh's household. As a man he went out to his own people and watched their hard labor. When he saw an Egyptian beating a Hebrew, he killed the Egyptian and hid him in the sand.</p><p>Word spread, and Pharaoh tried to kill him. Moses fled east out of Egypt to the land of Midian. His route is unknown, so the line on the map only points the way.</p>",
+   "facts": [
+    "Acts 7:23 says Moses was about forty years old when he went out to visit his fellow Israelites.",
+    "Midian is usually placed east of the Gulf of Aqaba, in what is now northwestern Saudi Arabia, well beyond the edge of this map."
+   ]
+  }
+ ]
+}

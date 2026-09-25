@@ -1,0 +1,295 @@
+{
+ "title": "Find the temple where Anna met the child Jesus",
+ "kicker": "Interactive map • Luke 2:21–40",
+ "bbox": [
+  34.6,
+  31.48,
+  35.75,
+  33.3
+ ],
+ "anchor": "temple",
+ "places": {
+  "temple": {
+   "name": "Temple Mount",
+   "sub": "Herod's temple area",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "main": true,
+   "conf": "probable",
+   "confT": "Traditional site",
+   "text": "The raised compound on the eastern side of today's Old City, known in Islam as the Noble Sanctuary. In Anna's day it held the temple complex rebuilt and enlarged by King Herod. The marker shows the wider site, not the spot where Anna stood.",
+   "label": "l"
+  },
+  "bethlehem": {
+   "name": "Bethlehem",
+   "sub": "Jesus's birthplace",
+   "ll": [
+    31.7043,
+    35.2066
+   ],
+   "conf": "secure",
+   "text": "The town of David, where Luke says Jesus was born (Luke 2:4–7). It lies about 5 miles (9 km) south of the Temple Mount in a straight line."
+  },
+  "nazareth": {
+   "name": "Nazareth",
+   "sub": "family's hometown",
+   "ll": [
+    32.7021,
+    35.2978
+   ],
+   "conf": "secure",
+   "text": "The Galilean village where Joseph and Mary lived. After the presentation at the temple, Luke says they returned here, and the child grew and became strong (Luke 2:39–40)."
+  },
+  "asher": {
+   "name": "Asher",
+   "sub": "Anna's tribe",
+   "ll": [
+    32.98,
+    35.2
+   ],
+   "area": [
+    13,
+    22
+   ],
+   "conf": "region",
+   "text": "Anna was the daughter of Penuel, of the tribe of Asher (Luke 2:36). The tribe's ancestral territory lay along the coast and hills of western Galilee (Joshua 19:24–31). Luke does not say where Anna's family lived."
+  },
+  "telaviv": {
+   "name": "Tel Aviv",
+   "ll": [
+    32.0853,
+    34.7818
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the Mediterranean coast, shown for orientation. It did not exist in the first century."
+  }
+ },
+ "routes": {
+  "totemple": {
+   "pts": [
+    [
+     31.7043,
+     35.2066
+    ],
+    [
+     31.735,
+     35.215
+    ],
+    [
+     31.76,
+     35.228
+    ],
+    [
+     31.778,
+     35.2354
+    ]
+   ],
+   "style": "req"
+  },
+  "home": {
+   "pts": [
+    [
+     31.778,
+     35.2354
+    ],
+    [
+     31.93,
+     35.24
+    ],
+    [
+     32.1,
+     35.27
+    ],
+    [
+     32.21,
+     35.28
+    ],
+    [
+     32.46,
+     35.3
+    ],
+    [
+     32.6,
+     35.3
+    ],
+    [
+     32.7021,
+     35.2978
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.35,
+    34.72
+   ],
+   "kind": "water",
+   "rot": -72
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.82,
+    35.585
+   ],
+   "kind": "water",
+   "size": 8
+  },
+  {
+   "t": "Galilee",
+   "ll": [
+    33.02,
+    35.45
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Samaria",
+   "ll": [
+    32.3,
+    35.12
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Judea",
+   "ll": [
+    31.72,
+    34.95
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.25,
+    35.56
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Kidron Valley",
+   "ll": [
+    31.7745,
+    35.2397
+   ],
+   "kind": "river",
+   "rot": -85,
+   "size": 8
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Asher",
+   "title": "A prophet from a northern tribe",
+   "refs": [
+    [
+     "Luke 2:36–37",
+     "Luke 2:36-37"
+    ]
+   ],
+   "hot": [
+    "asher",
+    "temple"
+   ],
+   "sel": "asher",
+   "html": "<p>Luke introduces Anna as a prophet, the daughter of Penuel, from the tribe of Asher. Asher's ancestral land lay far to the north in western Galilee, though Luke does not say where her family lived.</p><p>She had been married for seven years before her husband died, and by the time of this story she was very old. She never left the temple in Jerusalem, worshiping night and day with fasting and prayer.</p>",
+   "facts": [
+    "Anna is the Greek form of the Hebrew name Hannah, meaning “grace” or “favor.” Penuel means “face of God.”",
+    "The Greek of Luke 2:37 can mean either that Anna was 84 years old or that she had been a widow for 84 years. Translations differ."
+   ]
+  },
+  {
+   "tab": "Bethlehem",
+   "title": "Up to Jerusalem",
+   "refs": [
+    [
+     "Luke 2:21–24",
+     "Luke 2:21-24"
+    ]
+   ],
+   "hot": [
+    "bethlehem",
+    "temple"
+   ],
+   "routes": [
+    "totemple"
+   ],
+   "sel": "bethlehem",
+   "view": [
+    35.1,
+    31.66,
+    35.35,
+    31.83
+   ],
+   "html": "<p>Jesus was circumcised and named on the eighth day. When the days of purification required by the Law of Moses were complete, Joseph and Mary took him up to Jerusalem to present him to the Lord.</p><p>They offered a pair of doves or two young pigeons, the offering the law allowed for families who could not afford a lamb (Leviticus 12:8). The trip from Bethlehem was short, only a few hours on foot.</p>",
+   "facts": [
+    "Under Leviticus 12, a mother's purification after the birth of a son lasted forty days in all.",
+    "Bethlehem and the Temple Mount are both on the central ridge, about 5 miles (9 km) apart in a straight line."
+   ]
+  },
+  {
+   "tab": "Temple",
+   "title": "Anna gives thanks",
+   "refs": [
+    [
+     "Luke 2:25–38",
+     "Luke 2:25-38"
+    ]
+   ],
+   "hot": [
+    "temple"
+   ],
+   "sel": "temple",
+   "view": [
+    35.2,
+    31.755,
+    35.275,
+    31.8
+   ],
+   "html": "<p>In the temple courts, an old man named Simeon took the child in his arms and praised God for letting him see the Lord's salvation.</p><p>At that very moment Anna came up to them. She gave thanks to God and spoke about the child to everyone who was looking forward to the redemption of Jerusalem. Luke does not say where in the large complex this happened.</p>",
+   "quote": [
+    "looking forward to the redemption of Jerusalem",
+    "Luke 2:38 (NIV)"
+   ],
+   "facts": [
+    "Herod began rebuilding the temple around 20 BC. In John 2:20, people tell Jesus it has taken forty-six years to build.",
+    "The temple was destroyed by Roman forces in AD 70. The Dome of the Rock now on the platform was built centuries later, in the late 600s."
+   ]
+  },
+  {
+   "tab": "Nazareth",
+   "title": "Home to Galilee",
+   "refs": [
+    [
+     "Luke 2:39–40",
+     "Luke 2:39-40"
+    ]
+   ],
+   "hot": [
+    "nazareth",
+    "temple"
+   ],
+   "routes": [
+    "home"
+   ],
+   "sel": "nazareth",
+   "html": "<p>When Joseph and Mary had done everything the law required, they returned to their own town of Nazareth in Galilee. Luke does not describe their route.</p><p>The child grew and became strong, filled with wisdom, and the grace of God was on him. Luke adds that the family went up to Jerusalem every year for the Passover, so the temple where Anna prayed remained part of their lives.</p>",
+   "facts": [
+    "Nazareth lies about 65 miles (105 km) north of the Temple Mount in a straight line. On foot the journey took several days.",
+    "Galilean pilgrims could travel through Samaria or go around it by the Jordan Valley. Josephus describes Galileans passing through Samaria on their way to festivals."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,297 @@
+{
+ "title": "Follow Rehoboam from Shechem to a divided kingdom",
+ "kicker": "Interactive map • 1 Kings 12",
+ "bbox": [
+  34.25,
+  31.25,
+  36.0,
+  32.45
+ ],
+ "anchor": "shechem",
+ "places": {
+  "shechem": {
+   "name": "Shechem",
+   "sub": "the assembly",
+   "ll": [
+    32.21361,
+    35.28194
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "All Israel gathered at Shechem to make Rehoboam king (1 Kings 12:1). The ancient city is identified with Tell Balata, about 1.2 miles (2 km) east-southeast of modern Nablus. The marker shows the archaeological site, not the spot where Rehoboam spoke."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "Rehoboam's capital",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "conf": "secure",
+   "text": "The city of David and Solomon, where Rehoboam's father had built the temple and palace. Rehoboam escaped here after the northern tribes rebelled (1 Kings 12:18), and he reigned in Jerusalem for seventeen years (1 Kings 14:21)."
+  },
+  "bethel": {
+   "name": "Bethel",
+   "sub": "Jeroboam's shrine",
+   "ll": [
+    31.9296,
+    35.2396
+   ],
+   "conf": "probable",
+   "text": "Jeroboam set up one of his two golden calves here, near the southern edge of his kingdom (1 Kings 12:28–29). Bethel is usually identified with the village of Beitin, north of Jerusalem."
+  },
+  "penuel": {
+   "name": "Penuel",
+   "sub": "fortified by Jeroboam",
+   "ll": [
+    32.186,
+    35.69
+   ],
+   "area": [
+    6,
+    5
+   ],
+   "conf": "debated",
+   "text": "After fortifying Shechem, Jeroboam went out and built up Penuel east of the Jordan (1 Kings 12:25). It lay near the Jabbok River, and it is often placed at one of the twin hills of Tulul edh-Dhahab, but the identification is not certain."
+  },
+  "nablus": {
+   "name": "Nablus",
+   "ll": [
+    32.2211,
+    35.2544
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in the West Bank, shown for orientation. Tell Balata lies at its eastern edge, in the pass between Mount Gerizim and Mount Ebal."
+  }
+ },
+ "routes": {
+  "jeroboam": {
+   "pts": [
+    [
+     31.3,
+     34.35
+    ],
+    [
+     31.6,
+     34.62
+    ],
+    [
+     31.85,
+     34.74
+    ],
+    [
+     32.08,
+     34.93
+    ],
+    [
+     32.15,
+     35.06
+    ],
+    [
+     32.19,
+     35.18
+    ],
+    [
+     32.21361,
+     35.28194
+    ]
+   ],
+   "style": "dash"
+  },
+  "escape": {
+   "pts": [
+    [
+     32.21361,
+     35.28194
+    ],
+    [
+     32.12,
+     35.26
+    ],
+    [
+     32.03,
+     35.26
+    ],
+    [
+     31.93,
+     35.24
+    ],
+    [
+     31.85,
+     35.225
+    ],
+    [
+     31.7767,
+     35.2345
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.9,
+    34.45
+   ],
+   "kind": "water",
+   "rot": -62
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.5,
+    35.5
+   ],
+   "kind": "water",
+   "rot": -80,
+   "size": 10
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.05,
+    35.535
+   ],
+   "kind": "river",
+   "rot": -82
+  },
+  {
+   "t": "Mount Gerizim",
+   "ll": [
+    32.17,
+    35.262
+   ],
+   "kind": "region",
+   "size": 8.5
+  },
+  {
+   "t": "Mount Ebal",
+   "ll": [
+    32.247,
+    35.272
+   ],
+   "kind": "region",
+   "size": 8.5
+  },
+  {
+   "t": "Israel",
+   "ll": [
+    32.3,
+    35.02
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.55,
+    35.02
+   ],
+   "kind": "region",
+   "size": 13
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Shechem",
+   "title": "A coronation at Shechem",
+   "badge": "About 930 BC",
+   "refs": [
+    [
+     "1 Kings 12:1",
+     "1 Kings 12:1"
+    ]
+   ],
+   "hot": [
+    "shechem"
+   ],
+   "sel": "shechem",
+   "view": [
+    35.0,
+    32.03,
+    35.55,
+    32.38
+   ],
+   "html": "<p>When Solomon died, his son Rehoboam went north to Shechem, because all Israel had gathered there to make him king.</p><p>The choice of place mattered. Shechem was an old gathering place for Israel, set in a narrow pass between Mount Gerizim and Mount Ebal on the main road through the central hills. Here the tribes would decide whether to accept Solomon's son.</p>",
+   "facts": [
+    "Shechem was where Abram built his first altar in Canaan (Genesis 12:6–7) and where Joshua led Israel in renewing the covenant (Joshua 24:1, 25).",
+    "Excavations at Tell Balata uncovered massive Middle Bronze Age city walls and gates, centuries older than Rehoboam."
+   ]
+  },
+  {
+   "tab": "Request",
+   "title": "Lighten the yoke",
+   "refs": [
+    [
+     "1 Kings 12:2–7",
+     "1 Kings 12:2-7"
+    ]
+   ],
+   "hot": [
+    "shechem"
+   ],
+   "routes": [
+    "jeroboam"
+   ],
+   "sel": "shechem",
+   "html": "<p>Jeroboam, who had fled from Solomon to Egypt, came back and joined the assembly. The people asked Rehoboam to lighten the harsh labor and heavy yoke his father had put on them, and they promised to serve him if he did.</p><p>Rehoboam asked for three days. The elders who had served Solomon advised him to answer the people kindly, and they would be his servants for life.</p>",
+   "facts": [
+    "Jeroboam had been in charge of the labor force from the house of Joseph under Solomon before he fled to Shishak, king of Egypt (1 Kings 11:28, 40).",
+    "The dotted line only suggests a return from Egypt along the coastal plain. The Bible does not describe Jeroboam's route."
+   ]
+  },
+  {
+   "tab": "Rebellion",
+   "title": "A harsh answer and a fast escape",
+   "refs": [
+    [
+     "1 Kings 12:8–20",
+     "1 Kings 12:8-20"
+    ]
+   ],
+   "hot": [
+    "shechem",
+    "jerusalem"
+   ],
+   "routes": [
+    "escape"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>Rehoboam rejected the elders' advice and followed the young men he had grown up with. He told the people he would make their yoke even heavier.</p><p>The northern tribes rejected the house of David. When Rehoboam sent Adoniram, who was in charge of forced labor, the people stoned him to death. Rehoboam jumped into his chariot and escaped to Jerusalem.</p>",
+   "quote": [
+    "My father scourged you with whips; I will scourge you with scorpions.",
+    "1 Kings 12:14 (NIV)"
+   ],
+   "facts": [
+    "Shechem and Jerusalem are about 30 miles (49 km) apart in a straight line along the central hill country.",
+    "Adoniram had already been in charge of forced labor under Solomon (1 Kings 4:6; 5:14), so sending him was a pointed choice."
+   ]
+  },
+  {
+   "tab": "Division",
+   "title": "Two kingdoms",
+   "refs": [
+    [
+     "1 Kings 12:20–33",
+     "1 Kings 12:20-33"
+    ]
+   ],
+   "hot": [
+    "shechem",
+    "jerusalem",
+    "bethel",
+    "penuel"
+   ],
+   "sel": "bethel",
+   "html": "<p>The northern tribes made Jeroboam king over all Israel, and only the tribe of Judah stayed loyal to the house of David. When Rehoboam gathered the fighting men of Judah and Benjamin to win the north back, the prophet Shemaiah told them not to fight their brothers, and they went home.</p><p>Jeroboam fortified Shechem and lived there, then built up Penuel. To keep his people from worshiping at the temple in Jerusalem, he set up golden calves at Bethel and at Dan in the far north.</p>",
+   "facts": [
+    "Bethel is only about 11 miles (17 km) north of Jerusalem, so Jeroboam's shrine stood close to the new border.",
+    "Dan, the site of the second calf, lies off this map about 75 miles (120 km) north of Shechem, near the sources of the Jordan."
+   ]
+  }
+ ]
+}

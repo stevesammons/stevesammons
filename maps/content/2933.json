@@ -1,0 +1,86 @@
+{
+ "title": "Follow Uriah between Jerusalem and the siege of Rabbah",
+ "kicker": "Interactive map • 2 Samuel 11",
+ "bbox": [35.05, 31.50, 36.20, 32.25],
+ "anchor": "jerusalem",
+ "note": "The Bible does not give Uriah's route. The brown line only suggests a likely line of travel through the Jordan Valley. Modern borders are shown only for orientation.",
+ "places": {
+  "jerusalem": {
+   "name": "Jerusalem", "sub": "David's city",
+   "ll": [31.7735, 35.2358], "main": true,
+   "conf": "secure",
+   "text": "David captured the Jebusite stronghold of Zion and called it the City of David (2 Samuel 5:6–9). It sat on a narrow ridge south of today's Old City walls. David's palace stood here, and from its roof he saw Bathsheba bathing (2 Samuel 11:2)."
+  },
+  "rabbah": {
+   "name": "Rabbah", "sub": "Ammonite capital",
+   "ll": [31.9545, 35.9345],
+   "conf": "secure",
+   "text": "The royal city of the Ammonites, on the hill now called the Amman Citadel in Jordan's capital. Joab's army besieged it while David stayed in Jerusalem (2 Samuel 11:1). The citadel hill rises above a valley with springs that feed the upper Jabbok (Zarqa) River."
+  },
+  "jericho": {
+   "name": "Jericho", "ll": [31.857, 35.462],
+   "kind": "ref", "conf": "modern",
+   "text": "Modern town in the Jordan Valley, shown for orientation near the river crossings between Jerusalem and Rabbah."
+  },
+  "salt": {
+   "name": "Salt", "ll": [32.039, 35.727],
+   "kind": "ref", "conf": "modern",
+   "text": "Modern Jordanian town in the hills of Gilead, shown for orientation."
+  }
+ },
+ "routes": {
+  "summons": {"pts": [[31.9545, 35.9345], [31.93, 35.82], [31.89, 35.70], [31.86, 35.58], [31.85, 35.50], [31.845, 35.43], [31.82, 35.35], [31.79, 35.28], [31.7735, 35.2358]], "style": "req"}
+ },
+ "labels": [
+  {"t": "Dead Sea", "ll": [31.60, 35.50], "kind": "water", "rot": -80},
+  {"t": "Jordan", "ll": [32.02, 35.535], "kind": "river", "rot": -78},
+  {"t": "Judah", "ll": [31.66, 35.18], "kind": "region", "size": 12},
+  {"t": "Ammon", "ll": [31.83, 35.97], "kind": "region", "size": 12},
+  {"t": "Gilead", "ll": [32.17, 35.80], "kind": "region", "size": 12}
+ ],
+ "chapters": [
+  {
+   "tab": "Jerusalem", "title": "A king who stayed home", "badge": "About 1000 BC",
+   "refs": [["2 Samuel 11:1", "2 Samuel 11:1"]],
+   "hot": ["jerusalem", "rabbah"], "sel": "jerusalem",
+   "html": "<p>In the spring, David sent Joab out with his officers and the whole army of Israel. They defeated the Ammonites and laid siege to Rabbah, their capital east of the Jordan.</p><p>David himself stayed in Jerusalem. Among the soldiers in the field was Uriah the Hittite, one of David's elite warriors. His wife, Bathsheba, was at home in Jerusalem while he was away.</p>",
+   "quote": ["In the spring, at the time when kings go off to war", "2 Samuel 11:1 (NIV)"],
+   "facts": [
+    "Uriah's name is Hebrew and is usually understood to mean the Lord is my light, though he is called a Hittite. He is the last name in the list of David's mighty warriors (2 Samuel 23:39).",
+    "In the lands around Israel, the winter months are the rainy season. Kings usually waited for spring, when roads dried out, before sending armies on campaign."
+   ]
+  },
+  {
+   "tab": "The roof", "title": "From the palace roof",
+   "refs": [["2 Samuel 11:2–5", "2 Samuel 11:2-5"]],
+   "hot": ["jerusalem"], "sel": "jerusalem",
+   "view": [35.10, 31.62, 35.60, 31.95],
+   "html": "<p>One evening David got up from his bed and walked around on the roof of the palace. From there he saw a very beautiful woman bathing. He learned she was Bathsheba, daughter of Eliam and wife of Uriah the Hittite.</p><p>David sent messengers for her and slept with her. Later she sent him word that she was pregnant, while her husband was still at the siege of Rabbah.</p>",
+   "facts": [
+    "Houses in ancient Israel had flat roofs used for work, rest and sleeping. The Law required a parapet around a roof so no one would fall (Deuteronomy 22:8).",
+    "Excavations near the top of the City of David ridge uncovered a massive stone building. Eilat Mazar identified it as David's palace, but that identification is debated."
+   ]
+  },
+  {
+   "tab": "The summons", "title": "Called back from the siege",
+   "refs": [["2 Samuel 11:6–13", "2 Samuel 11:6-13"]],
+   "hot": ["rabbah", "jerusalem"], "routes": ["summons"], "sel": "rabbah",
+   "html": "<p>David sent word to Joab to send Uriah to Jerusalem. When Uriah arrived, David asked about the war and told him to go home, hoping he would sleep with his wife.</p><p>Uriah slept at the palace entrance instead. The ark, Israel and Judah were in tents, he said, and his commander was camped in the open field. How could he go home? Even when David got him drunk, he still did not go.</p>",
+   "facts": [
+    "Rabbah is about 43 miles (69 km) from Jerusalem in a straight line, but the road first drops more than 3,000 feet (900 m) into the Jordan Valley and then climbs again into the hills of Ammon.",
+    "In later centuries Rabbah was renamed Philadelphia after the Egyptian king Ptolemy II Philadelphus. The modern name Amman preserves the old name of the Ammonites."
+   ]
+  },
+  {
+   "tab": "The letter", "title": "A letter carried to the front",
+   "refs": [["2 Samuel 11:14–27", "2 Samuel 11:14-27"], ["2 Samuel 12:26–31", "2 Samuel 12:26-31"]],
+   "hot": ["rabbah"], "routes": ["summons"], "sel": "rabbah",
+   "view": [35.62, 31.78, 36.12, 32.12],
+   "html": "<p>In the morning David wrote a letter to Joab and sent it with Uriah. It ordered Joab to put Uriah where the fighting was fiercest and then withdraw. Uriah died near the city wall, along with other soldiers.</p><p>Bathsheba mourned her husband. Then David brought her to his house, and she bore him a son. But the thing David had done displeased the Lord. Later Joab captured Rabbah's water supply, and David came to take the city.</p>",
+   "facts": [
+    "Joab expected David to ask why his men went so close to the wall, since a woman on the wall of Thebez had killed Abimelek with a millstone (2 Samuel 11:20–21; Judges 9:53).",
+    "The Amman Citadel still holds the remains of a Roman temple and an early Islamic palace, built over centuries of earlier occupation on the same hill."
+   ]
+  }
+ ]
+}

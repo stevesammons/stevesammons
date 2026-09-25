@@ -1,0 +1,132 @@
+{
+ "title": "Follow Rachel from Harran to the road to Ephrath",
+ "kicker": "Interactive map • Genesis 29–35",
+ "bbox": [34.2, 31.3, 40.0, 37.4],
+ "anchor": "harran",
+ "places": {
+  "harran": {
+   "name": "Harran",
+   "sub": "Laban's country",
+   "ll": [36.8644, 39.0306],
+   "main": true,
+   "conf": "secure",
+   "text": "An ancient city in the plains of what is now southeastern Turkey, near the Syrian border. Jacob met Rachel at a well where the shepherds said they were from Harran (Genesis 29:4). Genesis calls the wider region Paddan Aram, and the exact well is unknown."
+  },
+  "gilead": {
+   "name": "Hill country of Gilead",
+   "sub": "Laban overtakes Jacob",
+   "ll": [32.3, 35.8],
+   "area": [28, 22],
+   "conf": "region",
+   "text": "The hills east of the Jordan where Laban caught up with Jacob's family (Genesis 31:23). The heap of stones and the place called Mizpah where they made a covenant cannot be located precisely."
+  },
+  "shechem": {
+   "name": "Shechem",
+   "ll": [32.2133, 35.2828],
+   "conf": "probable",
+   "text": "Jacob's family camped near Shechem after returning to Canaan (Genesis 33:18). The city is commonly identified with Tell Balata beside modern Nablus."
+  },
+  "bethel": {
+   "name": "Bethel",
+   "ll": [31.9303, 35.2217],
+   "conf": "probable",
+   "text": "Jacob built an altar at Bethel, where God had first appeared to him (Genesis 35:6–7). Rachel's last journey began from here. Bethel is usually identified with the village of Beitin."
+  },
+  "tomb": {
+   "name": "Rachel's Tomb",
+   "sub": "on the way to Ephrath",
+   "ll": [31.7196, 35.2022],
+   "main": true,
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "Genesis says Rachel was buried on the way to Ephrath, that is, Bethlehem, and that Jacob set up a pillar over her tomb (Genesis 35:19–20). Tradition places it at the northern edge of Bethlehem. 1 Samuel 10:2 mentions her tomb in the territory of Benjamin, so some scholars look farther north."
+  },
+  "damascus": {
+   "name": "Damascus",
+   "ll": [33.5138, 36.2765],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Capital of modern Syria, shown for orientation."
+  },
+  "urfa": {
+   "name": "Şanlıurfa",
+   "ll": [37.1591, 38.7969],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in southeastern Turkey, about 25 miles (40 km) north of Harran, shown for orientation."
+  }
+ },
+ "routes": {
+  "flight": {
+   "pts": [[36.8644, 39.0306], [36.62, 38.1], [36.2, 37.15], [35.13, 36.75], [34.73, 36.71], [33.51, 36.28], [32.9, 36.1], [32.3, 35.8]],
+   "style": "req"
+  },
+  "home": {
+   "pts": [[32.3, 35.8], [32.2, 35.7], [32.1969, 35.6222], [32.105, 35.545], [32.17, 35.45], [32.255, 35.36], [32.2133, 35.2828], [32.07, 35.24], [31.9303, 35.2217], [31.8, 35.21], [31.7196, 35.2022]]
+  }
+ },
+ "labels": [
+  {"t": "Mediterranean Sea", "ll": [33.4, 34.6], "kind": "water", "rot": -70},
+  {"t": "Euphrates", "ll": [35.9, 38.7], "kind": "river", "rot": -30},
+  {"t": "Paddan Aram", "ll": [36.55, 39.35], "kind": "region", "size": 11},
+  {"t": "Canaan", "ll": [31.55, 34.9], "kind": "region", "size": 12},
+  {"t": "Syrian Desert", "ll": [34.4, 38.4], "kind": "region", "size": 12},
+  {"t": "Sea of Galilee", "ll": [32.83, 35.3], "kind": "water", "size": 9}
+ ],
+ "chapters": [
+  {
+   "tab": "Harran",
+   "title": "A shepherd at the well",
+   "refs": [["Genesis 29:1–14", "Genesis 29:1-14"]],
+   "hot": ["harran"],
+   "sel": "harran",
+   "view": [37.6, 36.2, 40.0, 37.4],
+   "html": "<p>Jacob traveled east to the land of his mother's family and came to a well in the open country, where shepherds from Harran were waiting with their flocks. Rachel arrived with her father's sheep, because she was a shepherd.</p><p>Jacob rolled the stone from the well's mouth and watered Laban's flock. Then he kissed Rachel and wept aloud, and told her he was her father's relative.</p>",
+   "facts": [
+    "Harran lies in the basin of the Balikh River, a tributary of the Euphrates. Abraham's family had lived there before him (Genesis 11:31–12:4).",
+    "Harran later became a famous center of worship of the moon god Sin, well known from Assyrian and Babylonian records."
+   ]
+  },
+  {
+   "tab": "Marriage",
+   "title": "Seven years, then seven more",
+   "refs": [["Genesis 29:15–30:24", "Genesis 29:15-30:24"]],
+   "hot": ["harran"],
+   "sel": "harran",
+   "view": [37.6, 36.2, 40.0, 37.4],
+   "html": "<p>Jacob agreed to work seven years for Rachel. On the wedding night Laban gave him Rachel's older sister Leah instead, and Jacob worked another seven years for Rachel.</p><p>Leah had sons while Rachel remained childless. Rachel gave Jacob her servant Bilhah, who bore two sons. At last God enabled Rachel to conceive, and she named her son Joseph.</p>",
+   "quote": ["they seemed like only a few days to him because of his love for her", "Genesis 29:20 (NIV)"],
+   "facts": [
+    "The name Joseph sounds like the Hebrew for \"may he add.\" Rachel said, in effect, may the Lord add another son (Genesis 30:24).",
+    "Genesis says Rachel had a lovely figure and was beautiful, while Leah had weak or tender eyes. The Hebrew word describing Leah's eyes is uncertain in meaning."
+   ]
+  },
+  {
+   "tab": "Flight",
+   "title": "The household gods",
+   "refs": [["Genesis 31", "Genesis 31"]],
+   "hot": ["harran", "gilead"],
+   "routes": ["flight"],
+   "sel": "gilead",
+   "html": "<p>After twenty years with Laban, Jacob left secretly while Laban was away shearing sheep. Rachel stole her father's household gods. The family crossed the Euphrates and headed for the hill country of Gilead.</p><p>Laban pursued them for seven days and caught up in Gilead. He searched the tents, but Rachel had hidden the gods in her camel's saddle and was sitting on them. Jacob and Laban made a covenant and parted.</p>",
+   "facts": [
+    "Jacob called the covenant heap Galeed, Hebrew for \"witness heap.\" Laban gave it the Aramaic name Jegar Sahadutha, meaning the same thing (Genesis 31:47).",
+    "The route is unknown. The line on the map only suggests a plausible way around the Syrian Desert."
+   ]
+  },
+  {
+   "tab": "Ephrath",
+   "title": "Death on the road to Ephrath",
+   "refs": [["Genesis 35:16–20", "Genesis 35:16-20"]],
+   "hot": ["tomb", "bethel", "shechem"],
+   "routes": ["home"],
+   "sel": "tomb",
+   "view": [34.7, 31.45, 36.3, 32.6],
+   "html": "<p>Back in Canaan, the family moved on from Bethel. While they were still some distance from Ephrath, Rachel went into hard labor. As she was dying, she named her son Ben-Oni, but Jacob called him Benjamin.</p><p>Rachel was buried on the way to Ephrath, that is, Bethlehem. Jacob set up a pillar over her tomb, and Genesis says it still marked the grave in the writer's day.</p>",
+   "facts": [
+    "Ben-Oni means \"son of my trouble.\" Benjamin means \"son of the right hand,\" a name of honor.",
+    "Jeremiah 31:15 pictures Rachel weeping for her children in Ramah, and Matthew 2:18 applies the verse to Bethlehem."
+   ]
+  }
+ ]
+}

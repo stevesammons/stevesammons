@@ -1,0 +1,302 @@
+{
+ "title": "Follow Sarah to the oaks of Mamre at Hebron",
+ "kicker": "Interactive map • Genesis 13–23",
+ "bbox": [
+  34.38,
+  31.12,
+  35.6,
+  32.0
+ ],
+ "anchor": "hebron",
+ "places": {
+  "hebron": {
+   "name": "Hebron",
+   "sub": "Kiriath Arba",
+   "ll": [
+    31.5247,
+    35.1086
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "Hebron, earlier called Kiriath Arba, lies in the hill country about 19 miles (30 km) south of Jerusalem. The marker shows the Old Town in today's West Bank, which includes the enclosure traditionally built over the cave of Machpelah. It is a regional landmark, not the site of Sarah's tent."
+  },
+  "mamre": {
+   "name": "Mamre",
+   "sub": "one traditional site",
+   "ll": [
+    31.5555,
+    35.1015
+   ],
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "Genesis places Abraham's camp by the great trees of Mamre at Hebron (Genesis 13:18). An ancient walled enclosure at Ramat el-Khalil, north of the Old Town, is one traditional location. Other sites around Hebron have also been associated with the name."
+  },
+  "bethel": {
+   "name": "Bethel",
+   "sub": "earlier camp",
+   "ll": [
+    31.9285,
+    35.2375
+   ],
+   "conf": "probable",
+   "confT": "Often identified",
+   "text": "Abram and Sarai camped between Bethel and Ai after returning from Egypt, and there Abram and Lot parted (Genesis 13:3–12). Bethel is usually identified with the village of Beitin."
+  },
+  "gerar": {
+   "name": "Gerar",
+   "ll": [
+    31.3814,
+    34.6098
+   ],
+   "conf": "debated",
+   "text": "Abraham stayed for a time in Gerar and told its king, Abimelek, that Sarah was his sister (Genesis 20). Gerar is often identified with Tel Haror in the western Negev, but that is not certain."
+  },
+  "beersheba": {
+   "name": "Beersheba",
+   "ll": [
+    31.245,
+    34.8408
+   ],
+   "conf": "probable",
+   "text": "Abraham made a treaty with Abimelek here and planted a tamarisk tree (Genesis 21:31–33). The excavated tell east of the modern city dates mostly from later centuries, so the patriarchs' Beersheba cannot be pinned to it with certainty."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Shown for orientation. Jerusalem's Old City lies about 19 miles (30 km) north of Hebron in a straight line."
+  }
+ },
+ "routes": {
+  "tomamre": {
+   "pts": [
+    [
+     31.9285,
+     35.2375
+    ],
+    [
+     31.85,
+     35.225
+    ],
+    [
+     31.78,
+     35.215
+    ],
+    [
+     31.7,
+     35.185
+    ],
+    [
+     31.62,
+     35.14
+    ],
+    [
+     31.5555,
+     35.1015
+    ]
+   ],
+   "style": "req"
+  },
+  "tonegev": {
+   "pts": [
+    [
+     31.5247,
+     35.1086
+    ],
+    [
+     31.45,
+     35.0
+    ],
+    [
+     31.4,
+     34.82
+    ],
+    [
+     31.3814,
+     34.6098
+    ]
+   ],
+   "style": "req"
+  },
+  "tobeersheba": {
+   "pts": [
+    [
+     31.3814,
+     34.6098
+    ],
+    [
+     31.31,
+     34.73
+    ],
+    [
+     31.245,
+     34.8408
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.6,
+    34.5
+   ],
+   "kind": "water",
+   "rot": -52
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.48,
+    35.49
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 10
+  },
+  {
+   "t": "Negev",
+   "ll": [
+    31.19,
+    35.05
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Hill country",
+   "ll": [
+    31.66,
+    35.02
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Canaan",
+   "ll": [
+    31.88,
+    34.85
+   ],
+   "kind": "region",
+   "size": 13
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Hebron",
+   "title": "A camp by the trees of Mamre",
+   "refs": [
+    [
+     "Genesis 13",
+     "Genesis 13"
+    ]
+   ],
+   "hot": [
+    "hebron",
+    "mamre",
+    "bethel"
+   ],
+   "routes": [
+    "tomamre"
+   ],
+   "sel": "hebron",
+   "html": "<p>Sarai, later renamed Sarah, traveled with Abram from Haran into Canaan, down to Egypt during a famine, and back to the hills near Bethel. There the herds grew too large, and Abram and his nephew Lot went separate ways.</p><p>Abram moved his tents south and settled near the great trees of Mamre at Hebron, where he built an altar to the Lord. Hebron would remain the family's home base for much of Sarah's life.</p>",
+   "facts": [
+    "Hebron's Old Town lies at about 2,900 feet (880 m), and the ridges around it climb above 3,000 feet, some of the highest ground in the central hill country.",
+    "Numbers 13:22 notes that Hebron was built seven years before Zoan in Egypt, a way of stressing how ancient the town was."
+   ]
+  },
+  {
+   "tab": "Mamre",
+   "title": "Laughter at the tent door",
+   "refs": [
+    [
+     "Genesis 18:1–15",
+     "Genesis 18:1-15"
+    ]
+   ],
+   "hot": [
+    "mamre",
+    "hebron"
+   ],
+   "sel": "mamre",
+   "view": [
+    35.03,
+    31.49,
+    35.18,
+    31.59
+   ],
+   "html": "<p>In the heat of the day, three visitors came to Abraham's tent near the trees of Mamre. Abraham hurried to Sarah and asked her to bake bread from fine flour while he prepared a calf.</p><p>One visitor said Sarah would have a son within a year. Listening at the tent entrance, Sarah laughed to herself, since she was long past the age of childbearing. When she denied laughing, the Lord said that she had.</p>",
+   "quote": [
+    "Is anything too hard for the Lord?",
+    "Genesis 18:14 (NIV)"
+   ],
+   "facts": [
+    "The visitor's promise is echoed in the New Testament: Paul quotes it in Romans 9:9, and Hebrews 11:11 credits Sarah's faith.",
+    "The enclosure at Ramat el-Khalil has walls from Herod's time. According to the historian Eusebius, the emperor Constantine later had a church built at Mamre."
+   ]
+  },
+  {
+   "tab": "Negev",
+   "title": "Gerar, Beersheba and a son",
+   "refs": [
+    [
+     "Genesis 20–21",
+     "Genesis 20-21"
+    ]
+   ],
+   "hot": [
+    "gerar",
+    "beersheba",
+    "hebron"
+   ],
+   "routes": [
+    "tonegev",
+    "tobeersheba"
+   ],
+   "sel": "gerar",
+   "html": "<p>Abraham moved into the Negev and stayed in Gerar. Once again he called Sarah his sister, and King Abimelek took her, but God warned the king in a dream and Sarah was returned unharmed.</p><p>The Lord kept his promise, and Sarah gave birth to Isaac at about ninety. Genesis does not name the birthplace. The next scenes place the family around Gerar and Beersheba, where Abraham dug a well and made a treaty.</p>",
+   "quote": [
+    "God has brought me laughter",
+    "Genesis 21:6 (NIV)"
+   ],
+   "facts": [
+    "The name Isaac comes from the Hebrew word for laughing, echoing both Sarah's laugh at the tent and her joy at his birth.",
+    "Beersheba means “well of the oath” or “well of seven,” recalling the seven lambs Abraham gave Abimelek as a witness (Genesis 21:28–31)."
+   ]
+  },
+  {
+   "tab": "Machpelah",
+   "title": "A burial cave at Hebron",
+   "refs": [
+    [
+     "Genesis 23",
+     "Genesis 23"
+    ]
+   ],
+   "hot": [
+    "hebron",
+    "mamre"
+   ],
+   "sel": "hebron",
+   "view": [
+    35.03,
+    31.49,
+    35.18,
+    31.59
+   ],
+   "html": "<p>Sarah lived to 127 and died at Kiriath Arba, that is, Hebron. Abraham mourned and wept for her.</p><p>Owning no land in Canaan, he asked the Hittites for a burial place. He bought the field of Ephron with its cave of Machpelah, near Mamre, for four hundred shekels of silver. It was the family's first piece of land in the promised country, and Abraham, Isaac, Rebekah, Leah and Jacob were later buried there too.</p>",
+   "facts": [
+    "Sarah is the only woman in the Bible whose age at death is recorded (Genesis 23:1).",
+    "The massive stone enclosure traditionally built over the cave is usually attributed to King Herod in the first century BC. The buildings inside come from many later periods."
+   ]
+  }
+ ]
+}

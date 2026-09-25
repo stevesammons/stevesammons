@@ -3,18 +3,17 @@
  "kicker": "Interactive map • Judges 17–18",
  "bbox": [
   34.7,
-  31.62,
+  31.5,
   35.85,
   33.32
  ],
- "anchor": "shechem",
  "places": {
   "ephraim": {
    "name": "Hill country of Ephraim",
    "sub": "Micah's home region",
    "ll": [
     32.1,
-    35.24
+    35.2
    ],
    "main": true,
    "area": [
@@ -59,8 +58,8 @@
    "name": "Zorah",
    "sub": "Danite hometown",
    "ll": [
-    31.765,
-    34.985
+    31.7705,
+    34.9825
    ],
    "conf": "probable",
    "text": "The Danites sent out their scouts and later their 600 warriors from Zorah and Eshtaol (Judges 18:2, 11). Zorah is usually identified with Tel Tzora, on a ridge above the Sorek Valley. It was also the hometown of Samson's father, Manoah (Judges 13:2)."
@@ -121,8 +120,8 @@
   "danites": {
    "pts": [
     [
-     31.765,
-     34.985
+     31.7705,
+     34.9825
     ],
     [
      31.806,
@@ -189,11 +188,11 @@
   {
    "t": "Sea of Galilee",
    "ll": [
-    32.82,
-    35.7
+    32.83,
+    35.6
    ],
    "kind": "water",
-   "size": 9.5
+   "size": 9
   },
   {
    "t": "Dead Sea",
@@ -225,8 +224,8 @@
   {
    "t": "Judah",
    "ll": [
-    31.68,
-    35.0
+    31.66,
+    34.93
    ],
    "kind": "region",
    "size": 12
@@ -248,8 +247,8 @@
    ],
    "sel": "ephraim",
    "view": [
-    34.85,
-    31.65,
+    34.72,
+    31.67,
     35.65,
     32.45
    ],
@@ -281,8 +280,8 @@
    ],
    "sel": "bethlehem",
    "view": [
-    34.85,
-    31.62,
+    34.72,
+    31.67,
     35.65,
     32.42
    ],

@@ -1,0 +1,281 @@
+{
+ "title": "Find Capernaum, where Jesus called Matthew",
+ "kicker": "Interactive map • Matthew 9:9–13; Mark 2:13–17",
+ "bbox": [
+  35.15,
+  32.6,
+  35.75,
+  33.0
+ ],
+ "anchor": "capernaum",
+ "places": {
+  "capernaum": {
+   "name": "Capernaum",
+   "sub": "Tell Hum",
+   "ll": [
+    32.8893,
+    35.5712
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "A lakeside village on the northwestern shore of the Sea of Galilee, identified with the archaeological site of Tell Hum. Matthew calls it Jesus's own town (Matthew 9:1). The marker shows the village site, not Matthew's tax booth or home.",
+   "elev": -205
+  },
+  "nazareth": {
+   "name": "Nazareth",
+   "sub": "Jesus's hometown",
+   "ll": [
+    32.7021,
+    35.2978
+   ],
+   "conf": "secure",
+   "text": "The hill village where Jesus grew up. Matthew says Jesus left Nazareth and went to live in Capernaum, beside the lake (Matthew 4:13)."
+  },
+  "chorazin": {
+   "name": "Chorazin",
+   "ll": [
+    32.9114,
+    35.5639
+   ],
+   "conf": "probable",
+   "text": "A village in the basalt hills above Capernaum, identified with the ruins of Korazim. Jesus named it with Capernaum and Bethsaida as towns that saw his miracles but did not repent (Matthew 11:21–23)."
+  },
+  "bethsaida": {
+   "name": "Bethsaida",
+   "ll": [
+    32.9103,
+    35.6311
+   ],
+   "conf": "debated",
+   "text": "A fishing town near where the Jordan enters the lake, home of Peter, Andrew and Philip (John 1:44). Its site is debated: et-Tell, shown here, and el-Araj, closer to the shore, are the leading candidates."
+  },
+  "magdala": {
+   "name": "Magdala",
+   "ll": [
+    32.8253,
+    35.5157
+   ],
+   "conf": "probable",
+   "text": "A lakeside town on the western shore, usually identified with the excavated site at Migdal. It is traditionally connected with Mary Magdalene."
+  },
+  "tiberias": {
+   "name": "Tiberias",
+   "ll": [
+    32.794,
+    35.531
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the western shore, shown for orientation. It began as a city founded by Herod Antipas around AD 20 and named for the emperor Tiberius."
+  }
+ },
+ "routes": {
+  "move": {
+   "pts": [
+    [
+     32.7021,
+     35.2978
+    ],
+    [
+     32.74,
+     35.36
+    ],
+    [
+     32.78,
+     35.43
+    ],
+    [
+     32.82,
+     35.5
+    ],
+    [
+     32.855,
+     35.535
+    ],
+    [
+     32.8893,
+     35.5712
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.83,
+    35.595
+   ],
+   "kind": "water",
+   "size": 11
+  },
+  {
+   "t": "Lower Galilee",
+   "ll": [
+    32.76,
+    35.3
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Upper Galilee",
+   "ll": [
+    32.96,
+    35.35
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Golan",
+   "ll": [
+    32.95,
+    35.7
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.67,
+    35.575
+   ],
+   "kind": "river",
+   "rot": -80
+  },
+  {
+   "t": "Plain of Gennesaret",
+   "ll": [
+    32.862,
+    35.522
+   ],
+   "kind": "region",
+   "size": 7.5
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Galilee",
+   "title": "A new home by the lake",
+   "refs": [
+    [
+     "Matthew 4:12–17",
+     "Matthew 4:12-17"
+    ],
+    [
+     "Matthew 9:1",
+     "Matthew 9:1"
+    ]
+   ],
+   "hot": [
+    "capernaum",
+    "nazareth"
+   ],
+   "routes": [
+    "move"
+   ],
+   "sel": "capernaum",
+   "html": "<p>At the start of his ministry, Jesus left Nazareth in the hills and went to live in Capernaum, on the northwestern shore of the Sea of Galilee. Matthew later calls it his own town.</p><p>Capernaum was a working village of fishing boats, farms and travelers. Peter, Andrew, James and John were called from their nets along this shore, and Jesus taught in the village synagogue.</p>",
+   "facts": [
+    "Capernaum lies about 20 miles (32 km) northeast of Nazareth in a straight line and about 1,800 feet (550 m) lower. The lake's surface is roughly 690 feet (210 m) below sea level.",
+    "The name Capernaum comes from the Hebrew Kfar Nahum, “village of Nahum.”"
+   ]
+  },
+  {
+   "tab": "Booth",
+   "title": "Called from the tax booth",
+   "refs": [
+    [
+     "Matthew 9:9",
+     "Matthew 9:9"
+    ],
+    [
+     "Mark 2:13–14",
+     "Mark 2:13-14"
+    ]
+   ],
+   "hot": [
+    "capernaum"
+   ],
+   "sel": "capernaum",
+   "view": [
+    35.47,
+    32.815,
+    35.67,
+    32.94
+   ],
+   "html": "<p>Mark says Jesus went out beside the lake and taught the crowd. As he walked on, he saw a tax collector sitting at his booth. Mark calls him Levi son of Alphaeus. Matthew's Gospel tells the same call using the name Matthew.</p><p>Jesus told him to follow, and he got up and left the booth behind. The exact spot of the collection booth has never been identified.</p>",
+   "quote": [
+    "'Follow me,' he told him, and Matthew got up and followed him.",
+    "Matthew 9:9 (NIV)"
+   ],
+   "facts": [
+    "Capernaum sat near the edge of Herod Antipas's territory. Just across the Jordan to the east, the land belonged to his brother Philip, which may explain a toll station here.",
+    "The name Matthew is usually explained as “gift of the Lord.”"
+   ]
+  },
+  {
+   "tab": "Dinner",
+   "title": "A meal with tax collectors",
+   "refs": [
+    [
+     "Matthew 9:10–13",
+     "Matthew 9:10-13"
+    ],
+    [
+     "Luke 5:29–32",
+     "Luke 5:29-32"
+    ]
+   ],
+   "hot": [
+    "capernaum"
+   ],
+   "sel": "capernaum",
+   "view": [
+    35.47,
+    32.815,
+    35.67,
+    32.94
+   ],
+   "html": "<p>Soon Jesus was eating at a house with many tax collectors and sinners. Luke says Levi gave a great banquet for him at his own house.</p><p>Some Pharisees asked his disciples why their teacher ate with such people. Jesus answered that the sick, not the healthy, need a doctor, and told them to learn what Hosea meant: God desires mercy, not sacrifice. The house has not been identified.</p>",
+   "quote": [
+    "It is not the healthy who need a doctor, but the sick.",
+    "Matthew 9:12 (NIV)"
+   ],
+   "facts": [
+    "The white limestone synagogue visitors see at Capernaum today is usually dated to the fourth or fifth century AD. It stands on older basalt foundations that some archaeologists date earlier.",
+    "Nearby, an octagonal church was built over a house that early Christians honored as Peter's home. A modern church now stands above it."
+   ]
+  },
+  {
+   "tab": "Lake towns",
+   "title": "Towns that saw the miracles",
+   "refs": [
+    [
+     "Matthew 11:20–24",
+     "Matthew 11:20-24"
+    ]
+   ],
+   "hot": [
+    "capernaum",
+    "chorazin",
+    "bethsaida"
+   ],
+   "sel": "chorazin",
+   "view": [
+    35.46,
+    32.8,
+    35.68,
+    32.95
+   ],
+   "html": "<p>Matthew says Jesus did most of his miracles in the towns around this corner of the lake. Yet he warned that Chorazin, Bethsaida and even Capernaum had not repented.</p><p>He said that if the miracles done there had been done in Tyre and Sidon, or even Sodom, those cities would have repented. Capernaum, lifted up by his presence, would be brought down. Matthew, the tax collector from this shore, preserved the warning in his Gospel.</p>",
+   "facts": [
+    "Chorazin, Capernaum and the proposed sites of Bethsaida all lie within about 3 miles (5 km) of one another.",
+    "In 1986, during a drought, a fishing boat from roughly the first century was found in the mud of the western shore near Kibbutz Ginosar, where it is now displayed."
+   ]
+  }
+ ]
+}
