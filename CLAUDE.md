@@ -49,3 +49,9 @@ Reference pages (character profiles and place maps) get a "Back to the story" ca
 and bottom via `python3 backlinks/apply.py PAGE_ID POST_IDS SUBJECT --apply`. It only links
 posts that are already published, so scheduled posts appear automatically on their publish date.
 Done so far: 2903 Ahab (post 2943).
+
+## YouTube videos play on the page
+
+Posts with YouTube links (name pronunciations, the "Hear the gospel quartet" card) get a
+lightbox player via `python3 video-popup/apply.py POST_ID [POST_ID ...] --apply`. The links are
+left unchanged, so they still work without JavaScript. Done so far: 2627 Ahithophel.
