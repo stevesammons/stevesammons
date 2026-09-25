@@ -1,0 +1,34 @@
+{
+  "song": "Let Her Story Be Her Own",
+  "bpm": 68,
+  "beats_per_bar": 3,
+  "clips": {
+    "reference": ["verse", "chorus"],
+    "tag": ["tag"]
+  },
+  "sections": {
+    "verse": {
+      "key": "D minor",
+      "bars": ["Dm", "Dm/C", "Bb", "A7", "Dm", "Gm", "A7", "Dm"]
+    },
+    "chorus": {
+      "key": "F major",
+      "bars": ["F", "F7", "Bb", "Bbm6", "F/C", "D7", "G7", "C7",
+               "F", "A7", "Dm", "Bb Bbm6", "F/C C7", "F"]
+    },
+    "bridge": {
+      "key": "D minor to F major",
+      "bars": ["Bb", "C", "Am", "Dm", "Gm7", "C7", "A7", "D7"]
+    },
+    "final_chorus": {
+      "key": "G major (up a whole step)",
+      "bars": ["G", "G7", "C", "Cm6", "G/D", "E7", "A7", "D7",
+               "G", "B7", "Em", "C Cm6", "G/D D7", "G"]
+    },
+    "tag": {
+      "key": "G major",
+      "feel": "sustain",
+      "bars": ["C", "Cm6", "G/D", "E7", "A7", "D7", "G~3"]
+    }
+  }
+}
