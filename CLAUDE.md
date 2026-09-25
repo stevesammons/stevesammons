@@ -39,16 +39,37 @@ Always:
 
 ## Known pages
 
-- 3169 Hebron in Caleb's Story. Interactive map in `hebron-map/`, publish with
-  `python3 hebron-map/publish.py --apply`.
+- 3169 Hebron in Caleb's Story. It now runs the shared Bible map engine like every other map (see
+  Bible maps below). `hebron-map/` is the older standalone version; don't republish it.
 - /caleb/ Caleb profile. /give-me-the-hard-one/ reflection.
 
 ## Back-to-the-story links
 
-Reference pages (character profiles and place maps) get a "Back to the story" card at the top
-and bottom via `python3 backlinks/apply.py PAGE_ID POST_IDS SUBJECT --apply`. It only links
-posts that are already published, so scheduled posts appear automatically on their publish date.
-Done so far: 2903 Ahab (post 2943).
+Reference pages (character profiles and place maps) get a back card at the top and bottom.
+- Add it to a new page: `python3 backlinks/apply.py PAGE_ID POST_IDS SUBJECT --apply`. It only
+  lists posts that are already published, so scheduled posts appear on their publish date.
+- The card links back to wherever the reader came from on the site: "Back to the story" plus the
+  title for a listed post, otherwise "Back to" plus the title of the profile page, the Bible
+  Characters index, or the tag or category list (looked up through the REST API).
+- After editing `backlink.js`, run `python3 backlinks/refresh.py --apply`. It swaps only the script
+  on every page that has the card (109 on 2026-09-25: 41 maps and 68 profiles), keeping each
+  page's post list and layout.
+
+## Bible maps
+
+The 41 interactive maps are Pages tagged "Bible Map" (tag 1727) in the "Bible Maps" category
+(1807, /category/bible-maps/). Each page has one `<!-- bm:start -->` block whose base64 script is
+the shared engine (`bible-maps/engine.js`) followed by that map's config JSON.
+- `python3 bible-maps/apply.py [PAGE_ID ...] --category 1807 --apply` swaps in the current engine,
+  recomputes the modern country names and sets the category. It only saves pages that changed.
+- Country names come from Natural Earth 10m map units (cached in `backups/`, needs
+  `pip install shapely`). They match the dashed modern borders and show and hide with the
+  "Modern borders" button. The engine puts each name at the most central visible spot that clears
+  places, labels, shaded areas, the north arrow and the scale bar, and hides it when nothing fits.
+  West Bank and Gaza are labelled as Natural Earth draws them.
+- Street-level maps narrower than 0.1 degrees of longitude get no country names, because the
+  border data isn't that precise. Today that is only 3111 Jerusalem in Nicodemus's Story.
+- New maps: tag them Bible Map, put them in Bible Maps, run apply.py on them, and add the back card.
 
 ## YouTube videos play on the page
 

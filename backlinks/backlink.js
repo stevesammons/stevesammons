@@ -59,10 +59,11 @@
     slots.forEach(function (s) {
       var end = s.classList.contains('ss-back--end');
       if (origin) {
-        var label = origin.title ? origin.title : 'the post you were reading';
+        var page = origin.kind === 'page';
+        var label = origin.title ? origin.title : page ? 'the previous page' : 'the post you were reading';
         s.innerHTML = '<a class="ss-back-card" href="' + esc(origin.url) + '">' +
           '<span class="ss-back-arrow" aria-hidden="true">&larr;</span>' +
-          '<span><span class="ss-back-kicker">Back to the story</span>' +
+          '<span><span class="ss-back-kicker">' + (page ? 'Back to' : 'Back to the story') + '</span>' +
           '<span class="ss-back-title">' + esc(label) + '</span></span></a>';
         s.firstChild.addEventListener('click', function (e) {
           // Return to the same scroll position when the story is the previous page.
@@ -97,8 +98,38 @@
       var saved = load();
       if (saved && ids.indexOf(saved.id) >= 0 && ref && new URL(ref).origin === location.origin) origin = saved;
     }
-    if (origin) store(origin);
-    render(published, origin);
+    if (origin) { store(origin); render(published, origin); return; }
+    // Came from any other page on the site (a character profile, the Bible Characters index,
+    // a tag or category list): link back to it by its public title.
+    var r = sameSite(ref);
+    if (!r) { render(published, null); return; }
+    lookup(r).then(function (title) {
+      render(published, { url: ref, title: title, kind: 'page' });
+    });
+  }
+
+  function sameSite(u) {
+    try {
+      var x = new URL(u);
+      if (x.origin !== location.origin || norm(u) === norm(location.href) || /^\/wp-(admin|login)/.test(x.pathname)) return null;
+      return x;
+    } catch (e) { return null; }
+  }
+  // Public title for a same-site URL from the REST API (only published content is returned).
+  function lookup(x) {
+    var seg = x.pathname.split('/').filter(Boolean);
+    if (!seg.length) return Promise.resolve('Home');
+    function get(path) {
+      return fetch('/wp-json/wp/v2/' + path, { credentials: 'omit' })
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (a) { return a && a[0] ? (a[0].title ? a[0].title.rendered : a[0].name) : ''; })
+        .catch(function () { return ''; });
+    }
+    function text(t) { var d = document.createElement('textarea'); d.innerHTML = t; return d.value; }
+    var slug = encodeURIComponent(seg[seg.length - 1]);
+    var tax = { tag: 'tags', category: 'categories' }[seg[0]];
+    var first = tax ? get(tax + '?slug=' + slug + '&_fields=name') : get('pages?slug=' + slug + '&_fields=title');
+    return first.then(function (t) { return t || tax ? t : get('posts?slug=' + slug + '&_fields=title'); }).then(text);
   }
 
   var url = '/wp-json/wp/v2/posts?include=' + ids.join(',') + '&per_page=' + ids.length + '&_fields=id,link,title';
