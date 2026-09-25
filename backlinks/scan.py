@@ -15,10 +15,11 @@ def all_items(path):
         page += 1
     return out
 
-code, tags = wp.request("GET", "/wp/v2/tags?search=bible%20character&per_page=100&_fields=id,name")
-tag_ids = [t["id"] for t in tags if t["name"].lower() in ("bible character", "bible characters")]
-posts = all_items(f"/wp/v2/posts?tags={','.join(map(str,tag_ids))}&status=publish,future,draft,pending,private&context=edit&_fields=id,title,status,date,content")
-pages = all_items("/wp/v2/pages?status=publish,future,draft,pending,private&_fields=id,link,title,status")
+# Bible character posts live in the Old Testament / New Testament categories (children of Bible Characters).
+code, cats = wp.request("GET", "/wp/v2/categories?slug=old-testament,new-testament&_fields=id")
+tag_ids = [c["id"] for c in cats]
+posts = all_items(f"/wp/v2/posts?categories={','.join(map(str,tag_ids))}&status=publish,future,draft,pending,private&context=edit&_fields=id,title,status,date,content")
+pages = all_items("/wp/v2/pages?status=publish&_fields=id,link,title,status")  # only public pages get back links
 bypath = {up.urlparse(p["link"]).path.rstrip("/"): p for p in pages}
 byid = {p["id"]: p for p in pages}
 m, other = {}, set()
@@ -34,7 +35,7 @@ for po in posts:
 res = [{"page": k, "title": byid[k]["title"]["rendered"], "status": byid[k]["status"], "link": byid[k]["link"],
         "posts": sorted(v)} for k, v in sorted(m.items())]
 Path("backups/backlink-map.json").write_text(json.dumps(res, indent=1))
-print(f"tags {tag_ids}; {len(posts)} posts; {len(pages)} site pages; {len(res)} linked pages")
+print(f"categories {tag_ids}; {len(posts)} posts; {len(pages)} site pages; {len(res)} linked pages")
 print("multi-post pages:", [(r["title"], r["posts"]) for r in res if len(r["posts"]) > 1])
 print("non-published pages:", [(r["title"], r["status"]) for r in res if r["status"] != "publish"])
 print("internal links that are not pages:", sorted(other)[:20])
