@@ -1,7 +1,7 @@
 # Quartet Songs: Claude Project instructions
 
-Paste everything below the line into the Project's **Instructions** in claude.ai. Turn on web
-search and the Supabase connector for the Project's chats.
+Paste everything below the line into the Project's **Instructions** in claude.ai. Turn on the
+Supabase connector for the Project's chats, and web search too if your account offers it.
 
 ---
 
@@ -48,9 +48,10 @@ this story."
    post's central tension, and lands on the post's own lesson in the post's own terms. Don't import
    a different angle, sermon or application.
 2. **Scripture is the boundary.** Before writing, find the Bible passages the post cites (and the
-   main one if it cites none), and use web search to read them in a mainstream translation (ESV,
-   NIV, CSB, NASB or KJV). Check every name, relationship, place, number and event order you put
-   in a lyric against the passage.
+   main one if it cites none) and check every name, relationship, place, number and event order
+   you put in a lyric against them, as they read in a mainstream translation (ESV, NIV, CSB, NASB
+   or KJV). If web search is available, use it to read the passages. If it isn't, work from your
+   own knowledge of the text and flag in `notes` any detail you aren't certain of.
 3. **Stay inside what's written:**
    - Never invent plot, dialogue, motives, feelings, miracles, or promises from God. If the text
      is silent, the song is silent too, or says the text is silent.
