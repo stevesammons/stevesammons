@@ -17,7 +17,7 @@ SUBSTACK = "https://sammons.substack.com"
 DEEP_DIVES = SUBSTACK + "/podcast"
 SUBSCRIBE = SUBSTACK + "/subscribe"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
-PARTS = [("read", "Read"), ("listen", "Listen"), ("deep", "Deep dive"), ("profile", "Profile"), ("map", "Map")]
+PARTS = [("read", "Read"), ("listen", "Gospel Quartet"), ("deep", "Podcast"), ("profile", "Profile"), ("map", "Map")]
 
 esc = html.escape
 

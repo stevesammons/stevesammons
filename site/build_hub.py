@@ -4,7 +4,7 @@
   python3 site/stories.py              # refresh the data first
   python3 site/build_hub.py [--apply]
 
-Each card shows the character's five parts (read, listen, deep dive, profile, map). Scheduled
+Each card shows the character's five parts (read, gospel quartet, podcast, profile, map). Scheduled
 reflections show their month and are upgraded in the browser once the post is public.
 """
 import sys
@@ -44,8 +44,8 @@ def render():
     steps = (
         '<ol class="cw-steps">'
         '<li><b>Read</b>A short reflection, about three minutes.</li>'
-        f'<li><b>Listen</b>A gospel quartet song to remember it by. <a href="{SITE}/songs/">Songs</a></li>'
-        f'<li><b>Deep dive</b>The long version, 10 to 45 minutes. <a href="{DEEP_DIVES}" target="_blank" rel="noopener">Deep Dives</a></li>'
+        f'<li><b>Gospel Quartet</b>A gospel quartet song to remember it by. <a href="{SITE}/songs/">Songs</a></li>'
+        f'<li><b>Podcast</b>The long version, 10 to 45 minutes. <a href="{DEEP_DIVES}" target="_blank" rel="noopener">Podcast</a></li>'
         '<li><b>Profile</b>Who they were, from the text itself.</li>'
         f'<li><b>Map</b>Where it happened. <a href="{SITE}/bible-maps/">Maps</a></li>'
         "</ol>"
@@ -63,7 +63,7 @@ def render():
         + section("OT", "Old Testament") + section("NT", "New Testament") +
         '<p class="cw-empty">No one matches that search yet.</p>'
         f'<p class="cw-intro" style="margin-top:30px;font-size:.95em">{len(chars)} people · {n_pub} reflections · {n_song} songs · '
-        f'{n_deep} deep dives · {n_maps} maps · a new story every week. <a href="{YOUTUBE}" target="_blank" rel="noopener">Songs on YouTube</a></p>'
+        f'{n_deep} podcast episodes · {n_maps} maps · a new story every week. <a href="{YOUTUBE}" target="_blank" rel="noopener">Songs on YouTube</a></p>'
         + script(FILTER_JS) + "</div>"
     )
     return block(body)
@@ -73,5 +73,5 @@ if __name__ == "__main__":
     content = render()
     print(len(chars), "characters")
     publish("bible-characters", "Bible Characters", content,
-            "Characters Worth Following: every Bible character in five parts, a short read, a song, a deep dive, a profile and an interactive map.",
+            "Characters Worth Following: every Bible character in five parts, a short read, a gospel quartet song, a podcast episode, a profile and an interactive map.",
             "--apply" in sys.argv)
