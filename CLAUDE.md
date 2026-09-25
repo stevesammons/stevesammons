@@ -29,6 +29,13 @@ Always:
   (git-ignored) so it can be restored.
 - After publishing, load the live page and confirm it renders.
 - Report what changed with links. If something failed, say so.
+- Keep "Back to the story" links complete. Whenever a Bible character post (tag "Bible
+  character" or "Bible characters") is created, edited, scheduled or published, or a reference
+  page it links to is created, run `python3 backlinks/scan.py` then
+  `python3 backlinks/apply_all.py`, and report any page that fails. The user's approval for
+  that post covers updating its reference pages. Any other page that links readers to a
+  reference page on this site should get the same back link. Ask before extending it to other
+  tags or posts.
 
 ## Site quirks
 
@@ -52,3 +59,9 @@ All 50 reference pages linked from the 25 posts tagged "Bible character" / "Bibl
 were done on 2026-09-25. For new posts or links: `python3 backlinks/scan.py` (rebuilds
 `backups/backlink-map.json`), then `python3 backlinks/apply_all.py` (idempotent; re-publishes
 only pages whose back links changed, and checks each live page).
+
+- Pages come in three layouts: a Custom HTML block wrapping one div, the same with a stray
+  `<meta charset>` before it, and classic-editor HTML wrapped in one div (e.g. Nob in Doeg's
+  Story). `apply.py` handles all three. Never add block markup to a classic page.
+- The tag is split into "Bible character" (1716) and "Bible characters" (1676). Scan both.
+- Not yet covered: "Give Me the Hard One" (untagged Caleb post) and its Caleb and Hebron pages.
