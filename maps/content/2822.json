@@ -1,0 +1,280 @@
+{
+ "title": "Midian, the land where Moses married Zipporah",
+ "kicker": "Interactive map • Exodus 2–4; 18",
+ "bbox": [
+  32.6,
+  26.6,
+  37.4,
+  30.4
+ ],
+ "anchor": "aqaba",
+ "note": "Midian's borders and Zipporah's home are not known. The shaded area is a broad region, and Al-Bad' is an orientation point only. No route is drawn because the text gives none. Modern borders are shown only for orientation.",
+ "places": {
+  "midian": {
+   "name": "Midian",
+   "sub": "land of Zipporah's people",
+   "ll": [
+    28.75,
+    36.0
+   ],
+   "area": [
+    105,
+    110
+   ],
+   "main": true,
+   "conf": "region",
+   "confT": "Approximate region",
+   "text": "Scholars usually place Midian's heartland east of the Gulf of Aqaba, in today's northwestern Saudi Arabia, with connections into southern Jordan. No ancient border survives, and the name may describe both a people and a region. The shaded area is a broad approximation."
+  },
+  "albad": {
+   "name": "Al-Bad'",
+   "ll": [
+    28.4833,
+    35.0167
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "confT": "Orientation point",
+   "text": "Modern town in northwestern Saudi Arabia. Early Arab geographers knew a town called Madyan in this area, and local tradition links the nearby rock-cut tombs called Maghair Shuayb with Jethro. The marker is for orientation only, not a claim that Zipporah lived here."
+  },
+  "sinai": {
+   "name": "Mount Sinai",
+   "sub": "traditional Horeb",
+   "ll": [
+    28.5392,
+    33.9753
+   ],
+   "elev": 2285,
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "Christian tradition places Horeb, the mountain of God, at Jebel Musa in the southern Sinai. Some scholars look for it in northwestern Arabia instead, closer to Midian. The Bible's directions are not precise enough to settle the question (Exodus 3:1).",
+   "label": "l"
+  },
+  "timna": {
+   "name": "Timna",
+   "sub": "Midianite pottery",
+   "ll": [
+    29.785,
+    34.96
+   ],
+   "area": [
+    5,
+    5
+   ],
+   "conf": "secure",
+   "text": "Ancient copper mines in the Arabah Valley north of the Gulf of Aqaba, worked under Egyptian control late in the second millennium BC. Painted pottery found here, often called Midianite or Qurayyah ware, connects the site with northwestern Arabia."
+  },
+  "aqaba": {
+   "name": "Aqaba",
+   "ll": [
+    29.5267,
+    35.0078
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern Jordanian port at the head of the Gulf of Aqaba, shown for orientation."
+  },
+  "tabuk": {
+   "name": "Tabuk",
+   "ll": [
+    28.3838,
+    36.555
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern Saudi city in the region usually associated with ancient Midian, shown for orientation."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Gulf of Aqaba",
+   "ll": [
+    28.8,
+    34.7
+   ],
+   "kind": "water",
+   "rot": -75,
+   "size": 9
+  },
+  {
+   "t": "Gulf of Suez",
+   "ll": [
+    29.05,
+    32.95
+   ],
+   "kind": "water",
+   "rot": -57,
+   "size": 10.5
+  },
+  {
+   "t": "Red Sea",
+   "ll": [
+    27.05,
+    34.75
+   ],
+   "kind": "water",
+   "rot": -55
+  },
+  {
+   "t": "Sinai",
+   "ll": [
+    29.55,
+    33.75
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Edom",
+   "ll": [
+    30.2,
+    35.65
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Arabia",
+   "ll": [
+    27.2,
+    36.9
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Egypt",
+   "ll": [
+    27.9,
+    32.95
+   ],
+   "kind": "region",
+   "size": 12
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Midian",
+   "title": "A people and a land east of the gulf",
+   "refs": [
+    [
+     "Genesis 25:1–2",
+     "Genesis 25:1-2"
+    ],
+    [
+     "Exodus 2:15",
+     "Exodus 2:15"
+    ]
+   ],
+   "hot": [
+    "midian"
+   ],
+   "sel": "midian",
+   "html": "<p>Midian was both a people and the land where they lived. Genesis traces the Midianites to Midian, a son of Abraham by Keturah. Scholars usually place their heartland east of the Gulf of Aqaba, in today's northwestern Saudi Arabia, with ties into southern Jordan.</p><p>No surveyed border survives, and the map cannot place Zipporah's home. The shaded area is broad on purpose, and Al-Bad' is marked only to help readers find their bearings.</p>",
+   "facts": [
+    "Midianite merchants appear in the story of Joseph, who was sold and taken down to Egypt (Genesis 37:28, 36).",
+    "Archaeologists call a distinctive painted pottery Midianite or Qurayyah ware, after the oasis of Qurayyah near Tabuk. It has also been found in southern Jordan and at Timna."
+   ]
+  },
+  {
+   "tab": "The well",
+   "title": "Seven daughters at a well",
+   "refs": [
+    [
+     "Exodus 2:15–22",
+     "Exodus 2:15-22"
+    ]
+   ],
+   "hot": [
+    "midian",
+    "albad"
+   ],
+   "sel": "midian",
+   "view": [
+    34.2,
+    27.4,
+    37.2,
+    29.5
+   ],
+   "html": "<p>After killing an Egyptian, Moses fled from Pharaoh to Midian and sat down by a well. The priest of Midian had seven daughters, and when they came to water their father's flock, shepherds drove them away. Moses stood up, rescued them and watered the flock.</p><p>Their father, Reuel, invited Moses home. Moses agreed to stay, and Reuel gave him his daughter Zipporah in marriage. She bore a son, and Moses named him Gershom.</p>",
+   "quote": [
+    "I have become a foreigner in a foreign land.",
+    "Exodus 2:22 (NIV)"
+   ],
+   "facts": [
+    "Zipporah's name comes from the Hebrew word for bird.",
+    "Zipporah's father is called Reuel here and Jethro in Exodus 3:1. How the two names relate, and how Hobab in Numbers 10:29 fits, is debated."
+   ]
+  },
+  {
+   "tab": "Horeb",
+   "title": "The far side of the wilderness",
+   "refs": [
+    [
+     "Exodus 3:1–10",
+     "Exodus 3:1-10"
+    ]
+   ],
+   "hot": [
+    "sinai",
+    "midian"
+   ],
+   "sel": "sinai",
+   "view": [
+    32.7,
+    27.2,
+    37.0,
+    30.0
+   ],
+   "html": "<p>Years later, Moses was tending the flock of his father-in-law Jethro, the priest of Midian. He led the flock to the far side of the wilderness and came to Horeb, the mountain of God.</p><p>There the angel of the Lord appeared to him in flames of fire from within a bush that did not burn up. God called Moses by name and sent him back to Egypt to bring his people out.</p>",
+   "facts": [
+    "The Bible calls the mountain of God both Horeb and Sinai. Deuteronomy, for example, uses Horeb for the place where the covenant was given (Deuteronomy 5:2).",
+    "Saint Catherine's Monastery at the foot of Jebel Musa was built in the sixth century around a chapel that tradition links with the burning bush."
+   ]
+  },
+  {
+   "tab": "The journey",
+   "title": "The lodging place",
+   "refs": [
+    [
+     "Exodus 4:18–26",
+     "Exodus 4:18-26"
+    ]
+   ],
+   "hot": [
+    "midian"
+   ],
+   "sel": "midian",
+   "html": "<p>Moses asked Jethro's leave to return to Egypt, and Jethro sent him off in peace. Moses put his wife and sons on a donkey and started back.</p><p>At a lodging place on the way, the Lord met Moses and was about to kill him. Zipporah took a flint knife, circumcised her son and touched Moses' feet with the foreskin, and the Lord let him alone. The passage is brief and puzzling, and it does not say where this happened.</p>",
+   "quote": [
+    "Surely you are a bridegroom of blood to me.",
+    "Exodus 4:25 (NIV)"
+   ],
+   "facts": [
+    "Flint knives were also used for circumcision when Israel entered Canaan under Joshua (Joshua 5:2).",
+    "Exodus 4:20 says Moses took his sons, though only Gershom has been named so far. The second son, Eliezer, is named in Exodus 18:4."
+   ]
+  },
+  {
+   "tab": "Reunion",
+   "title": "Reunited at the mountain of God",
+   "refs": [
+    [
+     "Exodus 18:1–27",
+     "Exodus 18:1-27"
+    ]
+   ],
+   "hot": [
+    "sinai",
+    "midian"
+   ],
+   "sel": "sinai",
+   "html": "<p>At some point Moses had sent Zipporah and their two sons back to her father. After the exodus, Jethro brought them to Moses in the wilderness, where he was camped near the mountain of God.</p><p>Moses went out to meet his father-in-law, bowed down and kissed him. He told Jethro all the Lord had done, and Jethro praised God and offered sacrifices. The next day Jethro advised Moses to share the work of judging the people, and then he went home to his own country.</p>",
+   "facts": [
+    "Moses named his second son Eliezer, explaining that his father's God was his helper (Exodus 18:4). The name means something like my God is help.",
+    "Numbers 12:1 mentions Moses' Cushite wife. Interpreters debate whether this refers to Zipporah or to a second wife."
+   ]
+  }
+ ]
+}

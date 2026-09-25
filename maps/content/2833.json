@@ -1,0 +1,175 @@
+{
+ "title": "Nob, the priests' town where Doeg was watching",
+ "kicker": "Interactive map • 1 Samuel 21–22",
+ "bbox": [
+  35.17,
+  31.745,
+  35.31,
+  31.86
+ ],
+ "note": "Nob's exact site is not confirmed. The shaded area is an orientation aid north of Jerusalem. No route is drawn because the text gives none. Modern borders are shown only for orientation.",
+ "places": {
+  "nob": {
+   "name": "Nob",
+   "sub": "town of the priests",
+   "ll": [
+    31.797,
+    35.236
+   ],
+   "area": [
+    2.8,
+    2.2
+   ],
+   "main": true,
+   "conf": "unknown",
+   "confT": "Site not confirmed",
+   "text": "Isaiah 10:32 pictures an invader at Nob shaking his fist at Jerusalem, and Nehemiah 11:31–32 lists it among Benjamin's towns with Anathoth. That points to a place near Jerusalem, probably north or northeast. Mount Scopus, Ras Umm et-Tal and an area near the upper Kidron Valley have been proposed, but none is confirmed."
+  },
+  "gibeah": {
+   "name": "Gibeah",
+   "sub": "Saul's hometown",
+   "ll": [
+    31.8236,
+    35.2314
+   ],
+   "conf": "probable",
+   "text": "Saul's home and base, usually identified with Tell el-Ful on the northern edge of modern Jerusalem. Saul was sitting under a tamarisk tree on the hill here when Doeg made his report (1 Samuel 22:6–10)."
+  },
+  "anathoth": {
+   "name": "Anathoth",
+   "sub": "priestly town",
+   "ll": [
+    31.8117,
+    35.2597
+   ],
+   "conf": "probable",
+   "text": "A town of the priests in Benjamin, usually identified with Ras el-Kharrubeh near the village of Anata. Nehemiah lists it next to Nob (Nehemiah 11:32). Abiathar, the priest who escaped from Nob, was later sent home to his fields here (1 Kings 2:26)."
+  },
+  "jebus": {
+   "name": "Jebus",
+   "sub": "later Jerusalem",
+   "ll": [
+    31.7735,
+    35.2358
+   ],
+   "conf": "secure",
+   "text": "In Saul's day the ridge later called the City of David was still a Jebusite town. David captured it only after Saul's death (2 Samuel 5:6–9). It is shown here to orient the reader, not as part of the Nob story."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Benjamin",
+   "ll": [
+    31.848,
+    35.2
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Mount of Olives",
+   "ll": [
+    31.7785,
+    35.255
+   ],
+   "kind": "region",
+   "size": 9.5
+  },
+  {
+   "t": "Judean Wilderness",
+   "ll": [
+    31.785,
+    35.292
+   ],
+   "kind": "region",
+   "rot": -75,
+   "size": 10
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Nob",
+   "title": "The town of the priests",
+   "refs": [
+    [
+     "1 Samuel 21:1–6",
+     "1 Samuel 21:1-6"
+    ]
+   ],
+   "hot": [
+    "nob"
+   ],
+   "sel": "nob",
+   "html": "<p>Fleeing from Saul, David came alone to Nob, the town of the priests, where Ahimelek served. Ahimelek trembled when he met him and asked why no one was with him. David claimed he was on a secret mission for the king.</p><p>There was no ordinary bread on hand, only the consecrated bread that had been removed from before the Lord. Ahimelek gave it to David once David said his men had kept themselves from women.</p>",
+   "facts": [
+    "The consecrated bread, or bread of the Presence, was twelve loaves set out before the Lord and replaced every Sabbath. The old loaves were for the priests to eat (Leviticus 24:5–9).",
+    "Jesus cited this episode when critics objected that his disciples picked grain on the Sabbath (Mark 2:23–26)."
+   ]
+  },
+  {
+   "tab": "The sword",
+   "title": "An Edomite was watching",
+   "refs": [
+    [
+     "1 Samuel 21:7–9",
+     "1 Samuel 21:7-9"
+    ]
+   ],
+   "hot": [
+    "nob"
+   ],
+   "sel": "nob",
+   "html": "<p>One of Saul's servants was at Nob that day, detained before the Lord. He was Doeg the Edomite, the head of Saul's shepherds.</p><p>David asked Ahimelek for a spear or sword, saying the king's business had been urgent. The only weapon there was the sword of Goliath the Philistine, whom David had killed in the Valley of Elah. It lay wrapped in a cloth behind the ephod, and David took it.</p>",
+   "quote": [
+    "There is none like it; give it to me.",
+    "1 Samuel 21:9 (NIV)"
+   ],
+   "facts": [
+    "The Edomites traced their descent from Esau, Jacob's brother (Genesis 36:1). Their homeland lay southeast of the Dead Sea.",
+    "The text does not explain why Doeg was detained before the Lord. Some interpreters suggest a vow or a rite of purification at the sanctuary."
+   ]
+  },
+  {
+   "tab": "Gibeah",
+   "title": "Doeg's report",
+   "refs": [
+    [
+     "1 Samuel 22:6–10",
+     "1 Samuel 22:6-10"
+    ]
+   ],
+   "hot": [
+    "gibeah",
+    "nob"
+   ],
+   "sel": "gibeah",
+   "html": "<p>David fled on to Gath and then to the cave of Adullam. Back at Gibeah, Saul sat under the tamarisk tree on the hill with his spear in hand and accused his officials of conspiring against him.</p><p>Doeg spoke up. He had seen David come to Ahimelek at Nob, he said. Ahimelek had inquired of the Lord for David and given him provisions and the sword of Goliath.</p>",
+   "facts": [
+    "The heading of Psalm 52 links that psalm to the time when Doeg told Saul that David had gone to Ahimelek's house.",
+    "William F. Albright began excavating Tell el-Ful in 1922. In the 1960s Jordan's King Hussein began a palace on the hilltop, and its unfinished shell still stands there."
+   ]
+  },
+  {
+   "tab": "Judgment",
+   "title": "The massacre at Nob",
+   "refs": [
+    [
+     "1 Samuel 22:11–23",
+     "1 Samuel 22:11-23"
+    ]
+   ],
+   "hot": [
+    "nob",
+    "gibeah",
+    "anathoth"
+   ],
+   "sel": "nob",
+   "html": "<p>Saul summoned Ahimelek and his whole family of priests from Nob. Ahimelek defended David as the most loyal of the king's servants, but Saul ordered his guards to kill the priests. They would not raise a hand against the priests of the Lord.</p><p>So Saul turned to Doeg, who killed eighty-five priests that day and then put the town of Nob to the sword. Only Abiathar, a son of Ahimelek, escaped to David, who promised to keep him safe.</p>",
+   "facts": [
+    "Abiathar served as a priest through David's reign. Solomon later removed him and sent him to his fields in Anathoth (1 Kings 2:26–27).",
+    "Nob was lived in again after the exile, when Benjamites settled there (Nehemiah 11:31–32)."
+   ]
+  }
+ ]
+}
