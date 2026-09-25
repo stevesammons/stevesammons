@@ -94,22 +94,31 @@ only pages whose back links changed, and checks each live page).
   Fundraising / Higher Education / Children's Literacy. Default category: Leadership.
   New Bible character posts go only in Old Testament or New Testament.
 - Primary menu (id 14, also mobile), rebuilt 2026-09-25 by `site/menu-snippet.php`: Characters (/bible-characters/), Songs (/songs/),
-  Maps (/bible-maps/), Deep Dives (sammons.substack.com/podcast, new tab), About, Subscribe (/subscribe/,
+  Maps (/bible-maps/), Podcast (sammons.substack.com/podcast, new tab; item 4019, renamed from Deep Dives by
+  `site/menu-rename-snippet.php`), About, Subscribe (/subscribe/,
   menu item class `ss-menu-subscribe`, styled as a red button by the `ss-header` CSS in the SEO snippet).
   Non-Bible topics live in the footer's "More writing" column, not the header.
 - The header's duplicate top bar (repeated menu and empty social icons) is hidden by the `ss-header` CSS.
 - Series name: **Characters Worth Following** (same as the YouTube channel). Each character has five
-  parts: 1 Read (short post), 2 Listen (gospel quartet song, YouTube @CharactersWorthFollowing),
-  3 Deep dive (Substack podcast episode, sammons.substack.com/podcast), 4 Profile page, 5 Map page.
+  parts: 1 Read (short post), 2 Gospel Quartet (song, YouTube @CharactersWorthFollowing),
+  3 Podcast (Substack episode, sammons.substack.com/podcast), 4 Profile page, 5 Map page.
   Posts go in the RSS feed; profiles and maps are pages and must stay pages.
 - Story data: `site/stories.json` (committed), refreshed by `python3 site/stories.py`. It attaches new
   posts via the profile page they link to and matches new songs and deep dives by character name; it
   prints anything UNASSIGNED/UNMATCHED to fix by hand. Then rebuild what changed:
   `python3 site/build_hub.py --apply` (/bible-characters/), `site/build_songs.py --apply` (/songs/, 3947),
   `site/build_maps.py --apply` (/bible-maps/, 3948, lists seo/map-pages.json), and
-  `site/story_strip.py --apply` (the "<Name> in five parts" box after each character post: Code Snippet
+  `site/story_strip.py --apply` (the five-part component on each character post: Code Snippet
   id in `site/story-strip-snippet-id.txt`, the_content priority 15, skipped in feeds). Approval for a new
   character post covers all of these.
+- Five-part component on posts (rebuilt 2026-09-25, source `site/story_strip.py`, `story-strip.css`,
+  `story-strip.js`): parts are Read, Gospel Quartet, Podcast, Profile, Map (Steve renamed Listen and
+  Deep dive everywhere on 2026-09-25: posts, Characters/Songs/Subscribe pages, menu, footer. Use these names). A bar under the title with icons, hover titles and a ? panel; up to two cards in the text
+  (song or podcast about 40% in; map after the first paragraph naming a place from its title, else
+  profile about 70% in); a box at the end. Missing parts are light grey "Coming soon". Gospel Quartet
+  opens a popup YouTube player and Podcast a popup audio player (free Substack episodes; `stories.py`
+  saves each episode's `audio` URL). The CSS is printed in wp_head: a `<style>` at the start of the
+  post content gets stripped along with whatever follows it.
 - Subscribing: new subscribers go to Substack via /subscribe/ (1423, `site/build_subscribe.py`). The
   existing MailPoet list (about 8,000) keeps getting email; don't touch it. The footer MailPoet form
   (mailpoet_form-2) was moved to Inactive widgets on 2026-09-25. /newsletter/ (1464) holds the
