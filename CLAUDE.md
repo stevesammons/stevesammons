@@ -142,6 +142,14 @@ only pages whose back links changed, and checks each live page).
 
 Two kinds of featured image, both 16:9, black and white with one red accent:
 
+Portraits are for posts only. Character profile pages never show a portrait: they get a card
+(headline = name, subtitle "Bible character profile", footer = Old/New Testament) as their featured
+image and at the top of the page, from `python3 site/profile_cards.py apply [PAGE_ID]` (skips pages
+that already have one; `--force` remakes). The theme doesn't display a page's featured image, so the
+card is also placed in the content between `<!-- ss-card -->` markers, just after the back-link card.
+Started 2026-09-25: 20 of 88 profile pages done, then uploads failed with "could not be moved to
+wp-content/uploads" (server storage); run it again once uploads work.
+
 1. **Bible character posts**: the character portrait (imagined, black-and-white documentary
    photo style) with the name in white bold caps top left, a short line under it, and a thin red
    vertical bar to the left of the text. These come from Steve's own artwork; don't replace them.
