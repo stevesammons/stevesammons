@@ -1,0 +1,345 @@
+{
+ "title": "Follow the Danites through Micah's hill country",
+ "kicker": "Interactive map • Judges 17–18",
+ "bbox": [
+  34.7,
+  31.62,
+  35.85,
+  33.32
+ ],
+ "anchor": "shechem",
+ "places": {
+  "ephraim": {
+   "name": "Hill country of Ephraim",
+   "sub": "Micah's home region",
+   "ll": [
+    32.1,
+    35.24
+   ],
+   "main": true,
+   "area": [
+    20,
+    24
+   ],
+   "conf": "region",
+   "confT": "Approximate region",
+   "text": "Judges 17:1 and 18:13 place Micah in the hill country of Ephraim, part of the central highlands north of Jerusalem. The shaded area is broad orientation only. Micah's house has no secure modern identification, and no ancient border is implied."
+  },
+  "shechem": {
+   "name": "Shechem",
+   "sub": "regional landmark",
+   "ll": [
+    32.21361,
+    35.28194
+   ],
+   "conf": "secure",
+   "text": "Ancient Shechem is identified with Tell Balata, about 1.2 miles (2 km) east-southeast of modern Nablus. Joshua 20:7 places it in the hill country of Ephraim. It is shown as a known landmark of the region, not as Micah's home."
+  },
+  "shiloh": {
+   "name": "Shiloh",
+   "sub": "house of God",
+   "ll": [
+    32.0557,
+    35.2893
+   ],
+   "conf": "secure",
+   "text": "The tabernacle stood at Shiloh in this period (Joshua 18:1). Judges 18:31 notes that the Danites kept Micah's idol all the time the house of God was in Shiloh. The site is Khirbet Seilun (Tel Shiloh) in the West Bank."
+  },
+  "bethlehem": {
+   "name": "Bethlehem",
+   "sub": "the Levite's town",
+   "ll": [
+    31.7045,
+    35.2073
+   ],
+   "conf": "secure",
+   "text": "The young Levite who became Micah's priest came from Bethlehem in Judah (Judges 17:7–9). He left to look for somewhere else to live and came to Micah's house in the hills of Ephraim."
+  },
+  "zorah": {
+   "name": "Zorah",
+   "sub": "Danite hometown",
+   "ll": [
+    31.765,
+    34.985
+   ],
+   "conf": "probable",
+   "text": "The Danites sent out their scouts and later their 600 warriors from Zorah and Eshtaol (Judges 18:2, 11). Zorah is usually identified with Tel Tzora, on a ridge above the Sorek Valley. It was also the hometown of Samson's father, Manoah (Judges 13:2)."
+  },
+  "kiriath": {
+   "name": "Kiriath Jearim",
+   "sub": "Danite camp nearby",
+   "ll": [
+    31.806,
+    35.102
+   ],
+   "conf": "probable",
+   "text": "On the way north the 600 Danites camped near Kiriath Jearim in Judah, and the place west of it was afterward called Mahaneh Dan, meaning “camp of Dan” (Judges 18:12). The town is usually identified with the hill of Deir el-Azar at Abu Ghosh."
+  },
+  "laish": {
+   "name": "Laish / Dan",
+   "sub": "the Danites' new city",
+   "ll": [
+    33.2486,
+    35.6522
+   ],
+   "conf": "secure",
+   "text": "Laish was a quiet, unsuspecting town far from Sidon (Judges 18:7, 28). The Danites burned it, rebuilt it and renamed it Dan (Judges 18:27–29). The site is Tel Dan in northern Israel, beside one of the main springs of the Jordan."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city shown for orientation. In the time of the judges it was the Jebusite town of Jebus (Judges 19:10)."
+  }
+ },
+ "routes": {
+  "levite": {
+   "pts": [
+    [
+     31.7045,
+     35.2073
+    ],
+    [
+     31.78,
+     35.22
+    ],
+    [
+     31.93,
+     35.23
+    ],
+    [
+     32.05,
+     35.24
+    ]
+   ],
+   "style": "req"
+  },
+  "danites": {
+   "pts": [
+    [
+     31.765,
+     34.985
+    ],
+    [
+     31.806,
+     35.102
+    ],
+    [
+     31.88,
+     35.2
+    ],
+    [
+     31.97,
+     35.24
+    ],
+    [
+     32.07,
+     35.25
+    ],
+    [
+     32.22,
+     35.27
+    ],
+    [
+     32.37,
+     35.28
+    ],
+    [
+     32.5,
+     35.33
+    ],
+    [
+     32.68,
+     35.42
+    ],
+    [
+     32.9,
+     35.49
+    ],
+    [
+     33.02,
+     35.56
+    ],
+    [
+     33.15,
+     35.61
+    ],
+    [
+     33.2486,
+     35.6522
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.35,
+    34.78
+   ],
+   "kind": "water",
+   "rot": -76
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.82,
+    35.7
+   ],
+   "kind": "water",
+   "size": 9.5
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.66,
+    35.5
+   ],
+   "kind": "water",
+   "size": 9.5
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.45,
+    35.585
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Galilee",
+   "ll": [
+    32.95,
+    35.25
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.68,
+    35.0
+   ],
+   "kind": "region",
+   "size": 12
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Ephraim",
+   "title": "A shrine in the hills of Ephraim",
+   "refs": [
+    [
+     "Judges 17:1–6",
+     "Judges 17:1-6"
+    ]
+   ],
+   "hot": [
+    "ephraim",
+    "shechem"
+   ],
+   "sel": "ephraim",
+   "view": [
+    34.85,
+    31.65,
+    35.65,
+    32.45
+   ],
+   "html": "<p>Micah lived somewhere in the hill country of Ephraim, the central highlands north of Jerusalem. The Bible names the region but not his village, so the map shades the region instead of guessing at a house.</p><p>Micah returned 1,100 shekels of silver he had taken from his mother. She had part of it made into an idol, and Micah set up a shrine with an ephod and household gods, installing one of his sons as priest.</p>",
+   "quote": [
+    "In those days Israel had no king; everyone did as they saw fit.",
+    "Judges 17:6 (NIV)"
+   ],
+   "facts": [
+    "Joshua 20:7 lists Shechem “in the hill country of Ephraim,” which is why the map uses Tell Balata as a landmark for the region.",
+    "Micah's mother gave 200 shekels of the returned silver to a silversmith to make the image (Judges 17:4)."
+   ]
+  },
+  {
+   "tab": "Levite",
+   "title": "A priest for hire from Bethlehem",
+   "refs": [
+    [
+     "Judges 17:7–13",
+     "Judges 17:7-13"
+    ]
+   ],
+   "hot": [
+    "bethlehem",
+    "ephraim"
+   ],
+   "routes": [
+    "levite"
+   ],
+   "sel": "bethlehem",
+   "view": [
+    34.85,
+    31.62,
+    35.65,
+    32.42
+   ],
+   "html": "<p>A young Levite from Bethlehem in Judah left his town to find a place to stay. His travels brought him north into the hill country of Ephraim and to Micah's house.</p><p>Micah offered him ten shekels of silver a year, clothing and food to serve as his priest. The Levite agreed, and Micah was sure the Lord would now be good to him because he had a Levite as priest.</p>",
+   "facts": [
+    "Bethlehem lies about 5 miles (8 km) south of Jerusalem's Old City. The next story in Judges also involves a Levite in Ephraim and a woman from Bethlehem (Judges 19:1).",
+    "Levites received towns but no tribal territory of their own (Joshua 21), so a Levite looking for a place to live fits the unsettled times the book describes."
+   ]
+  },
+  {
+   "tab": "Scouts",
+   "title": "Five scouts from Dan",
+   "refs": [
+    [
+     "Judges 18:1–10",
+     "Judges 18:1-10"
+    ]
+   ],
+   "hot": [
+    "zorah",
+    "ephraim",
+    "laish"
+   ],
+   "routes": [
+    "danites"
+   ],
+   "sel": "zorah",
+   "html": "<p>The tribe of Dan had not yet settled a territory of its own. They sent five men from Zorah and Eshtaol to explore the land, and on the way the scouts spent the night at Micah's house, where they recognized the young Levite's voice.</p><p>They went on to Laish in the far north and found a peaceful, unprotected town. They came back urging their tribe to take it.</p>",
+   "facts": [
+    "Zorah and Tel Dan are about 110 miles (176 km) apart in a straight line. The route shown is only an illustration, since the text gives no road.",
+    "Samson, the best-known Danite, was buried between Zorah and Eshtaol (Judges 16:31)."
+   ]
+  },
+  {
+   "tab": "Dan",
+   "title": "Micah's gods go north",
+   "refs": [
+    [
+     "Judges 18:11–31",
+     "Judges 18:11-31"
+    ]
+   ],
+   "hot": [
+    "kiriath",
+    "ephraim",
+    "laish",
+    "shiloh"
+   ],
+   "routes": [
+    "danites"
+   ],
+   "sel": "laish",
+   "html": "<p>Six hundred armed Danites set out, camped near Kiriath Jearim and crossed into the hill country of Ephraim. At Micah's house they took the idol, the ephod and the household gods, and persuaded the Levite to come as priest for a whole tribe.</p><p>Micah chased them but turned back when he saw they were too strong. The Danites burned Laish, rebuilt it as Dan and set up the idol there.</p>",
+   "facts": [
+    "Judges 18:30 names the Danites' priest as Jonathan, son of Gershom, son of Moses, a surprising lineage for an idol shrine.",
+    "The springs at Tel Dan are among the main sources of the Jordan River. Later Jeroboam set up a golden calf at Dan (1 Kings 12:29)."
+   ]
+  }
+ ]
+}

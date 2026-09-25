@@ -1,50 +1,173 @@
 {
  "title": "See where Zechariah urged the temple rebuilding",
  "kicker": "Interactive map • Zechariah 1–14; Ezra 5–6",
- "bbox": [34.72, 31.5, 35.58, 32.12],
+ "bbox": [
+  34.72,
+  31.5,
+  35.58,
+  32.12
+ ],
  "anchor": "temple",
  "places": {
   "temple": {
-   "name": "Temple Mount", "sub": "traditional temple area", "ll": [31.778, 35.2354], "main": true, "conf": "probable", "confT": "Traditional site",
-   "text": "The raised compound on the eastern side of today's Old City, known in Islam as the Noble Sanctuary. The returned exiles rebuilt the temple in this area (Ezra 6:14–15). The marker shows the wider site, not the exact line of Zechariah's foundations."
-  },
-  "cityofdavid": {
-   "name": "City of David", "sub": "oldest Jerusalem", "ll": [31.7733, 35.2359], "conf": "secure",
-   "text": "The narrow ridge running south from the Temple Mount, where the oldest part of Jerusalem stood. In Zechariah's day the returned community was small, and Nehemiah later found the city's walls still broken down (Nehemiah 1:3)."
+   "name": "Temple Mount",
+   "sub": "traditional temple area",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "main": true,
+   "conf": "probable",
+   "confT": "Traditional site",
+   "text": "The raised compound on the eastern side of today's Old City, known in Islam as the Noble Sanctuary. The returned exiles rebuilt the temple in this area (Ezra 6:14–15). The marker shows the wider site, not the exact line of Zechariah's foundations.",
+   "label": "l"
   },
   "olives": {
-   "name": "Mount of Olives", "ll": [31.779, 35.2445], "conf": "secure",
+   "name": "Mount of Olives",
+   "ll": [
+    31.779,
+    35.2445
+   ],
+   "conf": "secure",
    "text": "The ridge east of the temple, across the Kidron Valley. Zechariah foresaw the Lord standing on it and the mountain splitting in two from east to west (Zechariah 14:4)."
   },
   "bethel": {
-   "name": "Bethel", "sub": "delegation's town", "ll": [31.9285, 35.2375], "conf": "probable", "confT": "Often identified",
+   "name": "Bethel",
+   "sub": "delegation's town",
+   "ll": [
+    31.9285,
+    35.2375
+   ],
+   "conf": "probable",
+   "confT": "Often identified",
    "text": "An old sanctuary town north of Jerusalem, usually identified with the village of Beitin. In the NIV's reading, the people of Bethel sent men to Jerusalem to ask the priests and prophets about fasting (Zechariah 7:2–3)."
   },
   "bethlehem": {
-   "name": "Bethlehem", "ll": [31.7043, 35.2066], "kind": "ref", "conf": "modern",
+   "name": "Bethlehem",
+   "ll": [
+    31.7043,
+    35.2066
+   ],
+   "kind": "ref",
+   "conf": "modern",
    "text": "Modern town south of Jerusalem, shown for orientation. Ezra lists 123 men of Bethlehem among the returning exiles (Ezra 2:21)."
   },
   "telaviv": {
-   "name": "Tel Aviv", "ll": [32.0853, 34.7818], "kind": "ref", "conf": "modern",
+   "name": "Tel Aviv",
+   "ll": [
+    32.0853,
+    34.7818
+   ],
+   "kind": "ref",
+   "conf": "modern",
    "text": "Modern city on the Mediterranean coast, shown for orientation. It did not exist in Zechariah's day."
   }
  },
  "routes": {
-  "delegation": {"pts": [[31.9285, 35.2375], [31.88, 35.225], [31.83, 35.225], [31.79, 35.232], [31.778, 35.2354]], "style": "req"}
+  "delegation": {
+   "pts": [
+    [
+     31.9285,
+     35.2375
+    ],
+    [
+     31.88,
+     35.225
+    ],
+    [
+     31.83,
+     35.225
+    ],
+    [
+     31.79,
+     35.232
+    ],
+    [
+     31.778,
+     35.2354
+    ]
+   ],
+   "style": "req"
+  }
  },
  "labels": [
-  {"t": "Mediterranean Sea", "ll": [31.72, 34.78], "kind": "water", "rot": -62},
-  {"t": "Dead Sea", "ll": [31.62, 35.49], "kind": "water", "rot": -85, "size": 10},
-  {"t": "Judean hills", "ll": [31.6, 35.08], "kind": "region", "size": 11},
-  {"t": "Province of Yehud", "ll": [31.87, 35.42], "kind": "region", "size": 10},
-  {"t": "Kidron Valley", "ll": [31.768, 35.2405], "kind": "river", "rot": -80, "size": 8},
-  {"t": "Jordan", "ll": [31.95, 35.535], "kind": "river", "rot": -80}
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.72,
+    34.78
+   ],
+   "kind": "water",
+   "rot": -62
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.62,
+    35.49
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 10
+  },
+  {
+   "t": "Judean hills",
+   "ll": [
+    31.6,
+    35.08
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Province of Yehud",
+   "ll": [
+    31.87,
+    35.42
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Kidron Valley",
+   "ll": [
+    31.7745,
+    35.2397
+   ],
+   "kind": "river",
+   "rot": -85,
+   "size": 8
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    31.95,
+    35.535
+   ],
+   "kind": "river",
+   "rot": -80
+  }
  ],
  "chapters": [
   {
-   "tab": "Return", "title": "A small community in the hills", "badge": "About 538–520 BC",
-   "refs": [["Ezra 1–4", "Ezra 1-4"], ["Zechariah 1:1–6", "Zechariah 1:1-6"]],
-   "hot": ["temple", "bethlehem"], "sel": "temple",
+   "tab": "Return",
+   "title": "A small community in the hills",
+   "badge": "About 538–520 BC",
+   "refs": [
+    [
+     "Ezra 1–4",
+     "Ezra 1-4"
+    ],
+    [
+     "Zechariah 1:1–6",
+     "Zechariah 1:1-6"
+    ]
+   ],
+   "hot": [
+    "temple",
+    "bethlehem"
+   ],
+   "sel": "temple",
    "html": "<p>After Persia conquered Babylon, King Cyrus allowed exiles from Judah to go home and rebuild the Lord's house in Jerusalem. They laid the temple's foundation, but opposition stopped the work for years.</p><p>In the second year of King Darius, about 520 BC, the prophets Haggai and Zechariah began to speak. Zechariah, a grandson of Iddo, called the people to return to the Lord so that he would return to them.</p>",
    "facts": [
     "Under Persian rule Judah was a small province called Yehud. Stamped jar handles and small silver coins bearing that name have been found in the area.",
@@ -52,22 +175,57 @@
    ]
   },
   {
-   "tab": "Temple", "title": "Visions for the builders",
-   "refs": [["Zechariah 1:7–6:15", "Zechariah 1:7-6:15"], ["Ezra 5:1–2", "Ezra 5:1-2"]],
-   "hot": ["temple", "cityofdavid", "olives"], "sel": "temple",
-   "view": [35.212, 31.762, 35.258, 31.792],
+   "tab": "Temple",
+   "title": "Visions for the builders",
+   "refs": [
+    [
+     "Zechariah 1:7–6:15",
+     "Zechariah 1:7-6:15"
+    ],
+    [
+     "Ezra 5:1–2",
+     "Ezra 5:1-2"
+    ]
+   ],
+   "hot": [
+    "temple",
+    "olives"
+   ],
+   "sel": "temple",
+   "view": [
+    35.195,
+    31.752,
+    35.275,
+    31.804
+   ],
    "html": "<p>Zechariah received a series of night visions: horsemen among myrtle trees, a man measuring Jerusalem, a high priest given clean garments, and a golden lampstand between two olive trees.</p><p>The message to Zerubbabel, the governor, was that the temple would be finished by God's Spirit and not by human strength. The leaders took up the work again, and the prophets stood with them and helped.</p>",
-   "quote": ["Not by might nor by power, but by my Spirit", "Zechariah 4:6 (NIV)"],
+   "quote": [
+    "Not by might nor by power, but by my Spirit",
+    "Zechariah 4:6 (NIV)"
+   ],
    "facts": [
     "Zechariah 4:10 asks who dares despise “the day of small things,” a reply to those who thought the new temple looked poor beside Solomon's (compare Haggai 2:3).",
     "The platform visible today, about 35 acres (14 hectares), largely reflects King Herod's later expansion. The temple of Zechariah's day stood on a smaller platform."
    ]
   },
   {
-   "tab": "Bethel", "title": "A question about fasting",
+   "tab": "Bethel",
+   "title": "A question about fasting",
    "badge": "About 518 BC",
-   "refs": [["Zechariah 7–8", "Zechariah 7-8"]],
-   "hot": ["bethel", "temple"], "routes": ["delegation"], "sel": "bethel",
+   "refs": [
+    [
+     "Zechariah 7–8",
+     "Zechariah 7-8"
+    ]
+   ],
+   "hot": [
+    "bethel",
+    "temple"
+   ],
+   "routes": [
+    "delegation"
+   ],
+   "sel": "bethel",
    "html": "<p>In the fourth year of Darius, men came to Jerusalem to ask whether they should keep mourning and fasting in the fifth month, as they had for many years since the temple's destruction.</p><p>Through Zechariah the Lord asked whether those fasts had really been for him. He called instead for true justice, mercy and compassion, and care for widows, orphans, foreigners and the poor. He promised that fasts would become joyful festivals.</p>",
    "facts": [
     "Bethel lies about 11 miles (17 km) north of the Temple Mount in a straight line, along the ridge road through the hill country.",
@@ -75,11 +233,25 @@
    ]
   },
   {
-   "tab": "Finished", "title": "The house is completed",
+   "tab": "Finished",
+   "title": "The house is completed",
    "badge": "About 515 BC",
-   "refs": [["Ezra 5:3–6:22", "Ezra 5:3-6:22"]],
-   "hot": ["temple"], "sel": "temple",
-   "view": [35.212, 31.762, 35.258, 31.792],
+   "refs": [
+    [
+     "Ezra 5:3–6:22",
+     "Ezra 5:3-6:22"
+    ]
+   ],
+   "hot": [
+    "temple"
+   ],
+   "sel": "temple",
+   "view": [
+    35.195,
+    31.752,
+    35.275,
+    31.804
+   ],
    "html": "<p>Persian officials questioned the builders, but a search of the royal archives found Cyrus's decree. Darius ordered that the work continue and be paid for from the royal treasury.</p><p>The temple was finished on the third day of the month Adar, in the sixth year of Darius. The people dedicated it with joy and celebrated the Passover. This temple stood for about five centuries before Herod rebuilt it on a grander scale.</p>",
    "facts": [
     "Ezra 6:2 says the copy of Cyrus's decree was found at Ecbatana, a Persian royal residence in what is now western Iran.",
@@ -87,13 +259,32 @@
    ]
   },
   {
-   "tab": "Olives", "title": "The coming king",
-   "refs": [["Zechariah 9:9", "Zechariah 9:9"], ["Zechariah 14:1–9", "Zechariah 14:1-9"]],
-   "hot": ["olives", "temple"], "sel": "olives",
-   "view": [35.212, 31.762, 35.258, 31.792],
+   "tab": "Olives",
+   "title": "The coming king",
+   "refs": [
+    [
+     "Zechariah 9:9",
+     "Zechariah 9:9"
+    ],
+    [
+     "Zechariah 14:1–9",
+     "Zechariah 14:1-9"
+    ]
+   ],
+   "hot": [
+    "olives",
+    "temple"
+   ],
+   "sel": "olives",
+   "view": [
+    35.195,
+    31.752,
+    35.275,
+    31.804
+   ],
    "html": "<p>Zechariah's later chapters look beyond the rebuilding. Jerusalem's king would come to her righteous and victorious, lowly and riding on a donkey.</p><p>In the final chapter, the Lord stands on the Mount of Olives east of the city, the mountain splits, and living water flows out from Jerusalem. Matthew and John connect Jesus's entry into the city on a donkey with Zechariah 9:9.</p>",
    "facts": [
-    "The Mount of Olives rises roughly 250 feet (about 80 m) above the Temple Mount, giving a full view of the temple area across the Kidron Valley.",
+    "The Mount of Olives stands higher than the Temple Mount, so from its slopes the whole temple area can be seen across the Kidron Valley.",
     "Matthew 21:5 and John 12:15 both quote Zechariah 9:9 when describing Jesus's arrival in Jerusalem."
    ]
   }

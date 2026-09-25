@@ -1,0 +1,132 @@
+{
+ "title": "Follow Jael's story from Kedesh to Mount Tabor",
+ "kicker": "Interactive map • Judges 4–5",
+ "bbox": [34.85, 32.45, 35.75, 33.2],
+ "anchor": "tabor",
+ "places": {
+  "kedesh": {
+   "name": "Kedesh",
+   "sub": "near Heber's camp",
+   "ll": [33.1106, 35.53],
+   "main": true,
+   "conf": "debated",
+   "text": "Barak came from Kedesh in Naphtali, and Heber the Kenite had pitched his tent near Kedesh (Judges 4:6, 11). This marker is Tel Kedesh in upper Galilee. Some scholars prefer a different Kedesh closer to Mount Tabor, and Jael's tent itself cannot be located."
+  },
+  "tabor": {
+   "name": "Mount Tabor",
+   "sub": "Barak's muster",
+   "ll": [32.687, 35.39],
+   "main": true,
+   "conf": "secure",
+   "text": "An isolated dome-shaped mountain at the northeastern edge of the Jezreel Valley. Barak gathered ten thousand men here and went down from it to fight Sisera (Judges 4:12–14)."
+  },
+  "hazor": {
+   "name": "Hazor",
+   "sub": "Jabin's city",
+   "ll": [33.017, 35.568],
+   "conf": "secure",
+   "text": "Judges 4:2 says Jabin, a king of Canaan, reigned in Hazor, and Sisera commanded his army. Tel Hazor, north of the Sea of Galilee, is one of the largest ancient mounds in Israel."
+  },
+  "megiddo": {
+   "name": "Megiddo",
+   "ll": [32.585, 35.185],
+   "conf": "secure",
+   "text": "The Song of Deborah says the kings of Canaan fought \"at Taanach, by the waters of Megiddo\" (Judges 5:19). Tel Megiddo guards a pass on the southwestern edge of the Jezreel Valley."
+  },
+  "taanach": {
+   "name": "Taanach",
+   "ll": [32.5195, 35.2195],
+   "conf": "secure",
+   "text": "A Canaanite town about 5 miles (8 km) southeast of Megiddo, named with Megiddo in the Song of Deborah (Judges 5:19)."
+  },
+  "haifa": {
+   "name": "Haifa",
+   "ll": [32.815, 34.995],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city at the mouth of the Kishon, shown for orientation."
+  },
+  "tiberias": {
+   "name": "Tiberias",
+   "ll": [32.7922, 35.5312],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the western shore of the Sea of Galilee, shown for orientation."
+  }
+ },
+ "routes": {
+  "muster": {
+   "pts": [[33.1106, 35.53], [33.0, 35.49], [32.88, 35.44], [32.76, 35.41], [32.687, 35.39]],
+   "style": "req"
+  },
+  "flight": {
+   "pts": [[32.66, 35.33], [32.72, 35.4], [32.85, 35.44], [32.98, 35.49], [33.08, 35.52]],
+   "style": "dash"
+  }
+ },
+ "labels": [
+  {"t": "Mediterranean Sea", "ll": [32.72, 34.9], "kind": "water", "rot": -75},
+  {"t": "Sea of Galilee", "ll": [32.83, 35.66], "kind": "water", "size": 9.5},
+  {"t": "Jezreel Valley", "ll": [32.61, 35.28], "kind": "region", "rot": -18},
+  {"t": "Kishon", "ll": [32.69, 35.14], "kind": "river", "rot": -35},
+  {"t": "Galilee", "ll": [32.95, 35.25], "kind": "region", "size": 13},
+  {"t": "Jordan", "ll": [33.07, 35.62], "kind": "river", "rot": -85}
+ ],
+ "chapters": [
+  {
+   "tab": "Kedesh",
+   "title": "A Kenite camp near Kedesh",
+   "badge": "Period of the judges",
+   "refs": [["Judges 4:1–11", "Judges 4:1-11"]],
+   "hot": ["kedesh", "hazor", "tabor"],
+   "routes": ["muster"],
+   "sel": "kedesh",
+   "html": "<p>For twenty years Jabin, a king of Canaan who reigned in Hazor, oppressed Israel through his commander Sisera and nine hundred iron chariots. Deborah summoned Barak from Kedesh in Naphtali and told him to lead ten thousand men to Mount Tabor.</p><p>Judges then pauses to note that Heber the Kenite had moved away from the other Kenites and pitched his tent by the great tree in Zaanannim near Kedesh. His wife was Jael.</p>",
+   "facts": [
+    "Judges 4:11 traces the Kenites to Hobab, Moses' brother-in-law. They were a people who lived alongside Israel without being an Israelite tribe.",
+    "Tel Hazor covers about 200 acres (80 hectares) including its lower city, which makes it one of the largest ancient sites in the land."
+   ]
+  },
+  {
+   "tab": "Tabor",
+   "title": "Barak comes down from Tabor",
+   "refs": [["Judges 4:12–16", "Judges 4:12-16"]],
+   "hot": ["tabor"],
+   "sel": "tabor",
+   "view": [35.05, 32.45, 35.6, 32.85],
+   "html": "<p>When Sisera heard that Barak had gone up Mount Tabor, he gathered his chariots and troops at the Kishon River. Deborah told Barak that this was the day.</p><p>Barak charged down the mountain with his ten thousand, and the Lord routed Sisera and his army. Barak pursued the chariots, and Sisera abandoned his own chariot and fled on foot.</p>",
+   "quote": ["Go! This is the day the LORD has given Sisera into your hands.", "Judges 4:14 (NIV)"],
+   "facts": [
+    "Mount Tabor rises more than 1,000 feet (300 m) above the surrounding plain, so troops on its slopes could watch the whole valley below.",
+    "Deborah had warned Barak that the honor of the victory would go to a woman (Judges 4:9)."
+   ]
+  },
+  {
+   "tab": "Kishon",
+   "title": "The river swept them away",
+   "refs": [["Judges 5:19–21", "Judges 5:19-21"]],
+   "hot": ["megiddo", "taanach", "tabor"],
+   "sel": "megiddo",
+   "view": [34.95, 32.45, 35.5, 32.85],
+   "html": "<p>The Song of Deborah retells the battle as poetry. The kings of Canaan fought at Taanach, by the waters of Megiddo, but carried off no silver.</p><p>The song says the stars fought against Sisera from the heavens and the river Kishon swept the enemy away. Earlier the song describes the clouds pouring down water, which suggests a storm turned the ground against the chariots.</p>",
+   "facts": [
+    "The Kishon drains the Jezreel Valley northwest to the Mediterranean near Haifa. For much of the year it is a small stream, but winter rains can flood the flat valley floor.",
+    "Chariots needed firm, level ground. A waterlogged valley would have turned Sisera's greatest strength into a weakness."
+   ]
+  },
+  {
+   "tab": "Jael",
+   "title": "Jael's tent",
+   "refs": [["Judges 4:17–24", "Judges 4:17-24"], ["Judges 5:24–27", "Judges 5:24-27"]],
+   "hot": ["kedesh", "tabor"],
+   "routes": ["flight"],
+   "sel": "kedesh",
+   "html": "<p>Sisera fled to the tent of Jael, because Heber's clan was at peace with Jabin. Jael invited him in, gave him milk when he asked for water, and covered him. While he slept, she drove a tent peg through his temple.</p><p>When Barak arrived in pursuit, Jael showed him the dead commander. Judges does not say exactly where the tent stood, only that Heber's camp was near Kedesh.</p>",
+   "quote": ["Most blessed of women be Jael, the wife of Heber the Kenite", "Judges 5:24 (NIV)"],
+   "facts": [
+    "If the Kedesh meant is Tel Kedesh in upper Galilee, Sisera's flight from the Tabor area would have been roughly 30 miles (48 km) in a straight line. This is one reason some scholars look for a closer Kedesh.",
+    "The Song of Deborah adds that Jael gave Sisera milk in a bowl fit for nobles (Judges 5:25)."
+   ]
+  }
+ ]
+}
