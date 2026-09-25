@@ -1,0 +1,269 @@
+{
+ "title": "Follow Naomi from Bethlehem to Moab and home again",
+ "kicker": "Interactive map • Ruth 1–4",
+ "bbox": [
+  34.85,
+  30.95,
+  36.15,
+  32.1
+ ],
+ "anchor": "bethlehem",
+ "places": {
+  "bethlehem": {
+   "name": "Bethlehem",
+   "sub": "Naomi's hometown",
+   "ll": [
+    31.7054,
+    35.2024
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "A town in the hill country of Judah, south of Jerusalem. Elimelech, Naomi and their two sons were Ephrathites from Bethlehem (Ruth 1:2). Naomi returned here at the start of the barley harvest (Ruth 1:22)."
+  },
+  "moab": {
+   "name": "Country of Moab",
+   "sub": "exact town not named",
+   "ll": [
+    31.35,
+    35.8
+   ],
+   "area": [
+    20,
+    30
+   ],
+   "conf": "region",
+   "text": "The tableland east of the Dead Sea. Ruth says the family went to live in the country of Moab (Ruth 1:1) but never names the town where they settled, so this marker shows only the region."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city shown for orientation, about 6 miles (10 km) north of Bethlehem."
+  },
+  "karak": {
+   "name": "Karak",
+   "ll": [
+    31.1853,
+    35.7048
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern town on the Moabite plateau in Jordan, shown for orientation."
+  }
+ },
+ "routes": {
+  "home": {
+   "pts": [
+    [
+     31.45,
+     35.72
+    ],
+    [
+     31.7,
+     35.66
+    ],
+    [
+     31.84,
+     35.55
+    ],
+    [
+     31.86,
+     35.45
+    ],
+    [
+     31.78,
+     35.33
+    ],
+    [
+     31.72,
+     35.24
+    ],
+    [
+     31.7054,
+     35.2024
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.5,
+    35.49
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 10
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    31.98,
+    35.54
+   ],
+   "kind": "river",
+   "rot": -80
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.45,
+    35.1
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Moab",
+   "ll": [
+    31.1,
+    35.9
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Arnon",
+   "ll": [
+    31.47,
+    35.68
+   ],
+   "kind": "river",
+   "rot": -10
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Bethlehem",
+   "title": "A famine in the house of bread",
+   "badge": "Days of the judges",
+   "refs": [
+    [
+     "Ruth 1:1–2",
+     "Ruth 1:1-2"
+    ]
+   ],
+   "hot": [
+    "bethlehem"
+   ],
+   "sel": "bethlehem",
+   "view": [
+    34.95,
+    31.35,
+    35.95,
+    31.95
+   ],
+   "html": "<p>The story opens in the days when the judges ruled. A famine struck the land, and a man from Bethlehem named Elimelech left with his wife Naomi and their sons Mahlon and Kilion.</p><p>They crossed to the country of Moab, on the high plateau east of the Dead Sea, to live there for a while. Ruth never says which Moabite town they chose.</p>",
+   "facts": [
+    "The name Bethlehem is usually understood to mean “house of bread,” which makes a famine there a striking way to begin the story.",
+    "Elimelech's name means “my God is king,” and Naomi's name is related to a Hebrew word for “pleasant.”"
+   ]
+  },
+  {
+   "tab": "Moab",
+   "title": "Ten years in a foreign land",
+   "refs": [
+    [
+     "Ruth 1:3–5",
+     "Ruth 1:3-5"
+    ]
+   ],
+   "hot": [
+    "moab"
+   ],
+   "sel": "moab",
+   "html": "<p>In Moab, Elimelech died. Naomi's two sons married Moabite women, Orpah and Ruth.</p><p>After about ten years, both sons died as well. Naomi was left far from home without her husband or her children, with only her two daughters-in-law beside her.</p>",
+   "facts": [
+    "The Mesha Stele, a Moabite inscription found at Dhiban in Jordan in 1868, names the Moabite god Chemosh and Israel's King Omri.",
+    "On clear days the mountains of Moab can be seen from the hills around Bethlehem, across the deep rift of the Dead Sea."
+   ]
+  },
+  {
+   "tab": "The road",
+   "title": "Where you go I will go",
+   "refs": [
+    [
+     "Ruth 1:6–18",
+     "Ruth 1:6-18"
+    ]
+   ],
+   "hot": [
+    "moab",
+    "bethlehem"
+   ],
+   "routes": [
+    "home"
+   ],
+   "sel": "moab",
+   "html": "<p>Naomi heard that the Lord had provided food for his people again, so she set out for Judah with Orpah and Ruth. On the way she urged them to go back to their mothers' homes.</p><p>Orpah kissed her and returned. Ruth clung to Naomi and refused to leave. Ruth does not describe the road they took, so the line on the map is only a general direction.</p>",
+   "quote": [
+    "Your people will be my people and your God my God.",
+    "Ruth 1:16 (NIV)"
+   ],
+   "facts": [
+    "A traveler from the Moabite plateau to Bethlehem had to go around the Dead Sea, whose surface is now more than 1,400 feet (430 m) below sea level, the lowest land surface on earth.",
+    "Naomi sends her daughters-in-law back to “your mother's home” (Ruth 1:8), an unusual phrase where the Old Testament more often speaks of a father's house."
+   ]
+  },
+  {
+   "tab": "Harvest",
+   "title": "Back in Bethlehem",
+   "refs": [
+    [
+     "Ruth 1:19–2:23",
+     "Ruth 1:19-2:23"
+    ]
+   ],
+   "hot": [
+    "bethlehem"
+   ],
+   "sel": "bethlehem",
+   "view": [
+    34.95,
+    31.45,
+    35.6,
+    31.95
+   ],
+   "html": "<p>The whole town was stirred when the two women arrived. Naomi told the women not to call her Naomi anymore, but Mara, because her life had become bitter.</p><p>It was the beginning of the barley harvest. Ruth went out to glean and happened to come to the field of Boaz, a relative of Elimelech, who treated her with kindness.</p>",
+   "quote": [
+    "Call me Mara, because the Almighty has made my life very bitter.",
+    "Ruth 1:20 (NIV)"
+   ],
+   "facts": [
+    "Mara means “bitter” in Hebrew, the opposite of Naomi's name.",
+    "The law of Moses told landowners to leave the edges of their fields and the leftover grain for the poor and the foreigner (Leviticus 19:9–10), which is what Ruth relied on."
+   ]
+  },
+  {
+   "tab": "Obed",
+   "title": "A son for Naomi",
+   "refs": [
+    [
+     "Ruth 3–4",
+     "Ruth 3-4"
+    ]
+   ],
+   "hot": [
+    "bethlehem"
+   ],
+   "sel": "bethlehem",
+   "view": [
+    34.95,
+    31.45,
+    35.6,
+    31.95
+   ],
+   "html": "<p>Naomi guided Ruth to approach Boaz at the threshing floor. At the town gate, before the elders, Boaz acted as guardian-redeemer, bought Elimelech's land and married Ruth.</p><p>When their son Obed was born, the women of Bethlehem praised the Lord for Naomi. She laid the child in her lap and cared for him. Obed became the grandfather of King David.</p>",
+   "facts": [
+    "The town gate was where legal business was done in public. Boaz gathered ten elders there as witnesses (Ruth 4:2).",
+    "Matthew's genealogy of Jesus names Ruth, along with Boaz and Obed (Matthew 1:5)."
+   ]
+  }
+ ]
+}

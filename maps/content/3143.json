@@ -1,0 +1,295 @@
+{
+ "title": "Follow Dinah's story at Shechem",
+ "kicker": "Interactive map • Genesis 33–35",
+ "bbox": [
+  34.75,
+  31.7,
+  35.95,
+  32.55
+ ],
+ "anchor": "shechem",
+ "places": {
+  "shechem": {
+   "name": "Shechem",
+   "sub": "Hivite city",
+   "ll": [
+    32.2133,
+    35.2828
+   ],
+   "main": true,
+   "conf": "probable",
+   "confT": "Commonly identified",
+   "text": "An ancient city in the pass between Mount Ebal and Mount Gerizim, commonly associated with Tell Balata beside modern Nablus. Jacob camped within sight of the city and bought a plot of ground there (Genesis 33:18–19). Genesis gives no street-level location for the events of chapter 34."
+  },
+  "gerizim": {
+   "name": "Mount Gerizim",
+   "ll": [
+    32.2003,
+    35.2728
+   ],
+   "conf": "secure",
+   "elev": 881,
+   "text": "The mountain on the south side of the Shechem pass. It is not named in Dinah's story, but it frames the valley where the city stood. Later, in Deuteronomy 11:29, it became the mountain of blessing."
+  },
+  "ebal": {
+   "name": "Mount Ebal",
+   "ll": [
+    32.2333,
+    35.2733
+   ],
+   "conf": "secure",
+   "elev": 940,
+   "text": "The higher mountain on the north side of the Shechem pass. Like Gerizim, it is not named in Genesis 34, but it overlooks the site of the ancient city."
+  },
+  "succoth": {
+   "name": "Succoth",
+   "sub": "Jacob's stop",
+   "ll": [
+    32.1969,
+    35.6222
+   ],
+   "conf": "debated",
+   "text": "After meeting Esau, Jacob went to Succoth, built a house and made shelters for his livestock (Genesis 33:17). The name means \"shelters\" or \"booths.\" It is often identified with Tell Deir Alla in the Jordan Valley, near the Jabbok, but that is not certain."
+  },
+  "bethel": {
+   "name": "Bethel",
+   "sub": "altar of El Bethel",
+   "ll": [
+    31.9303,
+    35.2217
+   ],
+   "conf": "probable",
+   "text": "God told Jacob to leave Shechem and settle at Bethel, where God had first appeared to him (Genesis 35:1). Bethel is usually identified with the village of Beitin, north of Jerusalem."
+  },
+  "nablus": {
+   "name": "Nablus",
+   "ll": [
+    32.2211,
+    35.2544
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in the West Bank, beside the ruins of ancient Shechem at Tell Balata. Shown for orientation."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Shown for orientation. Jerusalem plays no part in Dinah's story."
+  }
+ },
+ "routes": {
+  "arrive": {
+   "pts": [
+    [
+     32.1969,
+     35.6222
+    ],
+    [
+     32.105,
+     35.545
+    ],
+    [
+     32.17,
+     35.45
+    ],
+    [
+     32.255,
+     35.36
+    ],
+    [
+     32.235,
+     35.31
+    ],
+    [
+     32.2133,
+     35.2828
+    ]
+   ],
+   "style": "dash"
+  },
+  "tobethel": {
+   "pts": [
+    [
+     32.2133,
+     35.2828
+    ],
+    [
+     32.13,
+     35.27
+    ],
+    [
+     32.065,
+     35.24
+    ],
+    [
+     31.99,
+     35.25
+    ],
+    [
+     31.9303,
+     35.2217
+    ]
+   ]
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.05,
+    34.8
+   ],
+   "kind": "water",
+   "rot": -74
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.0,
+    35.515
+   ],
+   "kind": "river",
+   "rot": -80
+  },
+  {
+   "t": "Jabbok",
+   "ll": [
+    32.16,
+    35.72
+   ],
+   "kind": "river",
+   "rot": 10
+  },
+  {
+   "t": "Hill country",
+   "ll": [
+    32.44,
+    35.02
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Gilead",
+   "ll": [
+    32.4,
+    35.76
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Shechem",
+   "title": "A camp outside Shechem",
+   "refs": [
+    [
+     "Genesis 30:21",
+     "Genesis 30:21"
+    ],
+    [
+     "Genesis 33:17–20",
+     "Genesis 33:17-20"
+    ]
+   ],
+   "hot": [
+    "shechem",
+    "succoth",
+    "gerizim",
+    "ebal"
+   ],
+   "routes": [
+    "arrive"
+   ],
+   "sel": "shechem",
+   "html": "<p>Dinah was the daughter of Jacob and Leah, born during Jacob's years in Paddan Aram. Genesis names her after Leah's six sons and gives no age or birth date.</p><p>On the way back to Canaan, Jacob stayed for a time at Succoth, then crossed to the city of Shechem in the central hills. He camped within sight of the city, bought a plot of ground from the sons of Hamor, and set up an altar he called El Elohe Israel.</p>",
+   "facts": [
+    "Shechem sits in a key pass through the central hills, between Mount Ebal and Mount Gerizim, which made it a natural crossroads for travelers.",
+    "The plot Jacob bought became a family landmark. Joshua 24:32 says Joseph's bones were later buried there."
+   ]
+  },
+  {
+   "tab": "Dinah",
+   "title": "Dinah and the prince of Shechem",
+   "refs": [
+    [
+     "Genesis 34:1–12",
+     "Genesis 34:1-12"
+    ]
+   ],
+   "hot": [
+    "shechem"
+   ],
+   "sel": "shechem",
+   "view": [
+    35.05,
+    32.08,
+    35.55,
+    32.35
+   ],
+   "html": "<p>Dinah went out to visit the women of the land. Shechem son of Hamor, the ruler of the area, saw her, took her and violated her. Genesis then says he loved her and asked his father to get her for him as a wife.</p><p>Hamor went to Jacob to arrange a marriage and proposed that the two peoples intermarry, trade and live together. Genesis records what the men said and did, but not a single word from Dinah.</p>",
+   "facts": [
+    "Genesis 34:2 calls Hamor a Hivite, one of the peoples living in Canaan before Israel.",
+    "The city and the young prince share a name. In Hebrew, shekem means \"shoulder,\" perhaps describing the city's position on the slope of the pass."
+   ]
+  },
+  {
+   "tab": "Revenge",
+   "title": "Simeon and Levi's revenge",
+   "refs": [
+    [
+     "Genesis 34:13–31",
+     "Genesis 34:13-31"
+    ]
+   ],
+   "hot": [
+    "shechem"
+   ],
+   "sel": "shechem",
+   "view": [
+    35.05,
+    32.08,
+    35.55,
+    32.35
+   ],
+   "html": "<p>Jacob's sons answered deceitfully. They agreed to the marriage only if every male in the city was circumcised. Hamor and Shechem persuaded the men at the city gate to accept.</p><p>Three days later, while the men were still in pain, Simeon and Levi, Dinah's full brothers, attacked the city, killed every male and took Dinah from Shechem's house. The other sons looted the city. Jacob rebuked them, fearing the surrounding peoples would retaliate.</p>",
+   "quote": [
+    "Should he have treated our sister like a prostitute?",
+    "Genesis 34:31 (NIV)"
+   ],
+   "facts": [
+    "Jacob returned to this violence in his final words, when he condemned the anger of Simeon and Levi (Genesis 49:5–7).",
+    "Excavations at Tell Balata have uncovered massive city walls and gates from the Middle Bronze Age, showing that Shechem was a strong walled city in that era."
+   ]
+  },
+  {
+   "tab": "Bethel",
+   "title": "Leaving Shechem for Bethel",
+   "refs": [
+    [
+     "Genesis 35:1–7",
+     "Genesis 35:1-7"
+    ]
+   ],
+   "hot": [
+    "shechem",
+    "bethel"
+   ],
+   "routes": [
+    "tobethel"
+   ],
+   "sel": "bethel",
+   "html": "<p>God told Jacob to go up to Bethel and build an altar there. Jacob told his household to get rid of their foreign gods, and he buried the idols and earrings under the oak at Shechem.</p><p>As they set out, a terror from God fell on the surrounding towns, so no one pursued them. At Bethel Jacob built an altar and called the place El Bethel. Dinah is not mentioned again except in the list of Jacob's family in Genesis 46:15.</p>",
+   "facts": [
+    "Bethel lies about 20 miles (32 km) south of Shechem in a straight line, along the ridge of the central hills.",
+    "Bethel means \"house of God.\" Jacob gave the place that name after his dream of the stairway in Genesis 28."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,310 @@
+{
+ "title": "Follow Ahab between his two royal cities",
+ "kicker": "Interactive map • 1 Kings 16–22",
+ "bbox": [
+  34.75,
+  32.12,
+  36.15,
+  33.62
+ ],
+ "anchor": "samaria",
+ "places": {
+  "samaria": {
+   "name": "Samaria",
+   "sub": "capital of Israel",
+   "ll": [
+    32.2763,
+    35.1954
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "Ahab's father Omri bought this hill from a man named Shemer for two talents of silver and built Israel's new capital on it (1 Kings 16:24). The ruins are at Sebastia in today's West Bank, northwest of Nablus. Ahab built a temple to Baal here (1 Kings 16:32)."
+  },
+  "jezreel": {
+   "name": "Jezreel",
+   "sub": "royal residence",
+   "ll": [
+    32.5566,
+    35.329
+   ],
+   "conf": "secure",
+   "text": "A second royal city on a ridge above the broad Jezreel Valley, identified with Tel Jezreel. Naboth's vineyard lay beside Ahab's palace here (1 Kings 21:1). Excavations have uncovered a large fortified enclosure from the ninth century BC."
+  },
+  "carmel": {
+   "name": "Mount Carmel",
+   "sub": "Elijah's contest",
+   "ll": [
+    32.667,
+    35.083
+   ],
+   "conf": "probable",
+   "confT": "Traditional site",
+   "text": "The long Carmel ridge rises above the Mediterranean coast. Tradition places Elijah's contest with the prophets of Baal at el-Muhraqa, near the ridge's southeastern end, overlooking the Jezreel Valley (1 Kings 18:19–40).",
+   "elev": 482
+  },
+  "ramoth": {
+   "name": "Ramoth Gilead",
+   "sub": "Ahab's last battle",
+   "ll": [
+    32.53,
+    35.98
+   ],
+   "area": [
+    11,
+    9
+   ],
+   "conf": "debated",
+   "text": "A fortified town east of the Jordan held by the Arameans. Ahab died here after a randomly shot arrow struck him between the pieces of his armor (1 Kings 22:34–37). It is often identified with Tell er-Rumeith in northern Jordan, but that is not certain."
+  },
+  "sidon": {
+   "name": "Sidon",
+   "sub": "Jezebel's homeland",
+   "ll": [
+    33.5606,
+    35.3714
+   ],
+   "conf": "secure",
+   "text": "Jezebel was the daughter of Ethbaal, king of the Sidonians (1 Kings 16:31). The marriage tied Israel to the wealthy Phoenician trading cities on the coast of today's Lebanon."
+  },
+  "haifa": {
+   "name": "Haifa",
+   "ll": [
+    32.815,
+    34.995
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city at the foot of Mount Carmel, shown for orientation."
+  },
+  "irbid": {
+   "name": "Irbid",
+   "ll": [
+    32.5556,
+    35.85
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in northern Jordan, shown for orientation near the proposed site of Ramoth Gilead."
+  }
+ },
+ "routes": {
+  "elijah": {
+   "pts": [
+    [
+     32.667,
+     35.083
+    ],
+    [
+     32.63,
+     35.17
+    ],
+    [
+     32.59,
+     35.26
+    ],
+    [
+     32.5566,
+     35.329
+    ]
+   ]
+  },
+  "tobattle": {
+   "pts": [
+    [
+     32.2763,
+     35.1954
+    ],
+    [
+     32.4,
+     35.33
+    ],
+    [
+     32.49,
+     35.55
+    ],
+    [
+     32.53,
+     35.8
+    ],
+    [
+     32.53,
+     35.98
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.55,
+    34.86
+   ],
+   "kind": "water",
+   "rot": -76
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.82,
+    35.59
+   ],
+   "kind": "water",
+   "size": 9.5
+  },
+  {
+   "t": "Jezreel Valley",
+   "ll": [
+    32.61,
+    35.23
+   ],
+   "kind": "region",
+   "rot": -18
+  },
+  {
+   "t": "Gilead",
+   "ll": [
+    32.3,
+    35.8
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.42,
+    35.585
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Kishon",
+   "ll": [
+    32.7,
+    35.14
+   ],
+   "kind": "river",
+   "rot": -35
+  },
+  {
+   "t": "Phoenicia",
+   "ll": [
+    33.38,
+    35.38
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Samaria",
+   "title": "A king on his father's hill",
+   "badge": "About 874–853 BC",
+   "refs": [
+    [
+     "1 Kings 16:23–33",
+     "1 Kings 16:23-33"
+    ]
+   ],
+   "hot": [
+    "samaria",
+    "sidon"
+   ],
+   "sel": "samaria",
+   "html": "<p>Ahab inherited a young capital. His father Omri had built Samaria on a hill he bought outright, and Ahab ruled from it for twenty-two years.</p><p>He married Jezebel, a princess from Sidon on the Phoenician coast, and built a temple and altar for Baal in Samaria. First Kings says he did more to provoke the Lord than all the kings before him.</p>",
+   "facts": [
+    "The Assyrian Kurkh Monolith lists “Ahab the Israelite” with 2,000 chariots at the Battle of Qarqar in 853 BC, one of the earliest mentions of an Israelite king outside the Bible.",
+    "Hundreds of carved ivory fragments were found at Samaria in the 1930s. Many scholars connect them with the “palace adorned with ivory” of 1 Kings 22:39."
+   ]
+  },
+  {
+   "tab": "Carmel",
+   "title": "Fire on Mount Carmel",
+   "refs": [
+    [
+     "1 Kings 18",
+     "1 Kings 18"
+    ]
+   ],
+   "hot": [
+    "carmel",
+    "jezreel"
+   ],
+   "routes": [
+    "elijah"
+   ],
+   "sel": "carmel",
+   "view": [
+    34.85,
+    32.35,
+    35.6,
+    32.95
+   ],
+   "html": "<p>After three years of drought, Elijah summoned Ahab, the prophets of Baal and the people to Mount Carmel. Fire fell on Elijah's water-soaked offering, and the prophets of Baal were put to death at the Kishon Valley below.</p><p>As the rain finally came, Ahab raced his chariot to Jezreel, and Elijah ran ahead of him the whole way.</p>",
+   "quote": [
+    "How long will you waver between two opinions?",
+    "1 Kings 18:21 (NIV)"
+   ],
+   "facts": [
+    "The run from the Carmel ridge to Jezreel is about 16 miles (26 km) in a straight line across the flat Jezreel Valley.",
+    "The name Carmel means something like “garden land” or “vineyard of God,” fitting for one of the greenest ridges in the region."
+   ]
+  },
+  {
+   "tab": "Jezreel",
+   "title": "Naboth's vineyard",
+   "refs": [
+    [
+     "1 Kings 21",
+     "1 Kings 21"
+    ]
+   ],
+   "hot": [
+    "jezreel"
+   ],
+   "sel": "jezreel",
+   "view": [
+    35.05,
+    32.3,
+    35.6,
+    32.75
+   ],
+   "html": "<p>Next to Ahab's palace in Jezreel lay a vineyard owned by Naboth. Ahab offered to buy it or trade for it, but Naboth refused to sell his family inheritance.</p><p>Jezebel arranged false charges, Naboth was stoned, and Ahab took the vineyard. Elijah met him there with a message of judgment, and Ahab humbled himself.</p>",
+   "quote": [
+    "Let me have your vineyard to use for a vegetable garden.",
+    "1 Kings 21:2 (NIV)"
+   ],
+   "facts": [
+    "Jezreel sits on a natural shelf with a view across the whole valley, a strong position for watching the main road between the coast and the Jordan.",
+    "Archaeologists have found rock-cut wine presses around Tel Jezreel, a reminder that this was vineyard country."
+   ]
+  },
+  {
+   "tab": "Ramoth Gilead",
+   "title": "The last battle",
+   "refs": [
+    [
+     "1 Kings 22:1–40",
+     "1 Kings 22:1-40"
+    ]
+   ],
+   "hot": [
+    "ramoth",
+    "samaria"
+   ],
+   "routes": [
+    "tobattle"
+   ],
+   "sel": "ramoth",
+   "html": "<p>Ahab and King Jehoshaphat of Judah marched east across the Jordan to retake Ramoth Gilead from Aram. The prophet Micaiah warned that Ahab would not return.</p><p>Ahab went into battle in disguise, but an arrow shot at random struck him. He propped himself up in his chariot until evening and died. His body was brought back to Samaria for burial.</p>",
+   "facts": [
+    "The Bible notes that the arrow was shot “at random” (1 Kings 22:34). Disguise could not protect Ahab from the word Micaiah had spoken.",
+    "Ramoth Gilead guarded the King's Highway, the main north–south trade route east of the Jordan, which is why Israel and Aram fought over it."
+   ]
+  }
+ ]
+}

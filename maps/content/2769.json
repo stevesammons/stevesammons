@@ -1,0 +1,259 @@
+{
+ "title": "Follow Abimelech's rise and fall at Shechem",
+ "kicker": "Interactive map • Judges 8:29–9:57",
+ "bbox": [
+  34.9,
+  31.98,
+  35.62,
+  32.48
+ ],
+ "anchor": "shechem",
+ "places": {
+  "shechem": {
+   "name": "Shechem",
+   "sub": "Tell Balata",
+   "ll": [
+    32.2136,
+    35.2817
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "Ancient Shechem is identified with Tell Balata, about a mile (2 km) east-southeast of the center of modern Nablus and about 30 miles (49 km) north of Jerusalem. The city sat in the pass between Mount Ebal and Mount Gerizim. Abimelech's mother came from here, and its leaders made him king (Judges 8:31; 9:6)."
+  },
+  "gerizim": {
+   "name": "Mount Gerizim",
+   "sub": "Jotham's fable",
+   "ll": [
+    32.1995,
+    35.2727
+   ],
+   "conf": "secure",
+   "elev": 881,
+   "text": "The mountain on the south side of the Shechem pass. Jotham, the youngest of Gideon's sons and the only one to escape, stood on its top and called down his fable to the leaders of Shechem (Judges 9:7). The marker shows the summit area, not the exact spot where he stood."
+  },
+  "ebal": {
+   "name": "Mount Ebal",
+   "ll": [
+    32.2337,
+    35.2745
+   ],
+   "conf": "secure",
+   "elev": 940,
+   "text": "The higher mountain on the north side of the pass. Moses told Israel to pronounce curses from Ebal and blessings from Gerizim (Deuteronomy 11:29), and Joshua later built an altar on Ebal (Joshua 8:30–35)."
+  },
+  "arumah": {
+   "name": "Arumah",
+   "sub": "Abimelech's base",
+   "ll": [
+    32.158,
+    35.338
+   ],
+   "conf": "debated",
+   "text": "Abimelech was staying at Arumah when the revolt against him broke out (Judges 9:41). It is often identified with Khirbet el-Ormah, a hilltop southeast of Shechem, but the identification is not certain."
+  },
+  "thebez": {
+   "name": "Thebez",
+   "sub": "Abimelech's death",
+   "ll": [
+    32.3206,
+    35.3697
+   ],
+   "conf": "probable",
+   "confT": "Often identified",
+   "text": "Abimelech besieged this town after destroying Shechem and was killed at its strong tower (Judges 9:50–54). Thebez is usually identified with the town of Tubas, northeast of Shechem."
+  },
+  "nablus": {
+   "name": "Nablus",
+   "ll": [
+    32.2211,
+    35.2544
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in the West Bank, shown for orientation. Its name comes from Neapolis, the Roman city founded nearby in AD 72."
+  }
+ },
+ "routes": {
+  "toshechem": {
+   "pts": [
+    [
+     32.158,
+     35.338
+    ],
+    [
+     32.18,
+     35.315
+    ],
+    [
+     32.2,
+     35.295
+    ],
+    [
+     32.2136,
+     35.2817
+    ]
+   ],
+   "style": "req"
+  },
+  "tothebez": {
+   "pts": [
+    [
+     32.2136,
+     35.2817
+    ],
+    [
+     32.245,
+     35.3
+    ],
+    [
+     32.28,
+     35.33
+    ],
+    [
+     32.3206,
+     35.3697
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.2,
+    34.93
+   ],
+   "kind": "water",
+   "rot": -80
+  },
+  {
+   "t": "Hill country of Ephraim",
+   "ll": [
+    32.08,
+    35.18
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.18,
+    35.535
+   ],
+   "kind": "river",
+   "rot": -80
+  },
+  {
+   "t": "Samaria hills",
+   "ll": [
+    32.36,
+    35.17
+   ],
+   "kind": "region",
+   "size": 10
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Shechem",
+   "title": "A king from his mother's city",
+   "badge": "Period of the judges",
+   "refs": [
+    [
+     "Judges 8:29–9:6",
+     "Judges 8:29-9:6"
+    ]
+   ],
+   "hot": [
+    "shechem"
+   ],
+   "sel": "shechem",
+   "html": "<p>Gideon, also called Jerub-Baal, had seventy sons, plus Abimelech, the son of his concubine from Shechem. After Gideon died, Abimelech asked his mother's relatives to back him as sole ruler.</p><p>The leaders of Shechem gave him seventy shekels of silver from the temple of Baal-Berith. He hired reckless men, killed his half brothers on one stone at Ophrah, and was crowned king beside the great tree at the pillar in Shechem. Only Jotham escaped.</p>",
+   "facts": [
+    "The name Abimelech means “my father is king,” an ironic name for a son of Gideon, who had refused to rule over Israel (Judges 8:23).",
+    "Shechem appears centuries earlier in the Amarna letters of the 1300s BC, where its ruler Labayu is accused of seizing land for himself."
+   ]
+  },
+  {
+   "tab": "Gerizim",
+   "title": "Jotham's fable from the mountain",
+   "refs": [
+    [
+     "Judges 9:7–21",
+     "Judges 9:7-21"
+    ]
+   ],
+   "hot": [
+    "gerizim",
+    "shechem",
+    "ebal"
+   ],
+   "sel": "gerizim",
+   "view": [
+    35.19,
+    32.168,
+    35.36,
+    32.262
+   ],
+   "html": "<p>Jotham climbed Mount Gerizim, above the city, and shouted a parable to the leaders of Shechem. The trees looked for a king, but the olive, the fig and the vine would not give up their good work to rule. Only the thornbush accepted.</p><p>Jotham warned that if they had not acted in good faith, fire would come out of Abimelech and consume Shechem, and fire from Shechem would consume Abimelech. Then he fled to Beer.</p>",
+   "facts": [
+    "Mount Gerizim rises about 2,890 feet (881 m) and Mount Ebal about 3,080 feet (940 m). The city lay in the narrow pass between them.",
+    "Beer, where Jotham hid from his brother, has never been securely identified, so it is not marked."
+   ]
+  },
+  {
+   "tab": "Revolt",
+   "title": "Shechem turns on its king",
+   "refs": [
+    [
+     "Judges 9:22–49",
+     "Judges 9:22-49"
+    ]
+   ],
+   "hot": [
+    "shechem",
+    "arumah"
+   ],
+   "routes": [
+    "toshechem"
+   ],
+   "sel": "arumah",
+   "view": [
+    35.18,
+    32.1,
+    35.42,
+    32.28
+   ],
+   "html": "<p>After Abimelech had governed three years, God sent a spirit of hostility between him and the leaders of Shechem. A newcomer named Gaal boasted against him, and Zebul, the city's governor, secretly warned Abimelech.</p><p>Abimelech came from Arumah, set ambushes in the fields, and drove Gaal out. Then he captured Shechem, razed it and scattered salt over it. About a thousand people who took refuge in the stronghold of the temple of El-Berith died when he set it on fire.</p>",
+   "facts": [
+    "Excavations at Tell Balata uncovered a massive fortress temple with thick walls. Some scholars connect it with the temple of El-Berith, but that link is debated.",
+    "Scattering salt over a conquered city was a symbolic act of devastation. The text does not say it made the land permanently barren."
+   ]
+  },
+  {
+   "tab": "Thebez",
+   "title": "A millstone from the tower",
+   "refs": [
+    [
+     "Judges 9:50–57",
+     "Judges 9:50-57"
+    ]
+   ],
+   "hot": [
+    "thebez",
+    "shechem"
+   ],
+   "routes": [
+    "tothebez"
+   ],
+   "sel": "thebez",
+   "html": "<p>Abimelech moved on to Thebez and captured it, but its people shut themselves inside a strong tower. As he approached the entrance to burn it, a woman dropped an upper millstone on his head and cracked his skull.</p><p>He told his armor-bearer to kill him so no one could say a woman had done it. Judges concludes that God repaid Abimelech for murdering his brothers, and the curse of Jotham came on Shechem.</p>",
+   "facts": [
+    "Tubas, the usual identification for Thebez, lies about 9 miles (15 km) northeast of Tell Balata in a straight line.",
+    "An upper millstone was the smaller, hand-turned stone of a household mill, heavy enough to be deadly when dropped from a height."
+   ]
+  }
+ ]
+}
