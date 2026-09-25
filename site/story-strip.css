@@ -40,6 +40,8 @@ a.cwf,a.cwf:hover,a.cwf *,.cwf a,.cwf a:hover,.cwf a:focus,.cwf a *{text-decorat
 .cwf-track>li{position:relative;display:flex;justify-content:center}
 .cwf-step{display:flex!important;flex-direction:column;align-items:center;gap:5px;cursor:pointer;position:relative;padding:0 2px!important;background:none!important;border:0!important;color:var(--cwf-ink)!important;border-radius:0}
 .cwf-step .cwf-ic{position:relative;z-index:1}
+.cwf .cwf-step,.cwf .cwf-lbl,.cwf .cwf-sub{white-space:normal!important;min-width:0;max-width:100%;letter-spacing:normal!important;text-transform:none!important}
+a.cwf::after,a.cwf-step::after,a.cwf-tile::after{content:none!important;display:none!important}
 .cwf-lbl{font-family:"Poppins",system-ui,sans-serif;font-weight:600;font-size:.8rem;line-height:1.1;text-align:center;color:var(--cwf-ink)}
 .cwf-sub{font-size:.7rem;line-height:1.1;color:var(--cwf-muted);min-height:1.1em;text-align:center}
 .cwf-step.is-here .cwf-sub{color:var(--cwf-red)}
