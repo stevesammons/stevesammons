@@ -119,3 +119,16 @@ only pages whose back links changed, and checks each live page).
   social description.
 - Every post needs a featured image. Posts without one get a branded card from
   `python3 site/cards.py apply` (Poppins fonts in site/fonts, downloaded from google/fonts).
+
+## Footer (redesigned 2026-09-25)
+
+- Widgets (edit through /wp/v2/widgets): sidebar-footer = block-13 (brand, `site/footer/col1.html`),
+  sidebar-footer-2 = block-12 (Explore and Topics links, `col2.html`), sidebar-footer-3 = block-14
+  (newsletter heading, `col3.html`) followed by mailpoet_form-2. Styling is the `ss-footer` CSS in
+  the SEO snippet. Deleting a widget can push others into Inactive widgets, so re-check the
+  sidebars after any change.
+- Bottom bar: theme mod `footer_text` (copyright with Privacy Policy, About, Newsletter links) and
+  the Social menu (id 333: Facebook, X, LinkedIn). Set both with a single-use snippet
+  (`site/footer/theme-snippet.php`). Update the year each January.
+- Fonts: only Poppins (headings) and Lato (body). The MailPoet form defaults to Montserrat and is
+  overridden in the footer CSS.
