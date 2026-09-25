@@ -6,6 +6,8 @@ the character's name, "Bible character profile", and the testament in the footer
 
   python3 site/profile_cards.py sample          # write a few cards to site/cards/ to look at
   python3 site/profile_cards.py apply [PAGE_ID]  # all profile pages in stories.json (or one); --force remakes
+  python3 site/profile_cards.py apply --maps [PAGE_ID]  # map pages in seo/map-pages.json: headline is the
+                                                 # place, subtitle "Map of <Name>'s story"; map images stay
 
 For each page it backs up content and featured_media to backups/, uploads the card, sets it as the
 featured image (search and social), removes the inline portrait (the page's only image), and shows
@@ -22,6 +24,7 @@ import wp  # noqa: E402
 from cards import OUT, card  # noqa: E402
 
 SUB = "Bible character profile"
+MAP_SUB = "Interactive Bible map"
 TESTAMENT = {"OT": "Old Testament", "NT": "New Testament"}
 TOP_E = "<!-- ss-back:end -->"
 CARD_S, CARD_E = "<!-- ss-card -->", "<!-- /ss-card -->"
@@ -66,35 +69,56 @@ def place_card(raw, tag):
     return f"<!-- wp:html -->{snippet}<!-- /wp:html -->\n\n" + raw
 
 
-def make(pid, c, title):
-    h = headline(title)
-    k = TESTAMENT.get(c["t"], "")
+def make(pid, h, sub, k, kind="profile"):
     OUT.mkdir(parents=True, exist_ok=True)
     slug = re.sub(r"[^a-z0-9]+", "-", h.lower()).strip("-")[:50]
-    f = OUT / f"{slug}-profile-card.jpg"
-    card(h, SUB, k, pid).save(f, quality=84, optimize=True, progressive=True)
+    f = OUT / (f"{slug}-{kind}-card.jpg" if kind == "profile" else f"{slug}-{pid}-{kind}-card.jpg")
+    card(h, sub, k, pid).save(f, quality=84, optimize=True, progressive=True)
     return h, f
 
 
-def apply_one(pid, c):
+def map_text(title):
+    """'Hebron in Caleb's Story' -> ('Hebron', "Map of Caleb's story"); anything else keeps its title."""
+    t = headline(title)
+    m = re.match(r"(.+?) in (.+?)'s Story$", t)
+    if m and m.group(1) not in ("Rebuilding",):  # a place, not an activity
+        return m.group(1), f"Map of {m.group(2)}'s story"
+    return t, MAP_SUB
+
+
+def maps():
+    """(page id, headline, subtitle, footer) for every page in seo/map-pages.json."""
+    out = []
+    for e in json.loads((ROOT / "seo" / "map-pages.json").read_text()):
+        t = "New Testament" if "New Testament" in e["tags"] else "Old Testament"
+        out.append((e["id"], t))
+    return out
+
+
+def apply_one(pid, c, kind="profile"):
     code, p = wp.request("GET", f"/wp/v2/pages/{pid}?context=edit&_fields=id,title,link,content,featured_media")
     if code != 200:
         return f"FAIL read {code}"
-    (ROOT / "backups").mkdir(exist_ok=True)
-    (ROOT / "backups" / f"profile-{pid}-before-card.json").write_text(json.dumps(p))
     raw = p["content"]["raw"]
     if CARD_S in raw and p["featured_media"] and "--force" not in sys.argv:
         return "ok skipped (already has its card)"
-    h, f = make(pid, c, p["title"]["raw"])
+    (ROOT / "backups").mkdir(exist_ok=True)
+    (ROOT / "backups" / f"{kind}-{pid}-before-card-{time.strftime('%Y%m%d-%H%M%S')}.json").write_text(json.dumps(p))
+    if kind == "map":
+        h, sub = map_text(p["title"]["raw"])
+        h, f = make(pid, h, sub, c, "map")
+    else:
+        sub = SUB
+        h, f = make(pid, headline(p["title"]["raw"]), SUB, TESTAMENT.get(c["t"], ""))
     code, m = wp.request("POST", "/wp/v2/media", f.read_bytes(),
                          {"Content-Type": "image/jpeg", "Content-Disposition": f'attachment; filename="{f.name}"'})
     if code not in (200, 201):
         return f"FAIL upload {code}"
-    alt = f"{h}: {SUB}"
+    alt = f"{h}: {sub}"
     wp.request("POST", f"/wp/v2/media/{m['id']}", json.dumps({"alt_text": alt, "title": alt}).encode(), {"Content-Type": "application/json"})
     tag = (f'<img class="ss-profile-card" src="{m["source_url"]}" alt="{html.escape(alt)}" width="1600" height="900" '
            'style="display:block;width:100%;height:auto;margin:0 0 24px;border-radius:4px;">')
-    new = raw if CARD_S in raw else remove_portrait(raw)[0]
+    new = raw if CARD_S in raw or kind == "map" else remove_portrait(raw)[0]  # map images stay
     new = place_card(new, tag)
     body = {"content": new, "featured_media": m["id"]}
     code, r = wp.request("POST", f"/wp/v2/pages/{pid}", json.dumps(body).encode(), {"Content-Type": "application/json"})
@@ -116,18 +140,23 @@ def apply_one(pid, c):
 
 if __name__ == "__main__":
     items = profiles()
+    if "--maps" in sys.argv:  # map pages: card on top, featured image; their own map images stay
+        items = [(pid, t, "map") for pid, t in maps()]
+    else:
+        items = [(pid, c, "profile") for pid, c in items]
     if sys.argv[1:2] == ["sample"]:
-        for pid, c in [x for x in items if x[1]["name"] in ("Caleb", "Shadrach, Meshach and Abednego", "Nicodemus", "James, son of Zebedee")]:
-            print(make(pid, c, c["profile"].get("title") or c["name"]))
+        for pid, c, kind in items[:4]:
+            print(pid, kind, c if kind == "map" else c["name"])
         sys.exit()
     if sys.argv[1:2] == ["apply"]:
         only = next((int(a) for a in sys.argv[2:] if a.isdigit()), None)
         results = []
-        for pid, c in items:
+        for pid, c, kind in items:
             if only and pid != only:
                 continue
-            res = apply_one(pid, c)
-            results.append((pid, c["name"], res))
-            print(pid, c["name"], "|", res, flush=True)
-        (ROOT / "backups" / "profile-cards-results.json").write_text(json.dumps(results, indent=1))
+            res = apply_one(pid, c, kind)
+            name = c if kind == "map" else c["name"]
+            results.append((pid, name, res))
+            print(pid, name, "|", res, flush=True)
+        (ROOT / "backups" / f"{items[0][2] if items else 'profile'}-cards-results.json").write_text(json.dumps(results, indent=1))
         print(sum(r[2].startswith("ok") for r in results), "of", len(results), "pages ok")

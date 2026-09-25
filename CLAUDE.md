@@ -148,7 +148,10 @@ Portraits are for posts only. Character profile pages never show a portrait: the
 image and at the top of the page, from `python3 site/profile_cards.py apply [PAGE_ID]` (skips pages
 that already have one; `--force` remakes). The theme doesn't display a page's featured image, so the
 card is also placed in the content between `<!-- ss-card -->` markers, just after the back-link card.
-All 88 profile pages were done on 2026-09-25. If uploads fail with "could not be moved to
+Map pages get the same treatment with `--maps` (headline = the place, subtitle "Map of <Name>'s
+story", or "Interactive Bible map" when the title isn't "<Place> in <Name>'s Story"); their own map
+images stay. All 88 profile pages and all 41 map pages were done on 2026-09-25. The map publishers
+(`maps/publish.py`, `hebron-map/publish.py`) only replace their marked map section, so cards survive. If uploads fail with "could not be moved to
 wp-content/uploads", the hosting disk is full; ask Steve to clear space.
 
 1. **Bible character posts**: the character portrait (imagined, black-and-white documentary
