@@ -1,0 +1,92 @@
+{
+ "title": "Follow Naaman from Damascus to the Jordan",
+ "kicker": "Interactive map • 2 Kings 5",
+ "bbox": [34.5, 31.95, 36.75, 33.95],
+ "anchor": "damascus",
+ "note": "The Bible does not record Naaman's route or the place where he washed. The brown line only suggests a plausible line of travel. Modern borders are shown only for orientation.",
+ "places": {
+  "damascus": {
+   "name": "Damascus", "sub": "capital of Aram",
+   "ll": [33.5116, 36.3066], "main": true,
+   "conf": "secure",
+   "text": "The chief city of the Aramean kingdom north of Israel. Naaman commanded the army of its king (2 Kings 5:1). The city sits in an oasis watered by the Barada River, which is often identified with the Abana that Naaman praised (2 Kings 5:12)."
+  },
+  "samaria": {
+   "name": "Samaria", "sub": "capital of Israel",
+   "ll": [32.2763, 35.1954],
+   "conf": "secure",
+   "text": "The royal city of the northern kingdom, at Sebastia northwest of today's Nablus. The captive girl spoke of the prophet in Samaria, and Naaman brought his letter to the king of Israel (2 Kings 5:3–7)."
+  },
+  "jordan": {
+   "name": "Jordan River", "sub": "place not recorded",
+   "ll": [32.3, 35.56], "area": [9, 50],
+   "conf": "unknown", "confT": "Exact place not recorded",
+   "text": "Elisha told Naaman to wash seven times in the Jordan, and he went down and dipped himself there (2 Kings 5:10, 14). The text does not say at what point along the river. The shaded area simply marks the stretch of the Jordan Valley nearest Samaria."
+  },
+  "irbid": {
+   "name": "Irbid", "ll": [32.5556, 35.85],
+   "kind": "ref", "conf": "modern",
+   "text": "Modern city in northern Jordan, shown for orientation."
+  },
+  "beirut": {
+   "name": "Beirut", "ll": [33.8938, 35.5018],
+   "kind": "ref", "conf": "modern",
+   "text": "Capital of modern Lebanon, shown for orientation."
+  }
+ },
+ "routes": {
+  "letter": {"pts": [[33.5116, 36.3066], [33.28, 36.08], [33.02, 35.85], [32.78, 35.70], [32.66, 35.58], [32.52, 35.48], [32.44, 35.32], [32.34, 35.24], [32.2763, 35.1954]], "style": "req"}
+ },
+ "labels": [
+  {"t": "Mediterranean Sea", "ll": [32.7, 34.72], "kind": "water", "rot": -72},
+  {"t": "Sea of Galilee", "ll": [32.83, 35.4], "kind": "water", "size": 9.5},
+  {"t": "Jordan", "ll": [32.05, 35.585], "kind": "river", "rot": -84},
+  {"t": "Mount Hermon", "ll": [33.36, 35.86], "kind": "region", "rot": 40},
+  {"t": "Aram", "ll": [33.2, 36.5], "kind": "region", "size": 13},
+  {"t": "Israel", "ll": [32.1, 35.05], "kind": "region", "size": 12}
+ ],
+ "chapters": [
+  {
+   "tab": "Damascus", "title": "A commander with a skin disease", "badge": "9th century BC",
+   "refs": [["2 Kings 5:1–3", "2 Kings 5:1-3"]],
+   "hot": ["damascus"], "sel": "damascus",
+   "html": "<p>Naaman commanded the army of the king of Aram, whose capital was Damascus. He was highly regarded, a valiant soldier through whom the Lord had given Aram victory. But he had leprosy.</p><p>Aramean raiders had taken a young girl captive from Israel, and she served Naaman's wife. She told her mistress that the prophet in Samaria could cure him.</p>",
+   "quote": ["If only my master would see the prophet who is in Samaria!", "2 Kings 5:3 (NIV)"],
+   "facts": [
+    "The Hebrew word translated leprosy covered a range of skin diseases, not only the illness now called Hansen's disease.",
+    "Damascus is often described as one of the oldest continuously inhabited cities in the world. It appears in the Bible as early as Abraham's time (Genesis 14:15)."
+   ]
+  },
+  {
+   "tab": "Samaria", "title": "A letter to the king of Israel",
+   "refs": [["2 Kings 5:4–8", "2 Kings 5:4-8"]],
+   "hot": ["damascus", "samaria"], "routes": ["letter"], "sel": "samaria",
+   "html": "<p>With his king's blessing, Naaman set out with ten talents of silver, six thousand shekels of gold and ten sets of clothing. He carried a letter asking the king of Israel to cure him.</p><p>The king of Israel tore his robes. Was he God, able to kill and bring back to life? He suspected Aram was picking a quarrel. When Elisha heard, he sent word: let the man come to me, and he will know there is a prophet in Israel.</p>",
+   "facts": [
+    "Ten talents of silver weighed about 750 pounds (340 kg), and six thousand shekels of gold about 150 pounds (69 kg), a fortune carried across the border.",
+    "The king of Israel is not named here. Many scholars think he was Joram, son of Ahab, who reigned in Elisha's time."
+   ]
+  },
+  {
+   "tab": "Jordan", "title": "Seven times in the Jordan",
+   "refs": [["2 Kings 5:9–14", "2 Kings 5:9-14"]],
+   "hot": ["jordan", "samaria"], "sel": "jordan",
+   "view": [35.0, 32.0, 35.9, 32.84],
+   "html": "<p>Naaman arrived with his horses and chariots and stopped at the door of Elisha's house. Elisha did not come out. He sent a messenger instead: go and wash seven times in the Jordan.</p><p>Naaman went off angry. Weren't the Abana and Pharpar, the rivers of Damascus, better than any water in Israel? His servants persuaded him to try. He dipped himself seven times, and his flesh was restored and became clean like a young boy's.</p>",
+   "facts": [
+    "The Abana is often identified with the Barada, which runs through Damascus, and the Pharpar with the Awaj, which flows south of the city. Both identifications are probable but not certain.",
+    "Jesus recalled this story in Nazareth: there were many with leprosy in Israel in Elisha's time, yet only Naaman the Syrian was cleansed (Luke 4:27)."
+   ]
+  },
+  {
+   "tab": "Home", "title": "Two mule-loads of earth",
+   "refs": [["2 Kings 5:15–27", "2 Kings 5:15-27"]],
+   "hot": ["damascus", "samaria"], "routes": ["letter"], "sel": "damascus",
+   "html": "<p>Naaman went back to Elisha and declared that there is no God in all the world except in Israel. Elisha refused his gift. Naaman asked for as much earth as a pair of mules could carry, so he could worship the Lord alone back home, and he asked pardon for bowing in the temple of Rimmon beside his master.</p><p>After he left, Elisha's servant Gehazi ran after him and took silver and clothing by a lie. Naaman's leprosy then clung to Gehazi.</p>",
+   "facts": [
+    "Rimmon is usually understood as a title of Hadad, the storm god of the Arameans.",
+    "The Umayyad Mosque in Damascus stands on the site of a Roman temple of Jupiter, which is thought to have replaced an earlier Aramean temple of Hadad."
+   ]
+  }
+ ]
+}

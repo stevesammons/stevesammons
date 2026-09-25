@@ -1,0 +1,270 @@
+{
+ "title": "Find the hill country where Mary visited Elizabeth",
+ "kicker": "Interactive map • Luke 1",
+ "bbox": [
+  34.7,
+  31.5,
+  35.7,
+  32.95
+ ],
+ "anchor": "einkarem",
+ "places": {
+  "einkarem": {
+   "name": "Ein Karem",
+   "sub": "Church of the Visitation",
+   "ll": [
+    31.7648,
+    35.159
+   ],
+   "main": true,
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "Luke places Elizabeth's home in an unnamed town in the hill country of Judea (Luke 1:39–40). Christian tradition associates Mary's visit with Ein Karem, now a neighborhood on the western side of Jerusalem. The marker shows the Church of the Visitation; across the valley, the Church of St. John the Baptist marks the traditional birthplace of John. Neither is the proven site of Elizabeth's house.",
+   "label": "l"
+  },
+  "temple": {
+   "name": "Temple Mount",
+   "sub": "Zechariah's service",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "conf": "probable",
+   "confT": "Traditional site",
+   "text": "The raised compound on the eastern side of today's Old City, the traditional site of the temple where Zechariah served as a priest (Luke 1:8–9). The marker shows the wider temple area."
+  },
+  "nazareth": {
+   "name": "Nazareth",
+   "sub": "Mary's home",
+   "ll": [
+    32.7021,
+    35.2978
+   ],
+   "conf": "secure",
+   "text": "The Galilean town where the angel Gabriel visited Mary (Luke 1:26–27). From here she hurried south to the hill country of Judea to see Elizabeth."
+  },
+  "telaviv": {
+   "name": "Tel Aviv",
+   "ll": [
+    32.0853,
+    34.7818
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the Mediterranean coast, shown for orientation. It did not exist in Elizabeth's lifetime."
+  }
+ },
+ "routes": {
+  "mary": {
+   "pts": [
+    [
+     32.7021,
+     35.2978
+    ],
+    [
+     32.6,
+     35.3
+    ],
+    [
+     32.46,
+     35.3
+    ],
+    [
+     32.21,
+     35.28
+    ],
+    [
+     32.1,
+     35.27
+    ],
+    [
+     31.93,
+     35.24
+    ],
+    [
+     31.82,
+     35.2
+    ],
+    [
+     31.7648,
+     35.159
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.25,
+    34.76
+   ],
+   "kind": "water",
+   "rot": -75
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.83,
+    35.59
+   ],
+   "kind": "water",
+   "size": 8
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.58,
+    35.48
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 9
+  },
+  {
+   "t": "Galilee",
+   "ll": [
+    32.78,
+    35.08
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Samaria",
+   "ll": [
+    32.3,
+    35.1
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Hill country of Judea",
+   "ll": [
+    31.62,
+    35.03
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.25,
+    35.56
+   ],
+   "kind": "river",
+   "rot": -84
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Hill country",
+   "title": "A priest's home in the hills",
+   "refs": [
+    [
+     "Luke 1:5–7",
+     "Luke 1:5-7"
+    ],
+    [
+     "Luke 1:39–40",
+     "Luke 1:39-40"
+    ]
+   ],
+   "hot": [
+    "einkarem",
+    "temple"
+   ],
+   "sel": "einkarem",
+   "html": "<p>Elizabeth was descended from Aaron, and her husband Zechariah was a priest. Luke calls them both righteous in God's sight, yet they had no children, and both were very old.</p><p>They lived in a town in the hill country of Judea, which Luke leaves unnamed. A Christian tradition many centuries old places their home at Ein Karem, a village in the hills west of Jerusalem.</p>",
+   "facts": [
+    "Ein Karem is Hebrew for “spring of the vineyard.” A spring in the village is traditionally called Mary's Spring.",
+    "Luke never names Elizabeth's town, so any identification, including Ein Karem, rests on later tradition."
+   ]
+  },
+  {
+   "tab": "Temple",
+   "title": "Zechariah's turn at the altar",
+   "refs": [
+    [
+     "Luke 1:8–25",
+     "Luke 1:8-25"
+    ]
+   ],
+   "hot": [
+    "temple",
+    "einkarem"
+   ],
+   "sel": "temple",
+   "view": [
+    35.12,
+    31.73,
+    35.27,
+    31.815
+   ],
+   "html": "<p>When Zechariah's priestly division was on duty, he was chosen by lot to burn incense inside the temple. The angel Gabriel appeared beside the altar and told him Elizabeth would bear a son, to be named John.</p><p>Zechariah doubted and was left unable to speak until the promise came true. After his service he went home, and Elizabeth became pregnant and stayed in seclusion for five months.</p>",
+   "facts": [
+    "Zechariah belonged to the priestly division of Abijah, the eighth of twenty-four divisions that took turns serving at the temple (1 Chronicles 24:10).",
+    "The Temple Mount lies east of Ein Karem across the hills of what is now Jerusalem, a walk of a few hours."
+   ]
+  },
+  {
+   "tab": "Visit",
+   "title": "Mary hurries south",
+   "refs": [
+    [
+     "Luke 1:26–56",
+     "Luke 1:26-56"
+    ]
+   ],
+   "hot": [
+    "nazareth",
+    "einkarem"
+   ],
+   "routes": [
+    "mary"
+   ],
+   "sel": "nazareth",
+   "html": "<p>In Elizabeth's sixth month, Gabriel told Mary in Nazareth that she would bear a son, and that her relative Elizabeth was also expecting. Mary got ready and hurried to the hill country of Judea.</p><p>When Mary greeted her, the baby leaped in Elizabeth's womb, and Elizabeth, filled with the Holy Spirit, blessed her. Mary answered with a song of praise. She stayed about three months and then returned home. Luke does not describe her route.</p>",
+   "quote": [
+    "Blessed are you among women, and blessed is the child you will bear!",
+    "Luke 1:42 (NIV)"
+   ],
+   "facts": [
+    "Nazareth lies about 65 miles (105 km) north of Ein Karem in a straight line, a journey of several days on foot.",
+    "Mary's song is often called the Magnificat, from the first word of its Latin translation. Tiles in many languages on the courtyard walls of the Church of the Visitation display it."
+   ]
+  },
+  {
+   "tab": "John",
+   "title": "His name is John",
+   "refs": [
+    [
+     "Luke 1:57–80",
+     "Luke 1:57-80"
+    ]
+   ],
+   "hot": [
+    "einkarem"
+   ],
+   "sel": "einkarem",
+   "view": [
+    35.1,
+    31.735,
+    35.22,
+    31.8
+   ],
+   "html": "<p>Elizabeth gave birth to a son, and her neighbors and relatives shared her joy. On the eighth day they wanted to name him after his father, but Elizabeth said he would be called John.</p><p>Zechariah asked for a writing tablet and wrote the name. At once he could speak again, and he praised God. The news spread through the whole hill country of Judea, and people wondered what this child would become.</p>",
+   "quote": [
+    "His name is John.",
+    "Luke 1:63 (NIV)"
+   ],
+   "facts": [
+    "The present Church of the Visitation was completed in 1955 and designed by the Italian architect Antonio Barluzzi.",
+    "In the center of Ein Karem, the Franciscan Church of St. John the Baptist marks the traditional place of John's birth, across the valley from the Church of the Visitation."
+   ]
+  }
+ ]
+}

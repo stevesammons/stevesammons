@@ -43,6 +43,7 @@ is the reference example. Read it first.
      "confT": "Traditional site", // optional custom badge text
      "area": [rx_km, ry_km],      // optional: draw an approximate region instead of a point
      "elev": 482,                 // optional: meters; omit to use the terrain model value
+     "label": "l",                // optional preferred label side: r, l, t, b, tr, br, tl, bl
      "text": "Place card text with references."
    }
  },

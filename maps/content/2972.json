@@ -1,0 +1,248 @@
+{
+ "title": "Follow Hagar through the wilderness south of Canaan",
+ "kicker": "Interactive map • Genesis 16; 21",
+ "bbox": [
+  32.3,
+  29.6,
+  35.6,
+  31.95
+ ],
+ "anchor": "beersheba",
+ "places": {
+  "beersheba": {
+   "name": "Beersheba",
+   "sub": "edge of the desert",
+   "ll": [
+    31.2447,
+    34.8408
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "An important well site in the northern Negev. Hagar wandered in the Desert of Beersheba after Abraham sent her away (Genesis 21:14). The ancient mound, Tel Beer Sheva, lies just east of the modern city."
+  },
+  "lahairoi": {
+   "name": "Beer Lahai Roi",
+   "sub": "“the God who sees me”",
+   "ll": [
+    30.9,
+    34.3
+   ],
+   "area": [
+    28,
+    22
+   ],
+   "conf": "unknown",
+   "text": "The well where the angel of the Lord found Hagar. Genesis places it between Kadesh and Bered (Genesis 16:14). Bered has not been identified, so the site is unknown and this marker is only approximate."
+  },
+  "kadesh": {
+   "name": "Kadesh",
+   "sub": "oasis in the wilderness",
+   "ll": [
+    30.6475,
+    34.4239
+   ],
+   "conf": "probable",
+   "text": "Named as one reference point for Beer Lahai Roi (Genesis 16:14). Kadesh, later called Kadesh Barnea, is usually identified with the oasis of Ein el-Qudeirat in northeastern Sinai, though some scholars prefer nearby Ein Qadeis."
+  },
+  "shur": {
+   "name": "Desert of Shur",
+   "sub": "toward Egypt",
+   "ll": [
+    30.45,
+    33.05
+   ],
+   "area": [
+    40,
+    45
+   ],
+   "conf": "region",
+   "text": "Hagar was found by a spring beside the road to Shur (Genesis 16:7). Genesis describes Shur as near the eastern border of Egypt (Genesis 25:18), so the road probably led toward her homeland."
+  },
+  "paran": {
+   "name": "Desert of Paran",
+   "sub": "Ishmael's home",
+   "ll": [
+    30.1,
+    34.55
+   ],
+   "area": [
+    55,
+    40
+   ],
+   "conf": "region",
+   "text": "Ishmael grew up and lived in the Desert of Paran (Genesis 21:21). Paran names a broad wilderness, usually placed in the eastern Sinai and southern Negev. Its exact limits are debated."
+  },
+  "hebron": {
+   "name": "Hebron",
+   "ll": [
+    31.5326,
+    35.0998
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in the southern hill country. Abraham had earlier settled near the great trees of Mamre at Hebron (Genesis 13:18), shown here for orientation."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.65,
+    33.5
+   ],
+   "kind": "water",
+   "rot": -8,
+   "size": 12
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.45,
+    35.5
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 9
+  },
+  {
+   "t": "Negev",
+   "ll": [
+    30.95,
+    35.12
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Sinai",
+   "ll": [
+    29.95,
+    33.7
+   ],
+   "kind": "region",
+   "size": 14
+  },
+  {
+   "t": "Egypt",
+   "ll": [
+    30.35,
+    32.5
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Gulf of Suez",
+   "ll": [
+    29.75,
+    32.62
+   ],
+   "kind": "water",
+   "rot": -60,
+   "size": 9
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Negev",
+   "title": "An Egyptian servant in Abram's household",
+   "refs": [
+    [
+     "Genesis 16:1–6",
+     "Genesis 16:1-6"
+    ]
+   ],
+   "hot": [
+    "beersheba",
+    "hebron"
+   ],
+   "sel": "beersheba",
+   "html": "<p>Hagar was an Egyptian slave belonging to Sarai. After ten years in Canaan without children, Sarai gave Hagar to Abram so that she might build a family through her.</p><p>When Hagar became pregnant, she began to despise Sarai, and Sarai mistreated her in return. Hagar ran away into the dry country that stretches south from Canaan toward Egypt, the region around Beersheba and the Negev.</p>",
+   "facts": [
+    "The name Negev comes from a Hebrew root meaning “dry.” In the Bible it often simply means “the south.”",
+    "Beersheba gets only about 8 inches (200 mm) of rain a year, and the land grows drier farther south."
+   ]
+  },
+  {
+   "tab": "Lahai Roi",
+   "title": "The God who sees me",
+   "refs": [
+    [
+     "Genesis 16:7–16",
+     "Genesis 16:7-16"
+    ]
+   ],
+   "hot": [
+    "lahairoi",
+    "kadesh",
+    "shur"
+   ],
+   "sel": "lahairoi",
+   "view": [
+    32.6,
+    30.2,
+    35.2,
+    31.6
+   ],
+   "html": "<p>The angel of the Lord found Hagar near a spring in the desert beside the road to Shur. He told her to return to Sarai and promised that her descendants would be too many to count. Her son would be named Ishmael, because the Lord had heard of her misery.</p><p>Hagar went back, and Ishmael was born when Abram was eighty-six.</p>",
+   "quote": [
+    "You are the God who sees me",
+    "Genesis 16:13 (NIV)"
+   ],
+   "facts": [
+    "Ishmael means “God hears.” The name Beer Lahai Roi is usually understood as “well of the Living One who sees me.”",
+    "Hagar is often noted as the only person in the Bible who gives God a name. Isaac later lived near Beer Lahai Roi (Genesis 24:62; 25:11)."
+   ]
+  },
+  {
+   "tab": "Beersheba",
+   "title": "Sent away into the desert",
+   "refs": [
+    [
+     "Genesis 21:8–19",
+     "Genesis 21:8-19"
+    ]
+   ],
+   "hot": [
+    "beersheba"
+   ],
+   "sel": "beersheba",
+   "view": [
+    34.2,
+    30.85,
+    35.4,
+    31.6
+   ],
+   "html": "<p>Years later, at the feast for Isaac's weaning, Sarah saw Ishmael mocking and demanded that Abraham send Hagar and her son away. Early the next morning Abraham gave Hagar food and a skin of water and sent her off.</p><p>She wandered in the Desert of Beersheba until the water was gone. God heard the boy crying, and he opened Hagar's eyes to see a well.</p>",
+   "facts": [
+    "Genesis explains the name Beersheba as “well of the oath” or “well of seven,” from the covenant Abraham made there with Abimelek (Genesis 21:31).",
+    "Excavations at Tel Beer Sheva uncovered a large well just outside the gate of the Iron Age town."
+   ]
+  },
+  {
+   "tab": "Paran",
+   "title": "A home in the Desert of Paran",
+   "refs": [
+    [
+     "Genesis 21:20–21",
+     "Genesis 21:20-21"
+    ],
+    [
+     "Genesis 25:12–18",
+     "Genesis 25:12-18"
+    ]
+   ],
+   "hot": [
+    "paran",
+    "shur"
+   ],
+   "sel": "paran",
+   "html": "<p>God was with the boy as he grew up. Ishmael lived in the desert and became an archer.</p><p>He made his home in the Desert of Paran, and Hagar found him a wife from Egypt, her own homeland. Genesis later lists twelve sons of Ishmael, whose descendants lived in the region from Havilah to Shur, near the border of Egypt.</p>",
+   "facts": [
+    "The Desert of Paran appears again in the Exodus story. Moses sent the twelve spies into Canaan from there (Numbers 13:3).",
+    "Genesis calls Ishmael's twelve sons “twelve tribal rulers” (Genesis 25:16), a number that parallels the twelve sons of Jacob."
+   ]
+  }
+ ]
+}

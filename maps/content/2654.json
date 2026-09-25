@@ -1,0 +1,219 @@
+{
+ "title": "Follow David, Nabal and Abigail around Carmel in Judah",
+ "kicker": "Interactive map • 1 Samuel 25",
+ "bbox": [
+  34.95,
+  31.25,
+  35.5,
+  31.68
+ ],
+ "anchor": "carmel",
+ "places": {
+  "carmel": {
+   "name": "Carmel",
+   "sub": "Nabal's sheep-shearing",
+   "ll": [
+    31.4256,
+    35.1342
+   ],
+   "main": true,
+   "conf": "probable",
+   "confT": "Usual identification",
+   "text": "Nabal had property at Carmel and was shearing his sheep there (1 Samuel 25:2). Biblical Carmel is usually identified with the village area of al-Karmil, about 8 miles (13 km) south-southeast of Hebron. This is Carmel in Judah, not Mount Carmel on the northern coast or the nearby modern settlement of the same name."
+  },
+  "maon": {
+   "name": "Maon",
+   "sub": "Nabal's home",
+   "ll": [
+    31.4115,
+    35.1435
+   ],
+   "conf": "probable",
+   "text": "1 Samuel 25:2 introduces Nabal as a man of Maon with property at nearby Carmel. Maon is usually identified with Khirbet Ma'in (Tell Ma'in), a short distance south of al-Karmil, though the exact site is not proven."
+  },
+  "wilderness": {
+   "name": "Wilderness",
+   "sub": "where David stayed",
+   "ll": [
+    31.45,
+    35.28
+   ],
+   "area": [
+    9,
+    10
+   ],
+   "conf": "region",
+   "confT": "Approximate region",
+   "text": "David and his men lived in the dry country near Nabal's grazing lands and guarded his shepherds (1 Samuel 25:4, 7, 15–16). The shading marks the wilderness east of Carmel in general, not a known camp. Verse 1 says David went down to the Desert of Paran; some Greek manuscripts read Maon."
+  },
+  "hebron": {
+   "name": "Hebron",
+   "ll": [
+    31.5326,
+    35.0998
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in the southern West Bank, shown for orientation. Al-Karmil lies about 8 miles (13 km) to the south-southeast."
+  }
+ },
+ "routes": {
+  "approach": {
+   "pts": [
+    [
+     31.45,
+     35.28
+    ],
+    [
+     31.44,
+     35.23
+    ],
+    [
+     31.435,
+     35.18
+    ],
+    [
+     31.4256,
+     35.1342
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.5,
+    35.46
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 11
+  },
+  {
+   "t": "Wilderness of Judah",
+   "ll": [
+    31.6,
+    35.33
+   ],
+   "kind": "region",
+   "size": 10.5
+  },
+  {
+   "t": "Hill country of Judah",
+   "ll": [
+    31.47,
+    34.99
+   ],
+   "kind": "region",
+   "rot": -78,
+   "size": 10.5
+  },
+  {
+   "t": "Negev",
+   "ll": [
+    31.28,
+    35.05
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Carmel",
+   "title": "Sheep country south of Hebron",
+   "refs": [
+    [
+     "1 Samuel 25:1–3",
+     "1 Samuel 25:1-3"
+    ]
+   ],
+   "hot": [
+    "carmel",
+    "maon"
+   ],
+   "sel": "carmel",
+   "html": "<p>Nabal's story is set in the southern hills of Judah, where the farmland of the ridge gives way to dry grazing country. Nabal lived in Maon and had property at nearby Carmel.</p><p>He was very wealthy, with three thousand sheep and a thousand goats. The narrator calls him surly and mean in his dealings, a Calebite. His wife Abigail was intelligent and beautiful.</p>",
+   "facts": [
+    "Joshua 15:55 lists Maon and Carmel side by side among the towns of Judah's hill country, along with Ziph and Juttah.",
+    "Carmel appears earlier in 1 Samuel too: King Saul set up a monument in his own honor there (1 Samuel 15:12)."
+   ]
+  },
+  {
+   "tab": "Request",
+   "title": "Ten young men and a rude answer",
+   "refs": [
+    [
+     "1 Samuel 25:4–13",
+     "1 Samuel 25:4-13"
+    ]
+   ],
+   "hot": [
+    "wilderness",
+    "carmel"
+   ],
+   "routes": [
+    "approach"
+   ],
+   "sel": "wilderness",
+   "html": "<p>While David was in the wilderness, he heard that Nabal was shearing sheep. He sent ten young men to Carmel with a greeting and a request for whatever food Nabal could spare, reminding him that David's men had protected his shepherds.</p><p>Nabal insulted David and sent the men away empty-handed. David told four hundred men to put on their swords and left two hundred with the supplies.</p>",
+   "quote": [
+    "Who is this David? Who is this son of Jesse?",
+    "1 Samuel 25:10 (NIV)"
+   ],
+   "facts": [
+    "Sheep-shearing was a time of feasting and generosity. Absalom later held a sheep-shearing feast for the king's sons (2 Samuel 13:23–24).",
+    "Nabal's own servant said David's men had been a wall around the shepherds night and day (1 Samuel 25:16)."
+   ]
+  },
+  {
+   "tab": "Abigail",
+   "title": "Abigail rides out",
+   "refs": [
+    [
+     "1 Samuel 25:14–35",
+     "1 Samuel 25:14-35"
+    ]
+   ],
+   "hot": [
+    "carmel",
+    "wilderness"
+   ],
+   "routes": [
+    "approach"
+   ],
+   "sel": "carmel",
+   "html": "<p>A servant warned Abigail. Without telling her husband, she loaded donkeys with bread, wine, dressed sheep, roasted grain, raisin cakes and fig cakes and rode out to meet David.</p><p>She met him in a mountain ravine, bowed down and took the blame on herself. She urged David not to carry the guilt of needless bloodshed. David praised God for sending her and accepted her gift.</p>",
+   "quote": [
+    "Praise be to the LORD, the God of Israel, who has sent you today to meet me.",
+    "1 Samuel 25:32 (NIV)"
+   ],
+   "facts": [
+    "The text does not locate the ravine. East of Carmel the land falls about 4,000 feet (1,200 m) in roughly 15 miles (24 km) to the shore of the Dead Sea, cut by deep, dry valleys.",
+    "Abigail told David that Nabal's name means “fool” and that folly went with him (1 Samuel 25:25)."
+   ]
+  },
+  {
+   "tab": "Aftermath",
+   "title": "Nabal's end and Abigail's future",
+   "refs": [
+    [
+     "1 Samuel 25:36–44",
+     "1 Samuel 25:36-44"
+    ]
+   ],
+   "hot": [
+    "maon",
+    "carmel"
+   ],
+   "sel": "maon",
+   "html": "<p>Abigail came home to find Nabal holding a feast like a king's, very drunk. In the morning she told him what had happened, and his heart failed and he became like a stone. About ten days later the Lord struck him and he died.</p><p>David sent word to Abigail at Carmel asking her to become his wife. She went with his messengers, attended by five of her servants.</p>",
+   "facts": [
+    "Abigail became the mother of David's second son, called Kileab in 2 Samuel 3:3 and Daniel in 1 Chronicles 3:1.",
+    "Abigail and David's other wife, Ahinoam of Jezreel, were later captured in a raid on Ziklag and rescued by David (1 Samuel 30:5, 18)."
+   ]
+  }
+ ]
+}

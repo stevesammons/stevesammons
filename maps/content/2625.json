@@ -1,0 +1,293 @@
+{
+ "title": "Follow Ahithophel's counsel during Absalom's revolt",
+ "kicker": "Interactive map • 2 Samuel 15–17",
+ "bbox": [
+  34.45,
+  31.35,
+  35.95,
+  32.35
+ ],
+ "anchor": "jerusalem",
+ "places": {
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "the city David fled",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "main": true,
+   "elev": 754,
+   "conf": "secure",
+   "text": "David left Jerusalem when Absalom's rebellion grew, and Absalom entered the city with Ahithophel (2 Samuel 15:14; 16:15). The debate over pursuing David took place here (2 Samuel 17:1–14). The marker identifies the city, not a known council room."
+  },
+  "hebron": {
+   "name": "Hebron",
+   "sub": "Absalom proclaimed king",
+   "ll": [
+    31.5245,
+    35.1045
+   ],
+   "conf": "secure",
+   "text": "Absalom launched his revolt at Hebron, where David had first reigned (2 Samuel 15:7–10). Ancient Hebron is identified with Tel Rumeida, a hill in the modern city in the southern West Bank."
+  },
+  "mahanaim": {
+   "name": "Mahanaim",
+   "sub": "David's refuge",
+   "ll": [
+    32.187,
+    35.668
+   ],
+   "area": [
+    7,
+    6
+   ],
+   "conf": "debated",
+   "text": "David crossed the Jordan and took refuge at Mahanaim in Gilead (2 Samuel 17:22–24). It lay near the Jabbok River. It is often placed at Tell edh-Dhahab el-Gharbi, but the identification is debated."
+  }
+ },
+ "routes": {
+  "absalom": {
+   "pts": [
+    [
+     31.5245,
+     35.1045
+    ],
+    [
+     31.6,
+     35.14
+    ],
+    [
+     31.7,
+     35.2
+    ],
+    [
+     31.7767,
+     35.2345
+    ]
+   ],
+   "style": "req"
+  },
+  "flight": {
+   "pts": [
+    [
+     31.7767,
+     35.2345
+    ],
+    [
+     31.79,
+     35.28
+    ],
+    [
+     31.81,
+     35.37
+    ],
+    [
+     31.84,
+     35.45
+    ],
+    [
+     31.86,
+     35.53
+    ],
+    [
+     31.95,
+     35.57
+    ],
+    [
+     32.08,
+     35.59
+    ],
+    [
+     32.16,
+     35.62
+    ],
+    [
+     32.187,
+     35.668
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.8,
+    34.58
+   ],
+   "kind": "water",
+   "rot": -62,
+   "size": 10.5
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.58,
+    35.5
+   ],
+   "kind": "water",
+   "rot": -80,
+   "size": 10
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.0,
+    35.515
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Jabbok",
+   "ll": [
+    32.215,
+    35.8
+   ],
+   "kind": "river",
+   "rot": -10,
+   "size": 9
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.45,
+    34.95
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Gilead",
+   "ll": [
+    32.0,
+    35.82
+   ],
+   "kind": "region",
+   "size": 12
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Jerusalem",
+   "title": "A son steals the people's hearts",
+   "refs": [
+    [
+     "2 Samuel 15:1–6",
+     "2 Samuel 15:1-6"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>Jerusalem sits in the hills roughly 32 miles east of the Mediterranean, above the deep rift of the Jordan and the Dead Sea. It was David's capital, and Ahithophel was one of his most trusted advisers.</p><p>David's son Absalom began to build a following there. He stood beside the road to the city gate, met people who came with lawsuits for the king and told them he would give them justice if he were in charge.</p>",
+   "facts": [
+    "1 Chronicles 27:33 lists Ahithophel as the king's counselor, next to Hushai the Arkite, the king's friend.",
+    "Absalom kept a chariot, horses and fifty men to run ahead of him, the trappings of a would-be king (2 Samuel 15:1)."
+   ]
+  },
+  {
+   "tab": "Hebron",
+   "title": "A revolt begins at Hebron",
+   "refs": [
+    [
+     "2 Samuel 15:7–12",
+     "2 Samuel 15:7-12"
+    ]
+   ],
+   "hot": [
+    "hebron",
+    "jerusalem"
+   ],
+   "sel": "hebron",
+   "html": "<p>Absalom asked permission to go to Hebron to fulfill a vow. From there he sent secret messengers through the tribes to proclaim him king when they heard the trumpet.</p><p>While he offered sacrifices, Absalom sent for Ahithophel, David's counselor, to come from his hometown of Giloh. With Ahithophel on his side, the conspiracy gained strength and Absalom's following kept growing.</p>",
+   "facts": [
+    "Hebron was David's first capital, where he reigned seven and a half years, and Absalom was born there (2 Samuel 3:2–3; 5:5).",
+    "Giloh is listed among the towns of Judah's hill country (Joshua 15:51), but its site is uncertain, so it is not plotted on this map."
+   ]
+  },
+  {
+   "tab": "Flight",
+   "title": "David leaves the city",
+   "refs": [
+    [
+     "2 Samuel 15:13–37",
+     "2 Samuel 15:13-37"
+    ],
+    [
+     "2 Samuel 16:1–14",
+     "2 Samuel 16:1-14"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "routes": [
+    "flight"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>David left Jerusalem with his household and crossed the Kidron Valley. He climbed the Mount of Olives weeping, with his head covered and his feet bare. When he heard that Ahithophel had joined Absalom, he prayed.</p><p>At the top he met his friend Hushai and sent him back to the city to defeat Ahithophel's advice. Farther on, at Bahurim, Shimei cursed David and threw stones at him.</p>",
+   "quote": [
+    "LORD, turn Ahithophel's counsel into foolishness.",
+    "2 Samuel 15:31 (NIV)"
+   ],
+   "facts": [
+    "The road from Jerusalem down to the Jordan near Jericho drops more than 3,000 feet (900 m), from the hills into the lowest valley on earth.",
+    "The line on the map follows a likely path to the Jordan and Mahanaim. The Bible names points on the way but not an exact route."
+   ]
+  },
+  {
+   "tab": "Counsel",
+   "title": "Two plans for Absalom",
+   "refs": [
+    [
+     "2 Samuel 16:15–17:14",
+     "2 Samuel 16:15-17:14"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "hebron"
+   ],
+   "routes": [
+    "absalom"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>Absalom entered Jerusalem with Ahithophel. In those days Ahithophel's advice was treated like a word from God. He proposed to take twelve thousand men that very night, catch David while he was weary and strike down only the king.</p><p>Hushai urged Absalom instead to gather all Israel and lead the army himself. Absalom and his men chose Hushai's plan.</p>",
+   "quote": [
+    "The LORD had determined to frustrate the good advice of Ahithophel",
+    "2 Samuel 17:14 (NIV)"
+   ],
+   "facts": [
+    "One of David's mighty men was “Eliam son of Ahithophel” (2 Samuel 23:34), and Bathsheba was the daughter of an Eliam (2 Samuel 11:3). If they are the same man, Ahithophel was Bathsheba's grandfather.",
+    "At Ahithophel's advice, Absalom pitched a tent on the palace roof, fulfilling Nathan's warning to David in 2 Samuel 12:11–12."
+   ]
+  },
+  {
+   "tab": "Mahanaim",
+   "title": "Across the Jordan",
+   "refs": [
+    [
+     "2 Samuel 17:15–29",
+     "2 Samuel 17:15-29"
+    ]
+   ],
+   "hot": [
+    "mahanaim",
+    "jerusalem"
+   ],
+   "routes": [
+    "flight"
+   ],
+   "sel": "mahanaim",
+   "html": "<p>Hushai sent word through the priests' sons, who escaped Absalom's men by hiding in a well at Bahurim. David and his people crossed the Jordan by daybreak and went on to Mahanaim, where friends brought them food and bedding.</p><p>When Ahithophel saw that his advice had not been followed, he saddled his donkey, went home to his town, put his house in order and hanged himself.</p>",
+   "facts": [
+    "Mahanaim had served as the capital of Saul's son Ish-Bosheth (2 Samuel 2:8–9), so it was a known royal refuge east of the Jordan.",
+    "Among those who brought supplies was Shobi son of Nahash from Rabbah of the Ammonites (2 Samuel 17:27)."
+   ]
+  }
+ ]
+}

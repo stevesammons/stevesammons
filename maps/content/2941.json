@@ -1,0 +1,315 @@
+{
+ "title": "Follow Joab from Jerusalem to David's battlefields",
+ "kicker": "Interactive map • 2 Samuel 2–20 • 1 Kings 1–2",
+ "bbox": [
+  34.75,
+  31.4,
+  36.15,
+  33.35
+ ],
+ "anchor": "jerusalem",
+ "places": {
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "David's capital",
+   "ll": [
+    31.7735,
+    35.2357
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "David captured the Jebusite stronghold and made it his capital (2 Samuel 5:6–9). The oldest part of the city, the City of David, lies on the ridge south of today's Old City walls. Joab commanded David's army from here. He was killed at the altar of the tent of the Lord, most likely the tent David had pitched here for the ark (1 Kings 2:28–34)."
+  },
+  "gibeon": {
+   "name": "Gibeon",
+   "sub": "the pool fight",
+   "ll": [
+    31.8472,
+    35.1847
+   ],
+   "conf": "secure",
+   "text": "Joab's men and Abner's men met at the pool of Gibeon (2 Samuel 2:12–17). Gibeon is identified with el-Jib, northwest of Jerusalem. Years later Joab killed Amasa at the great rock in Gibeon (2 Samuel 20:8–10)."
+  },
+  "hebron": {
+   "name": "Hebron",
+   "sub": "David's first capital",
+   "ll": [
+    31.5247,
+    35.1034
+   ],
+   "conf": "secure",
+   "text": "David ruled Judah from Hebron for seven and a half years (2 Samuel 2:11). Joab murdered Abner in the gateway here to avenge his brother Asahel (2 Samuel 3:27). The ancient city is at Tel Rumeida in today's Hebron."
+  },
+  "tekoa": {
+   "name": "Tekoa",
+   "sub": "home of the wise woman",
+   "ll": [
+    31.6356,
+    35.2197
+   ],
+   "conf": "probable",
+   "text": "Joab brought a wise woman from Tekoa to persuade David to let Absalom come home (2 Samuel 14:1–3). Tekoa is identified with Khirbet Tuqu, south of Bethlehem at the edge of the Judean Desert."
+  },
+  "rabbah": {
+   "name": "Rabbah",
+   "sub": "Ammonite capital",
+   "ll": [
+    31.9544,
+    35.935
+   ],
+   "conf": "secure",
+   "text": "The royal city of the Ammonites, which Joab besieged (2 Samuel 11:1; 12:26–28). Uriah the Hittite died in the fighting here. Rabbah lies beneath the Citadel hill in the center of modern Amman, Jordan."
+  },
+  "mahanaim": {
+   "name": "Mahanaim",
+   "sub": "David's refuge",
+   "ll": [
+    32.185,
+    35.668
+   ],
+   "conf": "debated",
+   "text": "David stayed at Mahanaim, east of the Jordan, during Absalom's revolt, and sent Joab out from here to fight (2 Samuel 17:24; 18:1–5). It is often placed near the Jabbok River at Tell edh-Dhahab el-Gharbi, but the site is debated."
+  },
+  "forest": {
+   "name": "Forest of Ephraim",
+   "sub": "Absalom's death",
+   "ll": [
+    32.33,
+    35.75
+   ],
+   "area": [
+    14,
+    12
+   ],
+   "conf": "unknown",
+   "text": "The battlefield where Joab killed Absalom (2 Samuel 18:6–15). Despite the name, the story places it east of the Jordan, near Mahanaim. Its exact location is unknown."
+  },
+  "abel": {
+   "name": "Abel Beth Maakah",
+   "sub": "Sheba's last stand",
+   "ll": [
+    33.2575,
+    35.58
+   ],
+   "conf": "secure",
+   "text": "A town in the far north where the rebel Sheba son of Bikri took refuge. Joab built a siege ramp against it until a wise woman arranged Sheba's death (2 Samuel 20:14–22). It is identified with Tel Abel Beth Maacah near Metula."
+  },
+  "nablus": {
+   "name": "Nablus",
+   "ll": [
+    32.2211,
+    35.2544
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city in the central hill country, shown for orientation."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.55,
+    34.68
+   ],
+   "kind": "water",
+   "rot": -76,
+   "size": 11
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.83,
+    35.72
+   ],
+   "kind": "water",
+   "size": 9
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.52,
+    35.49
+   ],
+   "kind": "water",
+   "rot": -85,
+   "size": 9
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.45,
+    35.585
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Gilead",
+   "ll": [
+    32.5,
+    35.9
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Ammon",
+   "ll": [
+    31.75,
+    36.0
+   ],
+   "kind": "region",
+   "size": 11
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.45,
+    34.95
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Jerusalem",
+   "title": "David's nephew and commander",
+   "refs": [
+    [
+     "2 Samuel 8:15–16",
+     "2 Samuel 8:15-16"
+    ],
+    [
+     "1 Chronicles 11:4–6",
+     "1 Chronicles 11:4-6"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "view": [
+    34.85,
+    31.45,
+    35.6,
+    32.05
+   ],
+   "html": "<p>Joab was the son of Zeruiah, David's sister, and the brother of Abishai and Asahel. Chronicles says he led the attack on the Jebusite stronghold of Jerusalem and so became commander of David's army.</p><p>From Jerusalem, David's new capital, Joab led campaigns in every direction. He was fiercely loyal to David, yet he often acted on his own, sometimes against the king's wishes.</p>",
+   "facts": [
+    "The City of David was a narrow ridge of only about 10 to 15 acres, much smaller than the walled Old City of today.",
+    "The name Joab means something like “the Lord is father.”"
+   ]
+  },
+  {
+   "tab": "Gibeon",
+   "title": "A pool, a chase and a murder",
+   "refs": [
+    [
+     "2 Samuel 2:12–3:39",
+     "2 Samuel 2:12-3:39"
+    ]
+   ],
+   "hot": [
+    "gibeon",
+    "hebron"
+   ],
+   "sel": "gibeon",
+   "view": [
+    34.85,
+    31.45,
+    35.6,
+    32.05
+   ],
+   "html": "<p>During the war between David's house and Saul's, Joab's men met Abner's men at the pool of Gibeon. In the rout that followed, Abner killed Joab's brother Asahel, who was chasing him.</p><p>Later Abner came to Hebron to make peace with David. Joab called him aside in the gateway and stabbed him to death. David mourned Abner publicly and cursed Joab's family for the killing.</p>",
+   "facts": [
+    "At el-Jib, excavators in the 1950s uncovered a large rock-cut pool with a spiral stairway, often connected with the pool of Gibeon. Jar handles found there are inscribed with the name Gibeon.",
+    "Asahel was buried in his father's tomb at Bethlehem, and Joab and his men marched all night to reach Hebron (2 Samuel 2:32)."
+   ]
+  },
+  {
+   "tab": "Rabbah",
+   "title": "The siege of Rabbah",
+   "refs": [
+    [
+     "2 Samuel 11–12",
+     "2 Samuel 11-12"
+    ]
+   ],
+   "hot": [
+    "rabbah",
+    "jerusalem"
+   ],
+   "sel": "rabbah",
+   "view": [
+    35.1,
+    31.55,
+    36.05,
+    32.35
+   ],
+   "html": "<p>In the spring, David sent Joab and the army to besiege Rabbah, while he stayed in Jerusalem. There David took Bathsheba and then ordered Joab to put her husband Uriah where the fighting was fiercest.</p><p>Joab did it, and Uriah was killed. Later Joab captured the city's water supply and urged David to come and take the city himself, so the victory would carry the king's name.</p>",
+   "facts": [
+    "The name of modern Amman preserves the name of the Ammonites. In Greek and Roman times the city was called Philadelphia.",
+    "Rabbah is about 43 miles (69 km) from Jerusalem in a straight line, across the deep Jordan Valley."
+   ]
+  },
+  {
+   "tab": "Absalom",
+   "title": "Bringing Absalom home, then killing him",
+   "refs": [
+    [
+     "2 Samuel 14",
+     "2 Samuel 14"
+    ],
+    [
+     "2 Samuel 18",
+     "2 Samuel 18"
+    ]
+   ],
+   "hot": [
+    "tekoa",
+    "mahanaim",
+    "forest"
+   ],
+   "sel": "forest",
+   "view": [
+    34.95,
+    31.5,
+    36.1,
+    32.55
+   ],
+   "html": "<p>Joab once used a wise woman from Tekoa to persuade David to bring his exiled son Absalom home. Years later, Absalom rebelled and David fled across the Jordan to Mahanaim.</p><p>David ordered his commanders to deal gently with Absalom. But when Absalom was caught by his head in an oak in the forest of Ephraim, Joab plunged three javelins into his heart, and his armor-bearers finished him.</p>",
+   "facts": [
+    "Second Samuel says the forest claimed more lives that day than the sword (2 Samuel 18:8).",
+    "Absalom's men threw his body into a pit in the forest and covered it with a large heap of rocks (2 Samuel 18:17)."
+   ]
+  },
+  {
+   "tab": "Last years",
+   "title": "Abel Beth Maakah and the altar",
+   "refs": [
+    [
+     "2 Samuel 20",
+     "2 Samuel 20"
+    ],
+    [
+     "1 Kings 1–2",
+     "1 Kings 1-2"
+    ]
+   ],
+   "hot": [
+    "abel",
+    "gibeon",
+    "jerusalem"
+   ],
+   "sel": "abel",
+   "html": "<p>When Sheba son of Bikri rebelled, Joab killed his rival Amasa at Gibeon and chased Sheba to Abel Beth Maakah in the far north. A wise woman bargained with Joab, and the town gave up Sheba's head.</p><p>In David's old age Joab backed Adonijah for the throne instead of Solomon. Solomon later had him killed at the altar in the tent of the Lord, where he had fled.</p>",
+   "facts": [
+    "Abel Beth Maakah is about 105 miles (168 km) north of Jerusalem in a straight line, near the modern border of Israel and Lebanon.",
+    "Joab was buried at his own home in the wilderness (1 Kings 2:34)."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,258 @@
+{
+ "title": "Follow Nathan's words to King David in Jerusalem",
+ "kicker": "Interactive map • 2 Samuel 7; 11–12; 1 Kings 1",
+ "bbox": [
+  34.4,
+  31.35,
+  36.1,
+  32.25
+ ],
+ "anchor": "jerusalem",
+ "places": {
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "David's capital",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "David captured the Jebusite fortress of Zion and called it the City of David (2 Samuel 5:7–9). Nathan the prophet advised and confronted the king here. The marker identifies the city, not a verified room where Nathan spoke.",
+   "elev": 754
+  },
+  "kiriath": {
+   "name": "Kiriath Jearim",
+   "sub": "where the ark waited",
+   "ll": [
+    31.806,
+    35.102
+   ],
+   "conf": "probable",
+   "text": "The ark of God stayed here for twenty years after the Philistines returned it (1 Samuel 7:1–2). David brought it up from here, called Baalah of Judah in 2 Samuel 6:2, to Jerusalem. The town is usually identified with the hill of Deir el-Azar at Abu Ghosh."
+  },
+  "rabbah": {
+   "name": "Rabbah",
+   "sub": "Ammonite capital",
+   "ll": [
+    31.9544,
+    35.9353
+   ],
+   "conf": "secure",
+   "text": "Joab besieged the Ammonite royal city while David stayed in Jerusalem (2 Samuel 11:1). Uriah the Hittite died in the fighting near its wall (2 Samuel 11:17). Rabbah lies under the Citadel hill in the center of modern Amman, Jordan."
+  },
+  "telaviv": {
+   "name": "Tel Aviv",
+   "ll": [
+    32.0853,
+    34.7818
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the Mediterranean coast, shown for orientation. Jerusalem lies in the hills roughly 32 miles (51 km) east of the coast."
+  }
+ },
+ "routes": {
+  "joab": {
+   "pts": [
+    [
+     31.7767,
+     35.2345
+    ],
+    [
+     31.79,
+     35.3
+    ],
+    [
+     31.82,
+     35.4
+    ],
+    [
+     31.85,
+     35.46
+    ],
+    [
+     31.84,
+     35.55
+    ],
+    [
+     31.9,
+     35.65
+    ],
+    [
+     31.95,
+     35.75
+    ],
+    [
+     31.97,
+     35.85
+    ],
+    [
+     31.9544,
+     35.9353
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.82,
+    34.56
+   ],
+   "kind": "water",
+   "rot": -62,
+   "size": 10
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.58,
+    35.5
+   ],
+   "kind": "water",
+   "rot": -80,
+   "size": 10
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.08,
+    35.545
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.52,
+    35.05
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Ammon",
+   "ll": [
+    31.83,
+    35.98
+   ],
+   "kind": "region",
+   "size": 12
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Jerusalem",
+   "title": "David's city in the hills",
+   "refs": [
+    [
+     "2 Samuel 5:6–12",
+     "2 Samuel 5:6-12"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>Jerusalem sits high in the central hills, roughly 32 miles east of the Mediterranean coast, with the Dead Sea deep in the rift to the east. David captured it from the Jebusites and made it his capital.</p><p>King Hiram of Tyre sent cedar logs, carpenters and stonemasons to build David a palace. This hill city is where the prophet Nathan served as the king's adviser.</p>",
+   "facts": [
+    "The City of David stood on a narrow ridge above the Gihon Spring, the city's main source of water.",
+    "Jerusalem lies about 2,500 feet (750 m) above sea level, while the nearby Dead Sea shore is more than 1,300 feet (400 m) below sea level."
+   ]
+  },
+  {
+   "tab": "Promise",
+   "title": "A house for God, a house for David",
+   "refs": [
+    [
+     "2 Samuel 7",
+     "2 Samuel 7"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "kiriath"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>David had brought the ark to Jerusalem, but it still sat in a tent. He told Nathan he wanted to build a proper house for it, and Nathan first told him to go ahead.</p><p>That night the Lord sent Nathan back with a different message. David would not build the temple. Instead the Lord would build David a house, a dynasty, and David's son would build the temple.</p>",
+   "quote": [
+    "Here I am, living in a house of cedar, while the ark of God remains in a tent.",
+    "2 Samuel 7:2 (NIV)"
+   ],
+   "facts": [
+    "The chapter turns on one Hebrew word, bayit, which can mean a palace, a temple or a royal family line.",
+    "Before David brought it to Jerusalem, the ark had waited about twenty years at Kiriath Jearim, some 8 miles (13 km) west of the city (1 Samuel 7:2)."
+   ]
+  },
+  {
+   "tab": "Rabbah",
+   "title": "The king stays home",
+   "refs": [
+    [
+     "2 Samuel 11",
+     "2 Samuel 11"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "rabbah"
+   ],
+   "routes": [
+    "joab"
+   ],
+   "sel": "rabbah",
+   "html": "<p>In the spring, when kings went off to war, David sent Joab and the army to besiege Rabbah, the Ammonite capital. David remained in Jerusalem, saw Bathsheba from his palace roof and slept with her.</p><p>When she became pregnant, David called her husband Uriah back from the siege. When Uriah would not go home, David sent him back to Joab with a letter that arranged his death at the wall of Rabbah.</p>",
+   "facts": [
+    "Rabbah is about 43 miles (69 km) from Jerusalem in a straight line, across the deep Jordan Valley. Uriah carried his own death sentence the whole way.",
+    "The name Amman preserves the name of the Ammonites. In the Hellenistic period the city was renamed Philadelphia."
+   ]
+  },
+  {
+   "tab": "Nathan",
+   "title": "“You are the man!”",
+   "refs": [
+    [
+     "2 Samuel 12",
+     "2 Samuel 12"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "rabbah"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>The Lord sent Nathan to David with a story about a rich man who took a poor man's only lamb. David burned with anger at the rich man, and Nathan told him he was that man. David confessed that he had sinned against the Lord.</p><p>The child born to Bathsheba died. Later she gave birth to Solomon, and the Lord sent word through Nathan to name him Jedidiah. Meanwhile Joab took Rabbah and called David to finish the conquest.</p>",
+   "quote": [
+    "You are the man!",
+    "2 Samuel 12:7 (NIV)"
+   ],
+   "facts": [
+    "The heading of Psalm 51 connects that psalm of confession with Nathan's visit to David after his sin with Bathsheba.",
+    "Jedidiah means “loved by the Lord.”"
+   ]
+  },
+  {
+   "tab": "Solomon",
+   "title": "Nathan and the next king",
+   "refs": [
+    [
+     "1 Kings 1",
+     "1 Kings 1"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>Years later, as David grew old, his son Adonijah declared himself king. Nathan warned Bathsheba and helped her remind David of his promise that Solomon would succeed him.</p><p>David ordered Solomon to ride the king's own mule down to the Gihon Spring, where Zadok the priest and Nathan the prophet were to anoint him. The celebration was so loud that Adonijah's guests heard it at their feast nearby.</p>",
+   "facts": [
+    "Adonijah's feast was held at the Stone of Zoheleth near En Rogel (1 Kings 1:9), a spring in the Kidron Valley just south of the Gihon.",
+    "Chronicles cites “the records of Nathan the prophet” as a source for the reigns of both David and Solomon (1 Chronicles 29:29; 2 Chronicles 9:29)."
+   ]
+  }
+ ]
+}

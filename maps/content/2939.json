@@ -1,0 +1,256 @@
+{
+ "title": "Follow Achan from fallen Jericho to the Valley of Achor",
+ "kicker": "Interactive map • Joshua 6–7",
+ "bbox": [
+  35.12,
+  31.68,
+  35.62,
+  32.02
+ ],
+ "anchor": "jericho",
+ "places": {
+  "jericho": {
+   "name": "Jericho",
+   "sub": "the devoted city",
+   "ll": [
+    31.8711,
+    35.4439
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "The first city Israel took west of the Jordan (Joshua 6). Everything in it was devoted to the Lord, and its silver, gold, bronze and iron were to go into the Lord's treasury (Joshua 6:18–19). The ancient mound is Tell es-Sultan, beside a strong spring at the edge of modern Jericho."
+  },
+  "gilgal": {
+   "name": "Gilgal",
+   "sub": "Israel's camp",
+   "ll": [
+    31.86,
+    35.5
+   ],
+   "area": [
+    4,
+    4
+   ],
+   "conf": "unknown",
+   "text": "Israel's first camp after crossing the Jordan, on the eastern border of Jericho (Joshua 4:19). Several sites between Jericho and the river have been proposed, but none is certain."
+  },
+  "ai": {
+   "name": "Ai",
+   "sub": "the failed attack",
+   "ll": [
+    31.9166,
+    35.2616
+   ],
+   "area": [
+    3,
+    2.5
+   ],
+   "conf": "debated",
+   "text": "A town near Beth Aven, east of Bethel (Joshua 7:2). It is often identified with et-Tell, but that site shows little occupation at the usual dates for Joshua. Nearby Khirbet el-Maqatir has also been proposed, so the marker is approximate."
+  },
+  "bethel": {
+   "name": "Bethel",
+   "sub": "west of Ai",
+   "ll": [
+    31.9286,
+    35.2386
+   ],
+   "conf": "probable",
+   "text": "Joshua locates Ai by reference to Bethel (Joshua 7:2). Bethel is usually identified with the village of Beitin, north of Jerusalem."
+  },
+  "achor": {
+   "name": "Valley of Achor",
+   "sub": "where Achan died",
+   "ll": [
+    31.74,
+    35.39
+   ],
+   "area": [
+    6,
+    5
+   ],
+   "conf": "debated",
+   "text": "Achan was stoned and buried under a large heap of rocks in the Valley of Achor (Joshua 7:24–26). The valley later marked part of Judah's northern border (Joshua 15:7). It is often identified with the el-Buqei'a basin in the Judean Desert, but this is debated."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.778,
+    35.2354
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city shown for orientation."
+  }
+ },
+ "routes": {
+  "attack": {
+   "pts": [
+    [
+     31.8711,
+     35.4439
+    ],
+    [
+     31.88,
+     35.39
+    ],
+    [
+     31.895,
+     35.34
+    ],
+    [
+     31.91,
+     35.29
+    ],
+    [
+     31.9166,
+     35.2616
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.725,
+    35.535
+   ],
+   "kind": "water",
+   "size": 8.5,
+   "rot": -60
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    31.95,
+    35.55
+   ],
+   "kind": "river",
+   "rot": -75
+  },
+  {
+   "t": "Judean Desert",
+   "ll": [
+    31.7,
+    35.26
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Hill country",
+   "ll": [
+    31.86,
+    35.21
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Jordan Valley",
+   "ll": [
+    31.97,
+    35.47
+   ],
+   "kind": "region",
+   "size": 10,
+   "rot": -80
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Jericho",
+   "title": "The devoted city",
+   "refs": [
+    [
+     "Joshua 6",
+     "Joshua 6"
+    ]
+   ],
+   "hot": [
+    "jericho",
+    "gilgal"
+   ],
+   "sel": "jericho",
+   "html": "<p>After crossing the Jordan, Israel camped at Gilgal and then marched around Jericho for seven days. The walls collapsed, and the city was taken.</p><p>Joshua had warned that the whole city was devoted to the Lord. No one was to take anything for himself. The silver, gold, bronze and iron were sacred and belonged in the Lord's treasury.</p>",
+   "facts": [
+    "Tell es-Sultan is one of the oldest known towns in the world, with remains more than 10,000 years old. It was named a UNESCO World Heritage Site in 2023.",
+    "The dating of Jericho's ancient destruction layers has been debated among archaeologists for decades."
+   ]
+  },
+  {
+   "tab": "Ai",
+   "title": "Defeat in the hills",
+   "refs": [
+    [
+     "Joshua 7:1–5",
+     "Joshua 7:1-5"
+    ]
+   ],
+   "hot": [
+    "ai",
+    "bethel",
+    "jericho"
+   ],
+   "routes": [
+    "attack"
+   ],
+   "sel": "ai",
+   "html": "<p>Joshua sent men from Jericho to spy out Ai. They reported that the town was small and that two or three thousand men would be enough.</p><p>About three thousand went up, but the men of Ai routed them, chasing them from the gate as far as a place called Shebarim and killing thirty-six. The hearts of the people melted in fear.</p>",
+   "facts": [
+    "The attack meant a steep climb. Jericho lies more than 700 feet (220 m) below sea level, while the ridge at Ai is more than 2,600 feet (800 m) above it.",
+    "The name Ai means “the ruin” in Hebrew."
+   ]
+  },
+  {
+   "tab": "The lot",
+   "title": "The sin is exposed",
+   "refs": [
+    [
+     "Joshua 7:6–23",
+     "Joshua 7:6-23"
+    ]
+   ],
+   "hot": [
+    "gilgal",
+    "jericho"
+   ],
+   "sel": "gilgal",
+   "html": "<p>Joshua tore his clothes and fell before the ark. The Lord told him Israel had taken devoted things. The next morning the people came forward by tribe, clan and family, and Achan son of Karmi of the tribe of Judah was singled out.</p><p>Achan confessed that he had seen a beautiful robe from Babylonia, two hundred shekels of silver and a bar of gold, and had hidden them under his tent.</p>",
+   "facts": [
+    "Two hundred shekels of silver weighed roughly 5 pounds (2.3 kg), and the gold bar of fifty shekels over a pound (about 0.6 kg).",
+    "Achan describes his sin in three steps: he saw, he coveted and he took (Joshua 7:21)."
+   ]
+  },
+  {
+   "tab": "Achor",
+   "title": "The Valley of Trouble",
+   "refs": [
+    [
+     "Joshua 7:24–26",
+     "Joshua 7:24-26"
+    ],
+    [
+     "Hosea 2:15",
+     "Hosea 2:15"
+    ]
+   ],
+   "hot": [
+    "achor",
+    "jericho"
+   ],
+   "sel": "achor",
+   "html": "<p>Joshua and all Israel took Achan, the stolen goods and all he had to the Valley of Achor. There he and his household were stoned, and a large heap of rocks was raised over them.</p><p>The heap was still there when the book was written, and the place kept the name Achor, meaning “trouble.” Centuries later Hosea promised that this valley would become a door of hope.</p>",
+   "quote": [
+    "and will make the Valley of Achor a door of hope",
+    "Hosea 2:15 (NIV)"
+   ],
+   "facts": [
+    "When Joshua asks Achan why he has brought trouble on Israel (Joshua 7:25), the Hebrew verb for “trouble” echoes the valley's name.",
+    "First Chronicles 2:7 spells his name Achar and describes him as the one who brought trouble on Israel, sharpening the same wordplay."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,300 @@
+{
+ "title": "Explore the proposed locations of the land of Uz",
+ "kicker": "Interactive map • Job 1; Lamentations 4:21",
+ "bbox": [
+  33.8,
+  28.9,
+  39.8,
+  33.7
+ ],
+ "places": {
+  "edom": {
+   "name": "Near Edom",
+   "sub": "most common view",
+   "ll": [
+    30.3,
+    35.68
+   ],
+   "area": [
+    32,
+    85
+   ],
+   "conf": "debated",
+   "confT": "Proposed region",
+   "text": "The most common view places Uz in or near Edom, in today's southern Jordan, possibly reaching into northwestern Saudi Arabia. Lamentations 4:21 addresses Edom as living in the land of Uz, and Job's friend Eliphaz came from Teman, a name tied to Edom. The shading is broad orientation, not a known border."
+  },
+  "hauran": {
+   "name": "Hauran",
+   "sub": "ancient tradition",
+   "ll": [
+    32.75,
+    36.2
+   ],
+   "area": [
+    35,
+    35
+   ],
+   "conf": "debated",
+   "confT": "Proposed region",
+   "text": "An old tradition places Job in the Hauran of southern Syria, south of Damascus. It draws on Genesis 10:23, which lists Uz as a son of Aram, and on early Christian sites near Nawa connected with Job. The shading is broad orientation, not a known border."
+  },
+  "sirhan": {
+   "name": "Wadi Sirhan",
+   "sub": "desert proposal",
+   "ll": [
+    31.0,
+    37.9
+   ],
+   "area": [
+    70,
+    45
+   ],
+   "conf": "debated",
+   "confT": "Proposed region",
+   "text": "Some place Uz along Wadi Sirhan, a long desert valley running southeast from eastern Jordan into northern Saudi Arabia. It fits a pastoral people “of the East” on the edge of the desert. The shading is approximate."
+  },
+  "sheikhsaad": {
+   "name": "Sheikh Sa'd",
+   "sub": "Job traditions",
+   "ll": [
+    32.835,
+    36.03
+   ],
+   "conf": "debated",
+   "confT": "Traditional site",
+   "text": "A village near Nawa in southern Syria where early Christian and later local traditions honored Job, including a Monastery of Job. Tradition is not proof that Job lived here, and no archaeological find identifies Uz."
+  },
+  "bozrah": {
+   "name": "Bozrah",
+   "sub": "Edom's chief city",
+   "ll": [
+    30.73,
+    35.61
+   ],
+   "conf": "probable",
+   "text": "The prophets name Bozrah as a leading city of Edom (Isaiah 63:1; Amos 1:12). It is usually identified with Buseirah in southern Jordan. It is shown as a landmark for Edom, not as a site in the book of Job."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Shown for orientation. Every proposed location for Uz lies east or southeast of ancient Israel, fitting Job's description as a man of the East."
+  },
+  "amman": {
+   "name": "Amman",
+   "ll": [
+    31.9539,
+    35.9106
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Capital of modern Jordan, shown for orientation between the proposed regions."
+  },
+  "damascus": {
+   "name": "Damascus",
+   "ll": [
+    33.5138,
+    36.2765
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Capital of modern Syria, shown for orientation north of the Hauran."
+  }
+ },
+ "routes": {},
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.2,
+    34.55
+   ],
+   "kind": "water",
+   "rot": -76,
+   "size": 11
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.5,
+    35.5
+   ],
+   "kind": "water",
+   "rot": -82,
+   "size": 8.5
+  },
+  {
+   "t": "Gulf of Aqaba",
+   "ll": [
+    29.4,
+    34.9
+   ],
+   "kind": "water",
+   "rot": -68,
+   "size": 8.5
+  },
+  {
+   "t": "Syrian Desert",
+   "ll": [
+    32.7,
+    38.6
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Arabia",
+   "ll": [
+    29.75,
+    38.4
+   ],
+   "kind": "region",
+   "size": 12
+  },
+  {
+   "t": "Negev",
+   "ll": [
+    30.6,
+    34.75
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Uz",
+   "title": "A man in the land of Uz",
+   "refs": [
+    [
+     "Job 1:1–3",
+     "Job 1:1-3"
+    ]
+   ],
+   "hot": [
+    "edom",
+    "hauran",
+    "sirhan"
+   ],
+   "sel": "edom",
+   "html": "<p>The book of Job opens by naming Job's homeland, but it never places Uz on a map. It calls Job the greatest man among the people of the East, with seven thousand sheep, three thousand camels, five hundred yoke of oxen and five hundred donkeys.</p><p>Those clues point east or southeast of ancient Israel, to grazing land on the edge of the desert. Scholars have proposed several regions, shaded here as broad possibilities.</p>",
+   "quote": [
+    "In the land of Uz there lived a man whose name was Job.",
+    "Job 1:1 (NIV)"
+   ],
+   "facts": [
+    "“People of the East” was a general Hebrew term for peoples living east of Israel, often on the desert fringe (Genesis 29:1; Judges 6:3).",
+    "Uz was probably a tribal or pastoral territory rather than a walled city, which is one reason no archaeological site has been identified with it."
+   ]
+  },
+  {
+   "tab": "Edom",
+   "title": "The case for Edom",
+   "refs": [
+    [
+     "Lamentations 4:21",
+     "Lamentations 4:21"
+    ],
+    [
+     "Jeremiah 25:20",
+     "Jeremiah 25:20"
+    ],
+    [
+     "Job 2:11",
+     "Job 2:11"
+    ]
+   ],
+   "hot": [
+    "edom",
+    "bozrah"
+   ],
+   "sel": "edom",
+   "view": [
+    34.4,
+    29.0,
+    37.2,
+    31.9
+   ],
+   "html": "<p>The most common view places Uz in or near Edom, the hill country east of the Arabah valley in today's southern Jordan, perhaps reaching into northwestern Arabia.</p><p>Lamentations 4:21 speaks to Edom as the one who lives in the land of Uz. Job's friend Eliphaz came from Teman, a name closely tied to Edom, and the book's desert imagery fits these dry borderlands.</p>",
+   "facts": [
+    "Genesis 36:28 lists a man named Uz among the Horite clans of Seir, the land later ruled by Edom.",
+    "Teman appears as a grandson of Esau (Genesis 36:11), and the prophets use Teman as another name for Edom (Jeremiah 49:7; Obadiah 9)."
+   ]
+  },
+  {
+   "tab": "Hauran",
+   "title": "The case for the Hauran",
+   "refs": [
+    [
+     "Genesis 10:23",
+     "Genesis 10:23"
+    ],
+    [
+     "Genesis 22:20–21",
+     "Genesis 22:20-21"
+    ]
+   ],
+   "hot": [
+    "hauran",
+    "sheikhsaad"
+   ],
+   "sel": "hauran",
+   "view": [
+    35.2,
+    31.9,
+    37.4,
+    33.7
+   ],
+   "html": "<p>An ancient tradition places Uz farther north, in the fertile Hauran plain of southern Syria. Genesis 10:23 lists Uz as a son of Aram, the ancestor of the Arameans, and Genesis 22:21 names Uz as the firstborn of Abraham's brother Nahor.</p><p>Early Christians honored Job at sites near Nawa, including a Monastery of Job at Sheikh Sa'd. These traditions are old, but they are not proof.</p>",
+   "facts": [
+    "The first-century historian Josephus wrote that Uz, son of Aram, founded Trachonitis and Damascus, both on the edges of the Hauran.",
+    "A basalt monument at Sheikh Sa'd long called the “Job Stone” turned out to be an Egyptian victory stele of Pharaoh Ramesses II."
+   ]
+  },
+  {
+   "tab": "Desert",
+   "title": "Raiders from the desert",
+   "refs": [
+    [
+     "Job 1:13–19",
+     "Job 1:13-19"
+    ]
+   ],
+   "hot": [
+    "sirhan",
+    "edom",
+    "hauran"
+   ],
+   "sel": "sirhan",
+   "html": "<p>Job lost his herds to raiders: Sabeans, usually connected with Sheba in southern Arabia, and Chaldeans from Mesopotamia. Such raids fit a region exposed to desert peoples.</p><p>Some scholars look to Wadi Sirhan, a long desert valley running southeast from eastern Jordan into northern Arabia. Others see Uz as a broad term that may have covered parts of Edom, Moab and northern Arabia over time.</p>",
+   "facts": [
+    "Wadi Sirhan has long served as a caravan corridor between the Azraq oasis in Jordan and Dumat al-Jandal in northern Saudi Arabia.",
+    "Elihu, the young speaker in Job 32, was a Buzite. Jeremiah 25:23 names Buz with the Arabian oases of Dedan and Tema."
+   ]
+  },
+  {
+   "tab": "Why Uz",
+   "title": "A story beyond Israel's borders",
+   "refs": [
+    [
+     "Job 42:10–17",
+     "Job 42:10-17"
+    ]
+   ],
+   "hot": [
+    "edom",
+    "hauran",
+    "sirhan"
+   ],
+   "html": "<p>Whichever proposal is right, Job is not an Israelite living in Canaan. He is a man of the wider ancient Near East who worships the true God outside the covenant line.</p><p>That setting widens the book's message. God's rule and the reality of human suffering are not limited to Israel. Uz may be hard to find on a map, but it was pictured as a real place where one man's faith was tested.</p>",
+   "facts": [
+    "Ezekiel 14:14 names Job with Noah and Daniel as examples of righteousness.",
+    "The New Testament points to Job's perseverance as an example for believers (James 5:11)."
+   ]
+  }
+ ]
+}

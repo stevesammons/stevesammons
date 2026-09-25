@@ -1,0 +1,238 @@
+{
+ "title": "Follow Bathsheba's story in Jerusalem",
+ "kicker": "Interactive map • 2 Samuel 11–12; 1 Kings 1–2",
+ "bbox": [
+  34.55,
+  31.55,
+  36.1,
+  32.2
+ ],
+ "anchor": "jerusalem",
+ "places": {
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "City of David",
+   "ll": [
+    31.7735,
+    35.2355
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "David's capital, on the narrow ridge south of today's Temple Mount known as the City of David. David saw Bathsheba from the roof of his palace here (2 Samuel 11:2). The Gihon Spring, where Solomon was anointed, lies at the foot of the ridge (1 Kings 1:38–39)."
+  },
+  "rabbah": {
+   "name": "Rabbah",
+   "sub": "Ammonite capital",
+   "ll": [
+    31.9544,
+    35.9349
+   ],
+   "conf": "secure",
+   "text": "The capital of the Ammonites, besieged by Joab while David stayed in Jerusalem. Bathsheba's husband Uriah died near its wall (2 Samuel 11:16–17). The site lies under the Citadel hill in the center of modern Amman."
+  },
+  "jericho": {
+   "name": "Jericho",
+   "ll": [
+    31.857,
+    35.444
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern town near the Jordan crossing, shown for orientation. The Bible does not say which road Uriah took."
+  },
+  "telaviv": {
+   "name": "Tel Aviv",
+   "ll": [
+    32.0853,
+    34.7818
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the Mediterranean coast, shown for orientation."
+  }
+ },
+ "routes": {
+  "uriah": {
+   "pts": [
+    [
+     31.7735,
+     35.2355
+    ],
+    [
+     31.8,
+     35.33
+    ],
+    [
+     31.845,
+     35.43
+    ],
+    [
+     31.84,
+     35.55
+    ],
+    [
+     31.88,
+     35.68
+    ],
+    [
+     31.93,
+     35.8
+    ],
+    [
+     31.9544,
+     35.9349
+    ]
+   ],
+   "style": "dash"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    31.85,
+    34.62
+   ],
+   "kind": "water",
+   "rot": -72
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.6,
+    35.5
+   ],
+   "kind": "water",
+   "rot": -80,
+   "size": 10.5
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.05,
+    35.54
+   ],
+   "kind": "river",
+   "rot": -82
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.62,
+    35.05
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Ammon",
+   "ll": [
+    31.8,
+    35.98
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Gilead",
+   "ll": [
+    32.12,
+    35.78
+   ],
+   "kind": "region",
+   "size": 11
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Jerusalem",
+   "title": "A spring evening in Jerusalem",
+   "refs": [
+    [
+     "2 Samuel 11:1–5",
+     "2 Samuel 11:1-5"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "rabbah"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>In the spring, David sent Joab and the army to besiege Rabbah, but he stayed in Jerusalem. One evening he walked on the roof of the palace and saw a woman bathing.</p><p>He learned she was Bathsheba, the daughter of Eliam and the wife of Uriah the Hittite. David sent messengers to get her and slept with her. Later she sent word to him: she was pregnant.</p>",
+   "quote": [
+    "In the spring, at the time when kings go off to war",
+    "2 Samuel 11:1 (NIV)"
+   ],
+   "facts": [
+    "Some archaeologists identify a massive stone building on the City of David ridge with David's palace, but that identification is debated.",
+    "Uriah is called a Hittite, yet he is listed among David's elite warriors, known as the Thirty (2 Samuel 23:39)."
+   ]
+  },
+  {
+   "tab": "Rabbah",
+   "title": "A letter carried to Rabbah",
+   "refs": [
+    [
+     "2 Samuel 11:6–27",
+     "2 Samuel 11:6-27"
+    ]
+   ],
+   "hot": [
+    "rabbah",
+    "jerusalem"
+   ],
+   "routes": [
+    "uriah"
+   ],
+   "sel": "rabbah",
+   "html": "<p>David called Uriah back from the siege and urged him to go home, but Uriah slept at the palace entrance, refusing to enjoy comforts while the army camped in the field.</p><p>David sent him back to Rabbah carrying a letter that told Joab to put him where the fighting was fiercest. Uriah died near the city wall. After Bathsheba's time of mourning, David brought her to his house and she became his wife.</p>",
+   "facts": [
+    "Rabbah is about 43 miles (69 km) from Jerusalem in a straight line, across the deep Jordan Valley.",
+    "In Greek and Roman times, Rabbah was renamed Philadelphia. Its old name survives in the name Amman."
+   ]
+  },
+  {
+   "tab": "Nathan",
+   "title": "Nathan's rebuke",
+   "refs": [
+    [
+     "2 Samuel 12",
+     "2 Samuel 12"
+    ]
+   ],
+   "hot": [
+    "jerusalem",
+    "rabbah"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>The prophet Nathan told David a story about a rich man who took a poor man's only lamb. When David burned with anger, Nathan confronted him with his own guilt.</p><p>The child Bathsheba bore became ill and died. David comforted her, and she gave birth to Solomon. Nathan gave the baby the name Jedidiah. Meanwhile Joab captured Rabbah, and David came to take the city.</p>",
+   "quote": [
+    "You are the man!",
+    "2 Samuel 12:7 (NIV)"
+   ],
+   "facts": [
+    "Jedidiah means \"loved by the Lord.\" 2 Samuel 12:24–25 says the Lord loved the child.",
+    "The heading of Psalm 51 connects that psalm of repentance with Nathan's visit after David's sin with Bathsheba."
+   ]
+  },
+  {
+   "tab": "Gihon",
+   "title": "The mother of a king",
+   "refs": [
+    [
+     "1 Kings 1:1–2:25",
+     "1 Kings 1:1-2:25"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>When David was old, his son Adonijah held a feast near En Rogel and claimed the throne. Nathan and Bathsheba went to David and reminded him of his promise that Solomon would reign. David ordered Solomon anointed at the Gihon Spring.</p><p>As queen mother, Bathsheba had a throne at King Solomon's right hand. When she brought him Adonijah's request to marry Abishag, Solomon saw a threat and had Adonijah executed.</p>",
+   "facts": [
+    "The Gihon Spring and En Rogel both lie in the Kidron Valley below the City of David, within earshot of each other. Adonijah's guests heard the celebration for Solomon (1 Kings 1:41).",
+    "Solomon rose to meet his mother and bowed down to her before sitting on his throne (1 Kings 2:19)."
+   ]
+  }
+ ]
+}

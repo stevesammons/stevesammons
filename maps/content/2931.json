@@ -1,48 +1,130 @@
 {
  "title": "The wider world of Abel's story",
  "kicker": "Interactive map • Genesis 4:1–10",
- "bbox": [33.5, 28.5, 50.5, 38.8],
+ "bbox": [
+  31.2,
+  27.8,
+  50.8,
+  38.8
+ ],
  "note": "Genesis gives no location for Eden, Abel's home or the field where he died, so the map marks none of them. Shaded areas are broad regions, not sites. Modern borders are shown only for orientation.",
  "mapLabel": "Map of the ancient Near East for the story of Abel. No location is marked for Eden or for Abel.",
  "places": {
   "rivers": {
-   "name": "Tigris and Euphrates", "sub": "named in Genesis 2",
-   "ll": [34.4, 42.9], "area": [270, 170], "main": true,
-   "conf": "region", "confT": "Named rivers, not a site",
+   "name": "Tigris and Euphrates",
+   "sub": "named in Genesis 2",
+   "ll": [
+    34.4,
+    42.9
+   ],
+   "area": [
+    270,
+    170
+   ],
+   "main": true,
+   "conf": "region",
+   "confT": "Named rivers, not a site",
    "text": "Genesis 2:10–14 says a river watering Eden divided into four headwaters, two of them the Tigris and the Euphrates. The other two, the Pishon and the Gihon, have never been identified with confidence. Genesis 4 gives no location for Abel, so this shaded area marks only the land of the two rivers."
   },
   "crescent": {
-   "name": "Fertile Crescent", "sub": "early farming and herding",
-   "ll": [36.7, 39.6], "area": [300, 110],
-   "conf": "region", "confT": "Modern term, not a biblical site",
+   "name": "Fertile Crescent",
+   "sub": "early farming and herding",
+   "ll": [
+    36.7,
+    39.6
+   ],
+   "area": [
+    300,
+    110
+   ],
+   "conf": "region",
+   "confT": "Modern term, not a biblical site",
    "text": "A modern name for the arc of well-watered land running from the Persian Gulf up through Mesopotamia and around to the eastern Mediterranean. Archaeologists find some of the earliest evidence for growing crops and keeping flocks here. Genesis does not place Abel in this area or any other."
   },
   "jerusalem": {
-   "name": "Jerusalem", "sub": "where Jesus spoke of Abel",
-   "ll": [31.7781, 35.2354],
+   "name": "Jerusalem",
+   "sub": "where Jesus spoke of Abel",
+   "ll": [
+    31.7781,
+    35.2354
+   ],
    "conf": "secure",
    "text": "Teaching in the temple courts, Jesus spoke of the righteous blood shed on earth, from the blood of righteous Abel to that of Zechariah (Matthew 23:35). This is the only place on this map that the Abel texts connect to a known location."
   },
   "baghdad": {
-   "name": "Baghdad", "ll": [33.315, 44.366],
-   "kind": "ref", "conf": "modern",
+   "name": "Baghdad",
+   "ll": [
+    33.315,
+    44.366
+   ],
+   "kind": "ref",
+   "conf": "modern",
    "text": "Capital of modern Iraq, on the Tigris, shown for orientation."
   }
  },
  "routes": {},
  "labels": [
-  {"t": "Mediterranean Sea", "ll": [33.6, 34.35], "kind": "water", "rot": -70, "size": 11},
-  {"t": "Persian Gulf", "ll": [28.9, 49.7], "kind": "water", "rot": -35},
-  {"t": "Tigris", "ll": [35.35, 43.45], "kind": "river", "rot": -62},
-  {"t": "Euphrates", "ll": [35.05, 40.75], "kind": "river", "rot": 32},
-  {"t": "Syrian Desert", "ll": [31.9, 39.0], "kind": "region", "size": 12},
-  {"t": "Zagros Mountains", "ll": [34.2, 46.9], "kind": "region", "rot": -48}
+  {
+   "t": "Mediterranean",
+   "ll": [
+    33.45,
+    33.3
+   ],
+   "kind": "water",
+   "size": 9.5
+  },
+  {
+   "t": "Persian Gulf",
+   "ll": [
+    29.75,
+    49.1
+   ],
+   "kind": "water",
+   "rot": -28,
+   "size": 10.5
+  },
+  {
+   "t": "Tigris",
+   "ll": [
+    31.85,
+    46.95
+   ],
+   "kind": "river",
+   "rot": 45
+  },
+  {
+   "t": "Euphrates",
+   "ll": [
+    35.05,
+    40.75
+   ],
+   "kind": "river",
+   "rot": 32
+  },
+  {
+   "t": "Syrian Desert",
+   "ll": [
+    32.4,
+    40.4
+   ],
+   "kind": "region",
+   "size": 12
+  }
  ],
  "chapters": [
   {
-   "tab": "Beyond Eden", "title": "Outside the garden",
-   "refs": [["Genesis 3:23–4:2", "Genesis 3:23-4:2"]],
-   "hot": ["rivers"], "sel": "rivers",
+   "tab": "Beyond Eden",
+   "title": "Outside the garden",
+   "refs": [
+    [
+     "Genesis 3:23–4:2",
+     "Genesis 3:23-4:2"
+    ]
+   ],
+   "hot": [
+    "rivers"
+   ],
+   "sel": "rivers",
    "html": "<p>Genesis 4 opens after Adam and Eve have been sent out of the garden of Eden. Eve gives birth to Cain and then to his brother Abel. Abel kept flocks, and Cain worked the soil.</p><p>The text names no town, region or landmark for their home. Genesis 2 does name the Tigris and Euphrates among the rivers of Eden, so this map shows that wider world without marking Eden, Abel's home or the field where he died.</p>",
    "facts": [
     "Abel's name in Hebrew, Hevel, means breath or vapor. The same word is translated meaningless in Ecclesiastes 1:2 (NIV), a picture of something brief.",
@@ -50,9 +132,23 @@
    ]
   },
   {
-   "tab": "Offerings", "title": "Two brothers, two offerings",
-   "refs": [["Genesis 4:2–5", "Genesis 4:2-5"], ["Hebrews 11:4", "Hebrews 11:4"]],
-   "hot": ["crescent", "rivers"], "sel": "crescent",
+   "tab": "Offerings",
+   "title": "Two brothers, two offerings",
+   "refs": [
+    [
+     "Genesis 4:2–5",
+     "Genesis 4:2-5"
+    ],
+    [
+     "Hebrews 11:4",
+     "Hebrews 11:4"
+    ]
+   ],
+   "hot": [
+    "crescent",
+    "rivers"
+   ],
+   "sel": "crescent",
    "html": "<p>In the course of time Cain brought some of the fruits of the soil as an offering to the Lord. Abel brought fat portions from some of the firstborn of his flock.</p><p>The Lord looked with favor on Abel and his offering, but not on Cain and his. Genesis does not say how that favor was shown. The letter to the Hebrews says that Abel offered a better sacrifice by faith.</p>",
    "facts": [
     "Across the Fertile Crescent, archaeology shows farming and herding developing side by side, the same two ways of life Genesis gives to Cain and Abel.",
@@ -60,22 +156,54 @@
    ]
   },
   {
-   "tab": "The field", "title": "Blood crying from the ground",
-   "refs": [["Genesis 4:6–16", "Genesis 4:6-16"]],
-   "hot": ["rivers"], "sel": "rivers",
+   "tab": "The field",
+   "title": "Blood crying from the ground",
+   "refs": [
+    [
+     "Genesis 4:6–16",
+     "Genesis 4:6-16"
+    ]
+   ],
+   "hot": [
+    "rivers"
+   ],
+   "sel": "rivers",
    "html": "<p>Cain was angry and downcast. The Lord warned him that sin was crouching at his door and wanted to have him, but that he must rule over it.</p><p>Cain invited his brother out to the field, and there he attacked Abel and killed him. When the Lord asked where Abel was, Cain claimed not to know. The Lord said Abel's blood was crying out to him from the ground.</p>",
-   "quote": ["Am I my brother's keeper?", "Genesis 4:9 (NIV)"],
+   "quote": [
+    "Am I my brother's keeper?",
+    "Genesis 4:9 (NIV)"
+   ],
    "facts": [
     "Genesis 4:7 is the first place the Bible uses the word sin, pictured as an animal crouching at the door.",
     "Cain was sentenced to be a restless wanderer and settled in the land of Nod, east of Eden (Genesis 4:12, 16). Nod sounds like the Hebrew word for wandering, and its location is unknown."
    ]
   },
   {
-   "tab": "Remembered", "title": "Righteous Abel remembered",
-   "refs": [["Genesis 4:25", "Genesis 4:25"], ["Matthew 23:35", "Matthew 23:35"], ["Hebrews 12:24", "Hebrews 12:24"]],
-   "hot": ["jerusalem"], "sel": "jerusalem",
+   "tab": "Remembered",
+   "title": "Righteous Abel remembered",
+   "refs": [
+    [
+     "Genesis 4:25",
+     "Genesis 4:25"
+    ],
+    [
+     "Matthew 23:35",
+     "Matthew 23:35"
+    ],
+    [
+     "Hebrews 12:24",
+     "Hebrews 12:24"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
    "html": "<p>Eve later bore another son and named him Seth, saying God had granted her a child in place of Abel, since Cain had killed him.</p><p>Centuries later, in Jerusalem's temple courts, Jesus named Abel as the first of the righteous whose blood had been shed. Hebrews says that Abel still speaks through his faith, and that the blood of Jesus speaks a better word than the blood of Abel.</p>",
-   "quote": ["And by faith Abel still speaks, even though he is dead.", "Hebrews 11:4 (NIV)"],
+   "quote": [
+    "And by faith Abel still speaks, even though he is dead.",
+    "Hebrews 11:4 (NIV)"
+   ],
    "facts": [
     "Many scholars think Jesus' phrase from Abel to Zechariah spans the Hebrew Bible from its first book to Chronicles, traditionally its last, where Zechariah is stoned in the temple courtyard (2 Chronicles 24:20–22).",
     "Luke records a similar saying about the blood of Abel and Zechariah (Luke 11:50–51)."

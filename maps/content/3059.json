@@ -1,0 +1,351 @@
+{
+ "title": "Follow Absalom between Hebron and Jerusalem",
+ "kicker": "Interactive map • 2 Samuel 3; 13–18",
+ "bbox": [
+  34.75,
+  31.4,
+  36.0,
+  33.2
+ ],
+ "anchor": "jerusalem",
+ "places": {
+  "hebron": {
+   "name": "Hebron",
+   "sub": "birthplace and revolt",
+   "ll": [
+    31.5247,
+    35.1033
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "David's first royal city, where he reigned over Judah for seven and a half years (2 Samuel 5:5). Absalom was born here (2 Samuel 3:2–3) and later launched his revolt here (2 Samuel 15:10). The ancient mound is Tel Rumeida in today's Hebron."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "sub": "City of David",
+   "ll": [
+    31.7735,
+    35.2355
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "David's capital, on the ridge south of today's Temple Mount. Absalom lived here as a prince, won followers at the city gate and later entered the city as a rival king (2 Samuel 15:1–6; 16:15)."
+  },
+  "baalhazor": {
+   "name": "Baal Hazor",
+   "sub": "sheep-shearing feast",
+   "ll": [
+    31.98,
+    35.285
+   ],
+   "conf": "probable",
+   "confT": "Often identified",
+   "elev": 1016,
+   "text": "Absalom's shearers were at Baal Hazor near Ephraim, where he had Amnon killed (2 Samuel 13:23–29). It is often identified with Jebel Asur, one of the highest points in the central hills, northeast of Bethel."
+  },
+  "geshur": {
+   "name": "Geshur",
+   "sub": "his mother's homeland",
+   "ll": [
+    32.86,
+    35.75
+   ],
+   "area": [
+    10,
+    14
+   ],
+   "conf": "region",
+   "text": "A small Aramean kingdom east of the Sea of Galilee. Absalom's mother Maacah was the daughter of Talmai, king of Geshur, and Absalom took refuge with Talmai for three years (2 Samuel 3:3; 13:37–38)."
+  },
+  "mahanaim": {
+   "name": "Mahanaim",
+   "sub": "David's refuge",
+   "ll": [
+    32.18,
+    35.67
+   ],
+   "conf": "debated",
+   "text": "A town in Gilead east of the Jordan where David took refuge during the revolt (2 Samuel 17:24). It is often placed at Tell edh-Dhahab el-Gharbi by the Jabbok River, but the identification is uncertain.",
+   "area": [
+    6,
+    6
+   ]
+  },
+  "tiberias": {
+   "name": "Tiberias",
+   "ll": [
+    32.7922,
+    35.5312
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city on the western shore of the Sea of Galilee, shown for orientation."
+  }
+ },
+ "routes": {
+  "togeshur": {
+   "pts": [
+    [
+     31.98,
+     35.285
+    ],
+    [
+     31.95,
+     35.4
+    ],
+    [
+     32.0,
+     35.52
+    ],
+    [
+     32.4,
+     35.575
+    ],
+    [
+     32.62,
+     35.585
+    ],
+    [
+     32.72,
+     35.65
+    ],
+    [
+     32.86,
+     35.75
+    ]
+   ],
+   "style": "dash"
+  },
+  "revolt": {
+   "pts": [
+    [
+     31.7735,
+     35.2355
+    ],
+    [
+     31.705,
+     35.2
+    ],
+    [
+     31.6,
+     35.15
+    ],
+    [
+     31.5247,
+     35.1033
+    ]
+   ]
+  },
+  "davidflees": {
+   "pts": [
+    [
+     31.7735,
+     35.2355
+    ],
+    [
+     31.8,
+     35.33
+    ],
+    [
+     31.845,
+     35.43
+    ],
+    [
+     31.9,
+     35.53
+    ],
+    [
+     32.05,
+     35.6
+    ],
+    [
+     32.18,
+     35.67
+    ]
+   ],
+   "style": "dash"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.3,
+    34.8
+   ],
+   "kind": "water",
+   "rot": -74
+  },
+  {
+   "t": "Sea of Galilee",
+   "ll": [
+    32.83,
+    35.59
+   ],
+   "kind": "water",
+   "size": 8.5
+  },
+  {
+   "t": "Dead Sea",
+   "ll": [
+    31.52,
+    35.48
+   ],
+   "kind": "water",
+   "rot": -82,
+   "size": 10.5
+  },
+  {
+   "t": "Jordan",
+   "ll": [
+    32.3,
+    35.555
+   ],
+   "kind": "river",
+   "rot": -84
+  },
+  {
+   "t": "Judah",
+   "ll": [
+    31.48,
+    34.9
+   ],
+   "kind": "region",
+   "size": 13
+  },
+  {
+   "t": "Gilead",
+   "ll": [
+    32.4,
+    35.82
+   ],
+   "kind": "region",
+   "size": 12
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Hebron",
+   "title": "A prince born in Hebron",
+   "refs": [
+    [
+     "2 Samuel 3:2–5",
+     "2 Samuel 3:2-5"
+    ]
+   ],
+   "hot": [
+    "hebron",
+    "geshur"
+   ],
+   "sel": "hebron",
+   "html": "<p>Absalom was David's third son, born in Hebron while David reigned there as king of Judah. His mother was Maacah, daughter of Talmai, king of Geshur, a small kingdom far to the north.</p><p>When David later captured Jerusalem and moved his capital there, Absalom grew up as a prince in the new royal city. Scripture gives no year for his birth.</p>",
+   "facts": [
+    "Hebron was where David was first anointed king over Judah (2 Samuel 2:4), which made it a meaningful place for Absalom to claim the throne years later.",
+    "The marriage to a Geshurite princess gave David an ally on the far side of the Sea of Galilee, and it gave Absalom a place of refuge."
+   ]
+  },
+  {
+   "tab": "Revenge",
+   "title": "Revenge at Baal Hazor",
+   "refs": [
+    [
+     "2 Samuel 13",
+     "2 Samuel 13"
+    ]
+   ],
+   "hot": [
+    "baalhazor",
+    "geshur",
+    "jerusalem"
+   ],
+   "routes": [
+    "togeshur"
+   ],
+   "sel": "baalhazor",
+   "html": "<p>David's oldest son Amnon raped Absalom's sister Tamar. Absalom said nothing to Amnon, but he took Tamar into his house, and two years later he invited the king's sons to his sheep-shearing at Baal Hazor.</p><p>There his servants killed Amnon at Absalom's command. Absalom fled to his grandfather Talmai in Geshur and stayed there for three years while David mourned for his son.</p>",
+   "facts": [
+    "Jebel Asur, the site often identified with Baal Hazor, rises to about 3,330 feet (1,016 m), among the highest points north of Jerusalem.",
+    "Some scholars suggest that the Geshurite capital lay at et-Tell near the northern shore of the Sea of Galilee, but this is debated."
+   ]
+  },
+  {
+   "tab": "Jerusalem",
+   "title": "Stealing hearts at the gate",
+   "refs": [
+    [
+     "2 Samuel 14–15:6",
+     "2 Samuel 14-15:6"
+    ]
+   ],
+   "hot": [
+    "jerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>Joab arranged for a wise woman from Tekoa to persuade David to bring Absalom home. Absalom returned to Jerusalem but did not see the king for two more years.</p><p>Once restored, Absalom provided himself with a chariot and horses and fifty men to run ahead of him. He stood by the road to the city gate, greeted people with legal complaints and told them the king had no one to hear them.</p>",
+   "quote": [
+    "and so he stole the hearts of the people of Israel",
+    "2 Samuel 15:6 (NIV)"
+   ],
+   "facts": [
+    "Absalom was praised as the most handsome man in Israel. When he cut his hair each year, it weighed two hundred shekels by the royal standard (2 Samuel 14:25–26).",
+    "To get Joab's attention, Absalom had his servants set Joab's barley field on fire (2 Samuel 14:30)."
+   ]
+  },
+  {
+   "tab": "Revolt",
+   "title": "\"Absalom is king in Hebron\"",
+   "refs": [
+    [
+     "2 Samuel 15:7–37",
+     "2 Samuel 15:7-37"
+    ]
+   ],
+   "hot": [
+    "hebron",
+    "jerusalem"
+   ],
+   "routes": [
+    "revolt"
+   ],
+   "sel": "hebron",
+   "view": [
+    34.85,
+    31.4,
+    35.6,
+    31.95
+   ],
+   "html": "<p>Absalom asked permission to go to Hebron to fulfill a vow he said he had made in Geshur. From there he sent secret messengers through the tribes, and David's counselor Ahithophel joined him.</p><p>When word came that the people were following Absalom, David left Jerusalem with his household and loyal troops. He crossed the Kidron Valley and went up the Mount of Olives weeping.</p>",
+   "facts": [
+    "Most Hebrew manuscripts of 2 Samuel 15:7 say \"forty years.\" The NIV follows some Greek manuscripts and other ancient sources that read \"four years.\"",
+    "Hebron lies about 19 miles (30 km) south of Jerusalem in a straight line, along the ridge of the hill country."
+   ]
+  },
+  {
+   "tab": "Forest",
+   "title": "Death in the forest of Ephraim",
+   "refs": [
+    [
+     "2 Samuel 17:24–18:33",
+     "2 Samuel 17:24-18:33"
+    ]
+   ],
+   "hot": [
+    "mahanaim",
+    "jerusalem"
+   ],
+   "routes": [
+    "davidflees"
+   ],
+   "sel": "mahanaim",
+   "html": "<p>David crossed the Jordan and took refuge at Mahanaim in Gilead, and Absalom's army followed. David ordered his commanders to deal gently with Absalom for his sake.</p><p>The battle was fought in the forest of Ephraim, whose location is uncertain, and the forest claimed more lives than the sword. Absalom was caught in the branches of a large oak, and Joab and his armor-bearers killed him. When the news reached David, he wept for his son.</p>",
+   "quote": [
+    "O my son Absalom! My son, my son Absalom!",
+    "2 Samuel 18:33 (NIV)"
+   ],
+   "facts": [
+    "Absalom had set up a pillar for himself in the King's Valley because he had no son to carry on his name (2 Samuel 18:18).",
+    "The monument called Absalom's Tomb in Jerusalem's Kidron Valley was built around the first century AD, about a thousand years after Absalom."
+   ]
+  }
+ ]
+}

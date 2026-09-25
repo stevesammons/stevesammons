@@ -1,0 +1,317 @@
+{
+ "title": "Follow Peter from Joppa to Cornelius in Caesarea",
+ "kicker": "Interactive map • Acts 10:1–11:18",
+ "bbox": [
+  34.55,
+  31.7,
+  35.4,
+  32.66
+ ],
+ "anchor": "caesarea",
+ "places": {
+  "caesarea": {
+   "name": "Caesarea",
+   "sub": "Roman port city",
+   "ll": [
+    32.5,
+    34.8925
+   ],
+   "main": true,
+   "conf": "secure",
+   "text": "Herod the Great rebuilt this coastal town as a grand harbor city and named it for Caesar Augustus. Its remains now form Caesarea National Park, roughly 30 miles (50 km) north of Tel Aviv. The marker shows the ancient city area; Cornelius's house has not been identified."
+  },
+  "joppa": {
+   "name": "Joppa",
+   "sub": "Peter's lodging",
+   "ll": [
+    32.054,
+    34.751
+   ],
+   "conf": "secure",
+   "label": "l",
+   "text": "An ancient port on a hill by the sea, today's Jaffa, the old part of Tel Aviv-Yafo. Peter was staying here with Simon, a tanner whose house was by the sea (Acts 10:6)."
+  },
+  "lydda": {
+   "name": "Lydda",
+   "ll": [
+    31.9516,
+    34.8953
+   ],
+   "conf": "secure",
+   "text": "An inland town, today's Lod, where Peter healed a paralyzed man named Aeneas. Believers from Joppa asked him to come from here after Tabitha died (Acts 9:32–38)."
+  },
+  "telaviv": {
+   "name": "Tel Aviv",
+   "ll": [
+    32.0853,
+    34.7818
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Modern city founded in 1909 next to old Jaffa. It is shown for orientation and did not exist in Cornelius's lifetime."
+  },
+  "jerusalem": {
+   "name": "Jerusalem",
+   "ll": [
+    31.7767,
+    35.2345
+   ],
+   "kind": "ref",
+   "conf": "modern",
+   "text": "Shown for orientation. After the events in Caesarea, Peter went up to Jerusalem and explained to the believers there what had happened (Acts 11:1–18)."
+  }
+ },
+ "routes": {
+  "messengers": {
+   "pts": [
+    [
+     32.5,
+     34.8925
+    ],
+    [
+     32.33,
+     34.875
+    ],
+    [
+     32.18,
+     34.83
+    ],
+    [
+     32.1,
+     34.79
+    ],
+    [
+     32.054,
+     34.751
+    ]
+   ],
+   "style": "req"
+  },
+  "peter": {
+   "pts": [
+    [
+     32.054,
+     34.751
+    ],
+    [
+     32.1,
+     34.79
+    ],
+    [
+     32.18,
+     34.83
+    ],
+    [
+     32.33,
+     34.875
+    ],
+    [
+     32.5,
+     34.8925
+    ]
+   ]
+  },
+  "tojerusalem": {
+   "pts": [
+    [
+     32.5,
+     34.8925
+    ],
+    [
+     32.3,
+     34.9
+    ],
+    [
+     32.1,
+     34.9
+    ],
+    [
+     31.9516,
+     34.8953
+    ],
+    [
+     31.87,
+     35.0
+    ],
+    [
+     31.82,
+     35.12
+    ],
+    [
+     31.7767,
+     35.2345
+    ]
+   ],
+   "style": "req"
+  }
+ },
+ "labels": [
+  {
+   "t": "Mediterranean Sea",
+   "ll": [
+    32.2,
+    34.66
+   ],
+   "kind": "water",
+   "rot": -75
+  },
+  {
+   "t": "Plain of Sharon",
+   "ll": [
+    32.33,
+    34.97
+   ],
+   "kind": "region",
+   "rot": -72,
+   "size": 10
+  },
+  {
+   "t": "Samaria hills",
+   "ll": [
+    32.25,
+    35.22
+   ],
+   "kind": "region",
+   "size": 10
+  },
+  {
+   "t": "Judean hills",
+   "ll": [
+    31.85,
+    35.2
+   ],
+   "kind": "region",
+   "size": 10
+  }
+ ],
+ "chapters": [
+  {
+   "tab": "Caesarea",
+   "title": "An officer's vision",
+   "refs": [
+    [
+     "Acts 10:1–8",
+     "Acts 10:1-8"
+    ]
+   ],
+   "hot": [
+    "caesarea",
+    "joppa"
+   ],
+   "routes": [
+    "messengers"
+   ],
+   "sel": "caesarea",
+   "html": "<p>Cornelius was a centurion in what was known as the Italian Regiment, stationed at Caesarea. He and his household were devout and God-fearing. He gave generously to people in need and prayed to God regularly.</p><p>One afternoon at about three o'clock, an angel told him in a vision that God had noticed his prayers and gifts. He was to send to Joppa for a man named Simon Peter. Cornelius sent two servants and a devout soldier.</p>",
+   "facts": [
+    "Herod built Caesarea's artificial harbor, called Sebastos, between about 22 and 10 BC. Its builders set concrete that hardened underwater, a Roman technique.",
+    "A centurion commanded a company of roughly 80 to 100 soldiers."
+   ]
+  },
+  {
+   "tab": "Joppa",
+   "title": "A vision on the roof",
+   "refs": [
+    [
+     "Acts 10:9–23",
+     "Acts 10:9-23"
+    ]
+   ],
+   "hot": [
+    "joppa",
+    "lydda"
+   ],
+   "sel": "joppa",
+   "view": [
+    34.66,
+    31.9,
+    34.98,
+    32.14
+   ],
+   "html": "<p>About noon the next day, as the messengers neared the city, Peter went up on the roof to pray. He grew hungry and saw a vision of a large sheet let down from heaven, holding all kinds of animals, and a voice told him to kill and eat.</p><p>Peter refused to eat anything impure. The voice answered, and the vision came three times. While he wondered what it meant, the men from Cornelius arrived at the gate.</p>",
+   "quote": [
+    "Do not call anything impure that God has made clean.",
+    "Acts 10:15 (NIV)"
+   ],
+   "facts": [
+    "Joppa is the port where Jonah boarded a ship to flee from the Lord (Jonah 1:3).",
+    "Cedar logs from Lebanon for Solomon's temple were floated down the coast in rafts to Joppa (2 Chronicles 2:16)."
+   ]
+  },
+  {
+   "tab": "Journey",
+   "title": "Up the coast to Caesarea",
+   "refs": [
+    [
+     "Acts 10:23–33",
+     "Acts 10:23-33"
+    ]
+   ],
+   "hot": [
+    "joppa",
+    "caesarea"
+   ],
+   "routes": [
+    "peter"
+   ],
+   "sel": "caesarea",
+   "html": "<p>Peter invited the messengers in as his guests. The next day he set out with them, along with some believers from Joppa, and the day after that he reached Caesarea.</p><p>Cornelius had gathered his relatives and close friends. He fell at Peter's feet, but Peter told him to stand up, since he was only a man himself. Peter explained that God had shown him not to call anyone impure or unclean.</p>",
+   "facts": [
+    "Caesarea and Joppa are about 30 miles (50 km) apart in a straight line along the coastal plain.",
+    "Peter later said that six believers from Joppa went with him (Acts 11:12). They became witnesses of what happened next."
+   ]
+  },
+  {
+   "tab": "Household",
+   "title": "The Spirit comes to the Gentiles",
+   "refs": [
+    [
+     "Acts 10:34–48",
+     "Acts 10:34-48"
+    ]
+   ],
+   "hot": [
+    "caesarea"
+   ],
+   "sel": "caesarea",
+   "view": [
+    34.8,
+    32.43,
+    34.99,
+    32.57
+   ],
+   "html": "<p>Peter told the gathering about Jesus: his ministry, his death and his resurrection, and forgiveness for everyone who believes in him. While he was still speaking, the Holy Spirit came on all who heard the message.</p><p>The believers from Joppa were astonished that the gift had been poured out on Gentiles. Peter ordered that they be baptized in the name of Jesus Christ, and he stayed with them for a few days.</p>",
+   "quote": [
+    "I now realize how true it is that God does not show favoritism",
+    "Acts 10:34 (NIV)"
+   ],
+   "facts": [
+    "In 1961 archaeologists at Caesarea's theater found a stone inscribed with the name of Pontius Pilate, who governed Judea from this city.",
+    "Caesarea later appears again in Acts: Philip the evangelist lived here, and Paul was held here for two years (Acts 21:8; 24:27)."
+   ]
+  },
+  {
+   "tab": "Jerusalem",
+   "title": "Peter explains",
+   "refs": [
+    [
+     "Acts 11:1–18",
+     "Acts 11:1-18"
+    ]
+   ],
+   "hot": [
+    "caesarea",
+    "jerusalem"
+   ],
+   "routes": [
+    "tojerusalem"
+   ],
+   "sel": "jerusalem",
+   "html": "<p>News reached the apostles and believers in Judea that Gentiles had received the word of God. When Peter went up to Jerusalem, some criticized him for entering the house of uncircumcised men and eating with them.</p><p>Peter told the whole story from the beginning, including the vision and the Spirit's coming. His hearers had no further objections. They praised God that he had granted Gentiles repentance that leads to life.</p>",
+   "facts": [
+    "Jerusalem lies about 55 miles (87 km) southeast of Caesarea in a straight line and roughly 2,400 feet (720 m) higher, which is why Acts speaks of going up to it.",
+    "At the Jerusalem council years later, Peter pointed back to this household as proof that God accepted Gentiles by faith (Acts 15:7–9)."
+   ]
+  }
+ ]
+}

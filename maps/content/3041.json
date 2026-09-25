@@ -22,25 +22,24 @@
   },
   "capernaum": {
    "name": "Capernaum",
-   "sub": "home of Simon and Andrew",
    "ll": [
     32.8806,
     35.575
    ],
    "conf": "secure",
    "text": "A fishing town on the north shore of the lake. Mark says Jesus went from the synagogue here to the home of Simon and Andrew (Mark 1:29). The ruins lie at Kfar Nahum in Israel.",
-   "label": "t"
+   "label": "tl"
   },
   "tabgha": {
    "name": "Tabgha",
-   "sub": "traditional feeding site",
    "ll": [
     32.8733,
     35.5484
    ],
    "conf": "debated",
    "confT": "Traditional site",
-   "text": "Church tradition places the feeding of the five thousand here, on the northwest shore. Luke connects the feeding with the area of Bethsaida (Luke 9:10), and John places it on a hillside across the lake (John 6:1–3), so the exact site is uncertain."
+   "text": "Church tradition places the feeding of the five thousand here, on the northwest shore. Luke connects the feeding with the area of Bethsaida (Luke 9:10), and John places it on a hillside across the lake (John 6:1–3), so the exact site is uncertain.",
+   "label": "bl"
   },
   "bethany": {
    "name": "Bethany beyond the Jordan",
@@ -76,16 +75,6 @@
  },
  "routes": {},
  "labels": [
-  {
-   "t": "Mediterranean Sea",
-   "ll": [
-    32.25,
-    34.8
-   ],
-   "kind": "water",
-   "rot": -76,
-   "size": 10
-  },
   {
    "t": "Sea of Galilee",
    "ll": [

@@ -147,7 +147,7 @@ class DEM:
         w, s, e, n = bbox
         k = math.cos(math.radians((s + n) / 2))
         z = 3
-        while z < 11:
+        while z < 14:
             x0, _ = _merc(w, n, z); x1, _ = _merc(e, n, z)
             if (x1 - x0) * 256 >= out_w * 1.1:
                 break

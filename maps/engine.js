@@ -329,7 +329,7 @@
       var p = PL[k];
       order.forEach(function (n) { plEls[n].g.classList.toggle('sel', n === k); });
       var stats = [];
-      if (p.elev != null && !p.area) stats.push('Elevation ≈ ' + fmt(p.elev * 3.28084) + ' ft (' + fmt(p.elev) + ' m) ' + (p.elev < 0 ? 'below' : 'above') + ' sea level');
+      if (p.elev != null && !p.area) stats.push('Elevation ≈ ' + fmt(Math.abs(p.elev) * 3.28084) + ' ft (' + fmt(Math.abs(p.elev)) + ' m) ' + (p.elev < 0 ? 'below' : 'above') + ' sea level');
       if (C.anchor && k !== C.anchor && PL[C.anchor]) stats.push('≈ ' + fmt(miles(p.ll, PL[C.anchor].ll)) + ' mi (' + fmt(miles(p.ll, PL[C.anchor].ll) * 1.609) + ' km) from ' + PL[C.anchor].name + ' in a straight line');
       (p.stats || []).forEach(function (s) { stats.push(s); });
       card.innerHTML = '<div class="bm-card-h"><span class="bm-card-t">' + esc(p.name) + (p.sub ? ' <span>· ' + esc(p.sub) + '</span>' : '') + '</span>' +
