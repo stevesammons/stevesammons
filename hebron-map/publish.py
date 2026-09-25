@@ -33,8 +33,17 @@ def api(method, path, body=None, auth=None):
         sys.exit(f"{method} {path} failed: HTTP {e.code}: {detail}")
 
 
+def pack_scripts(html):
+    """Inline <script> bodies get <p> tags and curly quotes added by the site's content
+    filters, so ship each one as a base64 data: URI that those filters leave alone."""
+    def enc(m):
+        b64 = base64.b64encode(m.group(1).encode()).decode()
+        return f'<script src="data:text/javascript;base64,{b64}"></script>'
+    return re.sub(r"<script>(.*?)</script>", enc, html, flags=re.S)
+
+
 def new_content(raw, embed):
-    block = f"{START}\n{embed.strip()}\n{END}"
+    block = f"{START}\n{pack_scripts(embed).strip()}\n{END}"
     if START in raw and END in raw:  # re-run: replace our previous insert
         return re.sub(re.escape(START) + r".*?" + re.escape(END), lambda _: block, raw, count=1, flags=re.S)
     figs = [m for m in re.finditer(r"<figure\b.*?</figure>", raw, flags=re.S)
@@ -74,7 +83,7 @@ def main():
 
     res = api("POST", f"/pages/{PAGE_ID}", {"content": updated}, auth=auth)
     saved = res["content"]["raw"]
-    if "<script" not in saved or 'id="chm"' not in saved:
+    if "data:text/javascript;base64," not in saved or 'id="chm"' not in saved:
         sys.exit("Saved, but WordPress stripped the <script> or map markup (account lacks unfiltered_html?). "
                  f"Restore with backups/{bak.name} if needed.")
     print(f"Published. Page modified {res['modified']}: {res['link']}")
