@@ -147,8 +147,8 @@ Portraits are for posts only. Character profile pages never show a portrait: the
 image and at the top of the page, from `python3 site/profile_cards.py apply [PAGE_ID]` (skips pages
 that already have one; `--force` remakes). The theme doesn't display a page's featured image, so the
 card is also placed in the content between `<!-- ss-card -->` markers, just after the back-link card.
-Started 2026-09-25: 20 of 88 profile pages done, then uploads failed with "could not be moved to
-wp-content/uploads" (server storage); run it again once uploads work.
+All 88 profile pages were done on 2026-09-25. If uploads fail with "could not be moved to
+wp-content/uploads", the hosting disk is full; ask Steve to clear space.
 
 1. **Bible character posts**: the character portrait (imagined, black-and-white documentary
    photo style) with the name in white bold caps top left, a short line under it, and a thin red
