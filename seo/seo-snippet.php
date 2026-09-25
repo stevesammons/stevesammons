@@ -256,5 +256,14 @@ if ( ! function_exists( 'ss_seo_trim' ) ) {
 			wp_safe_redirect( home_url( '/about/' ), 301 );
 			exit;
 		}
+		// Merged duplicate posts (2026-09-25): old URL => kept post.
+		$merged = array(
+			'where-are-the-car-we-were-promised' => '/where-are-the-cars-we-were-promised/',
+			'rockefeller-habits'                 => '/the-power-of-the-rockefeller-habits-a-comprehensive-guide/',
+		);
+		if ( isset( $merged[ $path ] ) ) {
+			wp_safe_redirect( home_url( $merged[ $path ] ), 301 );
+			exit;
+		}
 	} );
 }
