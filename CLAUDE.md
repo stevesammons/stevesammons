@@ -158,8 +158,12 @@ Two kinds of featured image, both 16:9, black and white with one red accent:
 
 ## Suno songs (Characters Worth Following quartet series)
 
-- Packages live in `songs/<character>/` (`song.md`, `chords.json`, rendered clips). The governing
-  guide is `suno-gospel-quartet-songwriting-guide.md` in Steve's Google Drive.
+- Pipeline (see `songs/README.md`): Steve writes each song in a claude.ai Project using
+  `songs/claude-project-instructions.md`, which returns SQL for the Supabase `songs` table. An n8n
+  workflow (`songs/n8n/`) renders the chord clips for rows marked `ready` and emails them. Keep the
+  Project instructions, `render-clips.js` and `render_chords.py` in step; rebuild the workflow with
+  `python3 songs/n8n/build_workflow.py`. Refresh posts with `python3 songs/supabase/export_posts.py`.
+- The original guide is `suno-gospel-quartet-songwriting-guide.md` in Steve's Google Drive.
 - Suno account @stevesammons is on Pro (2,500 credits and about 20 downloads a month, no Studio).
   Chords go in as audio: `python3 songs/render_chords.py songs/<character>/chords.json`, then upload
   `chords-reference.wav` as the Audio reference in Create > Advanced. Never type chord names into
