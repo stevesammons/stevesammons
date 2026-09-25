@@ -43,6 +43,13 @@ Always:
   Ship scripts as base64 `data:` URIs, as `hebron-map/publish.py` does.
 - ModSecurity rejects requests with a bare or unusual User-Agent. Send a real one.
 - Use the block editor. Put custom HTML inside a `<!-- wp:html -->` block.
+- Menu items can't be created through the REST API (a theme or plugin hook on
+  `wp_update_nav_menu_item` demands an admin nonce and aborts with "link expired"). Deleting works.
+  Build menus with a single-use Code Snippets snippet that calls `remove_all_actions(
+  'wp_update_nav_menu_item' )` first (see `site/menu-snippet.php`).
+- The sammons-social-tags plugin outputs Open Graph tags and switches itself off when an SEO
+  plugin such as Rank Math is active. Rank Math can't be configured without its admin wizard,
+  so SEO is handled by our own snippet instead (below). Don't install another SEO plugin.
 
 ## Known pages
 
@@ -64,7 +71,6 @@ only pages whose back links changed, and checks each live page).
   `<meta charset>` before it, and classic-editor HTML wrapped in one div (e.g. Nob in Doeg's
   Story). `apply.py` handles all three. Never add block markup to a classic page.
 - The tag is split into "Bible character" (1716) and "Bible characters" (1676). Scan both.
-- Not yet covered: "Give Me the Hard One" (untagged Caleb post) and its Caleb and Hebron pages.
 
 ## Bible map pages: tags and descriptions
 
@@ -77,3 +83,39 @@ only pages whose back links changed, and checks each live page).
 - The data lives in `seo/map-pages.json` and is applied with `python3 seo/apply_tags.py`.
   When a new map page is created, add an entry and run it (the user's approval for the page
   covers its tags and excerpt).
+
+## Site structure (reorganized 2026-09-25)
+
+- Categories: Bible Characters > Old Testament / New Testament (every Bible character post, and
+  only those), Leadership > Character & Integrity, Faith & Spiritual Living, Marketing & Branding
+  > SEO / Advertising / LinkedIn / UI/UX Design / Technology, Publishing, Nonprofits & Education >
+  Fundraising / Higher Education / Children's Literacy. Default category: Leadership.
+  New Bible character posts go only in Old Testament or New Testament.
+- Primary menu (id 14, also mobile): Bible Characters (OT, NT, Bible Maps), Leadership
+  (Character & Integrity), Faith, Marketing (Publishing, Nonprofits & Education), About, Newsletter.
+- Hub: /bible-characters/ built by `python3 site/build_hub.py --apply` from
+  `backups/hub-chars.json`. Rebuild it when a character post is added (the approval for the post
+  covers it). Scheduled reflections link themselves in the browser once they publish.
+- About page: /about/ (source `site/about.html`). /stevesammons/ redirects there.
+
+## Code Snippets on the site (Code Snippets plugin, REST at /code-snippets/v1/snippets)
+
+- SEO essentials (id in `seo/snippet-id.txt`, source `seo/seo-snippet.php`, front-end scope):
+  meta descriptions from excerpts, JSON-LD (Person, WebSite, BlogPosting, WebPage, BreadcrumbList),
+  noindex for tag archives with fewer than 3 posts and for date/author/search pages, sitemap
+  cleanup, homepage H1 and share image, readable-contrast CSS, /stevesammons/ redirect.
+- Keep reading (id in `seo/related-snippet-id.txt`, source `seo/related-snippet.php`): 4 related
+  published posts after each post, cached 12 hours.
+- Always `php -l` a snippet before uploading, keep scope `front-end` unless it must run in admin,
+  and verify the live site returns 200 right after activating. Edit the source file, then push the
+  code with POST /code-snippets/v1/snippets/<id> {"code": ...}.
+- `.htaccess` has an `SS Browser Caching` marker block (30-day browser caching for static files);
+  the server keeps `.htaccess.ss-backup-*` copies. Test any new server rules in a sandbox folder
+  first, since a bad rule takes down the site and the API with it.
+
+## Content conventions
+
+- Every post and map page needs a hand-written excerpt (about 150 characters). It is the search and
+  social description.
+- Every post needs a featured image. Posts without one get a branded card from
+  `python3 site/cards.py apply` (Poppins fonts in site/fonts, downloaded from google/fonts).

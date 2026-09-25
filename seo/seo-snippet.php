@@ -226,6 +226,23 @@ if ( ! function_exists( 'ss_seo_trim' ) ) {
 		}
 	} );
 
+
+	/* ---------- Homepage share image ---------- */
+	add_action( 'wp_head', function () {
+		if ( is_front_page() || is_home() ) {
+			$img = 'https://stevesammons.com/wp-content/uploads/2026/09/steve-sammons-share.jpg';
+			echo '<meta property="og:image" content="' . esc_url( $img ) . '" />' . "\n";
+			echo '<meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />' . "\n";
+			echo '<meta name="twitter:image" content="' . esc_url( $img ) . '" />' . "\n";
+		}
+	}, 5 );
+
+	/* ---------- Readable text (WCAG AA contrast) ---------- */
+	add_action( 'wp_head', function () {
+		echo '<style id="ss-contrast">body,select,input[type=search],input[type=text],input[type=email],textarea,.entry-content,html body .entry-content p,html body .entry-content li,html body .entry-content td,html body .entry-content dd{color:#555}'
+			. 'blockquote cite,figcaption,.wp-caption-text,.wp-block-image figcaption,.entry-content figcaption,.post-meta,.post-categories,.post-count,.sub-title,.timestamp,.text-small,.comment-metadata,.comment-metadata a,label,.logged-in-as,.pk-color-secondary{color:#6b6b6b}</style>' . "\n";
+	}, 999 );
+
 	/* ---------- Old bio URL -> About ---------- */
 	add_action( 'template_redirect', function () {
 		$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
