@@ -171,6 +171,8 @@ Two kinds of featured image, both 16:9, black and white with one red accent:
   Chords go in as audio: `python3 songs/render_chords.py songs/<character>/chords.json`, then upload
   `chords-reference.wav` as the Audio reference in Create > Advanced. Never type chord names into
   Suno's text boxes.
+- Opening: one solo voice sings Verse 1 and sets the scene (character, setting, problem); the
+  quartet enters at the first chorus.
 - Big finish: end with a barbershop tag (lead holds an open vowel, tenor posts high above the
   chord, long fermata, clean stop), asked for in the style line, the lyrics and the chords.
 - Tender ears: write every lyric so a grandmother with tender ears can listen. Handle violence and

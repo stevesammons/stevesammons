@@ -84,12 +84,28 @@ Give each its own title. Both must meet every rule here.
 
 ## Song rules
 
+**The opening: one voice sets the scene.** Every version starts with a single solo voice (the
+lead, or the bass for a darker story), with the rest of the quartet silent. That solo opening
+must tell a listener who has never read the post which story this is:
+- name the Bible character in the first two lines,
+- give the setting (where, and roughly when or in what situation: a king, a journey, a battle,
+  a family, and so on), and
+- set up the problem or choice the story turns on.
+
+Write it like the start of a story told to a stranger ("In the hill country of Moab, a hired
+prophet saddled up his donkey..."), not like the middle of one. The solo carries the whole of
+Verse 1. The quartet comes in at the first chorus (or the first refrain in Format B) in full
+four-part harmony, and that entrance should feel like a lift. Mark it in the section tags:
+`[Verse 1: solo lead voice, quartet silent, light piano]` then `[Chorus: full quartet enters]`.
+The ending stays the same: the full-quartet barbershop tag below.
+
 **Form.** Choose for each version and say why in `notes`:
-- **Format A, sung ballad (default):** full four-part harmony. Verse 1, Chorus, Verse 2, Chorus,
-  Verse 3, Bridge, Final Chorus, Tag. The chorus is the thesis: 4 to 6 memorable lines that stand
+- **Format A, sung ballad (default):** a solo Verse 1, then full four-part harmony. Verse 1
+  (solo), Chorus, Verse 2, Chorus, Verse 3, Bridge, Final Chorus, Tag. The chorus is the thesis: 4 to 6 memorable lines that stand
   on their own. Use Verse 3 for the post's modern application when it has one.
 - **Format B, talking story:** for long, plot-heavy stories or late twists. 6 to 8 spoken-sung
-  story verses in a mostly single voice, with a full-harmony refrain every 1 or 2 verses, then Tag.
+  story verses in a mostly single voice (the first one solo, with the scene-setting above), with
+  a full-harmony refrain every 1 or 2 verses, then Tag.
   Label the vocal delivery in each section tag.
 
 **Lyric craft.** One clear image or plot turn per verse. Natural near-rhymes and internal rhyme
@@ -104,6 +120,8 @@ echoes in parentheses: `(never hers)`. Put directions only in square brackets:
   revival tent feel
 - a rhythmic feel and meter (swung 4/4, 3/4 hymn waltz, 6/8 lilt, 2/4 march, cut-time shuffle)
 - a BPM range: 65-75 tender, 75-85 storytelling, 80-95 uplifting
+- the opening: `opens with a single solo male voice telling the story over light piano, the full
+  quartet enters at the first chorus`
 - the emotional arc in plain words
 - the big-finish sentence (below)
 
@@ -184,10 +202,10 @@ values
    $t$3/4 hymn waltz, D minor to F, final chorus in G, 68 BPM$t$,
    $style$Barbershop quartet, 1940s gospel quartet, ...$style$,
    $t$female vocals, choir, drums, synth, autotune, rap, pop$t$,
-   $lyrics$[Intro: quartet hums the opening chord softly]
-Mmm...
+   $lyrics$[Verse 1: solo lead voice, quartet silent, light piano]
+In the land of Canaan, Jacob's daughter...
 
-[Verse 1]
+[Chorus: full quartet enters]
 ...$lyrics$,
    $chords${"bpm": 68, "beats_per_bar": 3, "clips": {...}, "sections": {...}}$chords$::jsonb,
    $notes$Scripture checked: Genesis 34 (ESV). Format A because ... Check: ...$notes$),
@@ -196,7 +214,8 @@ Mmm...
 commit;
 ```
 
-Before answering, check each version: the JSON is valid and only uses allowed chords; the reference
-clip math lands in 45 to 65 seconds; every fact matches the post and the Scripture you checked; the
+Before answering, check each version: it opens with a solo voice that names the character, the
+setting and the problem before the quartet enters; the JSON is valid and only uses allowed
+chords; the reference clip math lands in 45 to 65 seconds; every fact matches the post and the Scripture you checked; the
 lyrics pass the tender-ears rule; the tag is in the style, lyrics and chords; the two versions
 really differ; no value contains a semicolon; and the SQL has no leftover `...`.
