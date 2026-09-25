@@ -36,6 +36,9 @@ Always:
   Ship scripts as base64 `data:` URIs, as `hebron-map/publish.py` does.
 - ModSecurity rejects requests with a bare or unusual User-Agent. Send a real one.
 - Use the block editor. Put custom HTML inside a `<!-- wp:html -->` block.
+- Long bare URLs used as link text can push a post wider than a phone screen. Post 1282 has a
+  `<!-- ss-wrap:start -->` block with `.entry-content a{overflow-wrap:anywhere}` that fixes it; add
+  the same block to any other post with that problem.
 
 ## Known pages
 
@@ -120,5 +123,3 @@ and never touches status or schedule. Run it again after editing `player.js`.
 - YouTube blocks playback of most videos from the sandbox ("Video unavailable", watch pages 403),
   even for plain WordPress embeds. That is the sandbox, not the site. Check the player opens and
   ask the user to confirm playback on a real device. Substack podcast audio does play from the sandbox.
-- Known issue, not yet fixed: on phones, /the-art-of-quiet-change/ scrolls sideways because a long
-  Wikipedia URL in its footnotes does not wrap.
