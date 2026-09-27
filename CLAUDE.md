@@ -113,9 +113,9 @@ only pages whose back links changed, and checks each live page).
   character post covers all of these.
 - Five-part component on posts (rebuilt 2026-09-25, source `site/story_strip.py`, `story-strip.css`,
   `story-strip.js`): parts are Read, Gospel Quartet, Podcast, Profile, Map (Steve renamed Listen and
-  Deep dive everywhere on 2026-09-25: posts, Characters/Songs/Subscribe pages, menu, footer. Use these names). A bar under the title with icons, hover titles and a ? panel; up to two cards in the text
+  Deep dive everywhere on 2026-09-25: posts, Characters/Songs/Subscribe pages, menu, footer. Use these names). A bar at the top of the post text, right under the featured photo (icons and hover titles, no series line); up to two cards in the text
   (song or podcast about 40% in; map after the first paragraph naming a place from its title, else
-  profile about 70% in); a box at the end. Missing parts are light grey "Coming soon". Gospel Quartet
+  profile about 70% in); a box at the end with the ? panel in its top-right corner (Steve plans to build that box out further). Missing parts are light grey "Coming soon". Gospel Quartet
   opens a popup YouTube player and Podcast a popup audio player (free Substack episodes; `stories.py`
   saves each episode's `audio` URL). The CSS is printed in wp_head: a `<style>` at the start of the
   post content gets stripped along with whatever follows it.

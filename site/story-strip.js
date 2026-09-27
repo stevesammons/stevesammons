@@ -1,16 +1,12 @@
 /* Characters Worth Following five-part component: behaviour.
    Built into the snippet by site/story_strip.py as a base64 data: URI (the site's content
-   filters mangle inline scripts). Runs right after the top bar, so the bar can move up
-   under the post title before the page paints. */
+   filters mangle inline scripts). Runs right after the top bar. */
 (function () {
   var bar = document.querySelector('.cwf-bar');
   if (!bar || window.cwfReady) return;
   window.cwfReady = true;
 
-  // Move the bar from the top of the post text to just under the title, above the featured image.
-  var art = bar.closest('article');
-  var head = art && art.querySelector('.page-header');
-  if (head && !head.contains(bar)) head.insertAdjacentElement('afterend', bar);
+  // The bar stays where the snippet puts it: at the top of the post text, right under the featured photo.
 
   var NAME = bar.getAttribute('data-name') || '';
   var IMG = bar.getAttribute('data-img') || '';
@@ -34,7 +30,8 @@
 
   /* ---------- ? panel and Coming soon taps ---------- */
   function closeHelp() {
-    var q = bar.querySelector('.cwf-q'), h = bar.querySelector('.cwf-help');
+    var q = document.querySelector('.cwf-q'), h = document.querySelector('.cwf-help');
+    if (!q || !h) return;
     if (h && !h.hidden) { h.hidden = true; q.setAttribute('aria-expanded', 'false'); }
   }
   function closeSoon(except) {

@@ -5,10 +5,10 @@
   python3 site/story_strip.py [--apply]
 
 Each post gets three views of the same five parts (Read, Gospel Quartet, Podcast, Profile, Map):
-  - a bar under the title (icons + words, hover titles, a ? panel explaining the series),
+  - a bar right under the featured photo, at the top of the post text (icons + words, hover titles),
   - up to two cards inside the post: the song (or podcast) about 40% of the way in, and the map
     after the first paragraph that names one of its places (or the profile, about 70% in),
-  - a full box at the end.
+  - a full box at the end, with a ? panel in its top-right corner explaining the series.
 Parts that aren't out yet are light grey ("Coming soon"). Gospel Quartet and Podcast open a popup
 player (YouTube embed / an audio player for the free Substack episode) instead of leaving the page.
 
@@ -181,22 +181,8 @@ if ( ! function_exists( 'ss_cwf_data' ) ) {
 
 	function ss_cwf_bar( $row, $parts ) {
 		$name = $row[0];
-		$out  = 0;
-		foreach ( $parts as $q ) {
-			$out += $q['on'] ? 1 : 0;
-		}
-		$h  = '<nav class="cwf cwf-bar" aria-label="' . esc_attr( $name ) . ' in five parts" data-name="' . esc_attr( $name ) . '" data-img="' . esc_url( $row[1] ) . '">';
-		$h .= '<div class="cwf-head"><span class="cwf-k">__SERIES__</span>'
-			. '<button type="button" class="cwf-q" aria-expanded="false" aria-label="What is this?">?</button>'
-			. '<div class="cwf-help" hidden><p class="cwf-help-t">Every character comes in five parts</p><ol>'
-			. '<li><b>Read</b> the short post. You’re on it now.</li>'
-			. '<li><b>Gospel Quartet</b>: an original song about ' . esc_html( $name ) . ', sung by a gospel quartet.</li>'
-			. '<li><b>Podcast</b>: a longer conversation about the story.</li>'
-			. '<li><b>Profile</b>: a closer look at ' . esc_html( $name ) . ', with the key Bible passages.</li>'
-			. '<li><b>Map</b>: the places in the story and where they are today.</li></ol>'
-			. '<p class="cwf-help-s"><b>' . $out . ' of 5</b> ' . ( 1 === $out ? 'is' : 'are' ) . ' out for ' . esc_html( $name ) . '.'
-			. ( $out < 5 ? ' Grey parts are coming soon.' : '' ) . '</p>'
-			. '<a href="' . esc_url( home_url( '/bible-characters/' ) ) . '">See all characters →</a></div></div><ol class="cwf-track">';
+		$h    = '<nav class="cwf cwf-bar" aria-label="' . esc_attr( $name ) . ' in five parts" data-name="' . esc_attr( $name ) . '" data-img="' . esc_url( $row[1] ) . '">';
+		$h .= '<ol class="cwf-track">';
 		foreach ( $parts as $q ) {
 			$num  = $q['n'] . ' · ' . $q['label'];
 			$data = ' data-part="' . $q['k'] . '" data-label="' . esc_attr( $q['label'] ) . '"';
@@ -257,8 +243,18 @@ if ( ! function_exists( 'ss_cwf_data' ) ) {
 					. '<span class="cwf-tile-t">' . esc_html( $q['title'] ) . ss_cwf_arrow( $q ) . '</span><span class="cwf-tile-m">' . esc_html( $q['meta'] ) . '</span></span></a></li>';
 			}
 		}
-		$sub = 5 === $out ? 'All five parts are out.' : $out . ' of 5 parts are out. The rest are on the way.';
-		return '<aside class="cwf cwf-end" aria-label="' . esc_attr( $name ) . ' in five parts"><span class="cwf-k">__SERIES__</span>'
+		$sub  = 5 === $out ? 'All five parts are out.' : $out . ' of 5 parts are out. The rest are on the way.';
+		$help = '<button type="button" class="cwf-q" aria-expanded="false" aria-label="What is this?">?</button>'
+			. '<div class="cwf-help" hidden><p class="cwf-help-t">Every character comes in five parts</p><ol>'
+			. '<li><b>Read</b>: the short post you just finished.</li>'
+			. '<li><b>Gospel Quartet</b>: an original song about ' . esc_html( $name ) . ', sung by a gospel quartet.</li>'
+			. '<li><b>Podcast</b>: a longer conversation about the story.</li>'
+			. '<li><b>Profile</b>: a closer look at ' . esc_html( $name ) . ', with the key Bible passages.</li>'
+			. '<li><b>Map</b>: the places in the story and where they are today.</li></ol>'
+			. '<p class="cwf-help-s"><b>' . $out . ' of 5</b> ' . ( 1 === $out ? 'is' : 'are' ) . ' out for ' . esc_html( $name ) . '.'
+			. ( $out < 5 ? ' Grey parts are coming soon.' : '' ) . '</p>'
+			. '<a href="' . esc_url( home_url( '/bible-characters/' ) ) . '">See all characters →</a></div>';
+		return '<aside class="cwf cwf-end" aria-label="' . esc_attr( $name ) . ' in five parts">' . $help . '<span class="cwf-k">__SERIES__</span>'
 			. '<h2 class="cwf-end-h">' . esc_html( $name ) . ' in five parts</h2><p class="cwf-end-s">' . $sub . '</p><ol class="cwf-grid">' . $h . '</ol>'
 			. '<p class="cwf-more"><a href="' . esc_url( home_url( '/bible-characters/' ) ) . '">All characters</a><a href="' . esc_url( home_url( '/songs/' ) ) . '">Songs</a>'
 			. '<a href="__PODCAST__" target="_blank" rel="noopener">Podcast ↗</a><a href="' . esc_url( home_url( '/bible-maps/' ) ) . '">Maps</a></p></aside>';
