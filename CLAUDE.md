@@ -79,6 +79,20 @@ the shared engine (`bible-maps/engine.js`) followed by that map's config JSON.
   (`{page_id: {name: [lat, lon]}}`); the engine uses the free spot nearest that point.
 - New maps: tag them Bible Map, put them in Bible Maps, run apply.py on them, and add the back card.
 
+## Bible series layout (no reading time, tight header)
+
+Every Bible-series post and page (2026-09-27: 98 posts, 155 pages; maps, profiles, index pages)
+references the synced pattern "Bible series layout (tight header)" (wp_block 4676, source
+`series-layout/pattern.html`). It is only CSS: it hides the theme's "N minute read", trims the
+space above and below the headline, the "Characters Worth Following" strip and the featured
+image, with smaller values on phones. Edit the pattern once to restyle all of them.
+- `python3 series-layout/apply.py --apply` adds it to any series post or page that lacks it (new
+  posts, profiles and maps need this) and removes "· N minute read" text typed into content.
+  Scope and extra page IDs are at the top of the script.
+- Items with no block markup (13 older map pages) were converted with `subscribe/wpautop.py` into
+  a Custom HTML block, saved only after a scratch draft rendered identically. Set
+  `SCRATCH_DRAFT=<draft id>` to reuse a draft for that check.
+
 ## YouTube videos play on the page
 
 YouTube links (name pronunciations, the "Hear the gospel quartet" song card, other video links)
