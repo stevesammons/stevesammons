@@ -101,6 +101,8 @@ a.cwf-tile:hover .cwf-ic{background:var(--cwf-ink);color:#fff}
 .cwf-tile.is-soon .cwf-tile-t,.cwf-tile.is-soon .cwf-tile-n,.cwf-tile.is-soon .cwf-tile-m{color:var(--cwf-ghost)}
 .cwf-tile-m{font-size:.76rem;color:var(--cwf-muted);margin-top:auto;padding-top:2px}
 .cwf-tile.is-here .cwf-tile-m{color:#bdbdbd}
+.cwf .cwf-tile .cwf-notify{display:inline-block;margin-top:6px;font-family:"Poppins",system-ui,sans-serif;font-weight:600;font-size:.76rem;line-height:1.3;color:var(--cwf-red)!important}
+.cwf .cwf-tile .cwf-notify:hover,.cwf .cwf-tile .cwf-notify:focus-visible{text-decoration:underline!important}
 .cwf-more{margin:18px 0 0!important;font-size:.88rem;display:flex;flex-wrap:wrap;gap:4px 14px}
 .cwf-more a{color:var(--cwf-red)!important;font-weight:700}
 .cwf-more a:hover{text-decoration:underline!important}

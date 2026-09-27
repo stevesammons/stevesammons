@@ -8,7 +8,8 @@ Each post gets three views of the same five parts (Read, Gospel Quartet, Podcast
   - a bar right under the featured photo, at the top of the post text (icons + words, hover titles),
   - up to two cards inside the post: the song (or podcast) about 40% of the way in, and the map
     after the first paragraph that names one of its places (or the profile, about 70% in),
-  - a full box at the end, with a ? panel in its top-right corner explaining the series.
+  - a full box at the end, with a ? panel in its top-right corner explaining the series, and a
+    "Tell me when it's out" link (Substack subscribe) on each part that isn't out yet.
 Parts that aren't out yet are light grey ("Coming soon"). Gospel Quartet and Podcast open a popup
 player (YouTube embed / an audio player for the free Substack episode) instead of leaving the page.
 
@@ -21,7 +22,7 @@ the RSS feed and emails are unchanged. With --apply it lints the PHP, updates th
 site/story-strip-snippet-id.txt), activates it and checks the site and a few live posts.
 """
 import base64, json, re, subprocess, sys
-from storykit import DEEP_DIVES, ROOT, SERIES, SITE, check, characters, wp
+from storykit import DEEP_DIVES, ROOT, SERIES, SITE, SUBSCRIBE, check, characters, wp
 
 OUT = ROOT / "site" / "story-strip-snippet.php"
 ID_FILE = ROOT / "site" / "story-strip-snippet-id.txt"
@@ -237,7 +238,8 @@ if ( ! function_exists( 'ss_cwf_data' ) ) {
 					. '<span class="cwf-tile-t">' . esc_html( $q['title'] ) . '</span><span class="cwf-tile-m">You just read it</span></span></div></li>';
 			} elseif ( ! $q['on'] ) {
 				$h .= '<li><div class="cwf-tile is-soon">' . ss_cwf_icon( $q['k'] ) . '<span class="cwf-tile-b"><span class="cwf-tile-n">' . $num . '</span>'
-					. '<span class="cwf-tile-t">Coming soon</span><span class="cwf-tile-m">' . esc_html( $q['soon'] ) . '</span></span></div></li>';
+					. '<span class="cwf-tile-t">Coming soon</span><span class="cwf-tile-m">' . esc_html( $q['soon'] ) . '</span>'
+					. '<a class="cwf-notify" href="__SUBSCRIBE__" target="_blank" rel="noopener" aria-label="' . esc_attr( 'Tell me when the ' . ( 'song' === $q['k'] ? 'gospel quartet song' : strtolower( $q['label'] ) ) . ' for ' . $name . ' is out' ) . '">Tell me when it’s out →</a></span></div></li>';
 			} else {
 				$h .= '<li><a class="cwf-tile"' . $q['attrs'] . '>' . ss_cwf_icon( $q['k'] ) . '<span class="cwf-tile-b"><span class="cwf-tile-n">' . $num . '</span>'
 					. '<span class="cwf-tile-t">' . esc_html( $q['title'] ) . ss_cwf_arrow( $q ) . '</span><span class="cwf-tile-m">' . esc_html( $q['meta'] ) . '</span></span></a></li>';
@@ -367,7 +369,7 @@ if ( ! function_exists( 'ss_cwf_data' ) ) {
 def render():
     d = data()
     code = (TEMPLATE.replace("__DATA__", php({int(k): v for k, v in d.items()}))
-            .replace("__SERIES__", SERIES).replace("__PODCAST__", DEEP_DIVES)
+            .replace("__SERIES__", SERIES).replace("__PODCAST__", DEEP_DIVES).replace("__SUBSCRIBE__", SUBSCRIBE)
             .replace("__CSS__", css()).replace("__JS__", js_uri()))
     OUT.write_text(code)
     print(len(d), "posts,", len(code) // 1024, "KB ->", OUT.relative_to(ROOT))
