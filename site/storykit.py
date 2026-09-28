@@ -2,7 +2,7 @@
 
 Data comes from site/stories.json (refresh it with `python3 site/stories.py`).
 """
-import base64, html, json, sys, time, urllib.request
+import base64, html, json, re, sys, time, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -139,6 +139,11 @@ def publish(slug, title, content, excerpt, apply, status="publish"):
     code, existing = wp.request("GET", f"/wp/v2/pages?slug={slug}&status=publish,draft&context=edit&_fields=id,content,excerpt")
     body = {"title": title, "slug": slug, "status": status, "content": content}
     if existing:
+        # Keep synced-pattern references other tools add to the page (e.g. the Bible series layout,
+        # wp_block 4676, added by series-layout/apply.py); a rebuild must not drop them.
+        for ref in re.findall(r'<!-- wp:block \{"ref":\d+\} /-->', existing[0]["content"]["raw"]):
+            if ref not in body["content"]:
+                body["content"] += "\n\n" + ref
         (ROOT / "backups").mkdir(exist_ok=True)
         (ROOT / "backups" / f"page-{existing[0]['id']}-{int(time.time())}.json").write_text(json.dumps(existing[0]))
         if not existing[0]["excerpt"]["raw"].strip():

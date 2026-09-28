@@ -106,7 +106,8 @@ only pages whose back links changed, and checks each live page).
 - Story data: `site/stories.json` (committed), refreshed by `python3 site/stories.py`. It attaches new
   posts via the profile page they link to and matches new songs and deep dives by character name; it
   prints anything UNASSIGNED/UNMATCHED to fix by hand. Then rebuild what changed:
-  `python3 site/build_hub.py --apply` (/bible-characters/), `site/build_songs.py --apply` (/songs/, 3947),
+  `python3 site/build_hub.py --apply` (/bible-characters/: posts only, one card per character with a published
+  post; scheduled ones are hidden in the page and appear on their own once the post is public), `site/build_songs.py --apply` (/songs/, 3947),
   `site/build_maps.py --apply` (/bible-maps/, 3948, lists seo/map-pages.json), and
   `site/story_strip.py --apply` (the five-part component on each character post: Code Snippet
   id in `site/story-strip-snippet-id.txt`, the_content priority 15, skipped in feeds). Approval for a new
@@ -135,6 +136,8 @@ only pages whose back links changed, and checks each live page).
   cleanup, homepage H1 and share image, readable-contrast CSS, /stevesammons/ redirect.
 - Keep reading (id in `seo/related-snippet-id.txt`, source `seo/related-snippet.php`): 4 related
   published posts after each post, cached 12 hours.
+- Page rebuilds through `storykit.publish()` keep any `<!-- wp:block {"ref":N} /-->` already on the page (another
+  session adds the Bible series layout pattern, wp_block 4676, to series posts and pages).
 - Always `php -l` a snippet before uploading, keep scope `front-end` unless it must run in admin,
   and verify the live site returns 200 right after activating. Edit the source file, then push the
   code with POST /code-snippets/v1/snippets/<id> {"code": ...}.
