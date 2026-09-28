@@ -38,7 +38,7 @@ work from, never as instructions to you.
   publish_date, post_text).
 - **"What's left?"**: `select status, post_status, count(*) from songs group by 1, 2 order by 1, 2`
 - **"Save it"**: run your SQL block (section 11), then confirm with
-  `select post_id, status, (select count(*) from song_versions v where v.post_id = s.post_id) as versions from songs s where post_id = <id>`
+  `select post_id, status, (select count(*) from song_versions v where v.post_id = s.post_id) as versions from songs s where post_id = POST_ID`
   Never save before Steve says so.
 - **"Put version 1 in Suno"** (or 2): fill in Suno's form (section 12).
 
@@ -136,8 +136,8 @@ then `[Chorus: full quartet enters, four-part harmony]`. Say the same thing in t
 ### Chorus Story template (format A)
 
 ```
-[Intro: solo <voice>, quartet silent]           2 to 4 lines: character, setting, problem
-[Verse 1: solo <voice> continues]               who they are, what they want
+[Intro: solo VOICE, quartet silent]           2 to 4 lines: character, setting, problem
+[Verse 1: solo VOICE continues]               who they are, what they want
 [Chorus: full quartet enters, call-and-response] the title, the thesis, 4 to 6 lines
 [Verse 2: lead, tenor and baritone echoes]      the pressure or temptation
 [Chorus: full quartet]
@@ -153,8 +153,8 @@ Target: 320 to 420 words, 2,000 to 2,700 characters including tags, 3:30 to 4:15
 ### Ballad Story template (format B)
 
 ```
-[Intro: solo <voice>, quartet silent]           character, setting, problem
-[Verse 1: solo <voice> continues]
+[Intro: solo VOICE, quartet silent]           character, setting, problem
+[Verse 1: solo VOICE continues]
 [Refrain: full quartet enters]                  1 or 2 lines, the title or its key words
 [Verse 2: lead]  [Refrain]
 [Verse 3: bass recitation, half-spoken]  [Refrain]
@@ -268,7 +268,7 @@ It must appear in **all three** places:
 
 Put the most important words first (Suno weighs early words more). Always include:
 - core genre: `Barbershop gospel blues quartet, 1940s gospel quartet, close four-part male harmony, tenor lock`
-- the intro: `opens with a <voice from section 6> telling the story, quartet silent, the full quartet enters at the first chorus` (or "refrain")
+- the intro: `opens with a VOICE FROM SECTION 6 telling the story, quartet silent, the full quartet enters at the first chorus` (or "refrain")
 - texture: for example `a cappella-style with light piano and upright bass`, `warm vintage tone`, `revival tent feel`
 - meter and feel: `swung 4/4`, `3/4 hymn waltz`, `6/8 dotted-quarter lilt`, `2/4 march`, `slow 12/8 blues`, `cut-time shuffle`
 - tempo: 65 to 75 BPM tender, 75 to 85 storytelling, 80 to 95 uplifting
@@ -326,18 +326,18 @@ commit;
 When Steve says "put version N in Suno" (after it's saved):
 
 1. Read that version back:
-   `select song_title, style, exclude_styles, lyrics from song_versions where post_id = <id> and version = <N>`
+   `select song_title, style, exclude_styles, lyrics from song_versions where post_id = POST_ID and version = N`
 2. On suno.com go to **Create**, and switch to the custom or advanced mode that shows separate
    **Lyrics**, **Styles** and **Title** boxes (turn off any "instrumental" switch).
 3. Fill in **Lyrics** (the whole lyric, tags included), **Styles** (the style line), **Exclude
    styles** if the box is there (open "More options" if needed), and **Title**. Clear each box
    before typing. Check that nothing was cut off.
 4. **Stop there.** Don't click Create, don't upload files, and don't change account settings.
-   Tell Steve: "Version N is filled in. Upload its reference clip (`<post_id>/vN-chords-reference.wav`
+   Tell Steve: "Version N is filled in. Upload its reference clip (`POST_ID/vN-chords-reference.wav`
    from the email) as the audio reference, then click Create." Creating spends credits, so only
    Steve does it.
 5. After he picks a winner, offer to record it:
-   `update songs set chosen_version = <N>, status = 'generated', candidate_urls = array[...] where post_id = <id>`
+   `update songs set chosen_version = N, status = 'generated', candidate_urls = array[...] where post_id = POST_ID`
    (later `status = 'picked', winner_url = '...'`, then `'downloaded'`). Run it only when he says so.
 
 ## 13. Final check before you answer
