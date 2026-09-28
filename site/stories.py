@@ -2,8 +2,8 @@
 """Build site/stories.json: every Bible character with the five parts of their story.
 
   1 Read       the short reflection post (Old Testament / New Testament categories)
-  2 Listen     the gospel quartet song on YouTube (@CharactersWorthFollowing)
-  3 Deep dive  the long-form podcast episode on Substack (sammons.substack.com)
+  2 Gospel Quartet  the gospel quartet song on YouTube (@CharactersWorthFollowing)
+  3 Podcast    the long-form podcast episode on Substack (sammons.substack.com)
   4 Profile    the character profile page
   5 Map        the interactive Bible map page(s)
 
@@ -161,7 +161,9 @@ def deep_dives():
             continue
         out.append({"url": f"{SUBSTACK}/p/{r['slug']}", "title": r["title"], "subtitle": r.get("subtitle") or "",
                     "minutes": round((r.get("podcast_duration") or 0) / 60), "date": r["post_date"][:10],
-                    "tags": [t["name"] for t in r.get("postTags") or []]})
+                    "tags": [t["name"] for t in r.get("postTags") or []],
+                    # free episodes only: the audio plays in the post's podcast player
+                    "audio": r.get("podcast_url") if r.get("audience") == "everyone" else None})
     return out
 
 
@@ -222,13 +224,21 @@ def refresh():
         elif ("song", c["name"]) not in seen and not (c.get("song") or {}).get("pinned"):
             seen.add(("song", c["name"]))
             c["song"] = {"id": s["id"], "title": s["song"], "url": f"https://www.youtube.com/watch?v={s['id']}"}
-    for d in deep_dives():
+    dives = deep_dives()
+    for d in dives:
         c = match(chars, d["tags"]) or match(chars, [d["subtitle"], d["title"]])
         if not c:
             unmatched.append(("deep dive", d["title"]))
         elif ("deep", c["name"]) not in seen and not (c.get("deep") or {}).get("pinned"):
             seen.add(("deep", c["name"]))
             c["deep"] = {k: d[k] for k in ("url", "title", "minutes", "date")}
+    audio = {d["url"]: d["audio"] for d in dives}
+    for c in chars:  # pinned episodes too
+        if c.get("deep"):
+            if audio.get(c["deep"]["url"]):
+                c["deep"]["audio"] = audio[c["deep"]["url"]]
+            else:
+                c["deep"].pop("audio", None)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n")
     n = lambda k: sum(1 for c in chars if c.get(k))
     print(f"{len(chars)} characters; {sum(len(c['posts']) for c in chars)} posts; {n('song')} songs; "

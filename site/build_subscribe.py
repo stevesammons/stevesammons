@@ -25,8 +25,8 @@ def render():
         'It is free, and you can unsubscribe any time.</p>'
         '<div class="cw-sub"><div><ul>'
         '<li><b>The short read</b>, about three minutes, every week.</li>'
-        f'<li><b>The song</b>: a gospel quartet tune for the story. <a href="{SITE}/songs/">Hear them</a></li>'
-        f'<li><b>The deep dive</b>: the long version, 10 to 45 minutes, to listen to on a walk or a drive. <a href="{DEEP_DIVES}" target="_blank" rel="noopener">Browse deep dives</a></li>'
+        f'<li><b>The Gospel Quartet song</b>: a gospel quartet tune for the story. <a href="{SITE}/songs/">Hear them</a></li>'
+        f'<li><b>The podcast</b>: the long version, 10 to 45 minutes, to listen to on a walk or a drive. <a href="{DEEP_DIVES}" target="_blank" rel="noopener">Browse the podcast</a></li>'
         f'<li><b>Profiles and maps</b> for every character. <a href="{SITE}/bible-characters/">See them all</a></li>'
         '</ul>'
         f'<p class="cw-note">Sign-up is handled by Substack. Prefer to do it there? <a href="{SUBSCRIBE}" target="_blank" rel="noopener">Subscribe on Substack</a>. '
@@ -40,5 +40,5 @@ def render():
 
 if __name__ == "__main__":
     publish("subscribe", "Subscribe", render(),
-            "Get Characters Worth Following by email: a short Bible character reflection each week, plus songs, deep dives, profiles and maps. Free.",
+            "Get Characters Worth Following by email: a short Bible character reflection each week, plus gospel quartet songs, podcast episodes, profiles and maps. Free.",
             "--apply" in sys.argv)

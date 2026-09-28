@@ -12,7 +12,7 @@ $items = array(
 	array( 'Characters', 'bible-characters', '', '' ),
 	array( 'Songs', 'songs', '', '' ),
 	array( 'Maps', 'bible-maps', '', '' ),
-	array( 'Deep Dives', '', 'https://sammons.substack.com/podcast', '' ),
+	array( 'Podcast', '', 'https://sammons.substack.com/podcast', '' ),
 	array( 'About', 'about', '', '' ),
 	array( 'Subscribe', 'subscribe', '', 'ss-menu-subscribe' ),
 );
